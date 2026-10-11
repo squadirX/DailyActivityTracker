@@ -238,7 +238,8 @@ class Tracker:
         tracked = sum(totals.values())
         self.kpi_labels["tracked"].config(text=self.format_time(tracked))
         self.kpi_labels["apps"].config(text=str(len(totals)))
-        self.kpi_labels["sessions"].config(text=str(len(rows) + (1 if self.active_app else 0)))
+        live_interval = (1 if self.running and self.active_app and self.session_start and self.view_day == date.today() and self.session_start.date() == date.today() else 0)
+        self.kpi_labels["sessions"].config(text=str(len(rows) + live_interval))
         top = max(totals, key=totals.get) if totals else "—"
         self.kpi_labels["top"].config(text=top if len(top)<13 else top[:12]+"…")
         self.draw_chart(totals)
