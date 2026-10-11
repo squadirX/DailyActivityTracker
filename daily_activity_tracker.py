@@ -76,6 +76,7 @@ class Tracker:
         self.root.minsize(760, 590)
         self.root.configure(bg="#F4F7FB")
         self.categories = load_categories()
+        self.view_day = date.today()
         self.running = False
         self.active_app = None
         self.session_start = None
@@ -109,6 +110,13 @@ class Tracker:
         ttk.Label(header, text="Daily Activity Tracker", style="Title.TLabel").pack(anchor="w")
         ttk.Label(header, text="A simple, private view of how you spend your day on your Mac.", style="Sub.TLabel").pack(anchor="w", pady=(4, 12))
 
+        daybar = ttk.Frame(outer); daybar.pack(fill="x", pady=(0, 10))
+        ttk.Button(daybar, text="← Previous day", command=lambda: self.change_day(-1)).pack(side="left")
+        self.day_label = ttk.Label(daybar, text="", style="Sub.TLabel")
+        self.day_label.pack(side="left", padx=12)
+        ttk.Button(daybar, text="Today", command=self.show_today).pack(side="left")
+        ttk.Button(daybar, text="Next day →", command=lambda: self.change_day(1)).pack(side="left", padx=6)
+
         bar = ttk.Frame(outer); bar.pack(fill="x", pady=(0, 14))
         self.status = ttk.Label(bar, text="● Paused", foreground="#B45309")
         self.status.pack(side="left")
@@ -121,7 +129,7 @@ class Tracker:
 
         cards = ttk.Frame(outer); cards.pack(fill="x", pady=(0, 14))
         self.kpi_labels = {}
-        for name, key in [("Tracked time","tracked"),("Apps used","apps"),("Sessions","sessions"),("Top app","top")]:
+        for name, key in [("Tracked time","tracked"),("Apps used","apps"),("Intervals","sessions"),("Top app","top")]:
             card = tk.Frame(cards, bg="white", highlightbackground="#E4EAF2", highlightthickness=1)
             card.pack(side="left", fill="both", expand=True, padx=(0, 9))
             tk.Label(card, text=name.upper(), bg="white", fg="#7A8497", font=("Helvetica", 9, "bold")).pack(anchor="w", padx=14, pady=(12, 3))
@@ -137,7 +145,8 @@ class Tracker:
         self.chart.pack(fill="both", expand=True, padx=10, pady=(0, 10))
         right = tk.Frame(content, bg="white", highlightbackground="#E4EAF2", highlightthickness=1)
         right.pack(side="left", fill="both", expand=True)
-        tk.Label(right, text="TODAY'S ACTIVITY", bg="white", fg="#344054", font=("Helvetica", 10, "bold")).pack(anchor="w", padx=14, pady=(13, 5))
+        self.activity_title = tk.Label(right, text="ACTIVITY", bg="white", fg="#344054", font=("Helvetica", 10, "bold"))
+        self.activity_title.pack(anchor="w", padx=14, pady=(13, 5))
         cols = ("start", "app", "category", "duration")
         self.tree = ttk.Treeview(right, columns=cols, show="headings", height=10)
         for col, label, width in [("start","START",70),("app","APP",130),("category","CATEGORY",105),("duration","TIME",70)]:
@@ -145,6 +154,14 @@ class Tracker:
         self.tree.pack(fill="both", expand=True, padx=10, pady=(0, 12))
         footer = ttk.Label(outer, text="Local only • App names and time intervals • No keystrokes, screenshots or message contents", style="Sub.TLabel")
         footer.pack(anchor="w", pady=(12, 0))
+
+    def change_day(self, offset):
+        self.view_day += timedelta(days=offset)
+        self.refresh()
+
+    def show_today(self):
+        self.view_day = date.today()
+        self.refresh()
 
     def toggle(self):
         if not self.running:
@@ -208,13 +225,15 @@ class Tracker:
                     "app":app,"category":category,"device":"Mac","activity":category})
 
     def refresh(self):
-        rows = read_day(date.today())
+        rows = read_day(self.view_day)
         totals = defaultdict(int)
         for r in rows:
             try: totals[r["app"]] += int(float(r["duration_seconds"]))
             except Exception: pass
         # Include the currently running session as a live estimate.
-        if self.running and self.active_app and self.session_start and self.session_start.date() == date.today():
+        self.day_label.config(text=self.view_day.strftime("%A, %B %d, %Y"))
+        self.activity_title.config(text=f"ACTIVITY — {self.view_day.strftime('%b %d, %Y').upper()}")
+        if self.running and self.active_app and self.session_start and self.view_day == date.today() and self.session_start.date() == date.today():
             totals[self.active_app] += max(0, int((datetime.now()-self.session_start).total_seconds()))
         tracked = sum(totals.values())
         self.kpi_labels["tracked"].config(text=self.format_time(tracked))
@@ -253,10 +272,10 @@ class Tracker:
             y += rowh
 
     def export_csv(self):
-        source = csv_path()
+        source = csv_path(self.view_day)
         if not source.exists():
             messagebox.showinfo("Nothing to export", "No activity has been saved today yet."); return
-        target = filedialog.asksaveasfilename(defaultextension=".csv", initialfile=f"activity_{date.today().isoformat()}.csv", filetypes=[("CSV files","*.csv")])
+        target = filedialog.asksaveasfilename(defaultextension=".csv", initialfile=f"activity_{self.view_day.isoformat()}.csv", filetypes=[("CSV files","*.csv")])
         if target:
             import shutil; shutil.copy2(source, target)
             messagebox.showinfo("Export complete", "Your CSV file has been exported.")
@@ -271,7 +290,7 @@ class Tracker:
         canvas.create_window((0,0),window=inner,anchor="nw"); canvas.configure(yscrollcommand=sb.set)
         canvas.pack(side="left",fill="both",expand=True); sb.pack(side="right",fill="y")
         vars_={}
-        apps=sorted(set(self.categories)|{r["app"] for r in read_day(date.today())})
+        apps=sorted(set(self.categories)|{r["app"] for r in read_day(self.view_day)})
         for app in apps:
             row=ttk.Frame(inner); row.pack(fill="x",pady=3)
             ttk.Label(row,text=app,width=22).pack(side="left")
@@ -284,7 +303,14 @@ class Tracker:
         ttk.Button(win,text="Save categories",command=save).pack(anchor="e",padx=18,pady=16)
 
     def close(self):
-        if self.running: self.stop_session()
+        self.running = False
+        if self.after_id:
+            try:
+                self.root.after_cancel(self.after_id)
+            except tk.TclError:
+                pass
+            self.after_id = None
+        self.stop_session()
         self.root.destroy()
 
 if __name__ == "__main__":
