@@ -1,0 +1,487 @@
+    def _open_progress_preview(self, parent: tk.Toplevel, sources, destinations) -> None:
+        """Run the real Daily Smart Backup using the existing transfer-monitor design."""
+        if getattr(self, "_daily_backup_active", False):
+            messagebox.showinfo("Backup Running", "A Daily Smart Backup is already running.")
+            return
+
+        window = tk.Toplevel(self.root)
+        window.title("SmartBackup | Daily Backup Progress")
+        window.geometry("1080x780")
+        window.minsize(900, 650)
+        window.configure(bg=COLORS["bg"])
+        window.transient(self.root)
+
+        body = tk.Frame(window, bg=COLORS["bg"], padx=24, pady=20)
+        body.pack(fill="both", expand=True)
+        tk.Label(body, text="LIVE TRANSFER MONITOR", bg=COLORS["bg"], fg=COLORS["accent"], font=(FONT, 11, "bold")).pack(anchor="w")
+        tk.Label(body, text="Daily Smart Backup", bg=COLORS["bg"], fg=COLORS["text"], font=(FONT, 24, "bold")).pack(anchor="w", pady=(4, 12))
+
+        summary = tk.Frame(body, bg=COLORS["bg"])
+        summary.pack(fill="x", pady=(0, 12))
+        summary_labels = {}
+        for key, heading, color in (
+            ("progress", "OVERALL PROGRESS", COLORS["accent"]),
+            ("files", "FILES PROCESSED", COLORS["blue"]),
+            ("eta", "ESTIMATED REMAINING", COLORS["amber"]),
+        ):
+            card = self._card(summary, 13)
+            card.pack(side="left", fill="both", expand=True, padx=(0, 8))
+            tk.Label(card, text=heading, bg=COLORS["panel"], fg=COLORS["muted"], font=(FONT, 10, "bold")).pack(anchor="w")
+            value = tk.Label(card, text="0%", bg=COLORS["panel"], fg=color, font=(FONT, 22, "bold"))
+            value.pack(anchor="w", pady=(5, 0))
+            summary_labels[key] = value
+
+        progress_card = self._card(body, 14)
+        progress_card.pack(fill="x", pady=(0, 12))
+        progress_header = tk.Frame(progress_card, bg=COLORS["panel"])
+        progress_header.pack(fill="x")
+        tk.Label(progress_header, text="TRANSFER PROGRESS", bg=COLORS["panel"], fg=COLORS["text"], font=(FONT, 14, "bold")).pack(side="left")
+        progress_percent = tk.Label(progress_header, text="0%", bg=COLORS["panel"], fg=COLORS["accent"], font=(FONT, 13, "bold"))
+        progress_percent.pack(side="right")
+        progress_bar = ttk.Progressbar(progress_card, maximum=100, value=0, style="Smart.Horizontal.TProgressbar")
+        progress_bar.pack(fill="x", pady=(12, 8))
+        detail_label = tk.Label(progress_card, text="Scanning Documents and Downloads. No destination files have been copied yet.", bg=COLORS["panel"], fg=COLORS["muted"], font=(FONT, 10), justify="left", wraplength=950)
+        detail_label.pack(anchor="w")
+
+        preview_area = tk.Frame(body, bg=COLORS["bg"])
+        preview_area.pack(fill="both", expand=True, pady=(0, 10))
+        table_card = self._card(preview_area, 12)
+        table_card.pack(side="left", fill="both", expand=True, padx=(0, 10))
+        preview_summary = self._card(preview_area, 12)
+        preview_summary.pack(side="right", fill="y")
+        preview_summary.configure(width=270)
+        preview_summary.pack_propagate(False)
+        tk.Label(preview_summary, text="BACKUP SUMMARY", bg=COLORS["panel"], fg=COLORS["text"], font=(FONT, 13, "bold")).pack(anchor="w", pady=(0, 12))
+        preview_summary_labels = {}
+        for key, heading in (("files", "FILES FOUND"), ("size", "TOTAL SOURCE SIZE"), ("sources", "SOURCE FOLDERS"), ("destinations", "DESTINATIONS"), ("skipped", "SKIPPED ENTRIES")):
+            tk.Label(preview_summary, text=heading, bg=COLORS["panel"], fg=COLORS["muted"], font=(FONT, 9, "bold")).pack(anchor="w", pady=(7, 0))
+            value = tk.Label(preview_summary, text="—", bg=COLORS["panel"], fg=COLORS["text"], font=(FONT, 10), justify="left", anchor="w", wraplength=235)
+            value.pack(anchor="w", fill="x")
+            preview_summary_labels[key] = value
+        tk.Label(table_card, text="BACKUP FILE REVIEW / FILE-BY-FILE ACTIVITY", bg=COLORS["panel"], fg=COLORS["text"], font=(FONT, 14, "bold")).pack(anchor="w", pady=(0, 8))
+        tree_frame = tk.Frame(table_card, bg=COLORS["panel"])
+        tree_frame.pack(fill="both", expand=True)
+        tree = ttk.Treeview(tree_frame, columns=("file", "destination", "status"), show="headings", style="Smart.Treeview", height=12)
+        tree.heading("file", text="FILE")
+        tree.heading("destination", text="DESTINATION")
+        tree.heading("status", text="STATUS")
+        tree.column("file", width=420, anchor="w")
+        tree.column("destination", width=230, anchor="w")
+        tree.column("status", width=150, anchor="center")
+        tree_scrollbar = ttk.Scrollbar(tree_frame, orient="vertical", command=tree.yview)
+        tree.configure(yscrollcommand=tree_scrollbar.set)
+        tree.pack(side="left", fill="both", expand=True)
+        tree_scrollbar.pack(side="right", fill="y")
+
+        status_label = tk.Label(body, text="SCANNING SOURCE FOLDERS...", bg=COLORS["bg"], fg=COLORS["amber"], font=(FONT, 11, "bold"), anchor="w", justify="left", wraplength=950)
+        status_label.pack(fill="x", pady=(0, 9))
+        controls = tk.Frame(body, bg=COLORS["bg"])
+        controls.pack(fill="x")
+
+        normalized_sources = []
+        for label, raw_path in sources:
+            try:
+                source_path = Path(raw_path).expanduser().resolve(strict=True)
+            except Exception as exc:
+                messagebox.showerror("Source Error", f"{label}: {exc}", parent=window)
+                window.destroy()
+                return
+            if not source_path.is_dir():
+                messagebox.showerror("Source Error", f"{label} is not an accessible folder.", parent=window)
+                window.destroy()
+                return
+            normalized_sources.append((str(label), source_path))
+
+        job = {
+            "sources": normalized_sources,
+            "destinations": destinations,
+            "window": window,
+            "queue": queue.Queue(),
+            "cancel": threading.Event(),
+            "finished": False,
+            "summary_labels": summary_labels,
+            "progress_percent": progress_percent,
+            "progress_bar": progress_bar,
+            "detail_label": detail_label,
+            "status_label": status_label,
+            "tree": tree,
+            "preview_summary_labels": preview_summary_labels,
+            "files": [],
+            "dirs": [],
+            "skipped": 0,
+            "total_bytes": 0,
+            "total_ops": 0,
+            "validated_destinations": [],
+            "started": None,
+            "phase": "scan",
+            "row_ids": {},
+        }
+
+        def request_cancel():
+            if job["finished"]:
+                window.destroy()
+                return
+            job["cancel"].set()
+            if job["phase"] == "preview":
+                finish("CANCELLED BEFORE COPY", "You cancelled after reviewing the file list. No destination files were copied.")
+                return
+            try:
+                status_label.configure(text="CANCELLATION REQUESTED. Waiting for the current operation to stop...")
+            except tk.TclError:
+                pass
+
+        def start_copy():
+            if job["finished"] or job["phase"] != "preview":
+                return
+            job["phase"] = "copy"
+            job["started"] = time.monotonic()
+            status_label.configure(text="BACKUP RUNNING — COPYING FILES...")
+            detail_label.configure(text=f"{len(job['files'])} files · {self._manual_backup_format_size(job['total_bytes'])} per destination · {job['total_ops']} destination-file operations")
+            confirm_button.configure(state="disabled", text="BACKUP STARTED")
+            threading.Thread(target=copy_worker, daemon=True, name="SmartBackupDailyCopy").start()
+
+        confirm_button = self._action_button(controls, "CONFIRM BACKUP", start_copy, False)
+        confirm_button.pack(side="right", padx=(0, 8))
+        confirm_button.configure(state="disabled")
+        cancel_button = self._action_button(controls, "CANCEL", request_cancel, False)
+        cancel_button.pack(side="right")
+        window.protocol("WM_DELETE_WINDOW", request_cancel)
+        window.grab_set()
+
+        try:
+            parent.grab_release()
+            parent.destroy()
+        except tk.TclError:
+            pass
+
+        def finish(status, detail):
+            job["finished"] = True
+            self._daily_backup_active = False
+            try:
+                status_label.configure(text=status)
+                detail_label.configure(text=detail + "\n\nBackup process finished. Click CLOSE to close this window.")
+                cancel_button.destroy()
+                confirm_button.configure(text="CLOSE", state="normal", command=window.destroy)
+                confirm_button.tkraise()
+                window.protocol("WM_DELETE_WINDOW", window.destroy)
+            except tk.TclError:
+                pass
+
+        def scan_worker():
+            files, dirs, skipped, scan_errors = [], [], 0, []
+            today = time.strftime("%Y-%m-%d", time.localtime())
+            try:
+                for label, source_path in normalized_sources:
+                    for root, dirnames, filenames in os.walk(source_path, topdown=True, followlinks=False, onerror=lambda exc: scan_errors.append(str(exc))):
+                        if job["cancel"].is_set():
+                            job["queue"].put({"type": "scan_cancelled"})
+                            return
+                        current = Path(root)
+                        retained = []
+                        for dirname in dirnames:
+                            folder = current / dirname
+                            if folder.is_symlink():
+                                skipped += 1
+                            else:
+                                retained.append(dirname)
+                        dirnames[:] = retained
+                        for filename in filenames:
+                            if job["cancel"].is_set():
+                                job["queue"].put({"type": "scan_cancelled"})
+                                return
+                            path = current / filename
+                            try:
+                                if path.is_symlink() or not path.is_file():
+                                    skipped += 1
+                                    continue
+
+                                info = path.stat()
+                                modified_today = (
+                                    time.strftime("%Y-%m-%d", time.localtime(info.st_mtime)) == today
+                                )
+
+                                birth_time = getattr(info, "st_birthtime", None)
+                                if birth_time is None:
+                                    birth_time_ns = getattr(info, "st_birthtime_ns", None)
+                                    if birth_time_ns is not None:
+                                        birth_time = birth_time_ns / 1_000_000_000
+
+                                created_today = (
+                                    birth_time is not None
+                                    and time.strftime("%Y-%m-%d", time.localtime(birth_time)) == today
+                                )
+
+                                if not (created_today or modified_today):
+                                    continue
+
+                                files.append((
+                                    label,
+                                    source_path,
+                                    path.relative_to(source_path).as_posix(),
+                                    info.st_size
+                                ))
+                            except Exception as exc:
+                                scan_errors.append(f"{path}: {exc}")
+                if scan_errors:
+                    job["queue"].put({"type": "scan_error", "errors": scan_errors[:20], "error_count": len(scan_errors)})
+                else:
+                    job["queue"].put({"type": "scan_done", "files": files, "dirs": dirs, "skipped": skipped})
+            except Exception as exc:
+                job["queue"].put({"type": "scan_error", "errors": [str(exc)], "error_count": 1})
+
+        def copy_worker():
+            errors, archives = [], []
+            success = failed = processed = committed = 0
+            started = time.monotonic()
+            try:
+                for name, target, candidate, device in job["validated_destinations"]:
+                    if job["cancel"].is_set():
+                        break
+                    target.mkdir(parents=True, exist_ok=True)
+                    archives.append((name, target))
+                for name, target in archives:
+                    for label, relative in job["dirs"]:
+                        (target / label / Path(relative)).mkdir(parents=True, exist_ok=True)
+                job["queue"].put({"type": "copy_started", "archives": archives})
+                last_update = 0.0
+                for name, target in archives:
+                    for label, source_path, relative, scanned_size in job["files"]:
+                        if job["cancel"].is_set():
+                            break
+                        src = source_path / Path(relative)
+                        destination = target / label / Path(relative)
+                        temporary = destination.with_name(f".{destination.name}.smartbackup-partial")
+                        current_written = 0
+                        try:
+                            if src.is_symlink() or not src.is_file():
+                                raise OSError("Source file is no longer available as a regular file.")
+                            destination.parent.mkdir(parents=True, exist_ok=True)
+                            if destination.exists():
+                                if not destination.is_file():
+                                    raise OSError("Destination exists but is not a regular file.")
+                                source_hash = hashlib.sha256()
+                                destination_hash = hashlib.sha256()
+                                with src.open("rb") as check_file:
+                                    for check_chunk in iter(lambda: check_file.read(1024 * 1024), b""):
+                                        source_hash.update(check_chunk)
+                                with destination.open("rb") as check_file:
+                                    for check_chunk in iter(lambda: check_file.read(1024 * 1024), b""):
+                                        destination_hash.update(check_chunk)
+                                if source_hash.digest() == destination_hash.digest():
+                                    processed += 1
+                                    success += 1
+                                    job["queue"].put({
+                                        "type": "file",
+                                        "file": f"{label}/{relative}",
+                                        "destination": name,
+                                        "status": "SKIPPED — IDENTICAL",
+                                        "processed": processed,
+                                        "success": success,
+                                        "failed": failed,
+                                        "total_ops": job["total_ops"]
+                                    })
+                                    continue
+                            with src.open("rb") as input_file, temporary.open("xb") as output_file:
+                                while True:
+                                    if job["cancel"].is_set():
+                                        raise InterruptedError("Backup cancelled.")
+                                    chunk = input_file.read(1024 * 1024)
+                                    if not chunk:
+                                        break
+                                    output_file.write(chunk)
+                                    current_written += len(chunk)
+                                    now = time.monotonic()
+                                    if now - last_update >= 0.15:
+                                        fraction = min(current_written / scanned_size, 1.0) if scanned_size else 0.0
+                                        job["queue"].put({"type": "progress", "processed": processed, "success": success, "failed": failed, "units": processed + fraction, "written": committed, "current_written": current_written, "total_ops": job["total_ops"], "current_file": f"{label}/{relative}", "current_destination": name, "started": started})
+                                        last_update = now
+                            if job["cancel"].is_set():
+                                raise InterruptedError("Backup cancelled.")
+                            shutil.copystat(src, temporary, follow_symlinks=False)
+                            os.replace(temporary, destination)
+                            committed += current_written
+                            success += 1
+                            processed += 1
+                            job["queue"].put({"type": "file", "file": f"{label}/{relative}", "destination": name, "status": "SUCCESSFUL TRANSFER", "processed": processed, "success": success, "failed": failed, "total_ops": job["total_ops"]})
+                        except InterruptedError:
+                            temporary.unlink(missing_ok=True)
+                            job["cancel"].set()
+                            break
+                        except Exception as exc:
+                            temporary.unlink(missing_ok=True)
+                            failed += 1
+                            processed += 1
+                            errors.append(f"{name} | {label}/{relative} | {exc}")
+                            job["queue"].put({"type": "file", "file": f"{label}/{relative}", "destination": name, "status": "FAILED", "processed": processed, "success": success, "failed": failed, "total_ops": job["total_ops"]})
+                    if job["cancel"].is_set():
+                        break
+                job["queue"].put({"type": "finished", "success": success, "failed": failed, "processed": processed, "written": committed, "errors": errors[:30], "cancelled": job["cancel"].is_set(), "archives": archives})
+            except Exception as exc:
+                job["queue"].put({"type": "finished", "success": success, "failed": failed, "processed": processed, "written": committed, "errors": [f"Backup setup failed: {exc}"] + errors[:20], "cancelled": job["cancel"].is_set(), "archives": archives, "fatal": True})
+
+        def poll():
+            events = job["queue"]
+            while True:
+                try:
+                    event = events.get_nowait()
+                except queue.Empty:
+                    break
+                kind = event.get("type")
+                if kind == "scan_cancelled":
+                    finish("CANCELLED BEFORE COPY", "The source scan was cancelled. No destination files were copied.")
+                elif kind == "scan_error":
+                    finish("SOURCE SCAN FAILED — NO COPY STARTED", f"Scan errors: {event.get('error_count', 0)}\n" + "\n".join(event.get("errors", [])))
+                elif kind == "scan_done":
+                    job["files"], job["dirs"], job["skipped"] = event["files"], event["dirs"], event["skipped"]
+                    job["total_bytes"] = sum(item[3] for item in job["files"])
+                    job["total_ops"] = len(job["files"]) * len(destinations)
+                    valid, errors, warnings = [], [], []
+                    seen = set()
+                    device_groups = {}
+                    mounts = globals().get("WINDOWS_MOUNTS", {})
+                    cloud_names = {"OneDrive", "iCloud Drive", "Google Drive", "Dropbox"}
+                    source_roots = [path.resolve() for label, path in normalized_sources]
+                    for name, raw_target in destinations:
+                        if raw_target is None:
+                            errors.append(f"{name}: destination is not configured.")
+                            continue
+                        try:
+                            target = Path(raw_target).expanduser().resolve(strict=False)
+                            if target in seen:
+                                errors.append(f"{name}: duplicate destination folder selected.")
+                                continue
+                            seen.add(target)
+                            if target.exists() and not target.is_dir():
+                                errors.append(f"{name}: the backup destination exists but is not a folder.")
+                                continue
+                            unsafe = False
+                            for source_root in source_roots:
+                                if target == source_root or target.is_relative_to(source_root) or source_root.is_relative_to(target):
+                                    errors.append(f"{name}: destination overlaps a source folder ({source_root}). Select a separate drive or folder.")
+                                    unsafe = True
+                                    break
+                            if unsafe:
+                                continue
+                            if name in mounts:
+                                mount = Path(mounts[name]).expanduser()
+                                if not mount.is_mount():
+                                    errors.append(f"{name}: drive is not mounted.")
+                                    continue
+                                if not target.is_relative_to(mount.resolve()):
+                                    errors.append(f"{name}: selected folder is outside its mounted drive.")
+                                    continue
+                            if name in cloud_names:
+                                sync_root = self._connection_path(name)
+                                if not sync_root or not Path(sync_root).expanduser().is_dir():
+                                    errors.append(f"{name}: local cloud sync folder is not detected.")
+                                    continue
+                                if not target.is_relative_to(Path(sync_root).expanduser().resolve()):
+                                    warnings.append(f"{name}: only a local folder copy can be confirmed; cloud upload is not verified.")
+                            candidate = target
+                            while not candidate.exists() and candidate != candidate.parent:
+                                candidate = candidate.parent
+                            if not candidate.is_dir():
+                                errors.append(f"{name}: no existing parent folder is available.")
+                                continue
+                            free_bytes = shutil.disk_usage(candidate).free
+                            fd, test_path = tempfile.mkstemp(prefix=".smartbackup_preflight_", dir=str(candidate))
+                            os.close(fd)
+                            os.remove(test_path)
+                            device = os.stat(candidate).st_dev
+                            valid.append((name, target, candidate, device))
+                            device_groups.setdefault(device, []).append((name, free_bytes))
+                        except Exception as exc:
+                            errors.append(f"{name}: {exc}")
+                    for device, entries in device_groups.items():
+                        available = min(item[1] for item in entries)
+                        required = job["total_bytes"] * len(entries)
+                        if available < required:
+                            names = ", ".join(item[0] for item in entries)
+                            errors.append(f"{names}: insufficient free space. Available {self._manual_backup_format_size(available)}, required approximately {self._manual_backup_format_size(required)}.")
+                    if errors or not valid:
+                        finish("DESTINATION PREFLIGHT FAILED — NO COPY STARTED", "\n".join(errors or ["No valid destination was selected."]))
+                        continue
+                    job["validated_destinations"] = valid
+                    destination_text = "\n".join(f"{name}: {target}" for name, target, candidate, device in valid)
+                    warning_text = "\n".join(warnings)
+                    source_text = "\n".join(f"{label}: {path}" for label, path in normalized_sources)
+                    preview_summary_labels["files"].configure(text=str(len(job["files"])))
+                    preview_summary_labels["size"].configure(text=self._manual_backup_format_size(job["total_bytes"]))
+                    preview_summary_labels["sources"].configure(text=source_text)
+                    preview_summary_labels["destinations"].configure(text=destination_text)
+                    preview_summary_labels["skipped"].configure(text=str(job["skipped"]))
+                    row_number = 0
+                    for destination_name, target, candidate, device in valid:
+                        for label, source_path, relative, scanned_size in job["files"]:
+                            row_id = f"preview_{row_number}"
+                            row_number += 1
+                            display_file = f"{label}/{relative}"
+                            tree.insert("", "end", iid=row_id, values=(display_file, destination_name, "PENDING"))
+                            job["row_ids"][(destination_name, display_file)] = row_id
+                    job["phase"] = "preview"
+                    status_label.configure(text="BACKUP PREVIEW READY — REVIEW THE COMPLETE FILE LIST BEFORE CONFIRMING.")
+                    detail_label.configure(text=f"{len(job['files'])} unique source files · {len(job['files']) * len(valid)} potential destination operations. Existing identical files will be skipped; changed files will be safely replaced.")
+                    summary_labels["files"].configure(text=f"0 / {job['total_ops']}")
+                    if warning_text:
+                        detail_label.configure(text=detail_label.cget("text") + "\nWarnings: " + warning_text)
+                    confirm_button.configure(state="normal", text="CONFIRM BACKUP")
+                    cancel_button.configure(text="CANCEL")
+                elif kind == "copy_started":
+                    detail_label.configure(text="Daily backup folders created. Copying files...\n" + "\n".join(f"{name}: {path}" for name, path in event["archives"]))
+                elif kind == "progress":
+                    active_row = job["row_ids"].get((event["current_destination"], event["current_file"]))
+                    if active_row:
+                        tree.item(active_row, values=(event["current_file"], event["current_destination"], "COPYING..."))
+                    total = event["total_ops"]
+                    units = event["units"]
+                    percent = min(100.0, (units / total) * 100) if total else 100.0
+                    progress_bar.configure(value=percent)
+                    progress_percent.configure(text=f"{percent:.1f}%")
+                    summary_labels["progress"].configure(text=f"{percent:.1f}%")
+                    summary_labels["files"].configure(text=f"{event['processed']} / {total}")
+                    elapsed = max(0.1, time.monotonic() - event["started"])
+                    remaining = max(0.0, total - units)
+                    summary_labels["eta"].configure(text=f"{elapsed * remaining / units:.0f}s" if units > 0 and remaining > 0 else "—")
+                    active_bytes = event["written"] + event["current_written"]
+                    speed = active_bytes / elapsed / (1024 * 1024)
+                    detail_label.configure(text=f"{percent:.1f}% · {self._manual_backup_format_size(active_bytes)} written · {speed:.2f} MB/s · Current: {event['current_file']} → {event['current_destination']}")
+                elif kind == "file":
+                    row_id = job["row_ids"].get((event["destination"], event["file"]))
+                    if row_id:
+                        tree.item(row_id, values=(event["file"], event["destination"], event["status"]))
+                    summary_labels["files"].configure(text=f"{event['processed']} / {event['total_ops']}")
+                elif kind == "finished":
+                    success, failed = event.get("success", 0), event.get("failed", 0)
+                    cancelled = event.get("cancelled", False)
+                    if cancelled:
+                        final = "CANCELLED — PARTIAL BACKUP"
+                    elif event.get("fatal"):
+                        final = "BACKUP STOPPED — SETUP ERROR"
+                    elif failed:
+                        final = "BACKUP FINISHED WITH ERRORS"
+                    else:
+                        final = "BACKUP COMPLETED SUCCESSFULLY"
+                    if not cancelled and not event.get("fatal"):
+                        progress_bar.configure(value=100)
+                        progress_percent.configure(text="100%")
+                        summary_labels["progress"].configure(text="100%")
+                    archive_text = "\n".join(f"{name}: {path}" for name, path in event.get("archives", []))
+                    error_text = "\n".join(event.get("errors", [])[:10])
+                    detail = (f"Files successfully copied: {success}\nFailed file operations: {failed}\nFiles scanned: {len(job['files'])}\nSymbolic links/unsupported entries skipped: {job['skipped']}\n\nBackup locations:\n{archive_text}")
+                    if error_text:
+                        detail += "\n\nErrors:\n" + error_text
+                    if cancelled:
+                        detail += "\n\nPreviously completed files remain in the backup folders. This backup is incomplete."
+                    summary_labels["files"].configure(text=f"{success} copied / {failed} failed")
+                    summary_labels["eta"].configure(text="Finished")
+                    finish(final, detail)
+            if not job["finished"]:
+                try:
+                    window.after(100, poll)
+                except tk.TclError:
+                    job["cancel"].set()
+
+        self._daily_backup_active = True
+        threading.Thread(target=scan_worker, daemon=True, name="SmartBackupDailyScanner").start()
+        window.after(100, poll)
+
