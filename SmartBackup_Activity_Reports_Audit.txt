@@ -2085,3 +2085,696 @@ MANUAL_BACKUP_POLL_AND_FINISH | SOURCE LINES 4178,4410
 END OF AUDIT
 ====================================================================================================
 Audit collection completed. No application code or database records were modified.
+
+
+====================================================================================================
+ACTIVITY_REPORTS_PAGE | SOURCE LINES 5120-5807
+====================================================================================================
+    def _build_activity_page(self) -> None:
+        assert self.content is not None
+
+        bg = COLORS.get("bg", "#F3F6FA")
+        panel = COLORS.get("panel", "#FFFFFF")
+        text = COLORS.get("text", "#172B3F")
+        muted = COLORS.get("muted", "#718096")
+        subtle = COLORS.get("subtle", "#94A3B8")
+        accent = COLORS.get("accent", "#278B99")
+        blue = COLORS.get("blue", "#3478B9")
+        grid_color = "#E7EDF3"
+
+        # Preview figures are illustrative and are not live backup records.
+        daily_files = [64, 80, 51, 93, 72, 115, 80]
+        daily_gb = [3.1, 4.2, 2.4, 4.9, 3.6, 6.1, 4.1]
+        day_names = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"]
+
+        destinations = [
+            ("External Drive", 13.2, "#278B99"),
+            ("OneDrive", 9.4, "#4386C5"),
+            ("iCloud Drive", 5.8, "#9271C5"),
+        ]
+
+        records = [
+            {
+                "date": "Nov 12 · 12:04 AM",
+                "mode": "Daily Backup",
+                "files": "80",
+                "data": "4.1 GB",
+                "destination": "External Drive + OneDrive",
+                "status": "COMPLETED",
+                "source": "Documents & Downloads",
+                "scanned": "82",
+                "copied": "78",
+                "replaced": "2",
+                "skipped": "2",
+                "failed": "0",
+                "duration": "5m 18s",
+                "note": "All planned destination operations completed successfully.",
+            },
+            {
+                "date": "Nov 11 · 9:15 PM",
+                "mode": "Manual Archive",
+                "files": "125",
+                "data": "8.4 GB",
+                "destination": "External Drive",
+                "status": "COMPLETED",
+                "source": "Selected Archive Folder",
+                "scanned": "125",
+                "copied": "119",
+                "replaced": "3",
+                "skipped": "3",
+                "failed": "0",
+                "duration": "8m 42s",
+                "note": "Archive transfer completed. No failed file operations.",
+            },
+            {
+                "date": "Nov 11 · 8:00 AM",
+                "mode": "Daily Backup",
+                "files": "72",
+                "data": "3.6 GB",
+                "destination": "External Drive + OneDrive",
+                "status": "PARTIAL",
+                "source": "Documents & Downloads",
+                "scanned": "76",
+                "copied": "68",
+                "replaced": "2",
+                "skipped": "4",
+                "failed": "2",
+                "duration": "4m 51s",
+                "note": "Two file operations failed. Review the transfer result before relying on this run.",
+            },
+            {
+                "date": "Nov 10 · 10:30 AM",
+                "mode": "Manual Archive",
+                "files": "93",
+                "data": "4.9 GB",
+                "destination": "iCloud Drive",
+                "status": "COMPLETED",
+                "source": "Selected Archive Folder",
+                "scanned": "93",
+                "copied": "90",
+                "replaced": "2",
+                "skipped": "1",
+                "failed": "0",
+                "duration": "6m 12s",
+                "note": "Archive transfer completed successfully.",
+            },
+        ]
+
+        # ---------------------------------------------------------
+        # PAGE HEADER
+        # ---------------------------------------------------------
+        header = tk.Frame(self.content, bg=bg)
+        header.pack(fill="x", pady=(0, 12))
+
+        tk.Label(
+            header,
+            text="BACKUP PERFORMANCE OVERVIEW",
+            bg=bg,
+            fg=text,
+            font=(FONT, 15, "bold"),
+        ).pack(side="left", anchor="w")
+
+        preview_badge = tk.Label(
+            header,
+            text="UI PREVIEW  |  SAMPLE DATA",
+            bg="#FFF2DF",
+            fg="#985C18",
+            font=(FONT, 9, "bold"),
+            padx=11,
+            pady=6,
+        )
+        preview_badge.pack(side="right", anchor="e")
+
+        tk.Label(
+            self.content,
+            text="A summary of backup activity, transfer volume, destination usage, and recent results.",
+            bg=bg,
+            fg=muted,
+            font=(FONT, 10),
+        ).pack(anchor="w", pady=(0, 13))
+
+        # ---------------------------------------------------------
+        # KPI CARDS
+        # ---------------------------------------------------------
+        kpi_row = tk.Frame(self.content, bg=bg)
+        kpi_row.pack(fill="x", pady=(0, 14))
+
+        kpis = [
+            ("BACKUP RUNS", "12", "11 completed · 1 partial", "#3678AE"),
+            ("FILES TRANSFERRED", "555", "Last 7 days", "#25875E"),
+            ("DATA TRANSFERRED", "28.4 GB", "Across all destinations", "#7961B4"),
+            ("SUCCESS RATE", "91.7%", "11 of 12 runs completed", "#B77831"),
+        ]
+
+        for column, (label, value, hint, color) in enumerate(kpis):
+            kpi_row.grid_columnconfigure(column, weight=1, uniform="activity_kpi")
+
+            card = self._card(kpi_row, 13)
+            card.grid(
+                row=0,
+                column=column,
+                sticky="nsew",
+                padx=(0 if column == 0 else 5, 5 if column < 3 else 0),
+            )
+
+            stripe = tk.Frame(card, bg=color, height=4)
+            stripe.pack(fill="x", pady=(0, 10))
+
+            tk.Label(
+                card,
+                text=label,
+                bg=panel,
+                fg=muted,
+                font=(FONT, 9, "bold"),
+            ).pack(anchor="w")
+
+            tk.Label(
+                card,
+                text=value,
+                bg=panel,
+                fg=color,
+                font=(FONT, 23, "bold"),
+            ).pack(anchor="w", pady=(5, 2))
+
+            tk.Label(
+                card,
+                text=hint,
+                bg=panel,
+                fg=muted,
+                font=(FONT, 9),
+            ).pack(anchor="w")
+
+        # ---------------------------------------------------------
+        # CHART SECTION
+        # ---------------------------------------------------------
+        chart_row = tk.Frame(self.content, bg=bg)
+        chart_row.pack(fill="x", pady=(0, 14))
+        chart_row.grid_columnconfigure(0, weight=1, uniform="activity_charts")
+        chart_row.grid_columnconfigure(1, weight=1, uniform="activity_charts")
+
+        files_card = self._card(chart_row, 14)
+        files_card.grid(row=0, column=0, sticky="nsew", padx=(0, 7))
+
+        tk.Label(
+            files_card,
+            text="DAILY FILE TRANSFERS",
+            bg=panel,
+            fg=text,
+            font=(FONT, 12, "bold"),
+        ).pack(anchor="w")
+
+        tk.Label(
+            files_card,
+            text="Number of files transferred each day",
+            bg=panel,
+            fg=muted,
+            font=(FONT, 9),
+        ).pack(anchor="w", pady=(3, 0))
+
+        files_canvas = tk.Canvas(
+            files_card,
+            height=210,
+            bg=panel,
+            highlightthickness=0,
+            bd=0,
+        )
+        files_canvas.pack(fill="x", pady=(8, 0))
+
+        def draw_files_chart(event=None):
+            canvas = files_canvas
+            canvas.delete("all")
+
+            width = max(canvas.winfo_width(), 300)
+            height = 210
+            left, right, top, bottom = 39, 12, 15, 34
+            plot_width = max(100, width - left - right)
+            plot_height = height - top - bottom
+            maximum = 125
+
+            for step in range(5):
+                value = maximum * step / 4
+                y = top + plot_height * (1 - step / 4)
+                canvas.create_line(
+                    left, y, width - right, y,
+                    fill=grid_color, width=1
+                )
+                canvas.create_text(
+                    left - 8, y,
+                    text=str(int(value)),
+                    anchor="e",
+                    fill=muted,
+                    font=(FONT, 8),
+                )
+
+            slot = plot_width / len(daily_files)
+            bar_width = min(31, slot * 0.55)
+
+            for i, value in enumerate(daily_files):
+                center = left + slot * (i + 0.5)
+                bar_height = (value / maximum) * plot_height
+                x1 = center - bar_width / 2
+                x2 = center + bar_width / 2
+                y1 = top + plot_height - bar_height
+
+                canvas.create_rectangle(
+                    x1, y1, x2, top + plot_height,
+                    fill="#318DA0",
+                    outline="",
+                )
+                canvas.create_text(
+                    center, y1 - 10,
+                    text=str(value),
+                    fill=text,
+                    font=(FONT, 8, "bold"),
+                )
+                canvas.create_text(
+                    center, height - 13,
+                    text=day_names[i],
+                    fill=muted,
+                    font=(FONT, 8),
+                )
+
+        files_canvas.bind("<Configure>", draw_files_chart)
+        files_canvas.after(100, draw_files_chart)
+
+        data_card = self._card(chart_row, 14)
+        data_card.grid(row=0, column=1, sticky="nsew", padx=(7, 0))
+
+        tk.Label(
+            data_card,
+            text="DAILY DATA TRANSFER",
+            bg=panel,
+            fg=text,
+            font=(FONT, 12, "bold"),
+        ).pack(anchor="w")
+
+        tk.Label(
+            data_card,
+            text="Volume of data transferred each day",
+            bg=panel,
+            fg=muted,
+            font=(FONT, 9),
+        ).pack(anchor="w", pady=(3, 0))
+
+        data_canvas = tk.Canvas(
+            data_card,
+            height=210,
+            bg=panel,
+            highlightthickness=0,
+            bd=0,
+        )
+        data_canvas.pack(fill="x", pady=(8, 0))
+
+        def draw_data_chart(event=None):
+            canvas = data_canvas
+            canvas.delete("all")
+
+            width = max(canvas.winfo_width(), 300)
+            height = 210
+            left, right, top, bottom = 39, 12, 15, 34
+            plot_width = max(100, width - left - right)
+            plot_height = height - top - bottom
+            maximum = 7.0
+
+            for step in range(5):
+                value = maximum * step / 4
+                y = top + plot_height * (1 - step / 4)
+                canvas.create_line(
+                    left, y, width - right, y,
+                    fill=grid_color, width=1
+                )
+                canvas.create_text(
+                    left - 8, y,
+                    text=f"{value:.1f}",
+                    anchor="e",
+                    fill=muted,
+                    font=(FONT, 8),
+                )
+
+            points = []
+            for i, value in enumerate(daily_gb):
+                x = left + plot_width * (i / (len(daily_gb) - 1))
+                y = top + plot_height * (1 - value / maximum)
+                points.extend([x, y])
+
+                canvas.create_text(
+                    x, height - 13,
+                    text=day_names[i],
+                    fill=muted,
+                    font=(FONT, 8),
+                )
+                canvas.create_text(
+                    x, y - 12,
+                    text=f"{value:.1f}",
+                    fill=text,
+                    font=(FONT, 8, "bold"),
+                )
+
+            if len(points) >= 4:
+                canvas.create_line(
+                    *points,
+                    fill="#4386C5",
+                    width=2.6,
+                    smooth=True,
+                )
+
+            for i in range(0, len(points), 2):
+                canvas.create_oval(
+                    points[i] - 3,
+                    points[i + 1] - 3,
+                    points[i] + 3,
+                    points[i + 1] + 3,
+                    fill="#4386C5",
+                    outline=panel,
+                    width=1,
+                )
+
+        data_canvas.bind("<Configure>", draw_data_chart)
+        data_canvas.after(100, draw_data_chart)
+
+        # ---------------------------------------------------------
+        # DESTINATION DISTRIBUTION
+        # ---------------------------------------------------------
+        storage_card = self._card(self.content, 15)
+        storage_card.pack(fill="x", pady=(0, 14))
+
+        storage_header = tk.Frame(storage_card, bg=panel)
+        storage_header.pack(fill="x")
+
+        tk.Label(
+            storage_header,
+            text="STORAGE DESTINATION DISTRIBUTION",
+            bg=panel,
+            fg=text,
+            font=(FONT, 12, "bold"),
+        ).pack(side="left")
+
+        tk.Label(
+            storage_header,
+            text="28.4 GB total transferred",
+            bg=panel,
+            fg=muted,
+            font=(FONT, 9),
+        ).pack(side="right")
+
+        tk.Label(
+            storage_card,
+            text="Transfer volume by destination — not total drive capacity or free space.",
+            bg=panel,
+            fg=muted,
+            font=(FONT, 9),
+        ).pack(anchor="w", pady=(4, 10))
+
+        storage_total = sum(value for _, value, _ in destinations)
+
+        for name, amount, color in destinations:
+            row = tk.Frame(storage_card, bg=panel)
+            row.pack(fill="x", pady=(3, 1))
+
+            tk.Label(
+                row,
+                text=name,
+                bg=panel,
+                fg=text,
+                font=(FONT, 10, "bold"),
+            ).pack(side="left")
+
+            tk.Label(
+                row,
+                text=f"{amount:.1f} GB  ·  {amount / storage_total * 100:.0f}%",
+                bg=panel,
+                fg=muted,
+                font=(FONT, 9),
+            ).pack(side="right")
+
+            track = tk.Frame(storage_card, bg=grid_color, height=10)
+            track.pack(fill="x", pady=(5, 6))
+            track.pack_propagate(False)
+
+            bar = tk.Frame(track, bg=color, height=10)
+            bar.place(
+                x=0,
+                y=0,
+                relwidth=amount / storage_total,
+                relheight=1,
+            )
+
+        # ---------------------------------------------------------
+        # RECENT BACKUP HISTORY — SUMMARY ONLY
+        # ---------------------------------------------------------
+        history_card = self._card(self.content, 14)
+        history_card.pack(fill="both", expand=True, pady=(0, 14))
+
+        history_header = tk.Frame(history_card, bg=panel)
+        history_header.pack(fill="x", pady=(0, 8))
+
+        history_titles = tk.Frame(history_header, bg=panel)
+        history_titles.pack(side="left", fill="x", expand=True)
+
+        tk.Label(
+            history_titles,
+            text="RECENT BACKUP HISTORY",
+            bg=panel,
+            fg=text,
+            font=(FONT, 12, "bold"),
+        ).pack(anchor="w")
+
+        tk.Label(
+            history_titles,
+            text="Summary only · Select a run to open its report",
+            bg=panel,
+            fg=muted,
+            font=(FONT, 9),
+        ).pack(anchor="w", pady=(3, 0))
+
+        columns = (
+            "date", "mode", "files", "data", "destination", "status"
+        )
+
+        tree = ttk.Treeview(
+            history_card,
+            columns=columns,
+            show="headings",
+            style="Smart.Treeview",
+            height=4,
+        )
+
+        headings = {
+            "date": ("DATE / TIME", 155),
+            "mode": ("BACKUP MODE", 145),
+            "files": ("FILES", 65),
+            "data": ("DATA", 85),
+            "destination": ("DESTINATION", 245),
+            "status": ("RESULT", 105),
+        }
+
+        for key, (label, width) in headings.items():
+            tree.heading(key, text=label)
+            tree.column(key, width=width, anchor="w")
+
+        tree.tag_configure("success", foreground="#218052")
+        tree.tag_configure("partial", foreground="#B66E25")
+        tree.pack(fill="both", expand=True, pady=(2, 9))
+
+        for index, record in enumerate(records):
+            tag = "partial" if record["status"] == "PARTIAL" else "success"
+            tree.insert(
+                "",
+                "end",
+                iid=str(index),
+                values=(
+                    record["date"],
+                    record["mode"],
+                    record["files"],
+                    record["data"],
+                    record["destination"],
+                    record["status"],
+                ),
+                tags=(tag,),
+            )
+
+        def open_selected_summary():
+            selection = tree.selection()
+            if not selection:
+                from tkinter import messagebox
+                messagebox.showinfo(
+                    "Backup Summary",
+                    "Select a backup run from the history table first.",
+                    parent=self.root,
+                )
+                return
+
+            record = records[int(selection[0])]
+
+            report = tk.Toplevel(self.root)
+            report.title("Backup Run Summary")
+            report.geometry("650x460")
+            report.minsize(570, 400)
+            report.configure(bg=bg)
+            report.transient(self.root)
+
+            report_header = tk.Frame(report, bg=bg, padx=22, pady=18)
+            report_header.pack(fill="x")
+
+            tk.Label(
+                report_header,
+                text="BACKUP RUN SUMMARY",
+                bg=bg,
+                fg=text,
+                font=(FONT, 16, "bold"),
+            ).pack(side="left")
+
+            status_color = (
+                "#B66E25" if record["status"] == "PARTIAL" else "#218052"
+            )
+            tk.Label(
+                report_header,
+                text=record["status"],
+                bg="#FFF4E8" if record["status"] == "PARTIAL" else "#EAF7F0",
+                fg=status_color,
+                font=(FONT, 9, "bold"),
+                padx=10,
+                pady=6,
+            ).pack(side="right")
+
+            report_card = self._card(report, 18)
+            report_card.pack(
+                fill="both",
+                expand=True,
+                padx=22,
+                pady=(0, 12),
+            )
+
+            tk.Label(
+                report_card,
+                text=record["mode"],
+                bg=panel,
+                fg=text,
+                font=(FONT, 14, "bold"),
+            ).pack(anchor="w")
+
+            tk.Label(
+                report_card,
+                text=record["date"],
+                bg=panel,
+                fg=muted,
+                font=(FONT, 9),
+            ).pack(anchor="w", pady=(3, 12))
+
+            report_items = [
+                ("SOURCE", record["source"]),
+                ("DESTINATION", record["destination"]),
+                ("FILES SCANNED", record["scanned"]),
+                ("FILES COPIED", record["copied"]),
+                ("FILES REPLACED", record["replaced"]),
+                ("FILES SKIPPED", record["skipped"]),
+                ("FAILED OPERATIONS", record["failed"]),
+                ("DATA TRANSFERRED", record["data"]),
+                ("DURATION", record["duration"]),
+                ("FINAL RESULT", record["status"]),
+            ]
+
+            details = tk.Frame(report_card, bg=panel)
+            details.pack(fill="x")
+            details.grid_columnconfigure(1, weight=1)
+            details.grid_columnconfigure(3, weight=1)
+
+            for index, (label, value) in enumerate(report_items):
+                row = index // 2
+                column = (index % 2) * 2
+
+                tk.Label(
+                    details,
+                    text=label,
+                    bg=panel,
+                    fg=muted,
+                    font=(FONT, 8, "bold"),
+                    anchor="w",
+                ).grid(
+                    row=row * 2,
+                    column=column,
+                    sticky="w",
+                    padx=(0, 8),
+                    pady=(7, 1),
+                )
+
+                tk.Label(
+                    details,
+                    text=value,
+                    bg=panel,
+                    fg=text,
+                    font=(FONT, 9, "bold"),
+                    anchor="w",
+                    wraplength=210,
+                    justify="left",
+                ).grid(
+                    row=row * 2 + 1,
+                    column=column,
+                    sticky="w",
+                    padx=(0, 10),
+                    pady=(0, 5),
+                )
+
+            note = tk.Label(
+                report_card,
+                text=record["note"],
+                bg="#F1F5F9",
+                fg=muted,
+                font=(FONT, 9),
+                wraplength=550,
+                justify="left",
+                padx=10,
+                pady=9,
+            )
+            note.pack(fill="x", pady=(14, 0))
+
+            tk.Button(
+                report,
+                text="CLOSE REPORT",
+                command=report.destroy,
+                bg="#1B3553",
+                fg="#FFFFFF",
+                activebackground="#25445F",
+                activeforeground="#FFFFFF",
+                relief="flat",
+                bd=0,
+                padx=18,
+                pady=8,
+                cursor="hand2",
+                font=(FONT, 9, "bold"),
+            ).pack(anchor="e", padx=22, pady=(0, 16))
+
+            report.grab_set()
+
+        tree.bind(
+            "<Double-1>",
+            lambda event: open_selected_summary()
+        )
+
+        self._make_pill_button(
+            history_header,
+            "VIEW SUMMARY",
+            open_selected_summary,
+            primary=False,
+            width=14,
+            height=34,
+        ).pack(side="right")
+
+        tk.Label(
+            history_card,
+            text="File names are intentionally hidden from this overview. Open a run to see its transfer summary.",
+            bg=panel,
+            fg=subtle,
+            font=(FONT, 9),
+        ).pack(anchor="w", pady=(8, 0))
+
+        # Explicitly identify this as a visual preview.
+        tk.Label(
+            self.content,
+            text="PREVIEW ONLY — All figures and history rows above are illustrative sample data. Live history integration is not connected yet.",
+            bg=bg,
+            fg="#9A641F",
+            font=(FONT, 9, "bold"),
+            wraplength=1050,
+            justify="left",
+        ).pack(anchor="w", pady=(0, 10))
