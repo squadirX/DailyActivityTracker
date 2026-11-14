@@ -1,0 +1,200 @@
+CENTRAL LIBRARY SOURCE DISCOVERY
+Date: Fri 13 Nov 2026 20:51:51 EST
+Mac: MacBookPro
+
+===== PNDCC =====
+/Users/x/Library/Application Support/PNDCC
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/PNDCC_Documentation_Screenshots
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/PNDCC_Archive
+/Users/x/Documents/Personal_Network_Device_Command_Center/PNDCC_Documentation_Package_2026-10-07
+/Users/x/Documents/Backup-2026-10-23/Downloads/PNDCC_FAST_TRIAL_DATA_8817
+/Users/x/Downloads/PNDCC_Documentation_2_2026-10-08
+/Users/x/Downloads/PNDCC_Documentation_1_2026-10-08 2
+/Users/x/Downloads/PNDCC_Documentation_2_2026-10-09
+/Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (10)
+/Users/x/Downloads/PNDCC_v2.6.3_Documentation_Visual_Upgrade
+/Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (7)
+/Users/x/Downloads/PNDCC_SIEM_FINALIZATION_BACKUP_20261027_220013
+/Users/x/Downloads/PNDCC_V6_Hover_R2_Test_Bundle
+/Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (4)
+/Users/x/Downloads/PNDCC_v2.6.3_Visual_Documentation_Upgrade
+/Users/x/Downloads/PNDCC_v2.6.3_Visual_Documentation_Upgrade/PNDCC_v2.6.3_Visual_Documentation_Upgrade
+/Users/x/Downloads/PNDCC_v2.6.3_Visual_Documentation_Upgrade/PNDCC_v2.6.3_Visual_Documentation_Upgrade/PNDCC_Documentation_Screenshots
+/Users/x/Downloads/PNDCC_v2.6.3_Visual_Documentation_Upgrade/PNDCC_Documentation_Screenshots
+/Users/x/Downloads/PNDCC_v2.6.3_Visual_Documentation_Upgrade_FIXED_FINAL
+/Users/x/Downloads/PNDCC_SIEM_V343_ACTUAL_EXPORT_TRIAL_DATA_20261021
+
+===== SIEM =====
+/Users/x/GitHub/Python_Projects_SIEM_Review
+/Users/x/SIEM_Inbox
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_2_provenance_trial
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_v3_4_2_isolated_test_20261018
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_1_detection_test
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_1_timestamp_fix_trial
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_1_sensitive_detection_test
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_threshold_test
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_backups
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_trial
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_v3_4_2_macos_live_trial_8807_20261019
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_v3_4_3_health_trial_8808_20261020
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_2_trial
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_detection_test_20261017
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v2
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_3_trial
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_1_trial
+/Users/x/Documents/Backup-2026-10-18/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_2_provenance_trial
+
+===== WCCM =====
+/Users/x/Desktop/WCCM_Review_Package
+/Users/x/Library/Application Support/WCCM
+/Users/x/SIEM_Inbox/WCCM_P6_1_Update
+/Users/x/SIEM_Inbox/WCCM_Hibernate_Update
+/Users/x/SIEM_Inbox/WCCM_P6_ForceRestart
+/Users/x/SIEM_Inbox/WCCM_P4_Agent_Update
+/Users/x/SIEM_Inbox/WCCM_P3_Agent_Update
+/Users/x/SIEM_Inbox/WCCM_P6_Agent_Update
+/Users/x/SIEM_Inbox/WCCM_P2_Windows_Agent
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P6_Cumulative_Dashboard/WCCM_P6_Cumulative_Dashboard_Candidate
+/Users/x/Documents/Backup-2026-11-07/Documents/Personal_Network_Device_Command_Center/app/WCCM
+/Users/x/Downloads/WCCM_P6_1_Mac_Dashboard_Fix
+/Users/x/Downloads/WCCM_P6_3_Restore_Default_Full_Page_Capture_Package_v2
+/Users/x/Downloads/WCCM_Goal_Baseline_and_P5_Setup_v1.0
+/Users/x/Downloads/wccm_curated_pkg 2.backup_before_fixed_20261031_130211
+/Users/x/Downloads/WCCM_P6_Force_Restart_OneLine_Fix
+/Users/x/Downloads/WCCM_P4_Manual_Offline_Evidence_Reconcile_Package
+/Users/x/Downloads/WCCM_P6_2_Power_Control_Enhancement
+/Users/x/Downloads/WCCM_P6_3_Visual_Design_Enhancement
+
+===== SmartBackup =====
+/Users/x/Library/CloudStorage/GoogleDrive-squadir7@gmail.com/My Drive/SmartBackup
+/Users/x/Library/CloudStorage/OneDrive/SmartBackup
+/Users/x/Library/CloudStorage/OneDrive-SharedLibraries-OneDrive-Personal(2)/SmartBackup
+/Users/x/Library/CloudStorage/OneDrive-Personal/SmartBackup
+/Users/x/Library/CloudStorage/Dropbox/SmartBackup
+/Users/x/Library/CloudStorage/OneDrive-Personal(2) 2/SmartBackup
+/Users/x/Library/Logs/SmartBackup
+/Users/x/Library/Mobile Documents/com~apple~CloudDocs/SmartBackup
+/Users/x/Library/Group Containers/UBF8T346G9.OneDriveStandaloneSuite/OneDrive-Personal(2).noindex/OneDrive-Personal(2)/SmartBackup
+/Users/x/Documents/SmartBackup
+
+===== Job_Search_Agent =====
+
+===== JobSearchAgent =====
+/Users/x/JobSearchAgent
+/Users/x/JobSearchAgent/jobsearchagent_part1_2
+/Users/x/JobSearchAgent_backup_20261011_160049
+/Users/x/Library/Caches/com.apple.python/Users/x/JobSearchAgent
+/Users/x/Downloads/JobSearchAgent_v2_GUIDED_APPLICATION_PORTAL_MISMATCH_REPAIR
+/Users/x/Downloads/jobsearchagent_part3_tests
+/Users/x/Downloads/jobsearchagent_diagnostic_kit
+/Users/x/Downloads/jobsearchagent_diagnostic_kit/jobsearchagent_diagnostic_kit
+/Users/x/Downloads/JobSearchAgent_Guided_Repair
+/Users/x/Downloads/JobSearchAgent_v2_VISIBLE_FEEDBACK_PATCH
+/Users/x/Downloads/JobSearchAgent_Dynamic_Portal_Fix
+
+===== POSSIBLE OPERATIONAL FILES =====
+/Users/x/.config/filezilla/queue.sqlite3
+/Users/x/.copilot/logs/process-1791568063529-710.log
+/Users/x/.copilot/logs/process-1791876542597-753.log
+/Users/x/.copilot/logs/process-1793157466782-32391.log
+/Users/x/.copilot/logs/process-1793623072380-735.log
+/Users/x/.copilot/logs/process-1793139202574-1343.log
+/Users/x/.copilot/logs/process-1790164356083-777.log
+/Users/x/.copilot/logs/process-1793641165662-780.log
+/Users/x/.copilot/logs/process-1791251988684-752.log
+/Users/x/.copilot/logs/process-1793795023853-778.log
+/Users/x/.copilot/logs/process-1793711789205-793.log
+/Users/x/.copilot/logs/process-1790707294348-5307.log
+/Users/x/.copilot/logs/process-1793535667375-808.log
+/Users/x/.copilot/logs/process-1792671852304-808.log
+/Users/x/.copilot/logs/process-1790971098661-12158.log
+/Users/x/.copilot/logs/process-1793304526587-2969.log
+/Users/x/.copilot/logs/process-1792797556306-41009.log
+/Users/x/.copilot/logs/process-1790971100963-12162.log
+/Users/x/.copilot/logs/process-1793234640115-64095.log
+/Users/x/.copilot/logs/process-1792756731085-733.log
+/Users/x/.copilot/logs/process-1791491937135-44121.log
+/Users/x/.copilot/logs/process-1791246644256-17318.log
+/Users/x/.copilot/logs/process-1791829605090-4796.log
+/Users/x/.copilot/logs/process-1791727185401-2401.log
+/Users/x/.copilot/logs/process-1791015451240-644.log
+/Users/x/.copilot/logs/process-1793185520094-762.log
+/Users/x/.copilot/logs/process-1793446981787-766.log
+/Users/x/.copilot/logs/process-1792354276777-9021.log
+/Users/x/.copilot/logs/process-1792630822281-12214.log
+/Users/x/.copilot/logs/process-1791014058154-663.log
+/Users/x/.copilot/logs/process-1790769055433-703.log
+/Users/x/.copilot/logs/process-1793441793843-834.log
+/Users/x/.copilot/logs/process-1791254041479-688.log
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/browser_profile/first_party_sets.db
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/browser_profile/Default/Session Storage/000004.log
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/browser_profile/Default/GCM Store/000003.log
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/browser_profile/Default/Site Characteristics Database/000003.log
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/browser_profile/Default/heavy_ad_intervention_opt_out.db
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/browser_profile/Default/Extension Scripts/000003.log
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/browser_profile/Default/Extension Rules/000003.log
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/browser_profile/Default/Extension State/000003.log
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/browser_profile/Default/shared_proto_db/000003.log
+/Users/x/JobSearchAgent/logs/job_agent.log
+/Users/x/JobSearchAgent/logs/run_history.csv
+/Users/x/JobSearchAgent/data_v2/browser_profile/first_party_sets.db
+/Users/x/JobSearchAgent/data_v2/browser_profile/Default/Session Storage/000003.log
+/Users/x/JobSearchAgent/data_v2/browser_profile/Default/GCM Store/000003.log
+/Users/x/JobSearchAgent/data_v2/browser_profile/Default/Site Characteristics Database/000003.log
+/Users/x/JobSearchAgent/data_v2/browser_profile/Default/heavy_ad_intervention_opt_out.db
+/Users/x/JobSearchAgent/data_v2/browser_profile/Default/Extension Scripts/000003.log
+/Users/x/JobSearchAgent/data_v2/browser_profile/Default/Extension Rules/000003.log
+/Users/x/JobSearchAgent/data_v2/browser_profile/Default/Extension State/000003.log
+/Users/x/JobSearchAgent/data_v2/browser_profile/Default/shared_proto_db/000003.log
+/Users/x/JobSearchAgent/data/jobs.csv
+/Users/x/JobSearchAgent_backup_20261011_160049/data/jobs.csv
+/Users/x/.ipython/profile_default/history.sqlite
+/Users/x/.ipython/profile_default/history-corrupt-2025-02-02T20.20.53.620243.sqlite
+/Users/x/.ipython/profile_default/history-corrupt-2025-02-02T18.28.30.841557.sqlite
+/Users/x/.ipython/profile_default/history-corrupt-2025-01-27T20.45.26.305434.sqlite
+/Users/x/.ipython/profile_default/history-corrupt-2025-02-02T16.26.33.992701.sqlite
+/Users/x/.ipython/profile_default/history-corrupt-2025-02-02T18.25.57.607754.sqlite
+/Users/x/Desktop/PNDCC_V341_THRESHOLD_5TH_TEST.jsonl
+/Users/x/Desktop/PNDCC_V341_SENSITIVE_EVENTS_TEST.jsonl
+/Users/x/Desktop/PNDCC_SIEM_SYNTHETIC_DETECTION_TEST.jsonl
+/Users/x/Desktop/WCCM_Review_Package/wccm_defender_dashboard.log
+/Users/x/Desktop/PNDCC_SIEM_THRESHOLD_4_TEST.jsonl
+/Users/x/Desktop/PNDCC_V342_PROVENANCE_TEST.jsonl
+/Users/x/Desktop/PNDCC_SIEM_THRESHOLD_5TH_TEST.jsonl
+/Users/x/Desktop/PNDCC_Windows_Security_Events_20261017_184429.jsonl
+/Users/x/Desktop/PNDCC_V341_THRESHOLD_4_TEST.jsonl
+/Users/x/Desktop/PNDCC_SIEM_DISTINCT_RECORD_TEST.jsonl
+/Users/x/Library/Application Support/com.apple.control-center.tips/.tipkit/tips-store.db
+/Users/x/Library/Application Support/SESStorage/SESSEReservationStorageV001.sqlite
+/Users/x/Library/Application Support/networkserviceproxy/NSPCoreDataModel.sqlite
+/Users/x/Library/Application Support/com.otterai.desktop/Session Storage/000003.log
+/Users/x/Library/Application Support/com.otterai.desktop/IndexedDB/https_otter.ai_0.indexeddb.leveldb/000007.log
+/Users/x/Library/Application Support/com.otterai.desktop/Service Worker/Database/000003.log
+/Users/x/Library/Application Support/com.otterai.desktop/Local Storage/leveldb/000015.log
+/Users/x/Library/Application Support/Animoji/CoreDataBackend/avatars.db
+/Users/x/Library/Application Support/com.apple.akd/authorization.db
+/Users/x/Library/Application Support/com.apple.akd/devicelist.db
+/Users/x/Library/Application Support/com.apple.akd/privateEmails.db
+/Users/x/Library/Application Support/zoom.us/data/zoomus.zmdb.default.noenc.rlock.db
+/Users/x/Library/Application Support/zoom.us/data/3dCustomAvatar.enc.db
+/Users/x/Library/Application Support/zoom.us/data/zoomus.enc.db
+/Users/x/Library/Application Support/zoom.us/data/zoommeeting.enc.db
+/Users/x/Library/Application Support/com.microsoft.SharePoint-mac/com.microsoft.appcenter/Logs.sqlite
+/Users/x/Library/Application Support/OneDrive/settings/Personal/CxP.db
+/Users/x/Library/Application Support/OneDrive/settings/Personal/SyncEngineDatabase.db
+/Users/x/Library/Application Support/OneDrive/settings/Personal/KFM.db
+/Users/x/Library/Application Support/OneDrive/settings/Personal/UXDatabase.db
+/Users/x/Library/Application Support/OneDrive/settings/Personal/OCSI.db
+/Users/x/Library/Application Support/OneDrive/settings/Personal/SettingsDatabase.db
+/Users/x/Library/Application Support/OneDrive/settings/Personal/SafeDelete.db
+/Users/x/Library/Application Support/OneDrive/settings/FileSyncFSCache.db
+/Users/x/Library/Application Support/Google/DriveFS/metrics_store_sqlite.db
+/Users/x/Library/Application Support/Google/DriveFS/experiments.db
+/Users/x/Library/Application Support/Google/DriveFS/105257940766652807028/metrics_store_sqlite.db
+/Users/x/Library/Application Support/Google/DriveFS/105257940766652807028/mirror_sqlite.db
+/Users/x/Library/Application Support/Google/DriveFS/105257940766652807028/cello_metrics_store_sqlite.db
+
+DISCOVERY COMPLETE
