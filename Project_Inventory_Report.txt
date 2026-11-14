@@ -1,0 +1,2409 @@
+MAC PROJECT INVENTORY REPORT
+==========================================================================================
+Generated: 2026-11-13T19:50:45.791403-05:00
+Scan scope: Documents and Downloads
+Mode: Read-only
+
+
+==========================================================================================
+ROOT: /Users/x/Documents
+==========================================================================================
+FILE | .DS_Store | 57348 bytes
+FILE | .localized | 0 bytes
+FILE | 8-step ladder process-2025.docx | 17787 bytes
+FILE | 8-step ladder process-2025.pdf | 441664 bytes
+FILE | 93_Easter_High-Int_Can_Student conv.docx | 125431 bytes
+FILE | Action Plan Embedded in Avenue.jpeg | 54683 bytes
+
+FOLDER: Alico_Policies
+PATH: /Users/x/Documents/Alico_Policies
+FILES: 4
+SIZE_MB: 1.31
+STRUCTURE (maximum depth 4):
+[DIR] Alico_Policies
+  [DIR] 833303
+
+FOLDER: Backup-2026-10-18
+PATH: /Users/x/Documents/Backup-2026-10-18
+FILES: 45
+SIZE_MB: 12.91
+FILE_TYPES: CSV=3, Excel=1, JSON=3, Python=9, SQLite=2
+STRUCTURE (maximum depth 4):
+[DIR] Backup-2026-10-18
+  [DIR] Documents
+    [DIR] Certificates
+    [DIR] Personal_Network_Device_Command_Center
+      [DIR] app
+        [DIR] siem_backups
+        [DIR] siem_data_v3
+        [DIR] siem_data_v3_1_trial
+        [DIR] siem_data_v3_2_trial
+        [DIR] siem_data_v3_3_trial
+        [DIR] siem_data_v3_4_1_detection_test
+        [DIR] siem_data_v3_4_1_sensitive_detection_test
+        [DIR] siem_data_v3_4_1_timestamp_fix_trial
+        [DIR] siem_data_v3_4_2_provenance_trial
+        [DIR] siem_data_v3_4_detection_test_20261017
+        [DIR] siem_data_v3_4_threshold_test
+        [DIR] siem_data_v3_4_trial
+        [DIR] siem_v3_4_2_isolated_test_20261018
+      [DIR] data
+    [DIR] SQ_Personal_Info
+      [DIR] Resume
+  [DIR] Downloads
+
+FOLDER: Backup-2026-10-20
+PATH: /Users/x/Documents/Backup-2026-10-20
+FILES: 5
+SIZE_MB: 4.31
+FILE_TYPES: CSV=1, Excel=2, JSON=1
+STRUCTURE (maximum depth 4):
+[DIR] Backup-2026-10-20
+  [DIR] Documents
+    [DIR] Investment-2025
+    [DIR] Personal_Network_Device_Command_Center
+      [DIR] app
+        [DIR] siem_backups
+  [DIR] Downloads
+
+FOLDER: Backup-2026-10-23
+PATH: /Users/x/Documents/Backup-2026-10-23
+FILES: 23
+SIZE_MB: 12.64
+FILE_TYPES: CSV=7, Excel=1, JSON=4, Python=3
+STRUCTURE (maximum depth 4):
+[DIR] Backup-2026-10-23
+  [DIR] Documents
+    [DIR] Investment-2025
+    [DIR] Personal_Network_Device_Command_Center
+      [DIR] app
+      [DIR] data
+  [DIR] Downloads
+    [DIR] PNDCC_FAST_TRIAL_DATA_8817
+      [DIR] config
+    [DIR] siem_v3_4_3_browser_trial_8814
+    [DIR] siem_v3_4_3_live_verify_8813
+    [DIR] siem_v3_4_3_windows_e2e_8815_20261022
+
+FOLDER: Backup-2026-11-07
+PATH: /Users/x/Documents/Backup-2026-11-07
+FILES: 18
+SIZE_MB: 38.22
+FILE_TYPES: CSV=3, Excel=1, JSON=2, Log=3, SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] Backup-2026-11-07
+  [DIR] Documents
+    [DIR] Certificates
+    [DIR] Job_Application_Tracker_Dashboard
+      [DIR] Data
+      [DIR] logs
+    [DIR] Personal_Network_Device_Command_Center
+      [DIR] app
+        [DIR] WCCM
+      [DIR] data
+    [DIR] SQ_Personal_Info
+      [DIR] Resume
+  [DIR] Downloads
+    [DIR] siem_18821_transfer_trial_20261025_153726
+      [DIR] data
+    [DIR] siem_restart_logs
+    [DIR] siem_v3_4_3_windows_e2e_8815_20261022
+
+FOLDER: Bank_BD
+PATH: /Users/x/Documents/Bank_BD
+FILES: 14
+SIZE_MB: 4.63
+FILE_TYPES: Excel=5
+STRUCTURE (maximum depth 4):
+[DIR] Bank_BD
+  [DIR] BRAC_EVA_AC-2026
+
+FOLDER: BD_Doc
+PATH: /Users/x/Documents/BD_Doc
+FILES: 11
+SIZE_MB: 1.02
+STRUCTURE (maximum depth 4):
+[DIR] BD_Doc
+FILE | Book2.xlsx | 18671 bytes
+FILE | British Airways_Logo.png | 49573 bytes
+FILE | Business Development Research Guide-1.pdf | 239510 bytes
+FILE | Business Development Research Guide.pdf | 252898 bytes
+
+FOLDER: Capital_Market
+PATH: /Users/x/Documents/Capital_Market
+FILES: 2
+SIZE_MB: 0.08
+FILE_TYPES: CSV=1, Python=1
+STRUCTURE (maximum depth 4):
+[DIR] Capital_Market
+FILE | Car_Detail.docx | 13582 bytes
+
+FOLDER: Car_Insurance_CA-2025
+PATH: /Users/x/Documents/Car_Insurance_CA-2025
+FILES: 4
+SIZE_MB: 2.01
+STRUCTURE (maximum depth 4):
+[DIR] Car_Insurance_CA-2025
+
+FOLDER: Certificates
+PATH: /Users/x/Documents/Certificates
+FILES: 35
+SIZE_MB: 12.20
+STRUCTURE (maximum depth 4):
+[DIR] Certificates
+FILE | Choose Path.pdf | 224169 bytes
+FILE | Claude-for-Microsoft-365.pptx | 92062 bytes
+
+FOLDER: Codex
+PATH: /Users/x/Documents/Codex
+FILES: 0
+SIZE_MB: 0.00
+STRUCTURE (maximum depth 4):
+[DIR] Codex
+  [DIR] 2026-09-03
+    [DIR] files-pasted-by-the-user-last
+      [DIR] outputs
+      [DIR] work
+
+FOLDER: Common Compass-2026
+PATH: /Users/x/Documents/Common Compass-2026
+FILES: 62
+SIZE_MB: 51.50
+FILE_TYPES: CSV=6, Config=1, Excel=10
+STRUCTURE (maximum depth 4):
+[DIR] Common Compass-2026
+  [DIR] Report
+  [DIR] Tables
+  [DIR] data
+  [DIR] documents
+    [DIR] Presentation
+
+FOLDER: Coursera-2025
+PATH: /Users/x/Documents/Coursera-2025
+FILES: 16
+SIZE_MB: 17.58
+STRUCTURE (maximum depth 4):
+[DIR] Coursera-2025
+  [DIR] Machine Learning Specialization-IBM
+
+FOLDER: Courses-2026
+PATH: /Users/x/Documents/Courses-2026
+FILES: 11
+SIZE_MB: 1.03
+FILE_TYPES: Excel=4
+STRUCTURE (maximum depth 4):
+[DIR] Courses-2026
+FILE | Daily Activities-2025.pdf | 35564 bytes
+FILE | Daily Activities-2025.xlsx | 21633 bytes
+
+FOLDER: DailyActivityTracker
+PATH: /Users/x/Documents/DailyActivityTracker
+FILES: 19
+SIZE_MB: 0.23
+FILE_TYPES: JSON=1, Python=4
+STRUCTURE (maximum depth 4):
+[DIR] DailyActivityTracker
+  [DIR] .idea
+    [DIR] inspectionProfiles
+FILE | Data_Table-8.xlsx | 125908 bytes
+FILE | Dental Plan-2025.docx | 13999 bytes
+FILE | Driving License Authentication Certificate.jpg | 2497215 bytes
+FILE | Driving License_Back_G2.jpeg | 161245 bytes
+FILE | Driving License_Front_G2.jpeg | 150362 bytes
+FILE | E-SIG_SA24-KED-302-160-020_241017113605_signed_5e782db5-6a08-4c11-8219-f449c4c0850f.pdf | 389482 bytes
+FILE | E-SIG_SA24-KED-302-160-020_241017113605_signed_5e782db5-6a08-4c11-8219-f449c4c0850f_.pdf | 231003 bytes
+
+FOLDER: EDU_Part-2
+PATH: /Users/x/Documents/EDU_Part-2
+FILES: 9
+SIZE_MB: 17.63
+STRUCTURE (maximum depth 4):
+[DIR] EDU_Part-2
+
+FOLDER: Eighty Group-2026
+PATH: /Users/x/Documents/Eighty Group-2026
+FILES: 210
+SIZE_MB: 6.10
+FILE_TYPES: Excel=9, JSON=41, Python=135
+STRUCTURE (maximum depth 4):
+[DIR] Eighty Group-2026
+  [DIR] EG_Business_Development_Automation
+    [DIR] .agents
+      [DIR] skills
+    [DIR] backups
+      [DIR] IDENTITY_ENGINE_BEFORE_FIX_20260903_065730
+      [DIR] STEP_17_BEFORE_COMPATIBILITY_PATCH_20260903_082405
+      [DIR] STEP_6E_CHANGE_1A_STRICT_ROOT_DOMAIN_20260903_131951
+      [DIR] STEP_6E_CHANGE_1A_STRICT_ROOT_DOMAIN_20260903_132106
+      [DIR] STEP_6E_CHANGE_1_OFFICIAL_DOMAIN_FINAL_20260903_131633
+      [DIR] STEP_6E_CHANGE_2A_INDUSTRY_CONTEXT_20260903_132857
+      [DIR] STEP_6E_CHANGE_2B_IDENTITY_SCORING_20260903_133737
+      [DIR] STEP_6E_CHANGE_2C_ENTITY_RESOLUTION_20260903_134731
+      [DIR] STEP_6E_CHANGE_2C_ENTITY_RESOLUTION_20260903_134954
+      [DIR] STEP_6E_CHANGE_2C_REPAIR_20260903_135806
+      [DIR] STEP_6E_CHANGE_2_CONTEXT_DISCOVERY_20260903_132522
+      [DIR] STEP_6E_CONTEXT_FLOW_FIX_20260903_090053
+      [DIR] STEP_6E_C_BEFORE_CONTEXT_RECOVERY_20260903_070532
+      [DIR] STEP_6E_C_CONTEXT_PATCH_20260903_070836
+      [DIR] STEP_6E_D_BEFORE_FUNCTION_REFACTOR_20260903_072249
+      [DIR] STEP_6E_ENTITY_CONSOLIDATION_20260903_130218
+      [DIR] STEP_6E_F7_BEFORE_IDENTITY_INTEGRATION_20260903_073034
+      [DIR] STEP_6E_F7_CORRECTED_BEFORE_PATCH_20260903_073206
+      [DIR] STEP_6E_F_BEFORE_AUTHORIZATION_FIX_20260903_072425
+      [DIR] STEP_6E_G_BEFORE_IDENTITY_CALLABLE_PATCH_20260903_074018
+      [DIR] STEP_6E_H1_BEFORE_EXACT_IDENTITY_PATCH_20260903_074521
+      [DIR] STEP_6E_H_BEFORE_DAILY_RUN_IDENTITY_FIX_20260903_074240
+      [DIR] STEP_6E_IDENTITY_GATE_ORDER_20260903_083526
+      [DIR] STEP_6E_IDENTITY_GATE_ORDER_20260903_083625
+      [DIR] STEP_6E_IDENTITY_GATE_ORDER_20260903_083641
+      [DIR] STEP_6E_IDENTITY_GATE_REPAIR_20260903_083822
+      [DIR] STEP_6E_IDENTITY_RESEARCH_JOB_FIX_20260903_085008
+      [DIR] STEP_6E_IDENTITY_RESEARCH_JOB_FIX_20260903_085247
+      [DIR] STEP_6E_IDENTITY_SCORING_FIX_20260903_112918
+      [DIR] STEP_6E_OFFICIAL_DOMAIN_SCORING_20260903_130909
+      [DIR] STEP_DASHBOARD_PERSIST_LAST_RUN_20260903_103635
+      [DIR] STEP_DASHBOARD_RESEARCH_RESULTS_20260903_121235
+      [DIR] STEP_DASHBOARD_SAFE_PATCH_20260903_104416
+      [DIR] STEP_DASHBOARD_TERMINAL_MIRROR_20260903_095738
+    [DIR] input
+    [DIR] logs
+    [DIR] output
+    [DIR] research
+  [DIR] Python
+  [DIR] backups
+
+FOLDER: ESL_Class
+PATH: /Users/x/Documents/ESL_Class
+FILES: 58
+SIZE_MB: 33.75
+FILE_TYPES: Excel=1
+STRUCTURE (maximum depth 4):
+[DIR] ESL_Class
+FILE | ESL_Letter of Attendance_Saiful.pdf | 58015 bytes
+FILE | ExitUpsellKeyValueStore | 1212 bytes
+
+FOLDER: Holding Tax
+PATH: /Users/x/Documents/Holding Tax
+FILES: 2
+SIZE_MB: 0.15
+STRUCTURE (maximum depth 4):
+[DIR] Holding Tax
+
+FOLDER: Immigration
+PATH: /Users/x/Documents/Immigration
+FILES: 6
+SIZE_MB: 8.19
+STRUCTURE (maximum depth 4):
+[DIR] Immigration
+
+FOLDER: Investment-2025
+PATH: /Users/x/Documents/Investment-2025
+FILES: 606
+SIZE_MB: 152.00
+FILE_TYPES: CSV=2, Excel=322, JSON=2, Python=24
+STRUCTURE (maximum depth 4):
+[DIR] Investment-2025
+  [DIR] Capital Market Model
+    [DIR] .idea
+      [DIR] inspectionProfiles
+    [DIR] Bangladesh
+      [DIR] Backup
+      [DIR] Config
+      [DIR] Data
+        [DIR] Extracted_Data
+        [DIR] Raw_PDF
+      [DIR] Excel
+      [DIR] Python
+    [DIR] Charts
+    [DIR] Data
+    [DIR] Documentation
+    [DIR] Excel
+    [DIR] Output
+    [DIR] Python
+      [DIR] .idea
+        [DIR] inspectionProfiles
+  [DIR] Sanchayapatra
+  [DIR] Wage Earner Dev Bond-2026
+
+FOLDER: Job_Application_Tracker_Dashboard
+PATH: /Users/x/Documents/Job_Application_Tracker_Dashboard
+FILES: 128
+SIZE_MB: 8.00
+FILE_TYPES: Excel=1, Log=7, Python=28, SQLite=4
+STRUCTURE (maximum depth 4):
+[DIR] Job_Application_Tracker_Dashboard
+  [DIR] Data
+    [DIR] Certificates
+      [DIR] files
+    [DIR] Resumes
+      [DIR] files
+  [DIR] Image
+  [DIR] JobTracker_LinkPatch
+  [DIR] Tools
+    [DIR] Resume_Library_Installer_Package
+      [DIR] Resume_Library_Installer_Package
+  [DIR] ZIP
+  [DIR] backup_old_dashboard_20261104_184946
+  [DIR] backups
+    [DIR] certificate_card_resize_20261105_234821
+    [DIR] certificate_card_resize_20261105_235036
+    [DIR] certificate_card_resize_20261105_235250
+    [DIR] certificate_color_frames_20261106_000317
+    [DIR] certificate_desktop_resize_20261105_235519
+    [DIR] certificate_fullscreen_20261104_224336
+    [DIR] certificate_pdf_toolbar_fix_20261105_235940
+    [DIR] certificate_premium_3d_20261106_000617
+    [DIR] certificate_preview_spacing_20261105_234559
+    [DIR] certificates_fullscreen_gallery_20261104_224602
+    [DIR] certificates_library_20261104_223157
+    [DIR] duplicate_backend_patch_20261105_230039
+    [DIR] duplicate_detection_prepatch_20261105_225908
+    [DIR] duplicate_detection_prepatch_20261105_225915
+    [DIR] duplicate_frontend_patch_20261105_230251
+    [DIR] js_regex_repair_20261104T205917
+    [DIR] link_patch_20261105T015249Z
+    [DIR] production_pre_duplicate_activation_20261105_232150
+    [DIR] profile_photo_20261106_001521
+    [DIR] resume_fullscreen_fix_20261104T221849
+    [DIR] resume_get_record_restore_20261105_233143
+    [DIR] resume_library_20261104T212803
+    [DIR] resume_library_safe_20261104T214458
+    [DIR] resume_ui_polish_20261104T220316
+    [DIR] single_section_heading_20261104T211640
+  [DIR] logs
+  [DIR] static
+    [DIR] css
+    [DIR] js
+    [DIR] profile
+  [DIR] templates
+FILE | Job_Application_Tracker_Dashboard.zip | 6809 bytes
+FILE | Linkedin Message.docx | 14238 bytes
+FILE | Market_Research_Diagram.pptx | 265425 bytes
+
+FOLDER: Masuda_Khan
+PATH: /Users/x/Documents/Masuda_Khan
+FILES: 8
+SIZE_MB: 2.79
+STRUCTURE (maximum depth 4):
+[DIR] Masuda_Khan
+FILE | Match Systems Canada-Company Overview.docx | 49790 bytes
+
+FOLDER: My Tableau Repository
+PATH: /Users/x/Documents/My Tableau Repository
+FILES: 255
+SIZE_MB: 136.23
+FILE_TYPES: Excel=3
+STRUCTURE (maximum depth 4):
+[DIR] My Tableau Repository
+  [DIR] Bookmarks
+  [DIR] Connectors
+  [DIR] Datasources
+    [DIR] 2024.3
+      [DIR] en_US-US
+    [DIR] 2025.2
+      [DIR] en_US-US
+    [DIR] 2025.3
+      [DIR] en_US-US
+    [DIR] Archive
+  [DIR] Extensions
+  [DIR] Logs
+    [DIR] crashdumps
+      [DIR] Tableau
+        [DIR] database
+      [DIR] Tableau Public
+        [DIR] database
+      [DIR] tabprotosrv
+        [DIR] database
+  [DIR] Mapsources
+  [DIR] OAuthConfigs
+  [DIR] Services
+  [DIR] Shapes
+    [DIR] Arrows
+    [DIR] Bars
+    [DIR] Bug Tracking
+    [DIR] Gender
+    [DIR] KPI
+    [DIR] Proportions
+    [DIR] Ratings
+    [DIR] Thin Arrows
+    [DIR] Weather
+  [DIR] Workbooks
+
+FOLDER: Passport
+PATH: /Users/x/Documents/Passport
+FILES: 8
+SIZE_MB: 14.24
+STRUCTURE (maximum depth 4):
+[DIR] Passport
+FILE | PERSONAL NARRATIVE OF SAIFUL QUADIR.docx | 21667 bytes
+
+FOLDER: Personal_Network_Device_Command_Center
+PATH: /Users/x/Documents/Personal_Network_Device_Command_Center
+FILES: 429
+SIZE_MB: 91.36
+FILE_TYPES: CSV=3, JSON=12, JSONL=4, Log=5, PowerShell=9, Python=201, SQLite=14
+STRUCTURE (maximum depth 4):
+[DIR] Personal_Network_Device_Command_Center
+  [DIR] Backups
+  [DIR] PNDCC_Documentation_Package_2026-10-07
+  [DIR] app
+    [DIR] PNDCC_Archive
+      [DIR] Documentation
+    [DIR] PNDCC_Documentation_Screenshots
+    [DIR] WCCM
+      [DIR] P2_Health_Status_Prototype
+        [DIR] mac
+        [DIR] windows
+      [DIR] P3_Application_Inventory_Prototype
+        [DIR] acceptance_backups_20261028_183225
+        [DIR] mac
+        [DIR] tests
+        [DIR] windows
+      [DIR] P4_Application_Control_Prototype
+        [DIR] acceptance_backups_20261028_192651
+        [DIR] acceptance_backups_20261028_192816
+        [DIR] acceptance_backups_combined_20261028_195159
+        [DIR] acceptance_backups_combined_20261028_205351
+        [DIR] acceptance_reconciliation_20261028_201559
+        [DIR] acceptance_reconciliation_20261028_203552
+        [DIR] mac
+        [DIR] tests
+        [DIR] windows
+      [DIR] P5_Save_Review_Prototype
+        [DIR] data
+        [DIR] mac
+        [DIR] tests
+      [DIR] P6_Cumulative_Dashboard
+        [DIR] WCCM_P6_Cumulative_Dashboard_Candidate
+        [DIR] mac
+        [DIR] windows
+      [DIR] Scope_Lock_Backups_20261028_223614
+    [DIR] siem_backups
+      [DIR] MACOS_PATCH_REVIEW2_20261018_210010
+    [DIR] siem_data
+    [DIR] siem_data_v2
+    [DIR] siem_data_v3
+      [DIR] imports
+    [DIR] siem_data_v3_1_trial
+    [DIR] siem_data_v3_2_trial
+    [DIR] siem_data_v3_3_trial
+    [DIR] siem_data_v3_4_1_detection_test
+    [DIR] siem_data_v3_4_1_sensitive_detection_test
+    [DIR] siem_data_v3_4_1_timestamp_fix_trial
+    [DIR] siem_data_v3_4_2_provenance_trial
+    [DIR] siem_data_v3_4_detection_test_20261017
+    [DIR] siem_data_v3_4_threshold_test
+    [DIR] siem_data_v3_4_trial
+    [DIR] siem_v3_4_2_isolated_test_20261018
+    [DIR] siem_v3_4_2_macos_live_trial_8807_20261019
+    [DIR] siem_v3_4_3_health_trial_8808_20261020
+  [DIR] config
+  [DIR] data
+  [DIR] docs
+  [DIR] logs
+  [DIR] scripts
+FILE | Picture1 conv.docx | 1634021 bytes
+FILE | Presentation1.pptx | 48134 bytes
+FILE | printDLForm.pdf | 478312 bytes
+FILE | Project_Management_Pathways-2025.pptx | 326097 bytes
+
+FOLDER: Project_Recovery_Bundles
+PATH: /Users/x/Documents/Project_Recovery_Bundles
+FILES: 0
+SIZE_MB: 0.00
+STRUCTURE (maximum depth 4):
+[DIR] Project_Recovery_Bundles
+
+FOLDER: Projects
+PATH: /Users/x/Documents/Projects
+FILES: 412
+SIZE_MB: 382.74
+FILE_TYPES: CSV=9, Excel=38, JSON=26, Python=173
+STRUCTURE (maximum depth 4):
+[DIR] Projects
+  [DIR] Doly_Begum
+  [DIR] EG_Business_Development_Automation_DASHBOARD_FINAL
+    [DIR] backups
+    [DIR] input
+    [DIR] research
+  [DIR] EG_Business_Development_Automation_with_Dashboard
+    [DIR] backups
+    [DIR] input
+    [DIR] research
+  [DIR] ML_Projects
+    [DIR] First_Project
+  [DIR] MySQL_Projects
+    [DIR] Employee_Layoffs_Analysis
+    [DIR] Pizza_Sales_Analysis
+  [DIR] Python_Projects
+    [DIR] AAGP
+    [DIR] Customer_Call_List
+    [DIR] Ice_Cream_Rating
+    [DIR] Python_Diwali_Sales_Analysis
+    [DIR] Weather
+    [DIR] World_Population
+  [DIR] Tableau_Projects
+    [DIR] Air BnB_Data_Analysis
+    [DIR] British Airways
+    [DIR] Customer_Analysis
+    [DIR] E-Commerce_Analysis
+    [DIR] HR_Data_Analysis
+    [DIR] New_Condo_Canada
+FILE | Proof of Address.pdf | 538742 bytes
+FILE | Saiful Quadir-Masuda_Tax-2025.docx | 16398 bytes
+FILE | Saiful Quadir.docx | 16588 bytes
+FILE | Saiful Quadir.pdf | 565442 bytes
+FILE | Saiful Quadir_Resume 1.pdf | 61496 bytes
+FILE | Saiful Quadir_Resume Ver 18_NOV-2024.docx | 249290 bytes
+FILE | Saiful Quadir_Resume-1.docx | 18393 bytes
+FILE | Saiful Quadir_Resume-2026_V2.docx | 23465 bytes
+FILE | Saiful Quadir_Resume.docx | 19537 bytes
+FILE | Saiful Quadir_Resume_MasterCopy.docx | 35738 bytes
+FILE | Saiful Quadir_Resume_Ver-1.docx | 35354 bytes
+FILE | Saiful Quadir_Resume_Ver-1.pdf | 58262 bytes
+FILE | Screenshot 2026-08-24 at 2.04.21 PM.png | 542679 bytes
+FILE | Screenshot 2026-08-27 at 11.05.09 AM.png | 3933 bytes
+FILE | Screenshot 2026-09-10 at 8.44.07 AM.png | 40199 bytes
+FILE | Screenshot 2026-11-04 at 10.34.56 AM.png | 538397 bytes
+FILE | Share_Calc-1.xlsx | 496300 bytes
+
+FOLDER: SmartBackup
+PATH: /Users/x/Documents/SmartBackup
+FILES: 116
+SIZE_MB: 11.72
+FILE_TYPES: Database=2, JSON=1, Log=1, Python=93
+STRUCTURE (maximum depth 4):
+[DIR] SmartBackup
+  [DIR] Audit
+  [DIR] Backups
+    [DIR] Activity_Reports_PrePatch_20261112_205839
+  [DIR] Notes
+  [DIR] ZIP
+  [DIR] config
+  [DIR] database
+    [DIR] .idea
+      [DIR] inspectionProfiles
+    [DIR] engine
+      [DIR] engine
+  [DIR] engine
+  [DIR] logs
+  [DIR] reports
+
+FOLDER: SQ_Personal_Info
+PATH: /Users/x/Documents/SQ_Personal_Info
+FILES: 168
+SIZE_MB: 84.53
+FILE_TYPES: Excel=3
+STRUCTURE (maximum depth 4):
+[DIR] SQ_Personal_Info
+  [DIR] Primary_School
+  [DIR] Resume
+    [DIR] Tailored Resume
+  [DIR] SQ
+FILE | Stock_Chart_History.xlsb | 491133 bytes
+
+FOLDER: Talking_Tech-2025
+PATH: /Users/x/Documents/Talking_Tech-2025
+FILES: 135
+SIZE_MB: 134.44
+FILE_TYPES: CSV=2, Excel=3
+STRUCTURE (maximum depth 4):
+[DIR] Talking_Tech-2025
+  [DIR] ANNA
+  [DIR] AVA
+  [DIR] Case_study_DA_Tableau
+    [DIR] Apotex Case Study Solution-2025_Mimi_Jenny_Saiful.twb Files
+      [DIR] Data
+        [DIR] Case_study_DA_Tableau
+      [DIR] Image
+    [DIR] Apotex Case Study Solution-2025_SQ.twb Files
+      [DIR] Data
+        [DIR] Case_study_DA_Tableau
+  [DIR] Pawluk
+
+FOLDER: Tax_Canada
+PATH: /Users/x/Documents/Tax_Canada
+FILES: 5
+SIZE_MB: 0.51
+STRUCTURE (maximum depth 4):
+[DIR] Tax_Canada
+  [DIR] Yr.2024
+
+FOLDER: Test
+PATH: /Users/x/Documents/Test
+FILES: 1
+SIZE_MB: 0.24
+FILE_TYPES: Excel=1
+STRUCTURE (maximum depth 4):
+[DIR] Test
+  [DIR] Documents
+    [DIR] Investment-2025
+
+FOLDER: TIN Certificate
+PATH: /Users/x/Documents/TIN Certificate
+FILES: 16
+SIZE_MB: 5.00
+FILE_TYPES: Excel=1
+STRUCTURE (maximum depth 4):
+[DIR] TIN Certificate
+  [DIR] 2024-2025
+  [DIR] 2025-2026
+  [DIR] 2026-2027
+FILE | Volunteer Certificate (Saiful Q.)_20250226_115127_0000.jpg | 804754 bytes
+FILE | Which one do You Prefer.docx | 1087625 bytes
+
+FOLDER: Workshop-2024-2025
+PATH: /Users/x/Documents/Workshop-2024-2025
+FILES: 52
+SIZE_MB: 33.30
+FILE_TYPES: Excel=1
+STRUCTURE (maximum depth 4):
+[DIR] Workshop-2024-2025
+  [DIR] GoTo Webinar_files
+FILE | YMCA-NR-85690-SAIFUL QUADIR.pdf | 239403 bytes
+
+==========================================================================================
+ROOT: /Users/x/Downloads
+==========================================================================================
+FILE | (Auto Insurance Policy) Policy PA105851942-V1.pdf | 293539 bytes
+FILE | (Policy Quote) Quote PA105705770-V1 (1).pdf | 255558 bytes
+FILE | (Policy Quote) Quote PA105705770-V1.pdf | 256251 bytes
+FILE | .DS_Store | 77828 bytes
+FILE | .localized | 0 bytes
+FILE | 03-IntroToProgrammingInR (1).pptx | 1053638 bytes
+FILE | 1-month_illustrative_forecast_range.pdf | 56365 bytes
+FILE | 1-month_illustrative_forecast_range.png | 67146 bytes
+FILE | 1Ashfaq_Zaman_Resume_3.docx | 1107877 bytes
+FILE | 1JukQNWUQt6bpEDVlPLeaw_acfccb1a4ed248d38af04be11a60e4f1_Activity-Exemplar_-WBS-Brainstorm-Diagram.pptx | 293048 bytes
+FILE | 20260831061150.pdf | 29417 bytes
+FILE | 271024075400303970.pdf | 38876 bytes
+FILE | 35fol5t5TAGX6JebeSwBTA_924d1a40b2ec443ba762372c61d175f1_Activity-Template_-WBS-Brainstorm-Diagram.pptx | 49364 bytes
+FILE | 572a2e42c57d4cdb896695a7682b9ff2 (1).docx | 49191 bytes
+FILE | 5ZvimtimSsSb4prYpqrEGg_1624faba2315420a92f6c416ceb448f1_Demo-Lab-Bagging.zip | 305691 bytes
+FILE | 6. Diagram.pdf | 329851 bytes
+FILE | 8ke8gmaAR82utlXj4Z56cA_d372be5d167848fbab8cf8fee798b9f1_Gantt-chart---Template.xlsx | 63309 bytes
+FILE | _03706fa4ec5b661f1d6e17b43dad323c_Brand-Pyramid.docx | 18996 bytes
+FILE | _87b8774a741041c696d39915c70f196d_Activity-Template_-RACI-chart---Phase-1.xlsx | 74021 bytes
+FILE | _fbc259ecad060b52b870ad8ef7cfb507_Marketing-Analytics-Experiments-Calculations.xlsx | 25815 bytes
+FILE | AAPL_60_Day_Stock_History.xlsx | 10133 bytes
+FILE | Account Application - Credit Card - chase.com.pdf | 195837 bytes
+FILE | Account Related Customer Declaration Form (Non-Financial)_Blank.pdf | 91427 bytes
+FILE | Account Related Customer Declaration Form_Blank.pdf | 90547 bytes
+FILE | accountactivity (1).csv | 1706 bytes
+FILE | accountactivity.csv | 2777 bytes
+FILE | accountstatment.txt | 1393 bytes
+FILE | accountstatment.xls | 1427 bytes
+FILE | activities-export-2026-06-10.csv | 7250 bytes
+FILE | activities-export-2026-07-17.csv | 428344 bytes
+FILE | activity_2026-09-29.csv | 5224 bytes
+FILE | activity_2026-10-02.csv | 22714 bytes
+FILE | activity_2026-10-04.csv | 22317 bytes
+FILE | activity_2026-10-05.csv | 19456 bytes
+FILE | activity_2026-10-07.csv | 4654 bytes
+FILE | activity_2026-10-11.csv | 3419 bytes
+FILE | activity_2026-10-17.csv | 9521 bytes
+FILE | activity_2026-10-19.csv | 17841 bytes
+FILE | activity_2026-10-22.csv | 24558 bytes
+FILE | Amended Self Declaration Form 2024 (v_2).pdf | 169080 bytes
+FILE | Analyse de la Séparation de lAlberta.docx | 45828 bytes
+FILE | Analyse de la Séparation de lAlberta.pdf | 322767 bytes
+FILE | Apotex Case Study Solution - Comparison of Various Measures.twbx | 61556 bytes
+FILE | Apotex_Analysis_Presentation_2025.pptx | 36342 bytes
+FILE | Apotex_Analysis_Presentation_with_Charts.pptx | 233510 bytes
+FILE | Assessment.jpeg | 48371 bytes
+FILE | Assignment-06-06.03.2025.docx | 65001 bytes
+FILE | Automator.html | 485206 bytes
+FILE | Bangladesh_Portfolio_Charts_Presentation.pptx | 103479 bytes
+FILE | Bangladesh_UCB_Portfolio_Automation_RECOVERY.py | 89587 bytes
+FILE | Bangladesh_UCB_Portfolio_Automation_RECOVERY_FIXED.py | 90291 bytes
+FILE | Bangladesh_UCB_Portfolio_Automation_UPDATED.py | 91577 bytes
+FILE | Bar Chart.pdf | 510825 bytes
+FILE | bar_chart.jpg | 31687 bytes
+FILE | basic (1).ics | 1393 bytes
+FILE | basic (2).ics | 1393 bytes
+FILE | basic.ics | 1393 bytes
+FILE | BBL-HalfYearly-LoanOutstandingCertificate-251407-122853968-058.pdf | 63185 bytes
+FILE | BGTB Manual (1).pdf | 255385 bytes
+FILE | BGTB Manual.pdf | 255385 bytes
+FILE | Book1.xlsm | 17297 bytes
+FILE | Book1.xlsx | 92257 bytes
+FILE | Book2.csv | 6321 bytes
+FILE | Book2.xlsx | 212091 bytes
+FILE | Book3.csv | 6684 bytes
+FILE | Book4.csv | 6678 bytes
+FILE | Book5.csv | 7252 bytes
+FILE | Book6.csv | 7183 bytes
+FILE | BP ID form.pdf | 497895 bytes
+FILE | BRAC-CC-MAR-MAY-2025.docx | 548775 bytes
+FILE | BRAC_Bank_Statement_29052025 conv.xlsx | 45248 bytes
+FILE | BRAC_Bank_Statement_29052025.pdf | 103224 bytes
+FILE | BSP_2026_First_10:20.jpeg | 75110 bytes
+FILE | BSP_2026_Second_10:20.jpeg | 80052 bytes
+FILE | BUILD_PNDCC_CURRENT_SOURCE_SIEM_CANDIDATE.py | 6316 bytes
+FILE | Business Development Research Guide.pdf | 239510 bytes
+
+FOLDER: CAA_Club_Group_Marketing_Database_Analyst_Application
+PATH: /Users/x/Downloads/CAA_Club_Group_Marketing_Database_Analyst_Application
+FILES: 2
+SIZE_MB: 0.01
+STRUCTURE (maximum depth 4):
+[DIR] CAA_Club_Group_Marketing_Database_Analyst_Application
+FILE | CAA_Club_Group_Marketing_Database_Analyst_Application.zip | 5420 bytes
+FILE | california_housing_train.csv | 1706430 bytes
+FILE | Canada_investment-2025.xlsx | 11028 bytes
+FILE | Canadian Dental Plan-Application_SQ.pdf | 86083 bytes
+FILE | Canadian_Markets_158_Stocks_60_Days.xlsx | 59201 bytes
+FILE | Canadian_Markets_158_Stocks_60_Days_2.xlsx | 378556 bytes
+FILE | candidate_profile_updated_final.json | 3370 bytes
+FILE | Capital_Market_dashboard.py | 20263 bytes
+FILE | checklist.docx | 14729 bytes
+FILE | Checklist.pdf | 230532 bytes
+FILE | CLIENT DATA FORM - UPDATED.docx | 132982 bytes
+FILE | Cold Outreach Tracker.xlsx | 30036 bytes
+FILE | Cold Outreach Tracker_Adam_Lower_Level_Targets.xlsx | 17682 bytes
+FILE | Cold Outreach Tracker_Adam_Requirements_Updated.xlsx | 12879 bytes
+FILE | Common Compass - Executive Summary Example.docx | 8940 bytes
+FILE | Common Compass - Final Deliverables Instructions.docx | 236037 bytes
+FILE | Comprehensive Brand Architecture and Equity Analysis.docx | 19875 bytes
+
+FOLDER: config
+PATH: /Users/x/Downloads/config
+FILES: 1
+SIZE_MB: 0.00
+FILE_TYPES: JSON=1
+STRUCTURE (maximum depth 4):
+[DIR] config
+FILE | ConfirmationNote_21129_OnDate_6-7-2026.pdf | 96517 bytes
+FILE | Credit Card Service Request Form 2023JUL19.pdf | 37080 bytes
+FILE | CSE_BD_CC_E0727123950-1895074822.pdf | 124657 bytes
+FILE | CSE_BD_CC_E1028174751530271730.pdf | 123865 bytes
+FILE | D9MNwNMqRlCTDcDTKlZQWw_85abd6e1d2fd4c06bcd912d1058529f1_Activity-Template_-Emails-for-the-release-plan.docx | 14928 bytes
+FILE | daily_activity_tracker(1).py | 16888 bytes
+FILE | daily_activity_tracker.py | 34115 bytes
+FILE | daily_activity_tracker_batch_fetch.py | 34589 bytes
+FILE | daily_activity_tracker_credentials_progress.py | 41012 bytes
+FILE | daily_activity_tracker_professional_v2.py | 47790 bytes
+
+FOLDER: DailyActivityTracker
+PATH: /Users/x/Downloads/DailyActivityTracker
+FILES: 3
+SIZE_MB: 0.02
+FILE_TYPES: Python=1
+STRUCTURE (maximum depth 4):
+[DIR] DailyActivityTracker
+FILE | DailyActivityTracker_Corrected_Install_Package.zip | 20215 bytes
+FILE | DailyActivityTracker_macOS.zip | 6516 bytes
+
+FOLDER: data
+PATH: /Users/x/Downloads/data
+FILES: 0
+SIZE_MB: 0.00
+STRUCTURE (maximum depth 4):
+[DIR] data
+FILE | DCA_Dashboard.xlsx | 5008 bytes
+FILE | Declaration of Severance of Relationship.docx | 17037 bytes
+FILE | Declaration of Severance of Relationship.pdf | 162720 bytes
+FILE | Div_Share_Calc-2025.csv | 5446 bytes
+FILE | Div_Share_Calc-2025.xls | 42496 bytes
+FILE | Doc2.pdf | 251847 bytes
+FILE | Doc3.pdf | 148935 bytes
+FILE | Doc4.pdf | 182776 bytes
+FILE | Doc5.pdf | 87394 bytes
+FILE | Driving License_Back_G2.jpeg | 161245 bytes
+FILE | Driving License_Front_G2.jpeg | 150362 bytes
+FILE | DSE Top 30 Market Cap Stocks V1.xlsx | 38367 bytes
+FILE | DSE Top 30 Market Cap Stocks.xlsx | 37641 bytes
+FILE | Dxi8fFH5TAyYvHxR-awMLw_8efe21fb3fd24ccf8f26314be69ab0f1_Course-2-Glossary-_-PM-Terms-and-Definitions.docx | 52171 bytes
+FILE | E0228182730-2033320693.pdf | 23082 bytes
+FILE | E0427154949627087116.pdf | 124595 bytes
+FILE | E0527195413-1818422668.pdf | 125057 bytes
+FILE | E0627145823-1238591616.pdf | 124385 bytes
+FILE | e66BTMl6SuKugUzJeorihA_c1b85f2576504c929dc0ee0d7386bf84_Success-Criteria-Template.docx | 298021 bytes
+
+FOLDER: EG_Business_Development_Automation
+PATH: /Users/x/Downloads/EG_Business_Development_Automation
+FILES: 115
+SIZE_MB: 1.65
+FILE_TYPES: Excel=4, JSON=13, Python=91
+STRUCTURE (maximum depth 4):
+[DIR] EG_Business_Development_Automation
+  [DIR] backups
+  [DIR] input
+  [DIR] research
+
+FOLDER: EG_Business_Development_Automation_DASHBOARD_PROGRESS_FAST
+PATH: /Users/x/Downloads/EG_Business_Development_Automation_DASHBOARD_PROGRESS_FAST
+FILES: 113
+SIZE_MB: 1.64
+FILE_TYPES: Excel=4, JSON=13, Python=89
+STRUCTURE (maximum depth 4):
+[DIR] EG_Business_Development_Automation_DASHBOARD_PROGRESS_FAST
+  [DIR] backups
+  [DIR] input
+  [DIR] research
+
+FOLDER: EG_Business_Development_Automation_DASHBOARD_PROGRESS_FAST (1)
+PATH: /Users/x/Downloads/EG_Business_Development_Automation_DASHBOARD_PROGRESS_FAST (1)
+FILES: 113
+SIZE_MB: 1.64
+FILE_TYPES: Excel=4, JSON=13, Python=89
+STRUCTURE (maximum depth 4):
+[DIR] EG_Business_Development_Automation_DASHBOARD_PROGRESS_FAST (1)
+  [DIR] backups
+  [DIR] input
+  [DIR] research
+FILE | Eighty Group Business Development Intelligence Platform.docx | 35245 bytes
+FILE | EIGHTY GROUP.md | 47905 bytes
+FILE | Emoji_Comparison.xlsx | 5207 bytes
+FILE | English for the Workplace_ Listening - Reaserch Centre.html | 190412 bytes
+FILE | exported-text (1).docx | 9986 bytes
+FILE | exported-text.docx | 7227 bytes
+FILE | FATCA.pdf | 63399 bytes
+FILE | Ferrero_Application_Saiful_Quadir.zip | 5811 bytes
+
+FOLDER: FileZilla.app
+PATH: /Users/x/Downloads/FileZilla.app
+FILES: 630
+SIZE_MB: 45.50
+STRUCTURE (maximum depth 4):
+[DIR] FileZilla.app
+  [DIR] Contents
+    [DIR] Frameworks
+    [DIR] MacOS
+    [DIR] Resources
+      [DIR] an.lproj
+      [DIR] ar.lproj
+      [DIR] az.lproj
+      [DIR] bg_BG.lproj
+      [DIR] ca.lproj
+      [DIR] ca_ES@valencia.lproj
+      [DIR] co.lproj
+      [DIR] cs_CZ.lproj
+      [DIR] cy.lproj
+      [DIR] da.lproj
+      [DIR] de.lproj
+      [DIR] el.lproj
+      [DIR] en.lproj
+      [DIR] es.lproj
+      [DIR] et.lproj
+      [DIR] eu.lproj
+      [DIR] fa_IR.lproj
+      [DIR] fi_FI.lproj
+      [DIR] fr.lproj
+      [DIR] ga.lproj
+      [DIR] gl_ES.lproj
+      [DIR] he_IL.lproj
+      [DIR] hr.lproj
+      [DIR] hu_HU.lproj
+      [DIR] hy.lproj
+      [DIR] id_ID.lproj
+      [DIR] is.lproj
+      [DIR] it.lproj
+      [DIR] ja_JP.lproj
+      [DIR] ka.lproj
+      [DIR] kab.lproj
+      [DIR] km_KH.lproj
+      [DIR] ko_KR.lproj
+      [DIR] ku.lproj
+      [DIR] ky.lproj
+      [DIR] lo_LA.lproj
+      [DIR] lt_LT.lproj
+      [DIR] lv_LV.lproj
+      [DIR] mk_MK.lproj
+      [DIR] nb_NO.lproj
+      [DIR] ne.lproj
+      [DIR] nl.lproj
+      [DIR] nn_NO.lproj
+      [DIR] oc.lproj
+      [DIR] pl_PL.lproj
+      [DIR] pt_BR.lproj
+      [DIR] pt_PT.lproj
+      [DIR] ro_RO.lproj
+      [DIR] ru.lproj
+      [DIR] sk_SK.lproj
+      [DIR] sl_SI.lproj
+      [DIR] sr.lproj
+      [DIR] sv.lproj
+      [DIR] ta.lproj
+      [DIR] th_TH.lproj
+      [DIR] tr.lproj
+      [DIR] uk_UA.lproj
+      [DIR] vi_VN.lproj
+      [DIR] zh_CN.lproj
+      [DIR] zh_TW.lproj
+    [DIR] SharedSupport
+      [DIR] locales
+        [DIR] an
+        [DIR] ar
+        [DIR] az
+        [DIR] bg_BG
+        [DIR] ca
+        [DIR] ca_ES@valencia
+        [DIR] co
+        [DIR] cs_CZ
+        [DIR] cy
+        [DIR] da
+        [DIR] de
+        [DIR] el
+        [DIR] en
+        [DIR] es
+        [DIR] et
+        [DIR] eu
+        [DIR] fa_IR
+        [DIR] fi_FI
+        [DIR] fr
+        [DIR] ga
+        [DIR] gl_ES
+        [DIR] he_IL
+        [DIR] hr
+        [DIR] hu_HU
+        [DIR] hy
+        [DIR] id_ID
+        [DIR] is
+        [DIR] it
+        [DIR] ja_JP
+        [DIR] ka
+        [DIR] kab
+        [DIR] km_KH
+        [DIR] ko_KR
+        [DIR] ku
+        [DIR] ky
+        [DIR] lo_LA
+        [DIR] lt_LT
+        [DIR] lv_LV
+        [DIR] mk_MK
+        [DIR] nb_NO
+        [DIR] ne
+        [DIR] nl
+        [DIR] nn_NO
+        [DIR] oc
+        [DIR] pl_PL
+        [DIR] pt_BR
+        [DIR] pt_PT
+        [DIR] ro_RO
+        [DIR] ru
+        [DIR] sk_SK
+        [DIR] sl_SI
+        [DIR] sr
+        [DIR] sv
+        [DIR] ta
+        [DIR] th_TH
+        [DIR] tr
+        [DIR] uk_UA
+        [DIR] vi_VN
+        [DIR] zh_CN
+        [DIR] zh_TW
+      [DIR] resources
+        [DIR] 16x16
+        [DIR] 20x20
+        [DIR] 24x24
+        [DIR] 32x32
+        [DIR] 480x480
+        [DIR] 48x48
+        [DIR] blukis
+        [DIR] classic
+        [DIR] cyril
+        [DIR] default
+        [DIR] lone
+        [DIR] opencrystal
+        [DIR] tango
+    [DIR] _CodeSignature
+    [DIR] docs
+FILE | Form 1.pdf | 548810 bytes
+FILE | Glocal_Image.jpeg | 9180 bytes
+FILE | GS-Applying to Ontario Public Colleges as a Mature Student_.ics | 4260 bytes
+
+FOLDER: GYnBirNARvyJwYqzQIb8Uw_4aab7c974e5442739f9c53b460d73df1_Demo_Lab-Decision_Trees_Assets
+PATH: /Users/x/Downloads/GYnBirNARvyJwYqzQIb8Uw_4aab7c974e5442739f9c53b460d73df1_Demo_Lab-Decision_Trees_Assets
+FILES: 2
+SIZE_MB: 2.16
+FILE_TYPES: CSV=1
+STRUCTURE (maximum depth 4):
+[DIR] GYnBirNARvyJwYqzQIb8Uw_4aab7c974e5442739f9c53b460d73df1_Demo_Lab-Decision_Trees_Assets
+FILE | gzrsL-mTTvq67C_pk376JQ_5a3cbb30088c4b659a3e7c408e3240f1_Activity-Exemplar_-Project-Move-It-OKRs.docx | 16128 bytes
+FILE | Hard and Soft Skills.pdf | 37880 bytes
+FILE | Holding Tax_Decent_2026-2027.jpeg | 84042 bytes
+FILE | Holding Tax_Prominent_2026-2027.jpeg | 73687 bytes
+FILE | holdings-report-2026-11-13.csv | 31816 bytes
+FILE | Home Purchase in Ontario Canada.pdf | 385925 bytes
+FILE | How project managers impact organizations.pdf | 187565 bytes
+FILE | HRSDC_ComputerUse_SelfAssessment_EN.pdf | 326719 bytes
+FILE | HRSDC_ContinuousLearning_SelfAssessment_EN.pdf | 261705 bytes
+FILE | Hybrid_Manual_Automation.py | 26398 bytes
+FILE | Hypothesis Testing Review Questions.pdf.pdf | 146022 bytes
+FILE | IBMDesign20250330-26-vubhp8.pdf | 534549 bytes
+FILE | IBMDesign20250405-27-gwtq1n.pdf | 534198 bytes
+FILE | IMG_20260820_0014.pdf | 59815 bytes
+FILE | IMG_20260820_0015.pdf | 139221 bytes
+FILE | Introduction (1).docx | 17025 bytes
+FILE | Introduction.docx | 17025 bytes
+FILE | Investor Report.pdf | 4197011 bytes
+FILE | IyvFH-mHQBCrxR_ph2AQyQ_fb0a5e0732e74077a1f66a5ff516def1_OKRs-Scorecard-Spreadsheet.xlsx | 29180 bytes
+FILE | JACC_Hot_Jobs_Handoff_2026-11-07 (1).md | 34634 bytes
+FILE | JACC_Hot_Jobs_Handoff_2026-11-07.md | 34634 bytes
+FILE | Jatiyo Sanchaypatra - Saiful Quadir.docx | 378059 bytes
+FILE | Jia Email Reply.docx | 15957 bytes
+FILE | Job Search Listening Exercises.pdf | 34832 bytes
+FILE | Job_Application_Tracker_Dashboard.zip | 6809 bytes
+FILE | JobSearchAgent-overview-2026-10-12_21-38-40-097.pdf | 222020 bytes
+FILE | jobsearchagent_dashboard.py | 32700 bytes
+FILE | jobsearchagent_dashboard_DYNAMIC_PORTAL_ROUTING_ADZUNA_BROWSER_APPLY_PATCH.py | 165957 bytes
+FILE | jobsearchagent_dashboard_DYNAMIC_PORTAL_ROUTING_ADZUNA_BROWSER_APPLY_PATCH_v2.py | 166311 bytes
+FILE | jobsearchagent_dashboard_DYNAMIC_PORTAL_ROUTING_RESOLVER_CANDIDATE.py | 171418 bytes
+FILE | jobsearchagent_dashboard_DYNAMIC_PORTAL_ROUTING_STARTUP_FIX.py | 162116 bytes
+FILE | jobsearchagent_dashboard_EDIT_UPDATE_PATCH.py | 43086 bytes
+FILE | jobsearchagent_dashboard_JOB_EDIT_PATCH (1).py | 47125 bytes
+FILE | jobsearchagent_dashboard_JOB_EDIT_PATCH.py | 47125 bytes
+
+FOLDER: jobsearchagent_diagnostic_kit
+PATH: /Users/x/Downloads/jobsearchagent_diagnostic_kit
+FILES: 4
+SIZE_MB: 0.02
+FILE_TYPES: Python=2
+STRUCTURE (maximum depth 4):
+[DIR] jobsearchagent_diagnostic_kit
+  [DIR] jobsearchagent_diagnostic_kit
+FILE | JobSearchAgent_Diagnostic_Kit.zip | 4234 bytes
+
+FOLDER: JobSearchAgent_Dynamic_Portal_Fix
+PATH: /Users/x/Downloads/JobSearchAgent_Dynamic_Portal_Fix
+FILES: 3
+SIZE_MB: 0.18
+FILE_TYPES: Python=2
+STRUCTURE (maximum depth 4):
+[DIR] JobSearchAgent_Dynamic_Portal_Fix
+FILE | JobSearchAgent_DYNAMIC_SOURCE_DISCOVERY_v10.py | 187165 bytes
+
+FOLDER: JobSearchAgent_Guided_Repair
+PATH: /Users/x/Downloads/JobSearchAgent_Guided_Repair
+FILES: 3
+SIZE_MB: 0.16
+FILE_TYPES: Python=2
+STRUCTURE (maximum depth 4):
+[DIR] JobSearchAgent_Guided_Repair
+FILE | JobSearchAgent_Hybrid_Portal_Discovery_Update.md | 4387 bytes
+FILE | jobsearchagent_live_fetch_upgrade.zip | 21748 bytes
+FILE | jobsearchagent_part1_2.zip | 10162 bytes
+FILE | jobsearchagent_part3_compatibility_fix.zip | 3054 bytes
+
+FOLDER: jobsearchagent_part3_tests
+PATH: /Users/x/Downloads/jobsearchagent_part3_tests
+FILES: 2
+SIZE_MB: 0.00
+FILE_TYPES: Python=1
+STRUCTURE (maximum depth 4):
+[DIR] jobsearchagent_part3_tests
+FILE | jobsearchagent_part3_tests.zip | 1499 bytes
+FILE | jobsearchagent_profile_form_visibility_fix.zip | 33248 bytes
+FILE | jobsearchagent_requirement_matching_upgrade.zip | 20769 bytes
+FILE | JobSearchAgent_SMART_PORTAL_DISCOVERY_HYBRID_PATCH.py | 174498 bytes
+FILE | JobSearchAgent_SMART_PORTAL_DISCOVERY_HYBRID_PATCH_v2.py | 176946 bytes
+FILE | JobSearchAgent_SMART_PORTAL_DISCOVERY_HYBRID_PATCH_v3.py | 176998 bytes
+FILE | JobSearchAgent_SMART_PORTAL_DISCOVERY_HYBRID_PATCH_v4.py | 178736 bytes
+FILE | JobSearchAgent_SMART_PORTAL_DISCOVERY_HYBRID_PATCH_v5.py | 179636 bytes
+FILE | JobSearchAgent_SMART_PORTAL_DISCOVERY_HYBRID_PATCH_v6.py | 189389 bytes
+FILE | JobSearchAgent_SMART_PORTAL_DISCOVERY_HYBRID_PATCH_v7.py | 190550 bytes
+FILE | JobSearchAgent_SMART_PORTAL_DISCOVERY_HYBRID_PATCH_v8_LINKEDIN_INDEED.py | 192044 bytes
+FILE | JobSearchAgent_SMART_PORTAL_DISCOVERY_HYBRID_PATCH_v9_REJECT_JOBBOARD_AUTHWALL.py | 193033 bytes
+FILE | JobSearchAgent_SMART_PORTAL_DISCOVERY_TRIAL.py | 168525 bytes
+FILE | JobSearchAgent_v2_APPLIED_GUARD_PATCH.zip | 30157 bytes
+FILE | JobSearchAgent_v2_BUTTONS_RECOVERY_PATCH.zip | 35486 bytes
+FILE | JobSearchAgent_v2_DATE_PICKER_PATCH (1).zip | 28403 bytes
+FILE | JobSearchAgent_v2_DATE_PICKER_PATCH.zip | 28403 bytes
+FILE | JobSearchAgent_v2_DATE_RULES_PATCH.zip | 29384 bytes
+FILE | JobSearchAgent_v2_DEFAULT_FOOTER_ACTION_BAR_PATCH.zip | 38231 bytes
+FILE | JobSearchAgent_v2_DYNAMIC_EMPLOYER_PORTAL_ROUTING_FIX.zip | 47376 bytes
+FILE | JobSearchAgent_v2_EDIT_SCROLL_POSITION_FIX.zip | 27355 bytes
+FILE | JobSearchAgent_v2_GUIDED_APPLICATION_EMPLOYER_MISMATCH_FIX.zip | 43923 bytes
+FILE | JobSearchAgent_v2_GUIDED_APPLICATION_PATCH.zip | 33462 bytes
+
+FOLDER: JobSearchAgent_v2_GUIDED_APPLICATION_PORTAL_MISMATCH_REPAIR
+PATH: /Users/x/Downloads/JobSearchAgent_v2_GUIDED_APPLICATION_PORTAL_MISMATCH_REPAIR
+FILES: 3
+SIZE_MB: 0.17
+FILE_TYPES: Python=2
+STRUCTURE (maximum depth 4):
+[DIR] JobSearchAgent_v2_GUIDED_APPLICATION_PORTAL_MISMATCH_REPAIR
+FILE | JobSearchAgent_v2_GUIDED_APPLICATION_PORTAL_MISMATCH_REPAIR.zip | 46324 bytes
+FILE | JobSearchAgent_v2_GUIDED_APPLICATION_REPAIR_CANDIDATE.zip | 43855 bytes
+FILE | JobSearchAgent_v2_GUIDED_APPLICATION_VISIBLE_FEEDBACK_PATCH.zip | 34157 bytes
+FILE | JobSearchAgent_v2_MANUAL_SUBMISSION_TRACKER_PATCH.zip | 28428 bytes
+FILE | JobSearchAgent_v2_MATCH_SCORE_DESCENDING_PATCH.zip | 30102 bytes
+FILE | JobSearchAgent_v2_SESSION_HANDOFF_2026-10-12.md | 8747 bytes
+FILE | JobSearchAgent_v2_TEST_RECORD_ARCHIVE_PATCH.zip | 29294 bytes
+
+FOLDER: JobSearchAgent_v2_VISIBLE_FEEDBACK_PATCH
+PATH: /Users/x/Downloads/JobSearchAgent_v2_VISIBLE_FEEDBACK_PATCH
+FILES: 3
+SIZE_MB: 0.12
+FILE_TYPES: Python=2
+STRUCTURE (maximum depth 4):
+[DIR] JobSearchAgent_v2_VISIBLE_FEEDBACK_PATCH
+FILE | Khalid-Farhan-AI (English).txt | 124 bytes
+FILE | kpKWkPddSuOSlpD3Xerj7w_4f326e7cd1894626904078137f8365f1_Activity-Exemplar_-Project-budget.xlsx | 34111 bytes
+FILE | KPMG_Job_34680_PDF_Only_Package.zip | 29572 bytes
+FILE | L'économie du savoir _ résumé visuel conv.docx | 234877 bytes
+FILE | L'économie du savoir _ résumé visuel.pdf | 266691 bytes
+FILE | l7iziTi7QTi4s4k4u1E4Xg_a2e6d9a54f7a49df90864ce6d892aff1_Activity-Template_-WBS-Spreadsheet.xlsx | 74487 bytes
+FILE | LearnerProgress_Qadir.pdf | 202227 bytes
+FILE | LinkedIn Event - NDA Form (blank).pdf | 144427 bytes
+FILE | LinkedIn Event - NDA Form.pdf | 241112 bytes
+FILE | loan_amortization_schedule.xlsx | 43172 bytes
+FILE | Long View Systems - ASHFAQ ZAMAN.pdf | 213038 bytes
+FILE | Mac_Disk_Management_Analysis_2026-11-07.md | 16769 bytes
+FILE | Mail Attachment (1).ics | 3658 bytes
+FILE | Mail Attachment.ics | 3658 bytes
+FILE | March 26.pdf | 474500 bytes
+FILE | Mentorship Goal Assesment Form_editable.pdf | 190655 bytes
+FILE | MoneyReceipt - 2026-08-12T125320.415.pdf | 430773 bytes
+FILE | MoneyReceipt - 2027.pdf | 430775 bytes
+FILE | Mosaic_Client_Data_Analyst_II_Application.zip | 6288 bytes
+FILE | Navigating_with_Ease__Pro-2025-05-06-151005-chat-messages.txt | 519 bytes
+FILE | New to Canada Related links.pdf | 155684 bytes
+FILE | One More Step - Personal Area.pdf | 52746 bytes
+FILE | P6_1_Mac_Fix.zip | 14725 bytes
+FILE | part9_dashboard_updated (1).py | 33088 bytes
+FILE | part9_dashboard_updated.py | 26361 bytes
+FILE | patch_siem_ui_18821.py | 4847 bytes
+
+FOLDER: Personal_Network_Device_Command_Center
+PATH: /Users/x/Downloads/Personal_Network_Device_Command_Center
+FILES: 13
+SIZE_MB: 0.01
+FILE_TYPES: JSON=2, Python=1
+STRUCTURE (maximum depth 4):
+[DIR] Personal_Network_Device_Command_Center
+  [DIR] app
+  [DIR] config
+  [DIR] data
+  [DIR] docs
+  [DIR] logs
+  [DIR] scripts
+FILE | Personal_Network_Device_Command_Center_v1.zip | 11058 bytes
+FILE | PF SWOT Info.pdf.pdf | 133365 bytes
+FILE | Phone Call Exercises.pdf | 40666 bytes
+FILE | Plans - Assessment.pdf | 229397 bytes
+FILE | Plans.pdf | 429798 bytes
+FILE | PNDCC_18823_LAYOUT_20261028_011251.log | 368 bytes
+FILE | PNDCC_18823_LAYOUT_20261028_011747.log | 2937 bytes
+FILE | PNDCC_18823_LAYOUT_BACKUP_20261028_011251.py | 6173 bytes
+FILE | PNDCC_18823_LAYOUT_BACKUP_20261028_011747.py | 6173 bytes
+FILE | PNDCC_Advanced_v2.zip | 14249 bytes
+FILE | PNDCC_Blue_Chips_Coverage.csv | 24930 bytes
+FILE | PNDCC_CURRENT_SOURCE_SIEM_INTEGRATION_CANDIDATE.py | 453504 bytes
+FILE | PNDCC_CURRENT_SOURCE_SIEM_INTEGRATION_CANDIDATE_PRE_PATCH_BACKUP_20261024_110954.py | 452993 bytes
+FILE | PNDCC_CURRENT_SOURCE_SIEM_ISOLATED_TEST.log | 0 bytes
+FILE | PNDCC_CURRENT_SOURCE_SIEM_LIVE_READ_ONLY_TEST.log | 0 bytes
+FILE | PNDCC_Documentation_1_2026-1.textClipping | 320 bytes
+
+FOLDER: PNDCC_Documentation_1_2026-10-08
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-08
+FILES: 2
+SIZE_MB: 0.04
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-08
+
+FOLDER: PNDCC_Documentation_1_2026-10-08 (1)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-08 (1)
+FILES: 2
+SIZE_MB: 0.04
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-08 (1)
+FILE | PNDCC_Documentation_1_2026-10-08 (1).zip | 39375 bytes
+FILE | PNDCC_Documentation_1_2026-10-08 (3).zip | 39375 bytes
+
+FOLDER: PNDCC_Documentation_1_2026-10-08 2
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-08 2
+FILES: 2
+SIZE_MB: 1.35
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-08 2
+
+FOLDER: PNDCC_Documentation_1_2026-10-09
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09
+FILES: 2
+SIZE_MB: 0.04
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09
+
+FOLDER: PNDCC_Documentation_1_2026-10-09 (1)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (1)
+FILES: 2
+SIZE_MB: 0.04
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09 (1)
+FILE | PNDCC_Documentation_1_2026-10-09 (1).zip | 39375 bytes
+
+FOLDER: PNDCC_Documentation_1_2026-10-09 (10)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (10)
+FILES: 2
+SIZE_MB: 0.61
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09 (10)
+
+FOLDER: PNDCC_Documentation_1_2026-10-09 (2)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (2)
+FILES: 2
+SIZE_MB: 0.04
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09 (2)
+FILE | PNDCC_Documentation_1_2026-10-09 (2).zip | 39375 bytes
+
+FOLDER: PNDCC_Documentation_1_2026-10-09 (3)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (3)
+FILES: 2
+SIZE_MB: 0.04
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09 (3)
+FILE | PNDCC_Documentation_1_2026-10-09 (3).zip | 39375 bytes
+
+FOLDER: PNDCC_Documentation_1_2026-10-09 (4)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (4)
+FILES: 2
+SIZE_MB: 0.04
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09 (4)
+FILE | PNDCC_Documentation_1_2026-10-09 (4).zip | 39376 bytes
+
+FOLDER: PNDCC_Documentation_1_2026-10-09 (5)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (5)
+FILES: 2
+SIZE_MB: 0.04
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09 (5)
+
+FOLDER: PNDCC_Documentation_1_2026-10-09 (5) 2
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (5) 2
+FILES: 2
+SIZE_MB: 0.04
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09 (5) 2
+FILE | PNDCC_Documentation_1_2026-10-09 (5).zip | 39376 bytes
+
+FOLDER: PNDCC_Documentation_1_2026-10-09 (6)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (6)
+FILES: 2
+SIZE_MB: 0.61
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09 (6)
+
+FOLDER: PNDCC_Documentation_1_2026-10-09 (7)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (7)
+FILES: 2
+SIZE_MB: 0.61
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09 (7)
+
+FOLDER: PNDCC_Documentation_1_2026-10-09 (8)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (8)
+FILES: 2
+SIZE_MB: 0.61
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09 (8)
+
+FOLDER: PNDCC_Documentation_1_2026-10-09 (9)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2026-10-09 (9)
+FILES: 2
+SIZE_MB: 0.97
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2026-10-09 (9)
+FILE | PNDCC_Documentation_1_2026-10-09.zip | 39376 bytes
+
+FOLDER: PNDCC_Documentation_1_2_3_2026-10-08
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2_3_2026-10-08
+FILES: 6
+SIZE_MB: 4.50
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2_3_2026-10-08
+FILE | PNDCC_Documentation_1_2_3_2026-10-08.zip | 4176689 bytes
+
+FOLDER: PNDCC_Documentation_1_2_3_2026-10-09
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2_3_2026-10-09
+FILES: 6
+SIZE_MB: 0.12
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2_3_2026-10-09
+
+FOLDER: PNDCC_Documentation_1_2_3_2026-10-09 (1)
+PATH: /Users/x/Downloads/PNDCC_Documentation_1_2_3_2026-10-09 (1)
+FILES: 6
+SIZE_MB: 0.12
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_1_2_3_2026-10-09 (1)
+FILE | PNDCC_Documentation_1_2_3_2026-10-09 (1).zip | 119007 bytes
+FILE | PNDCC_Documentation_1_2_3_2026-10-09.zip | 119008 bytes
+
+FOLDER: PNDCC_Documentation_2_2026-10-08
+PATH: /Users/x/Downloads/PNDCC_Documentation_2_2026-10-08
+FILES: 2
+SIZE_MB: 1.48
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_2_2026-10-08
+
+FOLDER: PNDCC_Documentation_2_2026-10-09
+PATH: /Users/x/Downloads/PNDCC_Documentation_2_2026-10-09
+FILES: 2
+SIZE_MB: 0.04
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_2_2026-10-09
+FILE | PNDCC_Documentation_2_2026-10-09.zip | 39996 bytes
+
+FOLDER: PNDCC_Documentation_Package_2026-10-07
+PATH: /Users/x/Downloads/PNDCC_Documentation_Package_2026-10-07
+FILES: 9
+SIZE_MB: 0.60
+FILE_TYPES: Python=2
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_Documentation_Package_2026-10-07
+FILE | PNDCC_Documentation_Package_2026-10-07.zip | 240622 bytes
+FILE | PNDCC_FAST_TRIAL_8817.log | 0 bytes
+FILE | PNDCC_FAST_TRIAL_8817.pid | 6 bytes
+
+FOLDER: PNDCC_FAST_TRIAL_DATA_8817
+PATH: /Users/x/Downloads/PNDCC_FAST_TRIAL_DATA_8817
+FILES: 4
+SIZE_MB: 1.19
+FILE_TYPES: CSV=2, JSON=2
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_FAST_TRIAL_DATA_8817
+  [DIR] config
+FILE | PNDCC_FAST_TRIAL_SOURCE_PRE_ISOLATION.py | 450078 bytes
+FILE | PNDCC_Final_ReadOnly_Signoff.sh | 2047 bytes
+FILE | PNDCC_Final_Verification.sh | 2229 bytes
+FILE | PNDCC_Final_Verification_20261026_212600.txt | 15136 bytes
+FILE | PNDCC_Final_Verification_ReadOnly.sh | 4145 bytes
+FILE | PNDCC_Five_File_Audit.zip | 386022 bytes
+FILE | PNDCC_FTPS_TEST.txt | 63 bytes
+FILE | PNDCC_FTPS_TEST_FROM_FOLDER.txt | 63 bytes
+FILE | PNDCC_FTPS_Windows_Comprehensive_Diagnostic.XXX | 21044 bytes
+FILE | PNDCC_FTPS_Windows_Diagnostic_20261014_201538.txt | 67537 bytes
+FILE | PNDCC_Google_Drive_Reauthorize_Trial.py | 12883 bytes
+FILE | PNDCC_IP_Resilience_Prototype_Trial.py | 4319 bytes
+FILE | PNDCC_MAIN_DASHBOARD_PRE_DEVICES_OBSERVED_20261028_002858.py | 461369 bytes
+FILE | PNDCC_MAIN_DASHBOARD_RESTART_20261028_002858.log | 0 bytes
+FILE | PNDCC_MASTER_FIX_REGISTRY_TEMPLATE.csv | 4762 bytes
+FILE | PNDCC_NETWORK_DIAGNOSTICS_TARGETED.log | 0 bytes
+FILE | PNDCC_ONE_DEVICE_IP_IDENTITY_TRIAL.py | 3525 bytes
+FILE | PNDCC_PRE_SEVEN_SIEM_CARDS_20261028_003547.py | 463397 bytes
+FILE | PNDCC_PRE_SEVEN_SIEM_CARDS_RETRY_20261028_003749.py | 463397 bytes
+FILE | PNDCC_PRODUCTION_RELEASE_CHECKLIST_v1.md | 8790 bytes
+FILE | PNDCC_Screenshot_2026-10-08T22-13-15-434Z.pdf | 1064427 bytes
+FILE | PNDCC_SESSION_HANDOFF_2026-10-11.md | 5176 bytes
+FILE | PNDCC_SEVEN_SIEM_CARDS_20261028_003547.log | 0 bytes
+FILE | PNDCC_SEVEN_SIEM_CARDS_RETRY_20261028_003749.log | 0 bytes
+FILE | PNDCC_SEVERITY_DONUT_20261028_012415.log | 184 bytes
+FILE | PNDCC_SEVERITY_DONUT_BACKUP_20261028_012415.py | 13789 bytes
+FILE | PNDCC_SIEM_8807_ISOLATED_STARTUP.log | 89722 bytes
+FILE | PNDCC_SIEM_ACCEPTANCE_SYNTHETIC_20261023_181207.jsonl | 1940 bytes
+FILE | PNDCC_SIEM_CARD_FIX_RESTART.log | 0 bytes
+FILE | PNDCC_SIEM_CARD_POSITION_FIX.log | 6392 bytes
+FILE | PNDCC_SIEM_Final_Isolated_Regression.sh | 7841 bytes
+FILE | PNDCC_SIEM_FINAL_ONE_PASS.log | 0 bytes
+
+FOLDER: PNDCC_SIEM_FINAL_PROMOTION_BACKUP_20261024_150647
+PATH: /Users/x/Downloads/PNDCC_SIEM_FINAL_PROMOTION_BACKUP_20261024_150647
+FILES: 4
+SIZE_MB: 5.20
+FILE_TYPES: Python=1, SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_FINAL_PROMOTION_BACKUP_20261024_150647
+
+FOLDER: PNDCC_SIEM_FINAL_TEMP_VERIFY_20261024_153056
+PATH: /Users/x/Downloads/PNDCC_SIEM_FINAL_TEMP_VERIFY_20261024_153056
+FILES: 1
+SIZE_MB: 5.10
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_FINAL_TEMP_VERIFY_20261024_153056
+FILE | PNDCC_SIEM_FINAL_VERIFICATION_20261024_153055.txt | 1342 bytes
+FILE | PNDCC_SIEM_FINAL_VERIFY.sh | 9232 bytes
+
+FOLDER: PNDCC_SIEM_FINALIZATION_BACKUP_20261027_220013
+PATH: /Users/x/Downloads/PNDCC_SIEM_FINALIZATION_BACKUP_20261027_220013
+FILES: 1
+SIZE_MB: 5.10
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_FINALIZATION_BACKUP_20261027_220013
+
+FOLDER: PNDCC_SIEM_FINALIZATION_BACKUP_20261027_220304
+PATH: /Users/x/Downloads/PNDCC_SIEM_FINALIZATION_BACKUP_20261027_220304
+FILES: 1
+SIZE_MB: 5.10
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_FINALIZATION_BACKUP_20261027_220304
+FILE | PNDCC_SIEM_Finalization_Checklist_2026-10-27.md | 10754 bytes
+FILE | PNDCC_SIEM_HOME_PRE_VISUAL_REFRESH_20261028_004637.py | 465013 bytes
+FILE | PNDCC_SIEM_HOME_VISUAL_REFRESH_20261028_004637.log | 0 bytes
+FILE | pndcc_siem_infographic_preview.log | 0 bytes
+
+FOLDER: pndcc_siem_infographic_preview_20261024
+PATH: /Users/x/Downloads/pndcc_siem_infographic_preview_20261024
+FILES: 3
+SIZE_MB: 0.07
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] pndcc_siem_infographic_preview_20261024
+
+FOLDER: pndcc_siem_infographic_preview_v2
+PATH: /Users/x/Downloads/pndcc_siem_infographic_preview_v2
+FILES: 3
+SIZE_MB: 0.07
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] pndcc_siem_infographic_preview_v2
+FILE | pndcc_siem_infographic_preview_v2.log | 0 bytes
+
+FOLDER: pndcc_siem_infographic_preview_v3
+PATH: /Users/x/Downloads/pndcc_siem_infographic_preview_v3
+FILES: 3
+SIZE_MB: 0.07
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] pndcc_siem_infographic_preview_v3
+FILE | pndcc_siem_infographic_preview_v3.log | 0 bytes
+FILE | PNDCC_SIEM_Integration_Final_Result_Record_2026-10-24.md | 4541 bytes
+FILE | PNDCC_SIEM_INTEGRATION_TRIAL.log | 0 bytes
+FILE | PNDCC_SIEM_INTEGRATION_TRIAL_8816.log | 0 bytes
+FILE | PNDCC_SIEM_INTEGRATION_TRIAL_8816.pid | 5 bytes
+FILE | PNDCC_SIEM_INTEGRATION_TRIAL_CHECK_AND_REPORT.py | 4853 bytes
+FILE | PNDCC_SIEM_PRE_MACOS_RECOVERY_20261027_234058.jsonl | 2273259 bytes
+FILE | PNDCC_SIEM_PRODUCTION_8815_PROMOTION.log | 157773 bytes
+FILE | PNDCC_SIEM_READ_ONLY_INTEGRATION_CHECK.py | 3374 bytes
+FILE | PNDCC_SIEM_READONLY_INFOGRAPHIC_DASHBOARD_18823.py | 21003 bytes
+FILE | PNDCC_SIEM_READONLY_INFOGRAPHIC_DASHBOARD_18823.py.backup_20261026_143347 | 6089 bytes
+
+FOLDER: PNDCC_SIEM_ROLLBACK_REHEARSAL_20261024
+PATH: /Users/x/Downloads/PNDCC_SIEM_ROLLBACK_REHEARSAL_20261024
+FILES: 6
+SIZE_MB: 7.30
+FILE_TYPES: JSON=1, Log=1, SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_ROLLBACK_REHEARSAL_20261024
+  [DIR] data
+FILE | PNDCC_SIEM_SAFE_MACOS_PATCH_BUILDER.py | 4529 bytes
+
+FOLDER: PNDCC_SIEM_STAGING_8816_20261024
+PATH: /Users/x/Downloads/PNDCC_SIEM_STAGING_8816_20261024
+FILES: 7
+SIZE_MB: 7.30
+FILE_TYPES: JSON=1, Log=1, SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_STAGING_8816_20261024
+  [DIR] data
+FILE | PNDCC_SIEM_Standalone_Dashboard_V1.py | 39090 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V2_WAZUH_CONNECTOR_TRIAL.py | 60620 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_1_MAC_FILTER_TUNED.py | 49464 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_2_MAC_QUERY_OPTIMIZED.py | 50290 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_3_WINDOWS_RECORD_ID_FIX.py | 50640 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_1_TIMESTAMP_FIX_TRIAL.py | 54088 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_2_MACOS_DIAGNOSTIC_PATCH_REVIEW2.py | 63235 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_2_MACOS_DIAGNOSTIC_PATCH_TRIAL.py | 62814 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_2_MACOS_STATUS_REPORTING_TRIAL.py | 65666 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_2_MACOS_STATUS_REPORTING_TRIAL_PRE_METADATA_CLEAR_FIX_20261019_170357.py | 65487 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_2_PROVENANCE_LABELS_TRIAL.py | 62502 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_EXPORT_FIX_TRIAL.py | 71667 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_ISOLATED_HEALTH_CHECK_TRIAL.py | 66935 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_ISOLATED_HEALTH_CHECK_TRIAL.py.pre_version_label_fix.bak | 66935 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_RETENTION_ARCHIVE_CANDIDATE.py | 74934 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_SCHEDULED_POLLING_DEDUP_FIX_TRIAL.py | 73521 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_SCHEDULED_POLLING_TRIAL.py | 72969 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_SECURITY_HARDENING_CANDIDATE.py | 70867 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_SECURITY_HARDENING_CANDIDATE.py.backup_20261023T224053Z | 70867 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_SECURITY_HARDENING_CANDIDATE_TIMESTAMP_WINDOW_FIX.py | 71667 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_SECURITY_HARDENING_CANDIDATE_TIMESTAMP_WINDOW_FIX.py.pre_export_fix_20261024_204207.bak | 71362 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_SECURITY_HARDENING_CANDIDATE_TIMESTAMP_WINDOW_FIX_X.py | 71362 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_SYNTHETIC_REAL_SEPARATION_TRIAL.py | 68056 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_SYNTHETIC_REAL_SEPARATION_TRIAL_DOCS_FIX.py | 68136 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_3_WINDOWS_IDENTITY_FIX_TRIAL.py | 67144 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_4_PRIVACY_PREFLIGHT_CANDIDATE.py | 67315 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_4_WINDOWS_DEDUP_FIX.py | 53422 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_LOCAL_SIEM.py | 48405 bytes
+FILE | PNDCC_SIEM_Standalone_Dashboard_V3_LOCAL_SIEM_2.py | 48405 bytes
+FILE | PNDCC_SIEM_STEPS_26_27_LOCK.txt | 894 bytes
+FILE | PNDCC_SIEM_TOMORROW_HANDOFF_2026-10-17.md | 7660 bytes
+FILE | PNDCC_SIEM_UI_BROWSER_TRIAL.log | 32639 bytes
+
+FOLDER: PNDCC_SIEM_UI_BROWSER_TRIAL_DATA
+PATH: /Users/x/Downloads/PNDCC_SIEM_UI_BROWSER_TRIAL_DATA
+FILES: 3
+SIZE_MB: 0.07
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_UI_BROWSER_TRIAL_DATA
+
+FOLDER: PNDCC_SIEM_UI_BROWSER_TRIAL_DATA_V2
+PATH: /Users/x/Downloads/PNDCC_SIEM_UI_BROWSER_TRIAL_DATA_V2
+FILES: 3
+SIZE_MB: 0.07
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_UI_BROWSER_TRIAL_DATA_V2
+FILE | PNDCC_SIEM_UI_BROWSER_TRIAL_V2.log | 32616 bytes
+
+FOLDER: PNDCC_SIEM_V343_ACTUAL_EXPORT_TRIAL_DATA_20261021
+PATH: /Users/x/Downloads/PNDCC_SIEM_V343_ACTUAL_EXPORT_TRIAL_DATA_20261021
+FILES: 3
+SIZE_MB: 2.56
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_V343_ACTUAL_EXPORT_TRIAL_DATA_20261021
+
+FOLDER: PNDCC_SIEM_V343_DETECTION_RULE_TEST_20261021_203936
+PATH: /Users/x/Downloads/PNDCC_SIEM_V343_DETECTION_RULE_TEST_20261021_203936
+FILES: 7
+SIZE_MB: 0.11
+FILE_TYPES: JSON=1, JSONL=1, Log=1, SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_V343_DETECTION_RULE_TEST_20261021_203936
+FILE | PNDCC_SIEM_V3_4_3_7_CARD_INTEGRATED_UI_CANDIDATE.py | 91601 bytes
+FILE | PNDCC_SIEM_V3_4_3_ACCEPTANCE_REVIEW_2026-10-23.md | 3557 bytes
+FILE | PNDCC_SIEM_V3_4_3_CODEX_DIAGNOSIS.txt | 5643 bytes
+FILE | PNDCC_SIEM_V3_4_3_CONSOLIDATED_ISOLATED_REGRESSION_2026-10-23.md | 3323 bytes
+FILE | PNDCC_SIEM_V3_4_3_CONSOLIDATED_VALIDATION.sh | 8722 bytes
+FILE | PNDCC_SIEM_V3_4_3_CURRENT_CANDIDATE_REGRESSION_REPORT_2026-10-23.md | 3283 bytes
+FILE | PNDCC_SIEM_V3_4_3_CUTOVER_REVIEW.py | 28995 bytes
+FILE | PNDCC_SIEM_V3_4_3_CUTOVER_RUNBOOK.md | 4440 bytes
+FILE | PNDCC_SIEM_V3_4_3_Export.jsonl | 2078 bytes
+FILE | PNDCC_SIEM_V3_4_3_FINAL_ACCEPTANCE_PROGRESS_2026-10-23.md | 2166 bytes
+FILE | PNDCC_SIEM_V3_4_3_FINAL_ACCEPTANCE_REPORT.md | 21398 bytes
+FILE | PNDCC_SIEM_V3_4_3_FINAL_ACCEPTANCE_REPORT.md.before_backup_note_20261025_163529 | 20781 bytes
+FILE | PNDCC_SIEM_V3_4_3_FINAL_REGRESSION.py | 13195 bytes
+FILE | PNDCC_SIEM_V3_4_3_FINAL_REGRESSION_REPORT.txt | 2104 bytes
+FILE | PNDCC_SIEM_V3_4_3_FINAL_RELEASE_DECISION_2026-10-23.md | 3459 bytes
+FILE | PNDCC_SIEM_V3_4_3_final_test.log | 0 bytes
+FILE | PNDCC_SIEM_V3_4_3_final_test.pid | 5 bytes
+FILE | PNDCC_SIEM_V3_4_3_HARDENING_CHECK_AND_REPORT.py | 2918 bytes
+FILE | PNDCC_SIEM_V3_4_3_HTTP_RECHECK.txt | 2356 bytes
+FILE | PNDCC_SIEM_V3_4_3_INFOGRAPHIC_READONLY_PREVIEW.py | 94948 bytes
+FILE | PNDCC_SIEM_V3_4_3_INFOGRAPHIC_READONLY_PREVIEW.py.pre_export_disable_20261024.bak | 93063 bytes
+FILE | PNDCC_SIEM_V3_4_3_INFOGRAPHIC_READONLY_PREVIEW.py.pre_readonly_bridge.bak | 91611 bytes
+FILE | PNDCC_SIEM_V3_4_3_INFOGRAPHIC_READONLY_PREVIEW.py.pre_status_proxy_20261025_002628.bak | 92459 bytes
+FILE | PNDCC_SIEM_V3_4_3_INFOGRAPHIC_VISUAL_CANDIDATE.py | 80869 bytes
+FILE | PNDCC_SIEM_V3_4_3_INFOGRAPHIC_VISUAL_CANDIDATE_FINAL.py | 84293 bytes
+FILE | PNDCC_SIEM_V3_4_3_INFOGRAPHIC_VISUAL_CANDIDATE_V2.py | 87591 bytes
+FILE | PNDCC_SIEM_V3_4_3_INFOGRAPHIC_VISUAL_CANDIDATE_V3.py | 91611 bytes
+FILE | PNDCC_SIEM_V3_4_3_INTEGRATED_CANDIDATE_18821.py | 96304 bytes
+FILE | PNDCC_SIEM_V3_4_3_INTEGRATED_CANDIDATE_18821_FIX_TRIAL_20261025_152837.py | 96436 bytes
+
+FOLDER: PNDCC_SIEM_V3_4_3_INTEGRATION_WORKING_20261023
+PATH: /Users/x/Downloads/PNDCC_SIEM_V3_4_3_INTEGRATION_WORKING_20261023
+FILES: 10
+SIZE_MB: 0.57
+FILE_TYPES: PowerShell=3, Python=5
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_V3_4_3_INTEGRATION_WORKING_20261023
+FILE | PNDCC_SIEM_V3_4_3_ISOLATED_HARDENING_REGRESSION.py | 7151 bytes
+FILE | PNDCC_SIEM_V3_4_3_LOCAL_ACCEPTANCE_HANDOFF.md | 3589 bytes
+FILE | PNDCC_SIEM_V3_4_3_LOCAL_ACCEPTANCE_REPORT_2026-10-23_FINAL.json | 2429 bytes
+FILE | PNDCC_SIEM_V3_4_3_LOCAL_ACCEPTANCE_REPORT_SANDBOX.md | 4062 bytes
+FILE | PNDCC_SIEM_V3_4_3_local_acceptance_runner.py | 17713 bytes
+FILE | PNDCC_SIEM_V3_4_3_MASTER_FIX_REGISTRY_UPDATE_2026-10-21.md | 4282 bytes
+FILE | PNDCC_SIEM_V3_4_3_MASTER_FIX_REGISTRY_UPDATE_2026-10-24.md | 5218 bytes
+FILE | PNDCC_SIEM_V3_4_3_next_steps_report.md | 2582 bytes
+FILE | PNDCC_SIEM_V3_4_3_Original_Report.json | 569 bytes
+FILE | PNDCC_SIEM_V3_4_3_PATCH_PLAN.txt | 9841 bytes
+FILE | PNDCC_SIEM_V3_4_3_PATCH_REVIEW_2.txt | 1537 bytes
+FILE | PNDCC_SIEM_V3_4_3_RECONSTRUCTED_ACCEPTANCE_REPORT.json | 2617 bytes
+FILE | PNDCC_SIEM_V3_4_3_REGRESSION_REPORT_2026-10-22.md | 2951 bytes
+FILE | PNDCC_SIEM_V3_4_3_REMAINING_ACCEPTANCE_GAPS_2026-10-23.md | 3502 bytes
+FILE | PNDCC_SIEM_V3_4_3_RESTART.log | 57042 bytes
+FILE | PNDCC_SIEM_V3_4_3_RETENTION_ARCHIVE_REGRESSION_REPORT.md | 3107 bytes
+FILE | PNDCC_SIEM_V3_4_3_safe_backup_verify.py | 4183 bytes
+FILE | PNDCC_SIEM_V3_4_3_SAFE_PATCH_PLAN.txt | 8101 bytes
+FILE | PNDCC_SIEM_V3_4_3_SECURITY_HARDENING_CANDIDATE_REDOWNLOAD.py | 70229 bytes
+FILE | PNDCC_SIEM_V3_4_3_SOURCE_BACKUP_VERIFICATION_2026-10-23.md | 2406 bytes
+FILE | PNDCC_SIEM_V3_4_3_STARTUP.log | 7029 bytes
+FILE | PNDCC_SIEM_V3_4_3_UI_DESIGN_CANDIDATE_18821.py | 98329 bytes
+FILE | PNDCC_SIEM_V3_4_3_VALIDATION_REPORT.txt | 3290 bytes
+FILE | PNDCC_SIEM_V3_4_3_VISUAL_DESIGN_CANDIDATE.py | 73260 bytes
+FILE | PNDCC_SIEM_V3_4_3_WINDOWS_DETECTION_REVIEW_TEMPLATE_20261023.md | 4913 bytes
+FILE | PNDCC_SIEM_V3_4_3_WINDOWS_DETECTION_REVIEW_TEMPLATE_TIMESTAMP_WINDOW_FIX_20261023.md | 5451 bytes
+
+FOLDER: PNDCC_SIEM_VERIFIED_BACKUP_20261027_220217
+PATH: /Users/x/Downloads/PNDCC_SIEM_VERIFIED_BACKUP_20261027_220217
+FILES: 6
+SIZE_MB: 10.26
+FILE_TYPES: SQLite=2
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_SIEM_VERIFIED_BACKUP_20261027_220217
+FILE | PNDCC_SIEM_Windows_Collector_V3.xxx | 4267 bytes
+FILE | PNDCC_SIEM_Windows_Collector_V3_2.xxx | 4267 bytes
+FILE | PNDCC_SIEM_Windows_Collector_V3_3.xxx | 4315 bytes
+FILE | PNDCC_SIEM_Windows_Collector_V3_4_1.xxx | 4317 bytes
+FILE | PNDCC_SIEM_Windows_Collector_V3_4_1_READ_QUERY_FIX.xxx | 5067 bytes
+FILE | PNDCC_SIEM_Windows_Collector_V3_4_3.ps1 | 5068 bytes
+FILE | PNDCC_SOURCE_COMPARISON_STEP1.md | 4556 bytes
+FILE | PNDCC_STEP2_ISOLATED_RUNTIME_REPORT.md | 4014 bytes
+
+FOLDER: PNDCC_TEST_RUN
+PATH: /Users/x/Downloads/PNDCC_TEST_RUN
+FILES: 1
+SIZE_MB: 0.38
+FILE_TYPES: Python=1
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_TEST_RUN
+FILE | PNDCC_v1.1.py | 6224 bytes
+FILE | PNDCC_v1.3(1) (1).py | 17740 bytes
+FILE | PNDCC_v1.3.1.py | 17740 bytes
+FILE | PNDCC_v1.3.py | 15429 bytes
+FILE | PNDCC_v1.4.py | 30236 bytes
+FILE | PNDCC_v1.5.py | 36781 bytes
+FILE | PNDCC_v1.6 (1).py | 44782 bytes
+FILE | PNDCC_v1.6 (2).py | 45952 bytes
+FILE | PNDCC_v1.6 (3).py | 45953 bytes
+FILE | PNDCC_v1.6.py | 43244 bytes
+FILE | PNDCC_v1.6_cloud.py | 46953 bytes
+FILE | PNDCC_v1.6_cloud_quota.py | 52514 bytes
+FILE | PNDCC_v1.6_cloud_safe.py | 47460 bytes
+FILE | PNDCC_v1.6_cloud_simple.py | 52251 bytes
+FILE | PNDCC_v1.6_phase1_final.py | 46229 bytes
+FILE | PNDCC_v1.6_phase1_fixed.py | 46034 bytes
+FILE | PNDCC_v1.7 (1).py | 55968 bytes
+FILE | PNDCC_v1.7 (2).py | 56716 bytes
+FILE | PNDCC_v1.7 (3).py | 57806 bytes
+FILE | PNDCC_v1.7 (4).py | 56316 bytes
+FILE | PNDCC_v1.7 (5).py | 56894 bytes
+FILE | PNDCC_v1.7.py | 55968 bytes
+FILE | PNDCC_v1.7_Cloud_UPDATED.py | 60920 bytes
+FILE | PNDCC_v1.7_dynamic_cloud (1).py | 53503 bytes
+FILE | PNDCC_v1.7_dynamic_cloud.py | 53026 bytes
+FILE | PNDCC_v1.7_FTP_Keychain.py | 57978 bytes
+FILE | PNDCC_v1.7_FTP_Keychain_CLOUD_UPDATED.py | 58969 bytes
+FILE | PNDCC_v1.7_FTP_Keychain_FIXED (1).py | 58204 bytes
+FILE | PNDCC_v1.7_FTP_Keychain_FIXED.py | 57954 bytes
+FILE | PNDCC_v1.7_Network_Diagnostics (1).py | 70898 bytes
+FILE | PNDCC_v1.7_Network_Diagnostics.py | 68637 bytes
+FILE | PNDCC_v2.0_Device_Control.py | 81681 bytes
+FILE | PNDCC_v2.0_Device_Control_FIXED(1).py | 92484 bytes
+FILE | PNDCC_v2.0_Device_Control_FIXED.py | 81952 bytes
+FILE | PNDCC_v2.0_Device_Control_Phase2B.py | 91644 bytes
+FILE | PNDCC_v2.0_Device_Control_Rename_FIXED.py | 93298 bytes
+FILE | PNDCC_v2.0_Phase2C.py | 99219 bytes
+FILE | PNDCC_v2.0_Phase2D (1).py | 106241 bytes
+FILE | PNDCC_v2.0_Phase2D.py | 108093 bytes
+FILE | PNDCC_v2.0_Phase2D_COMPLETE (1).py | 117786 bytes
+FILE | PNDCC_v2.0_Phase2D_COMPLETE (2).py | 117786 bytes
+FILE | PNDCC_v2.0_Phase2D_COMPLETE.py | 125577 bytes
+FILE | PNDCC_v2.0_Phase2D_FINAL.py | 133543 bytes
+FILE | PNDCC_v2.0_Phase2D_FINAL_FIXED.py | 134534 bytes
+FILE | PNDCC_v2.0_Phase2D_FTPS_FIXED.py | 137757 bytes
+FILE | PNDCC_v2.0_Phase2D_MacStorage_Paste_Overwrite.py | 120533 bytes
+FILE | PNDCC_v2.0_Phase2D_PASTE_550_FIXED.py | 136758 bytes
+FILE | PNDCC_v2.0_Phase2D_PASTE_FIXED.py | 135321 bytes
+FILE | PNDCC_v2.1_PERSISTENT_CONFIG_Phase2D_550_FIXED.py | 148968 bytes
+FILE | PNDCC_v2.1_Phase2D_FTPS_LIST_FIX.py | 149150 bytes
+FILE | PNDCC_v2.2_Phase3A_NetworkPulse(1).py | 167613 bytes
+FILE | PNDCC_v2.2_Phase3A_NetworkPulse.py | 162505 bytes
+FILE | PNDCC_v2.2_Phase3A_NetworkPulse_FINAL (1).py | 169858 bytes
+FILE | PNDCC_v2.2_Phase3A_NetworkPulse_FINAL.py | 169222 bytes
+FILE | PNDCC_v2.2_Phase3A_NetworkPulse_FINAL_FIX.py | 178075 bytes
+FILE | PNDCC_v2.2_Phase3A_NetworkPulse_FINAL_FTPS_FIX.py | 178388 bytes
+FILE | PNDCC_v2.2_Phase3A_NetworkPulse_FTPS_FINAL.py | 178703 bytes
+FILE | PNDCC_v2.2_Phase3A_NetworkPulse_FTPS_FINAL2.py | 179196 bytes
+FILE | PNDCC_v2.2_Phase3A_NetworkPulse_WindowsStorage_FT12_FINAL (1).py | 179765 bytes
+FILE | PNDCC_v2.2_Phase3A_NetworkPulse_WindowsStorage_FT12_FINAL.py | 180080 bytes
+FILE | PNDCC_v2.2_WindowsStorage_FINAL.py | 180336 bytes
+FILE | PNDCC_v2.3.1_Phase3D_ControlledActionRecovery (1).py | 219139 bytes
+FILE | PNDCC_v2.3.1_Phase3D_ControlledActionRecovery.py | 219139 bytes
+FILE | PNDCC_v2.3.1_Phase3D_ControlledActionRecovery_SCREENSHOT (1).py | 222335 bytes
+FILE | PNDCC_v2.3.1_Phase3D_ControlledActionRecovery_SCREENSHOT.py | 222237 bytes
+FILE | PNDCC_v2.3.2_Phase3D_ControlledActionRecovery_SCREENSHOT(1).py | 225796 bytes
+FILE | PNDCC_v2.3_Phase3B_DecisionActionEngine (1).py | 195529 bytes
+FILE | PNDCC_v2.3_Phase3B_DecisionActionEngine.py | 192106 bytes
+FILE | PNDCC_v2.3_Phase3B_DecisionActionEngine_550_FIXED.py | 196176 bytes
+FILE | PNDCC_v2.3_Phase3C_DiagnosticExplanation.py | 208773 bytes
+FILE | PNDCC_v2.4_Phase3D_ControlledActionRecovery_SCREENSHOT_SHARE(1).py | 230803 bytes
+FILE | PNDCC_v2.5_Phase3D_ControlledActionRecovery_SCREENSHOT_SEND(1).py | 232169 bytes
+FILE | PNDCC_v2.6.1_Phase3D_ControlledActionRecovery_ALL_PAGES_PDF_FIXED(1) (1).py | 238159 bytes
+FILE | PNDCC_v2.6.1_Phase3D_ControlledActionRecovery_ALL_PAGES_PDF_FIXED(1).py | 238159 bytes
+FILE | PNDCC_v2.6.1_Phase3D_ControlledActionRecovery_ALL_PAGES_PDF_FIXED_FINAL.py | 238610 bytes
+FILE | PNDCC_v2.6.1_Phase3D_ControlledActionRecovery_ALL_PAGES_PDF_FIXED_FINAL_PATCHED.py | 238615 bytes
+FILE | PNDCC_v2.6.1_Phase3D_ControlledActionRecovery_ALL_PAGES_PDF_FIXED_FINE_TUNED.py | 247400 bytes
+FILE | PNDCC_v2.6.2_Phase3D_ControlledActionRecovery_FIXED.py | 249283 bytes
+
+FOLDER: PNDCC_v2.6.3_Documentation_Visual_Upgrade
+PATH: /Users/x/Downloads/PNDCC_v2.6.3_Documentation_Visual_Upgrade
+FILES: 2
+SIZE_MB: 0.27
+FILE_TYPES: Python=2
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_v2.6.3_Documentation_Visual_Upgrade
+
+FOLDER: PNDCC_v2.6.3_Documentation_Visual_Upgrade (1)
+PATH: /Users/x/Downloads/PNDCC_v2.6.3_Documentation_Visual_Upgrade (1)
+FILES: 2
+SIZE_MB: 0.27
+FILE_TYPES: Python=2
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_v2.6.3_Documentation_Visual_Upgrade (1)
+FILE | PNDCC_v2.6.3_Documentation_Visual_Upgrade (1).zip | 70372 bytes
+FILE | PNDCC_v2.6.3_Documentation_Visual_Upgrade.zip | 70372 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_DOCUMENTATION_SELECTOR.py | 274296 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_DOCUMENTATION_SELECTOR_FIXED.py | 274647 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_FINAL_ALL_PAGES_PDF_FIXED.py | 250332 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_FIXED_ALL_PAGES.py | 249488 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_PROFESSIONAL_DOC_ARCHIVE (1).py | 275829 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_PROFESSIONAL_DOC_ARCHIVE.py | 275829 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_PROFESSIONAL_DOC_ARCHIVE_BUTTONS_FORENSIC_FIXED.py | 276230 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_PROFESSIONAL_DOC_ARCHIVE_FIXED.py | 276279 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_PROFESSIONAL_DOC_ARCHIVE_FORENSIC_FINAL (1).py | 283574 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_PROFESSIONAL_DOC_ARCHIVE_FORENSIC_FINAL.py | 283574 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_PROFESSIONAL_DOC_ARCHIVE_FORENSIC_FIXED.py | 276120 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_PROGRESS_BAR (1).py | 254999 bytes
+FILE | PNDCC_v2.6.3_Phase3D_ControlledActionRecovery_PROGRESS_BAR.py | 254102 bytes
+FILE | PNDCC_v2.6.3_VISUAL_DOCS_TESTED.py | 279073 bytes
+
+FOLDER: PNDCC_v2.6.3_Visual_Documentation_Upgrade
+PATH: /Users/x/Downloads/PNDCC_v2.6.3_Visual_Documentation_Upgrade
+FILES: 29
+SIZE_MB: 4.85
+FILE_TYPES: Python=11
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_v2.6.3_Visual_Documentation_Upgrade
+  [DIR] PNDCC_Documentation_Screenshots
+  [DIR] PNDCC_v2.6.3_Visual_Documentation_Upgrade
+    [DIR] PNDCC_Documentation_Screenshots
+
+FOLDER: PNDCC_v2.6.3_Visual_Documentation_Upgrade 2
+PATH: /Users/x/Downloads/PNDCC_v2.6.3_Visual_Documentation_Upgrade 2
+FILES: 7
+SIZE_MB: 0.52
+FILE_TYPES: Python=6
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_v2.6.3_Visual_Documentation_Upgrade 2
+FILE | PNDCC_v2.6.3_Visual_Documentation_Upgrade.zip | 134086 bytes
+FILE | PNDCC_v2.6.3_Visual_Documentation_Upgrade_FIXED.zip | 136180 bytes
+
+FOLDER: PNDCC_v2.6.3_Visual_Documentation_Upgrade_FIXED_FINAL
+PATH: /Users/x/Downloads/PNDCC_v2.6.3_Visual_Documentation_Upgrade_FIXED_FINAL
+FILES: 5
+SIZE_MB: 0.27
+FILE_TYPES: Python=4
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_v2.6.3_Visual_Documentation_Upgrade_FIXED_FINAL
+FILE | PNDCC_v2.6.3_Visual_Documentation_Upgrade_FIXED_FINAL.zip | 219936 bytes
+FILE | PNDCC_v2.6_Phase3D_ControlledActionRecovery_ALL_PAGES_PDF(1).py | 237995 bytes
+FILE | PNDCC_v2.7.1_AUTO_IP_DISCOVERY_FINAL.py | 285404 bytes
+FILE | PNDCC_v2.7.1_IP_RESILIENCE_FINAL.py | 282759 bytes
+FILE | PNDCC_v2.7.1_IP_RESILIENCE_NETWORK_CONTEXT_MASKFIXED (1).py | 283462 bytes
+FILE | PNDCC_v2.7.1_IP_RESILIENCE_NETWORK_CONTEXT_MASKFIXED_FINAL.py | 283479 bytes
+FILE | PNDCC_v2.7.1_NetworkPulse_VIBRANT_PRO.py | 300446 bytes
+FILE | PNDCC_v2.7.2.1_FINAL_PRODUCTION_OFFLINE_IDENTITY_FIXED.py | 312427 bytes
+FILE | PNDCC_v2.7.2.2_FINAL_DASHBOARD_RUNTIME_IP_FIXED.py | 315633 bytes
+FILE | PNDCC_v2.7.2.2_LOCKED_PRODUCTION.py | 315633 bytes
+FILE | PNDCC_v2.7.2.2_LOCKED_PRODUCTION_SCREENSHOT_BUTTONS_FIXED.py | 316008 bytes
+FILE | PNDCC_v2.7.2_FINAL_PRODUCTION.py | 312135 bytes
+FILE | PNDCC_v2.7.2_IDENTITY_TRIAL_FINAL.py | 16893 bytes
+FILE | PNDCC_v2.7.2_IP_IDENTITY_PRODUCTION.py | 308285 bytes
+FILE | PNDCC_v2.7.2_NetworkPulse_REALISTIC.py | 300884 bytes
+FILE | PNDCC_v2.7_IP_RESILIENCE_NETWORK_CONTEXT_PROTOTYPE (1).py | 283268 bytes
+FILE | PNDCC_v2.7_IP_RESILIENCE_NETWORK_CONTEXT_PROTOTYPE.py | 279074 bytes
+FILE | PNDCC_v2.7_NetworkPulse_GRAPHICAL (1).py | 293070 bytes
+FILE | PNDCC_v2.7_NetworkPulse_GRAPHICAL.py | 293070 bytes
+FILE | PNDCC_v2.7_NetworkPulse_GRAPHICAL_TEST_8797.py | 293103 bytes
+FILE | PNDCC_v2.8_DecisionCenter_VIBRANT.py | 324188 bytes
+FILE | PNDCC_v2.8_DecisionCenter_VIBRANT_FIXED (1).py | 324202 bytes
+FILE | PNDCC_v2.8_DecisionCenter_VIBRANT_FIXED.py | 324202 bytes
+FILE | PNDCC_v2.9.1_DeviceHealth_TrafficSignal (1).py | 360358 bytes
+FILE | PNDCC_v2.9.1_DeviceHealth_TrafficSignal.py | 360067 bytes
+FILE | PNDCC_v2.9.1_DeviceHealth_TrafficSignal_DYNAMIC.py | 361205 bytes
+FILE | PNDCC_v2.9.1_DeviceHealth_TrafficSignal_DYNAMIC_FIXED.py | 362106 bytes
+FILE | PNDCC_v2.9.2_AUDIT_CANDIDATE_NOT_PRODUCTION.py | 364088 bytes
+FILE | PNDCC_v2.9.2_INTEGRATION_CANDIDATE(1).py | 393207 bytes
+FILE | PNDCC_v2.9.2_INTEGRATION_CANDIDATE.py | 393207 bytes
+FILE | PNDCC_v2.9.2_INTEGRATION_CANDIDATE_BROWSERFIX (1).py | 401249 bytes
+FILE | PNDCC_v2.9.2_INTEGRATION_CANDIDATE_BROWSERFIX.py | 401249 bytes
+FILE | PNDCC_v2.9.2_INTEGRATION_CANDIDATE_FIXED.py | 401243 bytes
+FILE | PNDCC_v2.9.3_DOCUMENTATION_SCREENSHOTS_FIXED.py | 406963 bytes
+FILE | PNDCC_v2.9.3_DOCUMENTATION_SCREENSHOTS_FIXED_REPACKAGED.py | 407508 bytes
+FILE | PNDCC_v2.9.3_PDF_TEXT_FALLBACK_FIXED(1).py | 402833 bytes
+FILE | PNDCC_v2.9.3_SCREENSHOT_AND_ALL_PAGES_FIX.py | 408309 bytes
+FILE | PNDCC_v2.9.4_PDF_WIDTH_AND_COLLECTOR_FIX.py | 409087 bytes
+FILE | PNDCC_v2.9.5_DASHBOARD_SCREENSHOT_FRAMING_FIX.py | 409381 bytes
+FILE | PNDCC_v2.9.6_CAPITAL_MARKET_TEST.py | 439584 bytes
+FILE | PNDCC_v2.9.6_CAPITAL_MARKETS_AUTO_FAILOVER_TRIAL.py | 440509 bytes
+FILE | PNDCC_v2.9.6_CAPITAL_MARKETS_AUTO_FAILOVER_TRIAL_V2.py | 444560 bytes
+FILE | PNDCC_v2.9.6_CAPITAL_MARKETS_AUTO_FAILOVER_TRIAL_V3_PATCHED.py | 445619 bytes
+FILE | PNDCC_v2.9.6_CAPITAL_MARKETS_DASHBOARD_NONBLOCKING_TEST_PATCHED (1).py | 440796 bytes
+FILE | PNDCC_v2.9.6_CAPITAL_MARKETS_DASHBOARD_NONBLOCKING_TEST_PATCHED.py | 440386 bytes
+FILE | PNDCC_v2.9.6_CAPITAL_MARKETS_GLOBAL_TEST_PATCHED.py | 446846 bytes
+FILE | PNDCC_v2.9.6_CAPITAL_MARKETS_NONBLOCKING_MASTER_PATCHED.py | 435588 bytes
+FILE | PNDCC_v2.9.6_CLOUD_STORAGE_PATCH_AUDIT (1).diff | 33804 bytes
+FILE | PNDCC_v2.9.6_CLOUD_STORAGE_PATCH_AUDIT.diff | 22277 bytes
+FILE | PNDCC_v2.9.6_CLOUD_STORAGE_RECOVERY_TRIAL.py | 428419 bytes
+FILE | PNDCC_v2.9.6_CLOUD_STORAGE_RECOVERY_TRIAL_V2_ICLOUD_LABEL_FIX.py | 429231 bytes
+FILE | PNDCC_v2.9.6_CLOUD_STORAGE_RECOVERY_TRIAL_V3_ICLOUD_CONTROL_FLOW_FIX.py | 429601 bytes
+FILE | PNDCC_v2.9.6_CLOUD_STORAGE_RECOVERY_TRIAL_V4_ICLOUD_SETTINGS_URL_FIX.py | 430261 bytes
+FILE | PNDCC_v2.9.6_CLOUD_STORAGE_RECOVERY_TRIAL_V5_ICLOUD_VALUE_ONLY_READER.py | 429610 bytes
+FILE | PNDCC_v2.9.6_FTPS_HOST_REACHABILITY_DIAGNOSTICS_TRIAL.py | 428274 bytes
+FILE | PNDCC_v2.9.6_ICLOUD_REFRESH_CONCURRENCY_CACHE_FIRST_FIX.diff | 2937 bytes
+FILE | PNDCC_v2.9.6_iPhone_TouchSupport_PATCHED.py | 419596 bytes
+FILE | PNDCC_v2.9.6_MACRO_INDICATORS_TRIAL_V4 (1).py | 455401 bytes
+FILE | PNDCC_v2.9.6_MACRO_INDICATORS_TRIAL_V4(1).py | 455401 bytes
+FILE | PNDCC_v2.9.6_MACRO_INDICATORS_TRIAL_V4.py | 455401 bytes
+FILE | PNDCC_v2.9.6_MASTER_CANDIDATE_V5_BASE_V6_3D_ACCENT_CARDS (1).py | 474134 bytes
+FILE | PNDCC_v2.9.6_MASTER_CANDIDATE_V5_BASE_V6_3D_ACCENT_CARDS.audit.json | 1766 bytes
+FILE | PNDCC_v2.9.6_MASTER_CANDIDATE_V5_BASE_V6_3D_ACCENT_CARDS.py | 474134 bytes
+FILE | PNDCC_v2.9.6_MASTER_CANDIDATE_V5_BASE_V6_3D_ACCENT_CARDS_HOVER_VISIBLE.py | 474211 bytes
+FILE | PNDCC_v2.9.6_MASTER_CANDIDATE_V6_HOVER_INFERENCE_TRENDLINE.py | 480029 bytes
+FILE | PNDCC_v2.9.6_Phase2D_CLOUD_STORAGE_LIVE_READER_TRIAL.py | 429408 bytes
+FILE | PNDCC_v2.9.6_Phase2D_CLOUD_STORAGE_LIVE_READER_TRIAL_V6_ICLOUD_ATTRIBUTE_FIX.py | 433722 bytes
+FILE | PNDCC_v2.9.6_Phase2D_CLOUD_STORAGE_LIVE_READER_TRIAL_V6_ICLOUD_CACHE_INTEGRATION.py | 433178 bytes
+FILE | PNDCC_v2.9.6_Phase2D_IPHONE_PASTE_MENU_FIX (1).py | 441835 bytes
+FILE | PNDCC_v2.9.6_Phase2D_IPHONE_PASTE_MENU_FIX (2).py | 443022 bytes
+FILE | PNDCC_v2.9.6_Phase2D_IPHONE_PASTE_MENU_FIX (3).py | 448035 bytes
+FILE | PNDCC_v2.9.6_Phase2D_IPHONE_PASTE_MENU_FIX.py | 421350 bytes
+FILE | PNDCC_v2.9.6_Phase2D_IPHONE_PASTE_MENU_FIX_CLOUD_STORAGE_PATCH_CANDIDATE (1).py | 441419 bytes
+FILE | PNDCC_v2.9.6_Phase2D_IPHONE_PASTE_MENU_FIX_CLOUD_STORAGE_PATCH_CANDIDATE.py | 431982 bytes
+FILE | PNDCC_v2.9.6_Phase2D_IPHONE_PASTE_MENU_FIX_STORAGE_PROGRESS_BARS_PATCHED.py | 447729 bytes
+FILE | PNDCC_v2.9.6_Phase2D_MOBILE_SIDEBAR_MODIFIED_FILTER_FIX.py | 421087 bytes
+FILE | PNDCC_v2.9.6_Phase2D_MOBILE_SIDEBAR_MODIFIED_FILTER_FIX_REVIEWED.py | 421253 bytes
+FILE | PNDCC_v2.9.6_PROPORTIONAL_FULL_SCREENSHOT_FIX (1).py | 416009 bytes
+FILE | PNDCC_v2.9.6_PROPORTIONAL_FULL_SCREENSHOT_FIX.py | 409384 bytes
+FILE | PNDCC_v2.9.6_PROPORTIONAL_FULL_SCREENSHOT_FIX_PATCHED (1).py | 416070 bytes
+FILE | PNDCC_v2.9.6_PROPORTIONAL_FULL_SCREENSHOT_FIX_PATCHED.py | 416070 bytes
+FILE | PNDCC_v2.9.6_STATISTICAL_ANALYSIS_TRIAL_V5.py | 472518 bytes
+FILE | PNDCC_v2.9.6_STATISTICAL_ANALYSIS_TRIAL_V5_COMPACT_HOVER_PATCH.py | 479608 bytes
+FILE | PNDCC_v2.9.6_STATISTICAL_ANALYSIS_TRIAL_V5_INFERENCE_HOVER_TRENDS.py | 479378 bytes
+FILE | PNDCC_v2.9.6_STATISTICAL_ANALYSIS_TRIAL_V6_3D_ACCENT_CARDS_TRIAL.py | 481224 bytes
+FILE | PNDCC_v2.9.6_STATISTICAL_ANALYSIS_TRIAL_V6_HOVER_REVEAL_INFERENCE_R2.py | 482179 bytes
+FILE | PNDCC_v2.9.6_STORAGE_PROGRESS_BARS_PATCH (1).diff | 22057 bytes
+FILE | PNDCC_v2.9.6_STORAGE_PROGRESS_BARS_PATCH.diff | 24640 bytes
+FILE | PNDCC_v2.9_DeviceHealthIntelligence_STABILITY_RECOVERY.py | 357733 bytes
+FILE | PNDCC_v2.9_DeviceHealthIntelligence_VIBRANT.py | 345994 bytes
+FILE | PNDCC_v2_9_6_SIEM_INTEGRATION_ISOLATED_CANDIDATE.py | 452792 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_TRIAL_R1.py | 31782 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_TRIAL_R2_CURRENCY_SEPARATION(1).py | 33012 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_TRIAL_R2_CURRENCY_SEPARATION.py | 33012 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.7.1_NEWS_HARDENED_TRIAL(1).py | 50859 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.7.2_DASHBOARD_REFINEMENTS_TRIAL.py | 59372 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.7.3_DATA_INTEGRITY_TRIAL.py | 62144 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.7.4_RETURN_CALCULATION_FIX_TRIAL.py | 65882 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.7.5_CHART_52W_RETURNS_PATCH.py | 75063 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.7.6_TASK01_1Y_FLEX_ANCHOR_PATCH(1).py | 75378 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.7_INTEGRATED_TRIAL(1).py | 49481 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.8.0_ALL_TASKS_CONSOLIDATED.py | 88943 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.8.1_TASK01_02_07_DRAWING_FIX.py | 96395 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.9.0_RETURNS_CHARTS_DRAWING_EXPORT_TRIAL.py | 106489 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.9.1_SCOPED_FIXES_TRIAL.py | 112771 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.9.1_UPDATE1_PRICE_DIFF_DASH.py | 113151 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.9.2_IMPORT_CSV_HOLDINGS_TRIAL.py | 124845 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.9.4_IMPORT_CONFIRMATION_DIFF_PORT8804_TRIAL.py | 133115 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.9.4_IMPORT_CONFIRMATION_DIFF_TRIAL.py | 133115 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.9.5_UPDATE_CHECK_PORTFOLIO_SUMMARY_TRIAL.py | 141275 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.9.6_AFTER_MARKET_CHANGE_TRIAL.py | 149746 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.9.7_SORTABLE_COLUMNS_TRIAL.py | 154864 bytes
+FILE | PNDCC_V6_Blue_Chips_Stock_Analysis_v2.9.9_DYNAMIC_CSV_DUPLICATE_SUFFIX_TRIAL.py | 156421 bytes
+FILE | PNDCC_V6_Combined_Candidate.py | 482179 bytes
+
+FOLDER: PNDCC_V6_Hover_R2_Test_Bundle
+PATH: /Users/x/Downloads/PNDCC_V6_Hover_R2_Test_Bundle
+FILES: 2
+SIZE_MB: 0.46
+FILE_TYPES: Python=2
+STRUCTURE (maximum depth 4):
+[DIR] PNDCC_V6_Hover_R2_Test_Bundle
+FILE | PNDCC_V6_Hover_R2_Test_Bundle.zip | 121133 bytes
+FILE | PNDCC_V6_Hover_R2_Updated (1).py | 487748 bytes
+FILE | PNDCC_V6_Hover_R2_Updated.py | 482299 bytes
+FILE | PNDCC_V6_Isolated_Live_Data_Test.py | 4421 bytes
+FILE | PNDCC_V6_Isolated_Live_Page_Integration_Test.py | 5117 bytes
+FILE | PNDCC_V6_Live_Page_Test.py | 5117 bytes
+FILE | PNDCC_V6_Sector_Analysis_TRIAL_R1.py | 47377 bytes
+FILE | PNDCC_V6_Sector_Analysis_TRIAL_R2(1).py | 47945 bytes
+FILE | PNDCC_V6_Sector_Analysis_TRIAL_R2_RETRY_20261010.py | 47945 bytes
+FILE | PNDCC_V6_Sector_Analysis_TRIAL_R2_UPDATE1_MULTI_PERIOD_RETURNS.py | 49495 bytes
+FILE | PNDCC_V6_Sector_Analysis_TRIAL_R3_REAL_ESTATE_EXPANDABLE_SUBSECTORS.py | 53651 bytes
+FILE | PNDCC_V6_Sector_Analysis_TRIAL_R4_DATA_BACKED_SUBSECTORS.py | 78479 bytes
+FILE | PNDCC_V6_Statistical_Analysis_Adjustments.py | 490601 bytes
+FILE | PNDCC_V6_Statistical_Analysis_Adjustments_R2.py | 491513 bytes
+FILE | PNDCC_V6_Statistical_Analysis_Adjustments_R3.py | 493336 bytes
+FILE | PNDCC_V6_Statistical_Analysis_Adjustments_R4.py | 494885 bytes
+FILE | PNDCC_V6_Statistical_Analysis_Adjustments_R5.py | 495334 bytes
+FILE | PNDCC_V6_Statistical_Analysis_Adjustments_R6.py | 495676 bytes
+FILE | PNDCC_V6_Statistical_Analysis_Adjustments_R7.py | 498421 bytes
+FILE | PNDCC_V6_Updated.py | 487748 bytes
+FILE | PNDCC_WiFi_Power_Fix_20261014_213014.txt | 3238 bytes
+FILE | PNDCC_Windows_Security_Events_20261016_200236.jsonl | 995932 bytes
+FILE | PNDCC_Windows_Security_Events_20261016_214743.jsonl | 1078816 bytes
+FILE | PNDCC_Windows_Security_Events_20261017_154335.jsonl | 589 bytes
+FILE | PNDCC_Windows_Security_Events_20261017_184429.jsonl | 1099015 bytes
+FILE | PNDCC_Windows_Security_Events_20261101_202507.jsonl | 1740297 bytes
+FILE | PNDCC_Windows_Storage.abc | 1345 bytes
+FILE | PNDCC_Windows_Storage_REPORTER_FINAL.doc | 1726 bytes
+FILE | PNDCC_WORKFLOW_UPDATE_2026-10-08_v2.7.2.2.md | 9816 bytes
+FILE | portfolio (1).csv | 4233 bytes
+FILE | portfolio (2).csv | 2094 bytes
+FILE | portfolio (3).csv | 2200 bytes
+FILE | portfolio (4).csv | 5154 bytes
+FILE | portfolio (5).csv | 7183 bytes
+FILE | portfolio (6).csv | 11082 bytes
+FILE | portfolio (7).csv | 11160 bytes
+FILE | portfolio.csv | 4581 bytes
+FILE | Post Policy rules_833303.jpeg | 172231 bytes
+FILE | Probability Review Questions.pdf.pdf | 117369 bytes
+FILE | Profile (1).pdf | 52332 bytes
+FILE | Profile (2).pdf | 45603 bytes
+FILE | Profile.pdf | 64476 bytes
+FILE | Prominent-Tolet.jpeg | 204710 bytes
+
+FOLDER: Proof of Address conv_jpeg
+PATH: /Users/x/Downloads/Proof of Address conv_jpeg
+FILES: 2
+SIZE_MB: 0.23
+STRUCTURE (maximum depth 4):
+[DIR] Proof of Address conv_jpeg
+
+FOLDER: Proof of Address convT_jpeg 1
+PATH: /Users/x/Downloads/Proof of Address convT_jpeg 1
+FILES: 1
+SIZE_MB: 0.09
+STRUCTURE (maximum depth 4):
+[DIR] Proof of Address convT_jpeg 1
+FILE | PYTHON_FILES_ACTIVITY_REFERENCE.md | 38625 bytes
+FILE | README_JobSearchAgent_Guided_Application.md | 4583 bytes
+FILE | Resume-Saiful-Quadir-micro1.pdf | 109942 bytes
+FILE | Resume-Saiful-Quadir-Super.com (1).pdf | 108868 bytes
+FILE | Resume-Saiful-Quadir-Super.com.pdf | 108868 bytes
+FILE | Resume_Corrections.docx | 15476 bytes
+FILE | Return-239980114257.pdf | 505662 bytes
+FILE | riverside_Lt2ySfEuIAMCIWw=_Khalid_Farhan_AI.txt | 4513 bytes
+FILE | Rx_Sales_By_State.csv | 549 bytes
+FILE | Saiful Quadir resume.pdf | 32664 bytes
+FILE | SAIFUL QUADIR_Cover_Letter.docx | 15308 bytes
+FILE | Saiful Quadir_Resume-2026_V2.docx | 23465 bytes
+FILE | Saiful Quadir_Resume-2026_V2.pdf | 157668 bytes
+FILE | SAIFUL QUADIR_Resume.docx | 20343 bytes
+FILE | Saiful Quadir_Resume_Jan-2026.docx | 25094 bytes
+FILE | Saiful Quadir_Resume_MAY-2025.pdf | 129187 bytes
+FILE | Saiful Quadir_Resume_MAY_DE-2025.docx | 18615 bytes
+
+FOLDER: saiful_portfolio_demo
+PATH: /Users/x/Downloads/saiful_portfolio_demo
+FILES: 1
+SIZE_MB: 0.01
+STRUCTURE (maximum depth 4):
+[DIR] saiful_portfolio_demo
+FILE | SAIFUL_QUADIR_12-Jul-2026_23_46_14 (1).pdf | 43886 bytes
+FILE | SAIFUL_QUADIR_12-Jul-2026_23_46_14.pdf | 43886 bytes
+FILE | Saiful_Quadir_Fidelity_Business_Analyst_Cover_Letter.pdf | 27927 bytes
+FILE | Saiful_Quadir_Fidelity_Business_Analyst_Resume.pdf | 29798 bytes
+FILE | Saiful_Quadir_Konrad_Associate_Data_Analyst_Cover_Letter.pdf | 28385 bytes
+FILE | Saiful_Quadir_Konrad_Associate_Data_Analyst_Resume.pdf | 31809 bytes
+FILE | Saiful_Quadir_NID_Back.jpeg | 119151 bytes
+FILE | Saiful_Quadir_NID_Front.jpeg | 67362 bytes
+FILE | Saiful_Quadir_PACT_BI_Analyst_Resume.pdf | 71424 bytes
+FILE | Saiful_Quadir_Rates_ca_Data_Analyst_Resume.pdf | 29905 bytes
+FILE | Self-Esteem Support Group Flyer_jpg.html | 469 bytes
+FILE | Services_Agreement.pdf | 304882 bytes
+FILE | Settlement Services Client's Assessment Form.docx | 38302 bytes
+FILE | Settlement- CTS Form.docx | 123549 bytes
+FILE | Settlement- Intake Form.docx | 173567 bytes
+FILE | ShanchyPatra 3months.docx | 49191 bytes
+FILE | Shanta Invetment Portfoli-2026 (1).xlsx | 9170 bytes
+FILE | Shanta Invetment Portfoli-2026.xlsx | 9170 bytes
+FILE | Shanta_MoneyReceipt - 2026-07-26T105404.769.pdf | 430775 bytes
+FILE | Share_Calc-2025.xlsx | 11847 bytes
+
+FOLDER: siem_18821_isolated_fix_test_20261025_152837
+PATH: /Users/x/Downloads/siem_18821_isolated_fix_test_20261025_152837
+FILES: 1
+SIZE_MB: 0.04
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_18821_isolated_fix_test_20261025_152837
+
+FOLDER: siem_18821_isolated_migration_test
+PATH: /Users/x/Downloads/siem_18821_isolated_migration_test
+FILES: 3
+SIZE_MB: 5.37
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_18821_isolated_migration_test
+
+FOLDER: siem_18821_transfer_trial_20261025_153726
+PATH: /Users/x/Downloads/siem_18821_transfer_trial_20261025_153726
+FILES: 4
+SIZE_MB: 30.55
+FILE_TYPES: Python=1, SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_18821_transfer_trial_20261025_153726
+  [DIR] data
+
+FOLDER: siem_backup_verify.mUIFSX
+PATH: /Users/x/Downloads/siem_backup_verify.mUIFSX
+FILES: 3
+SIZE_MB: 0.07
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_backup_verify.mUIFSX
+
+FOLDER: siem_compatibility_trial_18822_20261025
+PATH: /Users/x/Downloads/siem_compatibility_trial_18822_20261025
+FILES: 4
+SIZE_MB: 9.90
+FILE_TYPES: JSONL=1, SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_compatibility_trial_18822_20261025
+FILE | siem_dashboard_api_integration_preview 2.html | 23778 bytes
+FILE | siem_dashboard_api_integration_preview.html | 22333 bytes
+FILE | siem_dashboard_api_integration_preview.zip | 8149 bytes
+FILE | siem_dashboard_redesign_preview.html | 17758 bytes
+
+FOLDER: siem_data_v3
+PATH: /Users/x/Downloads/siem_data_v3
+FILES: 3
+SIZE_MB: 0.07
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_data_v3
+
+FOLDER: siem_final_regression_18823_20261025T053555Z
+PATH: /Users/x/Downloads/siem_final_regression_18823_20261025T053555Z
+FILES: 7
+SIZE_MB: 0.08
+FILE_TYPES: JSON=1, JSONL=1, Log=1, SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_final_regression_18823_20261025T053555Z
+  [DIR] data
+FILE | siem_final_ui_18820.log | 219517 bytes
+
+FOLDER: siem_infographic_readonly_preview_data_18820
+PATH: /Users/x/Downloads/siem_infographic_readonly_preview_data_18820
+FILES: 3
+SIZE_MB: 0.07
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_infographic_readonly_preview_data_18820
+
+FOLDER: siem_integrated_candidate_18821
+PATH: /Users/x/Downloads/siem_integrated_candidate_18821
+FILES: 0
+SIZE_MB: 0.00
+STRUCTURE (maximum depth 4):
+[DIR] siem_integrated_candidate_18821
+  [DIR] data
+
+FOLDER: siem_integrated_regression_20261025_004703
+PATH: /Users/x/Downloads/siem_integrated_regression_20261025_004703
+FILES: 15
+SIZE_MB: 16.24
+FILE_TYPES: JSON=2, Log=1, SQLite=3
+STRUCTURE (maximum depth 4):
+[DIR] siem_integrated_regression_20261025_004703
+  [DIR] cutover_backup_20261025_010412
+  [DIR] data
+  [DIR] runtime_data
+
+FOLDER: siem_live_cutover_backup_18821
+PATH: /Users/x/Downloads/siem_live_cutover_backup_18821
+FILES: 2
+SIZE_MB: 0.07
+FILE_TYPES: SQLite=2
+STRUCTURE (maximum depth 4):
+[DIR] siem_live_cutover_backup_18821
+
+FOLDER: siem_restart_logs
+PATH: /Users/x/Downloads/siem_restart_logs
+FILES: 7
+SIZE_MB: 128.30
+FILE_TYPES: Log=7
+STRUCTURE (maximum depth 4):
+[DIR] siem_restart_logs
+
+FOLDER: siem_ui_readonly_validation
+PATH: /Users/x/Downloads/siem_ui_readonly_validation
+FILES: 3
+SIZE_MB: 0.09
+STRUCTURE (maximum depth 4):
+[DIR] siem_ui_readonly_validation
+FILE | siem_v3_4_3_browser_test_events.jsonl | 1820 bytes
+
+FOLDER: siem_v3_4_3_browser_trial_8814
+PATH: /Users/x/Downloads/siem_v3_4_3_browser_trial_8814
+FILES: 3
+SIZE_MB: 0.07
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_v3_4_3_browser_trial_8814
+FILE | siem_v3_4_3_browser_trial_8814.log | 24487 bytes
+FILE | siem_v3_4_3_browser_trial_8814.pid | 6 bytes
+
+FOLDER: siem_v3_4_3_live_verify_8813
+PATH: /Users/x/Downloads/siem_v3_4_3_live_verify_8813
+FILES: 3
+SIZE_MB: 2.79
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_v3_4_3_live_verify_8813
+FILE | siem_v3_4_3_live_verify_8813.log | 81558 bytes
+FILE | siem_v3_4_3_live_verify_8813.pid | 6 bytes
+FILE | siem_v3_4_3_scheduled_polling_dedup_trial_8817.log | 62531 bytes
+FILE | siem_v3_4_3_scheduled_polling_dedup_trial_8817.pid | 6 bytes
+
+FOLDER: siem_v3_4_3_scheduled_polling_dedup_trial_8817_20261026
+PATH: /Users/x/Downloads/siem_v3_4_3_scheduled_polling_dedup_trial_8817_20261026
+FILES: 3
+SIZE_MB: 0.10
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_v3_4_3_scheduled_polling_dedup_trial_8817_20261026
+
+FOLDER: siem_v3_4_3_scheduled_polling_dedup_trial_8817_20261027
+PATH: /Users/x/Downloads/siem_v3_4_3_scheduled_polling_dedup_trial_8817_20261027
+FILES: 3
+SIZE_MB: 0.07
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_v3_4_3_scheduled_polling_dedup_trial_8817_20261027
+FILE | siem_v3_4_3_scheduled_polling_trial_8816.log | 62668 bytes
+FILE | siem_v3_4_3_scheduled_polling_trial_8816.pid | 6 bytes
+
+FOLDER: siem_v3_4_3_scheduled_polling_trial_8816_20261026
+PATH: /Users/x/Downloads/siem_v3_4_3_scheduled_polling_trial_8816_20261026
+FILES: 3
+SIZE_MB: 0.12
+FILE_TYPES: SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_v3_4_3_scheduled_polling_trial_8816_20261026
+
+FOLDER: siem_v3_4_3_session_20261022
+PATH: /Users/x/Downloads/siem_v3_4_3_session_20261022
+FILES: 7
+SIZE_MB: 2.64
+FILE_TYPES: JSONL=1, SQLite=2
+STRUCTURE (maximum depth 4):
+[DIR] siem_v3_4_3_session_20261022
+FILE | siem_v3_4_3_windows_e2e_8815.log | 73434 bytes
+FILE | siem_v3_4_3_windows_e2e_8815.pid | 6 bytes
+
+FOLDER: siem_v3_4_3_windows_e2e_8815_20261022
+PATH: /Users/x/Downloads/siem_v3_4_3_windows_e2e_8815_20261022
+FILES: 12
+SIZE_MB: 23.23
+FILE_TYPES: Log=1, SQLite=1
+STRUCTURE (maximum depth 4):
+[DIR] siem_v3_4_3_windows_e2e_8815_20261022
+FILE | SIEM_Windows_Collector_Audit.txt | 742 bytes
+FILE | Signature Declaration form.PDF | 213890 bytes
+
+FOLDER: Signed NDAs
+PATH: /Users/x/Downloads/Signed NDAs
+FILES: 27
+SIZE_MB: 4.43
+STRUCTURE (maximum depth 4):
+[DIR] Signed NDAs
+FILE | SmartBackup_Dashboard_Prototype.py | 38075 bytes
+FILE | SmartBackup_Dashboard_Prototype_v2.py | 43420 bytes
+FILE | sp encashment form_Blank.pdf | 71130 bytes
+FILE | SQ_Signature.jpg | 21983 bytes
+FILE | start_pndcc_dashboards.sh | 2458 bytes
+FILE | start_pndcc_manual.sh | 3276 bytes
+FILE | Tax-Certificate-239980114257.pdf | 373864 bytes
+FILE | tax-certificate.pdf | 59837 bytes
+FILE | Tax_certificate_20250701-20260630_CustID_98694.pdf | 108758 bytes
+FILE | TD Encashment Form_Revised.pdf | 215074 bytes
+FILE | test_jobsearchagent_v2.py | 2193 bytes
+FILE | TestStock.xlsm | 21702 bytes
+FILE | tfidf-lab.jupyterlite.ipynb | 18951 bytes
+FILE | TFSA Portfolio SWOT and Action Plan (Oct 27, 2026).pdf | 172436 bytes
+FILE | ticker_industries_canada.csv | 979 bytes
+FILE | Tin_Certificate_239980114257.pdf | 229357 bytes
+FILE | Toronto_ramadan_calendar (1).pdf | 412646 bytes
+FILE | Toronto_ramadan_calendar.pdf | 412646 bytes
+FILE | TRADE_CONFIRM_HQ8L3F5K6CAD_BITF _order-00Y5EIlWB5wq.pdf | 187072 bytes
+FILE | TRADE_CONFIRM_HQ8L3F5K6CAD_BYN _order-00Y0sPxmJCLq.pdf | 187073 bytes
+FILE | Update-WCCM-Agent-P6-FIXED.ps1 | 5247 bytes
+FILE | WCCM_Auth_Integration_Diagnostic.sh | 6696 bytes
+FILE | WCCM_Auth_Integration_Diagnostic_20261102_202858.txt | 5367 bytes
+
+FOLDER: wccm_curated_pkg
+PATH: /Users/x/Downloads/wccm_curated_pkg
+FILES: 5
+SIZE_MB: 0.03
+FILE_TYPES: Python=1
+STRUCTURE (maximum depth 4):
+[DIR] wccm_curated_pkg
+
+FOLDER: wccm_curated_pkg 2
+PATH: /Users/x/Downloads/wccm_curated_pkg 2
+FILES: 6
+SIZE_MB: 0.04
+FILE_TYPES: Python=1
+STRUCTURE (maximum depth 4):
+[DIR] wccm_curated_pkg 2
+
+FOLDER: wccm_curated_pkg 2.backup_before_fixed_20261031_130211
+PATH: /Users/x/Downloads/wccm_curated_pkg 2.backup_before_fixed_20261031_130211
+FILES: 5
+SIZE_MB: 0.03
+FILE_TYPES: Python=1
+STRUCTURE (maximum depth 4):
+[DIR] wccm_curated_pkg 2.backup_before_fixed_20261031_130211
+FILE | WCCM_End_of_Day_Handoff_2026-10-31.md | 21233 bytes
+FILE | WCCM_End_of_Day_Handoff_Notes_2026-10-28.md | 3291 bytes
+
+FOLDER: WCCM_Goal_Baseline_and_P5_Setup_v1.0
+PATH: /Users/x/Downloads/WCCM_Goal_Baseline_and_P5_Setup_v1.0
+FILES: 5
+SIZE_MB: 0.11
+FILE_TYPES: Python=1
+STRUCTURE (maximum depth 4):
+[DIR] WCCM_Goal_Baseline_and_P5_Setup_v1.0
+FILE | WCCM_Goal_Baseline_and_P5_Setup_v1.0.zip | 75189 bytes
+FILE | wccm_mac_dashboard_p6.py | 41196 bytes
+FILE | wccm_mac_dashboard_p6_1.py | 46347 bytes
+FILE | wccm_mac_dashboard_p6_1_FIXED.py | 46355 bytes
+FILE | wccm_mac_dashboard_p6_2.py | 52983 bytes
+FILE | WCCM_P2_Health_Status_Prototype_v0.1.0_REDOWNLOAD.zip | 18696 bytes
+FILE | WCCM_P2_Setup_Mac.command | 1822 bytes
+FILE | WCCM_P3_Application_Inventory_Prototype_v0.2.0_REVISED.zip | 76913 bytes
+FILE | WCCM_P3_Finalize_Acceptance.py | 26277 bytes
+FILE | WCCM_P3_Finalize_Acceptance_FIXED.py | 26275 bytes
+FILE | WCCM_P3_Setup_Mac.command | 2385 bytes
+FILE | WCCM_P4_Application_Control_Prototype_v0.1.0.zip | 26700 bytes
+FILE | WCCM_P4_Complete_Acceptance.py | 51973 bytes
+FILE | WCCM_P4_Documentation_Update.py | 18777 bytes
+FILE | WCCM_P4_Documentation_Update_FIXED.py | 18940 bytes
+FILE | WCCM_P4_Live_Acceptance_Report_2026-10-28.md | 3110 bytes
+
+FOLDER: WCCM_P4_Manual_Offline_Evidence_Reconcile_Package
+PATH: /Users/x/Downloads/WCCM_P4_Manual_Offline_Evidence_Reconcile_Package
+FILES: 3
+SIZE_MB: 0.07
+FILE_TYPES: Python=2
+STRUCTURE (maximum depth 4):
+[DIR] WCCM_P4_Manual_Offline_Evidence_Reconcile_Package
+FILE | WCCM_P4_Manual_Offline_Evidence_Reconcile_Package.zip | 21589 bytes
+FILE | WCCM_P4_Offline_Recovery_Finalize_Download.py | 32922 bytes
+FILE | WCCM_P4_Offline_Recovery_Finalize_FIXED.py | 33245 bytes
+FILE | WCCM_P4_Offline_Recovery_Finalize_Package.zip | 10529 bytes
+
+FOLDER: WCCM_P6_1_Graceful_Restart_Candidate
+PATH: /Users/x/Downloads/WCCM_P6_1_Graceful_Restart_Candidate
+FILES: 5
+SIZE_MB: 0.08
+FILE_TYPES: PowerShell=2, Python=1
+STRUCTURE (maximum depth 4):
+[DIR] WCCM_P6_1_Graceful_Restart_Candidate
+  [DIR] mac
+  [DIR] windows
+FILE | WCCM_P6_1_Graceful_Restart_Candidate.zip | 22451 bytes
+
+FOLDER: WCCM_P6_1_Mac_Dashboard_Fix
+PATH: /Users/x/Downloads/WCCM_P6_1_Mac_Dashboard_Fix
+FILES: 2
+SIZE_MB: 0.05
+FILE_TYPES: Python=1
+STRUCTURE (maximum depth 4):
+[DIR] WCCM_P6_1_Mac_Dashboard_Fix
+  [DIR] mac
+FILE | WCCM_P6_1_Mac_Dashboard_Fix.zip | 14725 bytes
+
+FOLDER: WCCM_P6_2_Power_Control_Enhancement
+PATH: /Users/x/Downloads/WCCM_P6_2_Power_Control_Enhancement
+FILES: 2
+SIZE_MB: 0.09
+FILE_TYPES: PowerShell=1, Python=1
+STRUCTURE (maximum depth 4):
+[DIR] WCCM_P6_2_Power_Control_Enhancement
+FILE | WCCM_P6_2_Power_Control_Enhancement.zip | 24049 bytes
+FILE | WCCM_P6_3_Bottom_Tools_User_Guide_Patch.command | 40600 bytes
+FILE | WCCM_P6_3_Curated_App_Library_Package.zip | 13034 bytes
+FILE | WCCM_P6_3_Remote_Desktop_Patch.command | 12550 bytes
+FILE | WCCM_P6_3_Remote_Desktop_Patch_V2.command | 12998 bytes
+FILE | WCCM_P6_3_Remote_Desktop_Patch_V3.command | 14185 bytes
+FILE | WCCM_P6_3_Remote_Desktop_Patch_V4.command | 13403 bytes
+FILE | WCCM_P6_3_Remote_Desktop_Patch_V5.command | 14640 bytes
+FILE | WCCM_P6_3_Remote_Desktop_Patch_V6.command | 18517 bytes
+FILE | WCCM_P6_3_Remote_Desktop_RDP_File_Integration.command | 15338 bytes
+FILE | WCCM_P6_3_Restore_Default_Full_Page_Capture.zip | 7102 bytes
+FILE | WCCM_P6_3_Restore_Default_Full_Page_Capture_Guard_Fix_v2.zip | 7118 bytes
+
+FOLDER: WCCM_P6_3_Restore_Default_Full_Page_Capture_Package
+PATH: /Users/x/Downloads/WCCM_P6_3_Restore_Default_Full_Page_Capture_Package
+FILES: 2
+SIZE_MB: 0.02
+STRUCTURE (maximum depth 4):
+[DIR] WCCM_P6_3_Restore_Default_Full_Page_Capture_Package
+
+FOLDER: WCCM_P6_3_Restore_Default_Full_Page_Capture_Package_v2
+PATH: /Users/x/Downloads/WCCM_P6_3_Restore_Default_Full_Page_Capture_Package_v2
+FILES: 2
+SIZE_MB: 0.02
+STRUCTURE (maximum depth 4):
+[DIR] WCCM_P6_3_Restore_Default_Full_Page_Capture_Package_v2
+FILE | WCCM_P6_3_Save_As_Wide_Capture_Repair.command | 24540 bytes
+FILE | WCCM_P6_3_Tools_Activation_User_Guide_Update.command | 29332 bytes
+FILE | WCCM_P6_3_Tools_Activation_User_Guide_Update.zip | 10110 bytes
+
+FOLDER: WCCM_P6_3_Visual_Design_Enhancement
+PATH: /Users/x/Downloads/WCCM_P6_3_Visual_Design_Enhancement
+FILES: 2
+SIZE_MB: 0.02
+STRUCTURE (maximum depth 4):
+[DIR] WCCM_P6_3_Visual_Design_Enhancement
+FILE | WCCM_P6_3_Visual_Design_Enhancement.zip | 8102 bytes
+FILE | WCCM_P6_3_Visual_Design_Enhancement_Boundary_Fix.zip | 8960 bytes
+
+FOLDER: WCCM_P6_3_Visual_Design_Enhancement_Package
+PATH: /Users/x/Downloads/WCCM_P6_3_Visual_Design_Enhancement_Package
+FILES: 2
+SIZE_MB: 0.02
+STRUCTURE (maximum depth 4):
+[DIR] WCCM_P6_3_Visual_Design_Enhancement_Package
+FILE | WCCM_P6_3_Wide_Capture_Position_Fix.command | 5309 bytes
+FILE | WCCM_P6_3_Wide_Capture_Position_Fix_Corrected.command | 5840 bytes
+
+FOLDER: WCCM_P6_3_Windows_App_Launcher_Package
+PATH: /Users/x/Downloads/WCCM_P6_3_Windows_App_Launcher_Package
+FILES: 8
+SIZE_MB: 0.18
+FILE_TYPES: PowerShell=1
+STRUCTURE (maximum depth 4):
+[DIR] WCCM_P6_3_Windows_App_Launcher_Package
+FILE | WCCM_P6_3_Windows_App_Launcher_Package.zip | 19343 bytes
+FILE | WCCM_P6_Cumulative_Dashboard_Candidate.zip | 23431 bytes
+FILE | WCCM_P6_Cumulative_Dashboard_Candidate_FIXED.zip | 22797 bytes
+
+FOLDER: WCCM_P6_Force_Restart_OneLine_Fix
+PATH: /Users/x/Downloads/WCCM_P6_Force_Restart_OneLine_Fix
+FILES: 5
+SIZE_MB: 0.08
+FILE_TYPES: PowerShell=2, Python=1
+STRUCTURE (maximum depth 4):
+[DIR] WCCM_P6_Force_Restart_OneLine_Fix
+  [DIR] mac
+  [DIR] windows
+FILE | WCCM_P6_Force_Restart_OneLine_Fix.zip | 23800 bytes
+FILE | WCCM_P6_Hibernate_Mac_Patch.command | 10381 bytes
+FILE | WCCM_P6_Hibernate_Mac_Patch_FIXED.command | 10397 bytes
+FILE | WCCM_P6_Hibernate_Mac_Patch_V2.command | 10399 bytes
+FILE | WCCM_P6_Hibernate_Windows_Install.ps1 | 7494 bytes
+FILE | WCCM_P6_Hibernate_Windows_Install_FIXED.ps1 | 11686 bytes
+FILE | WCCM_P6_Hibernate_Windows_Install_V2.ps1 | 17396 bytes
+FILE | WCCM_P7_ReadOnly_Diagnostics.ps1 | 6827 bytes
+FILE | WCCM_Project_Progress_2026-10-28.md | 5808 bytes
+FILE | WCCM_Remote_Desktop_Direct_Test.rdp | 169 bytes
+FILE | WCCM_Screenshot_2026-10-31T02-58-29-532Z.jpg | 45401 bytes
+FILE | wccm_windows_agent_p6_2_force_restart.ps1 | 34531 bytes
+FILE | wedbrbondform.doc | 36864 bytes
+FILE | WhatsApp Audio 2026-09-06 at 20.40.24.opus | 443753 bytes
+FILE | Work Habits.pdf | 68758 bytes
+FILE | xNqy_ag6Rhuasv2oOkYb1A_37b77efd9021437193ff81ef01935ff1_Activity-Exemplar_-RACI-chart---Phase-1.xlsx | 82848 bytes
+FILE | ~$AAPL_60_Day_Stock_History.xlsx | 165 bytes
+FILE | ~$ading Networking 3.docx | 162 bytes
+FILE | ~$ading Networking 4.docx | 162 bytes
+FILE | ~$Book1.xlsx | 165 bytes
+FILE | ~$BRAC_FD_2023.xlsx | 165 bytes
+FILE | ~$nal Case Study 1.docx | 162 bytes
+FILE | ~$Share_Calc.xlsx | 165 bytes
+FILE | ~$ttlement- Intake Form.docx | 162 bytes
+FILE | খতিয়ান সাইফুল কাদির.pdf | 524128 bytes
+FILE | সাইফুল কাদির.pdf | 76646 bytes
+
+==========================================================================================
+INVENTORY COMPLETE
+No source files or folders were moved, renamed, or deleted.
