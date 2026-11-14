@@ -1,0 +1,225 @@
+REMAINING OPERATIONAL FILE INVENTORY
+Date: 2026-11-13T21:06:13-05:00
+Mode: READ ONLY
+No file content opened, copied, moved, or deleted.
+
+===== PNDCC_APP =====
+Path: /Users/x/Documents/Personal_Network_Device_Command_Center/app
+Files found: 25
+Combined size: 15.40 MB
+Unreadable entries: 0
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P6_Cumulative_Dashboard/p6_dashboard.log | 65700 bytes | 2026-11-13 20:49
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P5_Save_Review_Prototype/data/review_state.json | 631 bytes | 2026-11-03 22:23
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/wccm_login_access_restart.log | 463278 bytes | 2026-11-01 22:19
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P6_Cumulative_Dashboard/mac/wccm_defender_dashboard.log | 221075 bytes | 2026-11-01 18:18
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P5_Save_Review_Prototype/data/review_state_backup_20261029_161930.json | 1164 bytes | 2026-10-28 22:56
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P2_Health_Status_Prototype/mac/config.json | 120 bytes | 2026-10-28 15:57
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P2_Health_Status_Prototype/mac/config.example.json | 118 bytes | 2026-10-28 15:25
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/pndcc_icloud_quota_cache.json | 296 bytes | 2026-10-28 00:30
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/pndcc_siem_status_fix_restart_20261026_180320.log | 0 bytes | 2026-10-26 18:03
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/pndcc_restart_18823_20261026_174556.log | 0 bytes | 2026-10-26 17:45
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_v3_4_3_health_trial_8808_20261020/events.sqlite3 | 36864 bytes | 2026-10-21 19:18
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_v3_4_2_macos_live_trial_8807_20261019/events.sqlite3 | 36864 bytes | 2026-10-19 21:37
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/google_drive_token.json | 1043 bytes | 2026-10-18 21:14
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_1_sensitive_detection_test/events.sqlite3 | 36864 bytes | 2026-10-17 19:04
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_1_timestamp_fix_trial/events.sqlite3 | 4661248 bytes | 2026-10-17 18:57
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_1_detection_test/events.sqlite3 | 45056 bytes | 2026-10-17 15:31
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_trial/events.sqlite3 | 2613248 bytes | 2026-10-17 15:07
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_threshold_test/events.sqlite3 | 45056 bytes | 2026-10-17 14:55
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_detection_test_20261017/events.sqlite3 | 45056 bytes | 2026-10-17 14:38
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_3_trial/events.sqlite3 | 5320704 bytes | 2026-10-16 23:49
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_2_trial/events.sqlite3 | 155648 bytes | 2026-10-16 21:29
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_1_trial/events.sqlite3 | 36864 bytes | 2026-10-16 20:41
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3/events.sqlite3 | 1368064 bytes | 2026-10-16 20:30
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3/imports/PNDCC_Windows_Security_Events_20261016_200236.jsonl | 995932 bytes | 2026-10-16 20:07
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/google_drive_credentials.json | 401 bytes | 2026-10-04 16:09
+
+===== PNDCC_SUPPORT =====
+Path: /Users/x/Library/Application Support/PNDCC
+Files found: 0
+Combined size: 0.00 MB
+Unreadable entries: 0
+
+===== SIEM_PROJECT =====
+Path: /Users/x/GitHub/Python_Projects_SIEM_Review
+Files found: 6
+Combined size: 2.31 MB
+Unreadable entries: 0
+/Users/x/GitHub/Python_Projects_SIEM_Review/WCCM_WINDOWS_EVENT_COLLECTOR_SOURCE_REVIEW.txt | 127754 bytes | 2026-11-02 19:15
+/Users/x/GitHub/Python_Projects_SIEM_Review/WCCM_AUTH_SIEM_TARGETED_SOURCE.txt | 152134 bytes | 2026-11-02 19:15
+/Users/x/GitHub/Python_Projects_SIEM_Review/PNDCC_Windows_Security_Events_20261017_184429.jsonl | 1099015 bytes | 2026-11-02 19:15
+/Users/x/GitHub/Python_Projects_SIEM_Review/Ice_Cream_Rating/Ice Cream Ratings.csv | 367 bytes | 2026-11-02 19:15
+/Users/x/GitHub/Python_Projects_SIEM_Review/Diwali_Sales_Analysis/Diwali Sales Data.csv | 1033233 bytes | 2026-11-02 19:15
+/Users/x/GitHub/Python_Projects_SIEM_Review/Customer_Call_List/Customer Call List.xlsx | 12662 bytes | 2026-11-02 19:15
+
+===== SIEM_INBOX =====
+Path: /Users/x/SIEM_Inbox
+Files found: 10
+Combined size: 11.20 MB
+Unreadable entries: 0
+/Users/x/SIEM_Inbox/Untitled.txt | 16767 bytes | 2026-11-13 19:20
+/Users/x/SIEM_Inbox/20261105100207.csv | 5157015 bytes | 2026-11-04 21:02
+/Users/x/SIEM_Inbox/PNDCC_Windows_Security_Events_20261101_202507.jsonl | 1740297 bytes | 2026-11-01 20:26
+/Users/x/SIEM_Inbox/WCCM_P7_Diagnostics.txt | 394 bytes | 2026-10-29 20:31
+/Users/x/SIEM_Inbox/PNDCC_Windows_Real_Events_20261023_190321.jsonl | 1398940 bytes | 2026-10-23 19:03
+/Users/x/SIEM_Inbox/PNDCC_Windows_Security_Events_20261022_232513.jsonl | 1142713 bytes | 2026-10-22 23:26
+/Users/x/SIEM_Inbox/PNDCC_Windows_Security_Events_20261022_223105.jsonl | 586 bytes | 2026-10-22 22:31
+/Users/x/SIEM_Inbox/PNDCC_Windows_Security_Events_20261022_213655.jsonl | 1192413 bytes | 2026-10-22 21:38
+/Users/x/SIEM_Inbox/PNDCC_Windows_Security_Events_20261022_212820.jsonl | 586 bytes | 2026-10-22 21:28
+/Users/x/SIEM_Inbox/PNDCC_Windows_Security_Events_20261017_184429.jsonl | 1099015 bytes | 2026-10-17 18:46
+
+===== WCCM_SUPPORT =====
+Path: /Users/x/Library/Application Support/WCCM
+Files found: 3
+Combined size: 0.01 MB
+Unreadable entries: 0
+/Users/x/Library/Application Support/WCCM/windows_security_collector_state.json | 318 bytes | 2026-11-13 20:58
+/Users/x/Library/Application Support/WCCM/windows_security_collector_last_batch.json | 6154 bytes | 2026-11-13 20:58
+/Users/x/Library/Application Support/WCCM/windows_agent_config.json | 120 bytes | 2026-11-02 22:29
+
+===== WCCM_PROJECT =====
+Path: /Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM
+Files found: 7
+Combined size: 0.72 MB
+Unreadable entries: 0
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P6_Cumulative_Dashboard/p6_dashboard.log | 65700 bytes | 2026-11-13 20:49
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P5_Save_Review_Prototype/data/review_state.json | 631 bytes | 2026-11-03 22:23
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/wccm_login_access_restart.log | 463278 bytes | 2026-11-01 22:19
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P6_Cumulative_Dashboard/mac/wccm_defender_dashboard.log | 221075 bytes | 2026-11-01 18:18
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P5_Save_Review_Prototype/data/review_state_backup_20261029_161930.json | 1164 bytes | 2026-10-28 22:56
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P2_Health_Status_Prototype/mac/config.json | 120 bytes | 2026-10-28 15:57
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P2_Health_Status_Prototype/mac/config.example.json | 118 bytes | 2026-10-28 15:25
+
+===== SMARTBACKUP =====
+Path: /Users/x/Documents/SmartBackup
+Files found: 8
+Combined size: 0.24 MB
+Unreadable entries: 0
+/Users/x/Documents/SmartBackup/database/backup.db | 45056 bytes | 2026-11-12 22:02
+/Users/x/Documents/SmartBackup/Backups/Activity_Reports_PrePatch_20261112_205839/backup.db | 8192 bytes | 2026-11-12 20:58
+/Users/x/Documents/SmartBackup/SmartBackup_Activity_Reports_Audit.txt | 109687 bytes | 2026-11-12 20:21
+/Users/x/Documents/SmartBackup/Audit/daily_monitor_final_patch_input.txt | 30486 bytes | 2026-11-11 22:19
+/Users/x/Documents/SmartBackup/Audit/daily_monitor_current_patched.txt | 30487 bytes | 2026-11-11 22:11
+/Users/x/Documents/SmartBackup/Audit/daily_monitor_source.txt | 29130 bytes | 2026-11-11 21:51
+/Users/x/Documents/SmartBackup/logs/smartbackup_startup_20261110_185623.log | 0 bytes | 2026-11-10 18:56
+/Users/x/Documents/SmartBackup/config/config.json | 845 bytes | 2026-08-15 22:53
+
+===== SMARTBACKUP_LOGS =====
+Path: /Users/x/Library/Logs/SmartBackup
+Files found: 1
+Combined size: 3.45 MB
+Unreadable entries: 0
+/Users/x/Library/Logs/SmartBackup/WhatsApp_OneDrive_Archive_2026-11-08.log | 3619900 bytes | 2026-11-08 19:22
+
+===== TABLEAU_DOCUMENTS =====
+Path: /Users/x/Documents
+Files found: 699
+Combined size: 340.37 MB
+Unreadable entries: 0
+/Users/x/Documents/Job_Application_Tracker_Dashboard/logs/dashboard_resume_library.log | 803248 bytes | 2026-11-13 21:05
+/Users/x/Documents/Personal_Network_Device_Command_Center/data/ftp_history.csv | 2292311 bytes | 2026-11-13 21:04
+/Users/x/Documents/Personal_Network_Device_Command_Center/data/alerts_history.csv | 7002140 bytes | 2026-11-13 21:04
+/Users/x/Documents/Personal_Network_Device_Command_Center/data/device_history.csv | 11013300 bytes | 2026-11-13 21:04
+/Users/x/Documents/Personal_Network_Device_Command_Center/data/ip_identity_cache.json | 1135 bytes | 2026-11-13 21:04
+/Users/x/Documents/D_Drive_Transfer_Batch01_Report.txt | 1412 bytes | 2026-11-13 21:02
+/Users/x/Documents/D_Drive_PreTransfer_Safety_Check.txt | 2586 bytes | 2026-11-13 21:01
+/Users/x/Documents/D_Drive_Selected_Source_Check.txt | 12663 bytes | 2026-11-13 20:59
+/Users/x/Documents/D_Drive_Source_Discovery.txt | 12811 bytes | 2026-11-13 20:52
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P6_Cumulative_Dashboard/p6_dashboard.log | 65700 bytes | 2026-11-13 20:49
+/Users/x/Documents/Mac_Storage_Audit_20261113_201446.txt | 505078 bytes | 2026-11-13 20:18
+/Users/x/Documents/Mac_Storage_Audit_20261113_201425.txt | 7872 bytes | 2026-11-13 20:16
+/Users/x/Documents/Project_Inventory_Report.txt | 97697 bytes | 2026-11-13 19:50
+/Users/x/Documents/Job_Application_Tracker_Dashboard/Data/Job Application Tracker.xlsx | 59408 bytes | 2026-11-13 16:38
+/Users/x/Documents/SmartBackup/database/backup.db | 45056 bytes | 2026-11-12 22:02
+/Users/x/Documents/SmartBackup/Backups/Activity_Reports_PrePatch_20261112_205839/backup.db | 8192 bytes | 2026-11-12 20:58
+/Users/x/Documents/SmartBackup/SmartBackup_Activity_Reports_Audit.txt | 109687 bytes | 2026-11-12 20:21
+/Users/x/Documents/Capital_Market/holdings-report-2026-11-12.csv | 31804 bytes | 2026-11-12 10:27
+/Users/x/Documents/SmartBackup/Audit/daily_monitor_final_patch_input.txt | 30486 bytes | 2026-11-11 22:19
+/Users/x/Documents/SmartBackup/Audit/daily_monitor_current_patched.txt | 30487 bytes | 2026-11-11 22:11
+/Users/x/Documents/SmartBackup/Audit/daily_monitor_source.txt | 29130 bytes | 2026-11-11 21:51
+/Users/x/Documents/SmartBackup/logs/smartbackup_startup_20261110_185623.log | 0 bytes | 2026-11-10 18:56
+/Users/x/Documents/Backup-2026-11-07/.smartbackup_manifest.json | 18110 bytes | 2026-11-07 12:59
+/Users/x/Documents/Backup-2026-11-07/Documents/Personal_Network_Device_Command_Center/data/ftp_history.csv | 1946829 bytes | 2026-11-07 12:59
+/Users/x/Documents/Backup-2026-11-07/Documents/Personal_Network_Device_Command_Center/data/alerts_history.csv | 5693573 bytes | 2026-11-07 12:59
+/Users/x/Documents/Backup-2026-11-07/Documents/Personal_Network_Device_Command_Center/data/device_history.csv | 9131956 bytes | 2026-11-07 12:59
+/Users/x/Documents/Backup-2026-11-07/Documents/Personal_Network_Device_Command_Center/data/ip_identity_cache.json | 1135 bytes | 2026-11-07 12:59
+/Users/x/Documents/Backup-2026-11-07/Documents/Job_Application_Tracker_Dashboard/logs/dashboard_resume_library.log | 366499 bytes | 2026-11-07 12:58
+/Users/x/Documents/Backup-2026-11-07/Downloads/siem_18821_transfer_trial_20261025_153726/data/events.sqlite3 | 22413312 bytes | 2026-11-07 12:54
+/Users/x/Documents/Backup-2026-11-07/Downloads/siem_restart_logs/startup.log | 7345 bytes | 2026-11-07 07:55
+/Users/x/Documents/Backup-2026-11-07/Documents/Job_Application_Tracker_Dashboard/Data/Job Application Tracker.xlsx | 47367 bytes | 2026-11-07 00:04
+/Users/x/Documents/Job_Application_Tracker_Dashboard/Data/Resumes/resume_library.sqlite3 | 20480 bytes | 2026-11-06 22:11
+/Users/x/Documents/Job_Application_Tracker_Dashboard/logs/profile_photo_restart_20261106_001845.log | 3182 bytes | 2026-11-06 00:24
+/Users/x/Documents/Job_Application_Tracker_Dashboard/logs/duplicate_detection_activation_20261105.log | 55710 bytes | 2026-11-06 00:18
+/Users/x/Documents/Job_Application_Tracker_Dashboard/Data/Certificates/certificates_library.sqlite3 | 20480 bytes | 2026-11-05 23:40
+/Users/x/Documents/Job_Application_Tracker_Dashboard/dashboard_start.log | 14065 bytes | 2026-11-05 23:22
+/Users/x/Documents/Job_Application_Tracker_Dashboard/backups/production_pre_duplicate_activation_20261105_232150/certificates_library.sqlite3 | 16384 bytes | 2026-11-05 23:21
+/Users/x/Documents/Job_Application_Tracker_Dashboard/backups/production_pre_duplicate_activation_20261105_232150/resume_library.sqlite3 | 16384 bytes | 2026-11-05 23:21
+/Users/x/Documents/Job_Application_Tracker_Dashboard/requirements.txt | 31 bytes | 2026-11-04 22:30
+/Users/x/Documents/Job_Application_Tracker_Dashboard/job_tracker_dashboard.log | 12294 bytes | 2026-11-04 21:48
+/Users/x/Documents/Job_Application_Tracker_Dashboard/Tools/Resume_Library_Installer_Package/Resume_Library_Installer_Package/README_BN.txt | 2543 bytes | 2026-11-04 21:37
+/Users/x/Documents/Investment-2025/Stock_Screener_20261105.xlsx | 3626772 bytes | 2026-11-04 21:06
+/Users/x/Documents/Job_Application_Tracker_Dashboard/dashboard_server.log | 2443 bytes | 2026-11-04 19:20
+/Users/x/Documents/Job_Application_Tracker_Dashboard/dashboard.log | 7724 bytes | 2026-11-04 18:54
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P5_Save_Review_Prototype/data/review_state.json | 631 bytes | 2026-11-03 22:23
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/wccm_login_access_restart.log | 463278 bytes | 2026-11-01 22:19
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P6_Cumulative_Dashboard/mac/wccm_defender_dashboard.log | 221075 bytes | 2026-11-01 18:18
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P5_Save_Review_Prototype/data/review_state_backup_20261029_161930.json | 1164 bytes | 2026-10-28 22:56
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P2_Health_Status_Prototype/mac/config.json | 120 bytes | 2026-10-28 15:57
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/WCCM/P2_Health_Status_Prototype/mac/config.example.json | 118 bytes | 2026-10-28 15:25
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/pndcc_icloud_quota_cache.json | 296 bytes | 2026-10-28 00:30
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/pndcc_siem_status_fix_restart_20261026_180320.log | 0 bytes | 2026-10-26 18:03
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/pndcc_restart_18823_20261026_174556.log | 0 bytes | 2026-10-26 17:45
+/Users/x/Documents/Backup-2026-10-23/.smartbackup_manifest.json | 22370 bytes | 2026-10-23 15:59
+/Users/x/Documents/Backup-2026-10-23/Downloads/PNDCC_FAST_TRIAL_DATA_8817/alerts_history.csv | 30027 bytes | 2026-10-23 15:59
+/Users/x/Documents/Backup-2026-10-23/Downloads/PNDCC_FAST_TRIAL_DATA_8817/history.csv | 41081 bytes | 2026-10-23 15:59
+/Users/x/Documents/Backup-2026-10-23/Documents/Personal_Network_Device_Command_Center/data/ftp_history.csv | 858455 bytes | 2026-10-23 15:58
+/Users/x/Documents/Backup-2026-10-23/Documents/Personal_Network_Device_Command_Center/data/alerts_history.csv | 2275870 bytes | 2026-10-23 15:58
+/Users/x/Documents/Backup-2026-10-23/Documents/Personal_Network_Device_Command_Center/data/device_history.csv | 4284382 bytes | 2026-10-23 15:58
+/Users/x/Documents/Backup-2026-10-23/Documents/Personal_Network_Device_Command_Center/data/ip_identity_cache.json | 1117 bytes | 2026-10-23 15:58
+/Users/x/Documents/Backup-2026-10-23/Downloads/PNDCC_FAST_TRIAL_DATA_8817/ip_identity_cache.json | 675 bytes | 2026-10-23 15:08
+/Users/x/Documents/Backup-2026-10-23/Downloads/PNDCC_FAST_TRIAL_DATA_8817/config/pndcc_config.json | 544 bytes | 2026-10-23 14:55
+/Users/x/Documents/Backup-2026-10-23/Downloads/holdings-report-2026-10-23.csv | 31669 bytes | 2026-10-23 09:38
+/Users/x/Documents/Backup-2026-10-23/Downloads/activity_2026-10-22.csv | 24558 bytes | 2026-10-23 00:00
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_v3_4_3_health_trial_8808_20261020/events.sqlite3 | 36864 bytes | 2026-10-21 19:18
+/Users/x/Documents/Backup-2026-10-20/.smartbackup_manifest.json | 2499 bytes | 2026-10-20 10:47
+/Users/x/Documents/Backup-2026-10-20/Downloads/holdings-report-2026-10-20.csv | 31477 bytes | 2026-10-20 10:41
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_v3_4_2_macos_live_trial_8807_20261019/events.sqlite3 | 36864 bytes | 2026-10-19 21:37
+/Users/x/Documents/Investment-2025/Sanchayapatra/Total_Schonchoypotro_Investment.xlsx | 14650 bytes | 2026-10-19 09:55
+/Users/x/Documents/Backup-2026-10-18/.smartbackup_manifest.json | 43093 bytes | 2026-10-18 21:59
+/Users/x/Documents/Backup-2026-10-18/Documents/Personal_Network_Device_Command_Center/data/ftp_history.csv | 849032 bytes | 2026-10-18 21:58
+/Users/x/Documents/Backup-2026-10-18/Documents/Personal_Network_Device_Command_Center/data/alerts_history.csv | 2256114 bytes | 2026-10-18 21:58
+/Users/x/Documents/Backup-2026-10-18/Documents/Personal_Network_Device_Command_Center/data/device_history.csv | 4242702 bytes | 2026-10-18 21:58
+/Users/x/Documents/Backup-2026-10-18/Documents/Personal_Network_Device_Command_Center/data/ip_identity_cache.json | 1117 bytes | 2026-10-18 21:48
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/google_drive_token.json | 1043 bytes | 2026-10-18 21:14
+/Users/x/Documents/Backup-2026-10-18/Documents/Personal_Network_Device_Command_Center/app/google_drive_token.json | 1043 bytes | 2026-10-18 21:14
+/Users/x/Documents/Backup-2026-10-18/Documents/SQ_Personal_Info/Project Portfolio_Ver-1.xlsx | 282582 bytes | 2026-10-18 13:25
+/Users/x/Documents/SQ_Personal_Info/Project Portfolio_Ver-1.xlsx | 282582 bytes | 2026-10-18 13:25
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_1_sensitive_detection_test/events.sqlite3 | 36864 bytes | 2026-10-17 19:04
+/Users/x/Documents/Personal_Network_Device_Command_Center/app/siem_data_v3_4_1_timestamp_fix_trial/events.sqlite3 | 4661248 bytes | 2026-10-17 18:57
+... 619 additional files omitted
+
+===== JOBSEARCHAGENT =====
+Path: /Users/x/JobSearchAgent
+Files found: 19
+Combined size: 16.26 MB
+Unreadable entries: 0
+/Users/x/JobSearchAgent/Job Application Tracker.xlsx | 40525 bytes | 2026-11-05 18:06
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/verified_employer_portals.json | 1168 bytes | 2026-10-13 08:58
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/applications.json | 11986 bytes | 2026-10-13 08:52
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/profile.json | 1045 bytes | 2026-10-12 23:05
+/Users/x/JobSearchAgent/data_v2_smart_discovery_test/jobs.json | 83043 bytes | 2026-10-12 23:05
+/Users/x/JobSearchAgent/data_v2/applications.json | 9064 bytes | 2026-10-12 22:51
+/Users/x/JobSearchAgent/data_v2/verified_employer_portals.json | 286 bytes | 2026-10-12 22:50
+/Users/x/JobSearchAgent/data_v2/jobs.json | 83043 bytes | 2026-10-12 22:36
+/Users/x/JobSearchAgent/data_v2/profile.json | 1045 bytes | 2026-10-11 23:51
+/Users/x/JobSearchAgent/README.txt | 502 bytes | 2026-10-11 17:59
+/Users/x/JobSearchAgent/jobsearchagent_part1_2/README.txt | 749 bytes | 2026-10-11 17:23
+/Users/x/JobSearchAgent/data/csv_integrity_audit.json | 9046 bytes | 2026-10-11 16:47
+/Users/x/JobSearchAgent/logs/run_history.csv | 922 bytes | 2026-09-19 19:40
+/Users/x/JobSearchAgent/data/jobs.csv | 15916134 bytes | 2026-09-19 19:40
+/Users/x/JobSearchAgent/logs/job_agent.log | 764652 bytes | 2026-09-19 19:40
+/Users/x/JobSearchAgent/Job_Search_Tracker.xlsx | 121331 bytes | 2026-09-19 12:23
+/Users/x/JobSearchAgent/config.json | 157 bytes | 2026-09-18 21:17
+/Users/x/JobSearchAgent/candidate_profile.json | 3370 bytes | 2026-09-18 08:35
+/Users/x/JobSearchAgent/candidate_profile_BK1.json | 2123 bytes | 2026-09-17 19:33
+
