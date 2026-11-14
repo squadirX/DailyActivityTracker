@@ -1,0 +1,409 @@
+
+# PNDCC / SIEM Smart Backup & Central Storage
+## কাজের হ্যান্ডঅফ ও পরবর্তী দিনের পরিকল্পনা
+
+**প্রস্তুতির তারিখ:** ১৩ নভেম্বর ২০২৬  
+**পরবর্তী কাজ:** ১৪ নভেম্বর ২০২৬  
+**বর্তমান অবস্থা:** কাজ সাময়িকভাবে বন্ধ। পরবর্তী সেশন এখান থেকেই শুরু হবে।
+
+---
+
+# 1. মূল উদ্দেশ্য
+
+আমাদের লক্ষ্য Windows কম্পিউটারের D: Drive-কে PNDCC, SIEM, WCCM এবং Smart Backup-সংক্রান্ত প্রয়োজনীয় logs, databases, reports ও archives-এর কেন্দ্রীয় storage হিসেবে প্রস্তুত করা।
+
+- Windows computer = Central Storage / Server
+- MacBook = Command Center
+- Windows D: Drive = সম্ভাব্য central data location
+
+Mac-এর internal storage প্রায় পূর্ণ। তাই যাচাইয়ের পর প্রয়োজনীয় operational data কেন্দ্রীয় storage-এ রাখার ব্যবস্থা করতে হবে।
+
+**কাজের নিয়ম:**
+1. আগে যাচাই।
+2. তারপর পরিকল্পনা।
+3. তারপর অনুমোদিত copy।
+4. এরপর file count ও SHA-256 দিয়ে verification।
+5. সব যাচাই সফল না হওয়া পর্যন্ত original files অক্ষত থাকবে।
+6. কোনো service, database, configuration বা file অনুমতি ছাড়া পরিবর্তন করা যাবে না।
+
+---
+
+# 2. Mac Storage-এর বর্তমান অবস্থা
+
+সর্বশেষ যাচাই:
+
+- Internal Data volume free space: 3.6 GiB
+- Storage usage: প্রায় 97%
+- তাই অপ্রয়োজনীয় বড় file copy বা software installation এড়িয়ে চলতে হবে।
+
+Mac-এর internal storage-এ অপ্রয়োজনীয় logs ও archives জমা না রেখে প্রয়োজনীয় data কেন্দ্রীয় storage-এ স্থানান্তর করাই লক্ষ্য।
+
+---
+
+# 3. Windows SMB Storage-এর যাচাইকৃত তথ্য
+
+Windows computer-এর IP:
+
+`192.168.2.162`
+
+Mac-এ তিনটি SMB share পাওয়া গেছে:
+
+| Mount Path | Total | Used | Free |
+|---|---:|---:|---:|
+| `/Volumes/Windows_C_Drive` | 238 GiB | 123 GiB | 114 GiB |
+| `/Volumes/Windows_D_ADATA` | 931 GiB | 384 GiB | 548 GiB |
+| `/Volumes/Windows_F_TRANSCEND` | 113 GiB | 42 GiB | 70 GiB |
+
+### SMB Information
+
+- Protocol: SMB 3.1.1
+- Signing: Supported
+- Current signing algorithm: AES_128_CMAC
+- SMB encryption: Available algorithms, but current encryption status OFF
+- এগুলো network SMB mounts, local USB disks নয়।
+- `diskutil list external`-এ external physical disk পাওয়া যায়নি।
+- `/Volumes`-এ `Shuttle Storage` নামে কোনো mount পাওয়া যায়নি।
+
+### সম্ভাব্য Central Storage
+
+`/Volumes/Windows_D_ADATA`
+
+কারণ:
+- এটি Windows D: share হওয়ার সম্ভাবনা সবচেয়ে বেশি।
+- Free space: 548 GiB।
+- অন্য দুটি share-এর তুলনায় বেশি জায়গা খালি।
+
+তবে underlying physical disk identity এখনো নিশ্চিত করা হয়নি।
+
+**এখনো D: Drive-এর folder structure ও permissions পরীক্ষা করা হয়নি।**
+
+---
+
+# 4. PNDCC / SIEM Services
+
+সর্বশেষ যাচাইয়ে নিচের endpoints HTTP 200 দিয়েছিল:
+
+| Port | Service |
+|---|---|
+| 8787 | PNDCC |
+| 8815 | SIEM |
+| 18821 | SIEM |
+| 18823 | SIEM |
+
+এগুলো আগের যাচাইয়ের ফল। পরবর্তী সেশনে প্রয়োজন হলে সংক্ষিপ্ত health check করা যাবে।
+
+অকারণে service restart করা যাবে না।
+
+## 4.1 PNDCC 8787
+
+Source:
+
+`~/Documents/Personal_Network_Device_Command_Center/app/PNDCC_v2.9.6_Phase2D_IPHONE_PASTE_MENU_FIX.py`
+
+Concurrency patch অনুমোদিতভাবে করা হয়েছে।
+
+Backup:
+
+`~/Documents/Personal_Network_Device_Command_Center/Backups/PNDCC_pre_singleflight_20261112_230708.py`
+
+- Original source backup তৈরি করা হয়েছে।
+- Backup hash original source-এর সঙ্গে মিলে গেছে।
+- Patch-এর পর service PID 93691 চালু করা হয়েছিল।
+- `/health` HTTP 200 পাওয়া গিয়েছিল।
+
+Patch-এর পর 10 মিনিটের পর্যবেক্ষণ:
+
+- New log bytes: 0
+- New MallocStackLogging warnings: 0
+- New error-pattern matches: 0
+- Health-check failures: 7
+
+সিদ্ধান্ত: ওই নির্দিষ্ট সময়ের মধ্যে নতুন warning/error পাওয়া যায়নি। এটি স্থায়ী সমাধানের প্রমাণ নয়।
+
+**এই patch পুনরায় করার প্রয়োজন নেই।**
+
+## 4.2 SIEM Port 18821
+
+Source:
+
+`~/Downloads/PNDCC_SIEM_V3_4_3_INTEGRATED_CANDIDATE_18821.py`
+
+Active data directory:
+
+`~/Downloads/siem_18821_transfer_trial_20261025_153726/data`
+
+Database:
+
+`events.sqlite3`
+
+আগের যাচাই:
+
+- Database size: প্রায় 30 MB
+- Event count: 5000
+- Journal mode: WAL
+- `PRAGMA quick_check`: ok
+- HTTP health: তিনবার HTTP 200
+- Response time: প্রায় 0.04–0.06 seconds
+
+আগে intermittent timeout এবং `/api/ingest`-এ `BrokenPipeError` পাওয়া গিয়েছিল। Root cause নিশ্চিত নয়।
+
+### গুরুত্বপূর্ণ Retention সমস্যা
+
+Live SIEM source-এর `trim_db` newest 5000 events রেখে পুরোনো events delete করে।
+
+Archive ছাড়া 5000-record cap অতিক্রম করলে পুরোনো event হারানোর ঝুঁকি আছে।
+
+---
+
+# 5. পূর্বের Log Size Snapshot
+
+১৩ নভেম্বরের আগের এক audit-এ:
+
+| Log File | Size |
+|---|---:|
+| 8787.log | 100.7 MiB |
+| 18821.log | 13.9 MiB |
+| 18823.log | 10.3 MiB |
+| 8815.log | 1.0 MiB |
+| startup.log | 14 KiB |
+| Total | প্রায় 126 MiB |
+
+এগুলো আগের snapshot, বর্তমান size নয়।
+
+প্রয়োজনে আগামীকাল শুধু current file size ও modified time পরীক্ষা করতে হবে।
+
+---
+
+# 6. Backup Automation Audit
+
+Launcher:
+
+`~/Library/Application Support/PNDCC/start_pndcc_dashboards.sh`
+
+LaunchAgent:
+
+`~/Library/LaunchAgents/com.saiful.pndcc-dashboards.plist`
+
+যা পাওয়া গেছে:
+
+- Launcher logs `>>` দিয়ে append করে।
+- Launcher-এ log rotation/compression/retention ব্যবস্থা পাওয়া যায়নি।
+- অনুসন্ধান করা launcher/config path-এ নির্দিষ্ট PNDCC backup copy command পাওয়া যায়নি।
+- Time Machine status আগের যাচাইয়ে idle ছিল।
+- Dropbox ও OneDrive process/service দেখা গেছে।
+- কিন্তু PNDCC logs/data কোন path sync হচ্ছে তা নিশ্চিত করা হয়নি।
+
+**গুরুত্বপূর্ণ সিদ্ধান্ত:**
+
+প্রতিদিন সম্পূর্ণ active log copy হচ্ছে—এমন নিশ্চিত প্রমাণ পাওয়া যায়নি। আবার হচ্ছে না—এটিও নিশ্চিত নয়।
+
+আগের অনুসন্ধান সীমিত path-এ হয়েছিল। পুরো Mac-এ কোনো backup নেই—এমন দাবি করা যাবে না।
+
+---
+
+# 7. SIEM Retention Archive Candidate
+
+Candidate:
+
+`~/Downloads/PNDCC_SIEM_Standalone_Dashboard_V3_4_3_RETENTION_ARCHIVE_CANDIDATE.py`
+
+Regression report:
+
+`~/Downloads/PNDCC_SIEM_V3_4_3_RETENTION_ARCHIVE_REGRESSION_REPORT.md`
+
+আগের পরীক্ষা:
+
+- Synthetic-only regression: 10/10 PASS
+- JSONL archive generation
+- SHA-256 verification
+- Record count ও ID verification
+- Archive verification failure হলে database deletion বন্ধ রাখে
+
+সীমাবদ্ধতা:
+
+- Production-এ চালু করা হয়নি।
+- Live source-এ replace করা হয়নি।
+- Real database/live import/browser/Windows collector-এর পূর্ণ পরীক্ষা হয়নি।
+- Archive rotation/retention নেই।
+- Restore mechanism নেই।
+- Retention age `created_at` বা ingestion time-এর ভিত্তিতে।
+
+**এই candidate এখনই production-এ বসানো যাবে না।**
+
+---
+
+# 8. আগামীকাল প্রথম কাজ: D: Drive পরীক্ষা
+
+প্রথমে শুধু read-only command চালাতে হবে।
+
+এটি:
+- D: Drive mounted আছে কি না দেখবে।
+- Storage capacity দেখাবে।
+- Top-level folders দেখাবে।
+- Top-level files দেখাবে।
+- Read/write permission পরীক্ষা করবে।
+- কোনো file তৈরি বা পরিবর্তন করবে না।
+
+```bash
+bash <<'BASH'
+ROOT="/Volumes/Windows_D_ADATA"
+
+echo "========== WINDOWS D DRIVE: READ-ONLY CHECK =========="
+
+if [ ! -d "$ROOT" ]; then
+  echo "ERROR: D: Drive is not mounted at $ROOT"
+  exit 1
+fi
+
+echo ""
+echo "=== STORAGE CAPACITY ==="
+df -h "$ROOT"
+
+echo ""
+echo "=== TOP-LEVEL FOLDERS ==="
+find "$ROOT" -mindepth 1 -maxdepth 1 -type d -print 2>/dev/null | sort
+
+echo ""
+echo "=== TOP-LEVEL FILES ==="
+find "$ROOT" -mindepth 1 -maxdepth 1 -type f -print 2>/dev/null | sort
+
+echo ""
+echo "=== ACCESS PERMISSIONS ==="
+if [ -r "$ROOT" ]; then echo "Read access: YES"; else echo "Read access: NO"; fi
+if [ -w "$ROOT" ]; then echo "Write permission reported by macOS: YES"; else echo "Write permission reported by macOS: NO"; fi
+
+echo ""
+echo "========== CHECK COMPLETE =========="
+BASH
+```
+
+Output পাওয়ার পর folder structure দেখে পরবর্তী ধাপ ঠিক করতে হবে।
+
+**এই ধাপে কোনো folder তৈরি করা হবে না।**
+
+---
+
+# 9. পরবর্তী কাজের ধাপ
+
+## Step 1 — D: Drive যাচাই
+উপরের read-only command চালিয়ে folder structure ও permissions দেখা।
+
+## Step 2 — Central Folder নির্বাচন
+প্রস্তাবিত folder:
+
+`PNDCC_Central_Storage`
+
+আগে একই নামের folder আছে কি না যাচাই করতে হবে।
+
+নতুন folder তৈরি করার আগে অনুমোদন নিতে হবে।
+
+## Step 3 — Data Inventory
+প্রাসঙ্গিক data খুঁজে তালিকা তৈরি করতে হবে:
+
+- PNDCC operational data
+- SIEM database ও প্রয়োজনীয় archives
+- WCCM operational data
+- Smart Backup reports
+- Logs
+- প্রয়োজনীয় historical backups
+
+তালিকায় থাকবে:
+- File path
+- File size
+- Modified time
+- Category
+
+অপ্রাসঙ্গিক Downloads বা project ZIP নির্বিচারে কপি করা যাবে না।
+
+## Step 4 — Verified Copy
+- Source ও destination চূড়ান্ত করা।
+- মোট data size হিসাব করা।
+- D: Drive-এ যথেষ্ট জায়গা আছে কি না দেখা।
+- প্রয়োজনীয় files কপি করা।
+- File count যাচাই করা।
+- SHA-256 hash যাচাই করা।
+- Verification সফল না হওয়া পর্যন্ত original files অক্ষত রাখা।
+
+Live SQLite WAL database সরাসরি SMB share-এ চালানো বা চলমান অবস্থায় কপি করা যাবে না; আগে consistent backup পদ্ধতি নির্ধারণ করতে হবে।
+
+## Step 5 — Mac Command Center Connection
+- Dashboard কোন data পড়বে তা নির্ধারণ।
+- কোন service কোথায় write করবে তা নির্ধারণ।
+- SQLite database-এর জন্য SMB-safe architecture যাচাই।
+- প্রথমে read-only integration test।
+
+## Step 6 — Smart Backup Activity Report
+Report-এ থাকবে:
+
+- Last backup/copy time
+- New files
+- Modified files
+- Missing files
+- Duplicate files
+- Source/destination file count
+- SHA-256 verification
+- Backup failures
+- Storage usage
+- Archive/retention status
+
+প্রথমে monitoring/reporting চালু করতে হবে। Automatic deletion বা cleanup নয়।
+
+---
+
+# 10. আগামীকাল যেসব পরীক্ষা অকারণে পুনরায় চালানো যাবে না
+
+আগের ফলগুলো নথিবদ্ধ থাকায়, নতুন কোনো পরিবর্তন বা সমস্যার প্রমাণ না থাকলে এগুলো শুরু থেকে পুনরায় চালানোর দরকার নেই:
+
+1. তিনটি SMB share-এর পূর্ণ identification audit।
+2. SMB protocol/signing-এর পূর্ণ audit।
+3. PNDCC 8787 concurrency patch।
+4. SIEM 18821 source code-এর পূর্ণ বিশ্লেষণ।
+5. SIEM database-এর পূর্ণ schema dump।
+6. Database quick_check পুনরায় চালানো।
+7. পুরো Downloads folder-এ broad backup search।
+8. হাজার হাজার log line পুনরায় grep করা।
+
+শুধু প্রয়োজনীয় targeted checks করতে হবে।
+
+---
+
+# 11. নিরাপত্তা ও অনুমোদনের নিয়ম
+
+স্পষ্ট অনুমোদন ছাড়া:
+
+- কোনো file delete করা যাবে না।
+- কোনো log truncate করা যাবে না।
+- কোনো file overwrite বা move করা যাবে না।
+- কোনো service stop/restart করা যাবে না।
+- কোনো LaunchAgent বা plist পরিবর্তন করা যাবে না।
+- কোনো database retention/cleanup চালানো যাবে না।
+- কোনো archive বা backup মুছে ফেলা যাবে না।
+- SMB encryption চালু আছে বলে দাবি করা যাবে না।
+- Hash verification ছাড়া backup সম্পূর্ণ/verified বলা যাবে না।
+
+---
+
+# 12. পরবর্তী সেশনের জন্য Final Handoff
+
+বর্তমান অবস্থান:
+
+- Mac internal storage প্রায় পূর্ণ; সর্বশেষ free space 3.6 GiB।
+- Windows D: share `/Volumes/Windows_D_ADATA` mounted।
+- D: Drive-এ 548 GiB free space পাওয়া গেছে।
+- D: Drive folder structure এখনো পরীক্ষা করা হয়নি।
+- Central folder তৈরি হয়নি।
+- কোনো data copy হয়নি।
+- PNDCC 8787 patch সম্পন্ন।
+- SIEM 18821 database integrity check সফল হয়েছিল।
+- SIEM 5000-event retention/archive gap রয়েছে।
+- Archive candidate production-এ চালু নয়।
+- Launcher-এ append-only logs দেখা গেছে; searched paths-এ rotation/retention পাওয়া যায়নি।
+- Daily full backup-এর প্রমাণ এখনো পাওয়া যায়নি।
+
+## আগামীকাল প্রথম কাজ
+
+**শুধু Section 8-এর read-only D: Drive command চালাতে হবে।**
+
+তার output বিশ্লেষণ করে তারপর এক ধাপ করে এগোতে হবে।
+
+এই নোটই পরবর্তী কাজের starting point। আগের যাচাইগুলো অকারণে পুনরাবৃত্তি করা যাবে না।
