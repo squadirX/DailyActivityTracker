@@ -1,0 +1,24 @@
+===== DESTINATION DIRECTORY =====
+ls: fts_read: Invalid argument
+total 0
+
+===== ALL DESTINATION FILES =====
+/Volumes/Windows_D_ADATA/Project_Library/Runtime_Logs/MacBook/2026-11-13
+
+===== EXPECTED FILE CHECK =====
+
+-rwx------  1 x  staff   101M Nov 12 23:16 /Volumes/Windows_D_ADATA/Project_Library/Runtime_Logs/MacBook/2026-11-13/siem_restart_logs/8787.log
+7b9fa811f1483658189c6777c6ad0448c08ebff5c8857f05217e8e316cdf1ce6  /Volumes/Windows_D_ADATA/Project_Library/Runtime_Logs/MacBook/2026-11-13/siem_restart_logs/8787.log
+
+-rwx------  1 x  staff    10M Nov 13 20:25 /Volumes/Windows_D_ADATA/Project_Library/Runtime_Logs/MacBook/2026-11-13/PNDCC/device_history.csv
+e80ed3b23789260f2d36d1761c28d8eb63ed119598e289f0a7f06ba3cee7cf6b  /Volumes/Windows_D_ADATA/Project_Library/Runtime_Logs/MacBook/2026-11-13/PNDCC/device_history.csv
+
+-rwx------  1 x  staff   6.7M Nov 13 20:25 /Volumes/Windows_D_ADATA/Project_Library/Runtime_Logs/MacBook/2026-11-13/PNDCC/alerts_history.csv
+b6ffceeb495b64c504ec32078c9f0f9dc34e533b4f6d18e01481d0033d2a2f8a  /Volumes/Windows_D_ADATA/Project_Library/Runtime_Logs/MacBook/2026-11-13/PNDCC/alerts_history.csv
+
+===== TABLEAU DESTINATION =====
+ls: fts_read: Invalid argument
+total 0
+
+===== MOUNT STATUS =====
+//saiful%20quadir@192.168.2.162/Windows_D_ADATA on /Volumes/Windows_D_ADATA (smbfs, nodev, nosuid, mounted by x)
