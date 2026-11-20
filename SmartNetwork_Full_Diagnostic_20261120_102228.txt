@@ -1,0 +1,1386 @@
+==================================================
+ SMART NETWORK - FULL DIAGNOSTIC
+==================================================
+Fri 20 Nov 2026 10:22:28 EST
+Report: /Users/x/Documents/SmartNetwork/Diagnostics/SmartNetwork_Full_Diagnostic_20261120_102228.txt
+
+========== 1. MAC SYSTEM ==========
+ProductName:		macOS
+ProductVersion:		15.8.1
+BuildVersion:		24H32
+Darwin MacBookPro 24.6.0 Darwin Kernel Version 24.6.0: Sun Aug 23 20:30:56 PDT 2026; root:xnu-11417.140.69.712.69~1/RELEASE_X86_64 x86_64
+
+========== 2. NETWORK INTERFACES ==========
+lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 16384
+	options=1203<RXCSUM,TXCSUM,TXSTATUS,SW_TIMESTAMP>
+	inet 127.0.0.1 netmask 0xff000000
+	inet6 ::1 prefixlen 128 
+	inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1 
+	nd6 options=201<PERFORMNUD,DAD>
+gif0: flags=8010<POINTOPOINT,MULTICAST> mtu 1280
+stf0: flags=0<> mtu 1280
+en3: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 16000
+	ether ac:de:48:00:11:22
+	inet6 fe80::aede:48ff:fe00:1122%en3 prefixlen 64 scopeid 0x4 
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect (100baseTX <full-duplex>)
+	status: active
+ap1: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=6460<TSO4,TSO6,CHANNEL_IO,PARTIAL_CSUM,ZEROINVERT_CSUM>
+	ether 86:f5:dd:22:20:6e
+	inet6 fe80::84f5:ddff:fe22:206e%ap1 prefixlen 64 scopeid 0x5 
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=6460<TSO4,TSO6,CHANNEL_IO,PARTIAL_CSUM,ZEROINVERT_CSUM>
+	ether 8a:0a:3e:48:95:e4
+	inet6 fe80::c12:a27a:391e:8269%en0 prefixlen 64 secured scopeid 0x6 
+	inet 192.168.2.130 netmask 0xffffff00 broadcast 192.168.2.255
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect
+	status: active
+awdl0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=6460<TSO4,TSO6,CHANNEL_IO,PARTIAL_CSUM,ZEROINVERT_CSUM>
+	ether ee:fc:19:db:6d:84
+	inet6 fe80::ecfc:19ff:fedb:6d84%awdl0 prefixlen 64 scopeid 0x7 
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect
+	status: active
+llw0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=400<CHANNEL_IO>
+	ether ee:fc:19:db:6d:84
+	inet6 fe80::ecfc:19ff:fedb:6d84%llw0 prefixlen 64 scopeid 0x8 
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect
+	status: inactive
+en2: flags=8963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1500
+	options=460<TSO4,TSO6,CHANNEL_IO>
+	ether 82:40:fa:42:5c:00
+	media: autoselect <full-duplex>
+	status: inactive
+en1: flags=8963<UP,BROADCAST,SMART,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1500
+	options=460<TSO4,TSO6,CHANNEL_IO>
+	ether 82:40:fa:42:5c:01
+	media: autoselect <full-duplex>
+	status: inactive
+bridge0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=63<RXCSUM,TXCSUM,TSO4,TSO6>
+	ether 82:40:fa:42:5c:01
+	Configuration:
+		id 0:0:0:0:0:0 priority 0 hellotime 0 fwddelay 0
+		maxage 0 holdcnt 0 proto stp maxaddr 100 timeout 1200
+		root id 0:0:0:0:0:0 priority 0 ifcost 0 port 0
+		ipfilter disabled flags 0x0
+	member: en1 flags=3<LEARNING,DISCOVER>
+	        ifmaxaddr 0 port 10 priority 0 path cost 0
+	member: en2 flags=3<LEARNING,DISCOVER>
+	        ifmaxaddr 0 port 9 priority 0 path cost 0
+	nd6 options=201<PERFORMNUD,DAD>
+	media: <unknown type>
+	status: inactive
+utun0: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1500
+	inet6 fe80::4169:27c8:a15b:342d%utun0 prefixlen 64 scopeid 0xc 
+	nd6 options=201<PERFORMNUD,DAD>
+utun1: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1380
+	inet6 fe80::c512:3132:5f96:ac12%utun1 prefixlen 64 scopeid 0xd 
+	nd6 options=201<PERFORMNUD,DAD>
+en4: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=6464<VLAN_MTU,TSO4,TSO6,CHANNEL_IO,PARTIAL_CSUM,ZEROINVERT_CSUM>
+	ether 6c:1f:f7:c3:1f:73
+	inet6 fe80::8f8:6eeb:baaa:9e27%en4 prefixlen 64 secured scopeid 0xe 
+	inet 169.254.166.198 netmask 0xffff0000 broadcast 169.254.255.255
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect (1000baseT <full-duplex>)
+	status: active
+utun2: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 2000
+	inet6 fe80::ad33:e6cb:16bf:70e5%utun2 prefixlen 64 scopeid 0xf 
+	nd6 options=201<PERFORMNUD,DAD>
+utun3: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1000
+	inet6 fe80::ce81:b1c:bd2c:69e%utun3 prefixlen 64 scopeid 0x10 
+	nd6 options=201<PERFORMNUD,DAD>
+utun4: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1380
+	inet6 fe80::2e0a:c9b4:dadb:3876%utun4 prefixlen 64 scopeid 0x11 
+	nd6 options=201<PERFORMNUD,DAD>
+utun5: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1380
+	inet6 fe80::c4b5:7b1c:a719:5638%utun5 prefixlen 64 scopeid 0x12 
+	nd6 options=201<PERFORMNUD,DAD>
+
+========== 3. INTERFACE LIST ==========
+lo0 gif0 stf0 en3 ap1 en0 awdl0 llw0 en2 en1 bridge0 utun0 utun1 en4 utun2 utun3 utun4 utun5
+
+========== 4. NETWORK SERVICES ==========
+An asterisk (*) denotes that a network service is disabled.
+(1) USB 10/100/1000 LAN
+(Hardware Port: USB 10/100/1000 LAN, Device: en4)
+
+(2) Thunderbolt Bridge
+(Hardware Port: Thunderbolt Bridge, Device: bridge0)
+
+(3) Wi-Fi
+(Hardware Port: Wi-Fi, Device: en0)
+
+(4) Urban VPN Desktop
+(Hardware Port: com.urban-vpn.mac, Device: )
+
+
+========== 5. WIFI STATUS ==========
+Wi-Fi Power (en0): On
+You are not associated with an AirPort network.
+192.168.2.130
+
+========== 6. WIFI DETAILS ==========
+en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=6460<TSO4,TSO6,CHANNEL_IO,PARTIAL_CSUM,ZEROINVERT_CSUM>
+	ether 8a:0a:3e:48:95:e4
+	inet6 fe80::c12:a27a:391e:8269%en0 prefixlen 64 secured scopeid 0x6 
+	inet 192.168.2.130 netmask 0xffffff00 broadcast 192.168.2.255
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect
+	status: active
+
+========== 7. WIFI SIGNAL DETAILS ==========
+WARNING: The airport command line tool is deprecated and will be removed in a future release.
+For diagnosing Wi-Fi related issues, use the Wireless Diagnostics app or wdutil command line tool.
+
+========== 8. USB ETHERNET SERVICE ==========
+DHCP Configuration
+IP address: 169.254.166.198
+Subnet mask: 255.255.0.0
+Router: (null)
+Client ID: 
+IPv6: Automatic
+IPv6 IP address: none
+IPv6 Router: none
+Ethernet Address: 6c:1f:f7:c3:1f:73
+
+========== 9. ETHERNET INTERFACE en4 ==========
+en4: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=6464<VLAN_MTU,TSO4,TSO6,CHANNEL_IO,PARTIAL_CSUM,ZEROINVERT_CSUM>
+	ether 6c:1f:f7:c3:1f:73
+	inet6 fe80::8f8:6eeb:baaa:9e27%en4 prefixlen 64 secured scopeid 0xe 
+	inet 169.254.166.198 netmask 0xffff0000 broadcast 169.254.255.255
+	nd6 options=201<PERFORMNUD,DAD>
+	media: autoselect (1000baseT <full-duplex>)
+	status: active
+
+========== 10. ROUTING TABLE ==========
+Routing tables
+
+Internet:
+Destination        Gateway            Flags               Netif Expire
+default            192.168.2.1        UGScg                 en0       
+127                127.0.0.1          UCS                   lo0       
+127.0.0.1          127.0.0.1          UH                    lo0       
+169.254            link#6             UCS                   en0      !
+169.254            link#14            UCSI                  en4      !
+169.254.1.126      3c:52:82:d4:61:6a  UHLSW                 en4   1142
+169.254.166.198/32 link#14            UCS                   en4      !
+192.168.2          link#6             UCS                   en0      !
+192.168.2.1/32     link#6             UCS                   en0      !
+192.168.2.1        78:8d:af:4:a9:7b   UHLWIir               en0   1168
+192.168.2.2        link#6             UHLWI                 en0      !
+192.168.2.3        link#6             UHLWI                 en0      !
+192.168.2.4        link#6             UHLWI                 en0      !
+192.168.2.5        link#6             UHLWI                 en0      !
+192.168.2.6        link#6             UHLWI                 en0      !
+192.168.2.7        link#6             UHLWI                 en0      !
+192.168.2.8        link#6             UHLWI                 en0      !
+192.168.2.9        link#6             UHLWI                 en0      !
+192.168.2.10       link#6             UHLWI                 en0      !
+192.168.2.11       link#6             UHLWI                 en0      !
+192.168.2.12       link#6             UHLWI                 en0      !
+192.168.2.13       link#6             UHLWI                 en0      !
+192.168.2.14       link#6             UHLWI                 en0      !
+192.168.2.15       38:aa:3c:39:18:65  UHLWI                 en0   1152
+192.168.2.16       link#6             UHLWI                 en0      !
+192.168.2.17       link#6             UHLWI                 en0      !
+192.168.2.18       link#6             UHLWI                 en0      !
+192.168.2.19       92:9c:96:55:9b:e6  UHLWI                 en0   1142
+192.168.2.20       link#6             UHLWI                 en0      !
+192.168.2.21       link#6             UHLWI                 en0      !
+192.168.2.22       link#6             UHLWI                 en0      !
+192.168.2.23       link#6             UHLWI                 en0      !
+192.168.2.24       link#6             UHLWI                 en0      !
+192.168.2.25       link#6             UHLWI                 en0      !
+192.168.2.26       link#6             UHLWI                 en0      !
+192.168.2.27       link#6             UHLWI                 en0      !
+192.168.2.28       link#6             UHLWI                 en0      !
+192.168.2.29       link#6             UHLWI                 en0      !
+192.168.2.30       c2:75:68:52:b2:99  UHLWI                 en0   1090
+192.168.2.31       link#6             UHLWI                 en0      !
+192.168.2.32       link#6             UHLWI                 en0      !
+192.168.2.33       link#6             UHLWI                 en0      !
+192.168.2.34       link#6             UHLWI                 en0      !
+192.168.2.35       link#6             UHLWI                 en0      !
+192.168.2.36       link#6             UHLWI                 en0      !
+192.168.2.37       link#6             UHLWI                 en0      !
+192.168.2.38       link#6             UHLWI                 en0      !
+192.168.2.39       link#6             UHLWI                 en0      !
+192.168.2.40       link#6             UHLWI                 en0      !
+192.168.2.41       link#6             UHLWI                 en0      !
+192.168.2.42       link#6             UHLWI                 en0      !
+192.168.2.43       link#6             UHLWI                 en0      !
+192.168.2.44       link#6             UHLWI                 en0      !
+192.168.2.45       link#6             UHLWI                 en0      !
+192.168.2.46       link#6             UHLWI                 en0      !
+192.168.2.47       link#6             UHLWI                 en0      !
+192.168.2.48       link#6             UHLWI                 en0      !
+192.168.2.49       link#6             UHLWI                 en0      !
+192.168.2.50       link#6             UHLWI                 en0      !
+192.168.2.51       link#6             UHLWI                 en0      !
+192.168.2.52       link#6             UHLWI                 en0      !
+192.168.2.53       link#6             UHLWI                 en0      !
+192.168.2.54       link#6             UHLWI                 en0      !
+192.168.2.55       link#6             UHLWI                 en0      !
+192.168.2.56       link#6             UHLWI                 en0      !
+192.168.2.57       link#6             UHLWI                 en0      !
+192.168.2.58       link#6             UHLWI                 en0      !
+192.168.2.59       link#6             UHLWI                 en0      !
+192.168.2.60       link#6             UHLWI                 en0      !
+192.168.2.61       link#6             UHLWI                 en0      !
+192.168.2.62       fc:9c:a7:b:c5:85   UHLWIi                en0   1065
+192.168.2.63       link#6             UHLWI                 en0      !
+192.168.2.64       link#6             UHLWI                 en0      !
+192.168.2.65       link#6             UHLWI                 en0      !
+192.168.2.66       link#6             UHLWI                 en0      !
+192.168.2.67       link#6             UHLWI                 en0      !
+192.168.2.68       link#6             UHLWI                 en0      !
+192.168.2.69       link#6             UHLWI                 en0      !
+192.168.2.70       link#6             UHLWI                 en0      !
+192.168.2.71       link#6             UHLWI                 en0      !
+192.168.2.72       link#6             UHLWI                 en0      !
+192.168.2.73       link#6             UHLWI                 en0      !
+192.168.2.74       link#6             UHLWI                 en0      !
+192.168.2.75       link#6             UHLWI                 en0      !
+192.168.2.76       link#6             UHLWI                 en0      !
+192.168.2.77       link#6             UHLWI                 en0      !
+192.168.2.78       link#6             UHLWI                 en0      !
+192.168.2.79       link#6             UHLWI                 en0      !
+192.168.2.80       link#6             UHLWI                 en0      !
+192.168.2.81       link#6             UHLWI                 en0      !
+192.168.2.82       link#6             UHLWI                 en0      !
+192.168.2.83       link#6             UHLWI                 en0      !
+192.168.2.84       link#6             UHLWI                 en0      !
+192.168.2.85       link#6             UHLWI                 en0      !
+192.168.2.86       link#6             UHLWI                 en0      !
+192.168.2.87       link#6             UHLWI                 en0      !
+192.168.2.88       link#6             UHLWI                 en0      !
+192.168.2.89       link#6             UHLWI                 en0      !
+192.168.2.90       link#6             UHLWI                 en0      !
+192.168.2.91       link#6             UHLWI                 en0      !
+192.168.2.92       link#6             UHLWI                 en0      !
+192.168.2.93       link#6             UHLWI                 en0      !
+192.168.2.94       link#6             UHLWI                 en0      !
+192.168.2.95       link#6             UHLWI                 en0      !
+192.168.2.96       link#6             UHLWI                 en0      !
+192.168.2.97       link#6             UHLWI                 en0      !
+192.168.2.98       link#6             UHLWI                 en0      !
+192.168.2.99       link#6             UHLWI                 en0      !
+192.168.2.100      34:f1:50:ba:b3:b7  UHLWI                 en0   1165
+192.168.2.101      link#6             UHLWI                 en0      !
+192.168.2.102      link#6             UHLWI                 en0      !
+192.168.2.103      link#6             UHLWI                 en0      !
+192.168.2.104      link#6             UHLWI                 en0      !
+192.168.2.105      link#6             UHLWI                 en0      !
+192.168.2.106      link#6             UHLWI                 en0      !
+192.168.2.107      link#6             UHLWI                 en0      !
+192.168.2.108      link#6             UHLWI                 en0      !
+192.168.2.109      link#6             UHLWI                 en0      !
+192.168.2.110      link#6             UHLWI                 en0      !
+192.168.2.111      link#6             UHLWI                 en0      !
+192.168.2.112      link#6             UHLWI                 en0      !
+192.168.2.113      link#6             UHLWI                 en0      !
+192.168.2.114      link#6             UHLWI                 en0      !
+192.168.2.115      link#6             UHLWI                 en0      !
+192.168.2.116      link#6             UHLWI                 en0      !
+192.168.2.117      link#6             UHLWI                 en0      !
+192.168.2.118      link#6             UHLWI                 en0      !
+192.168.2.119      link#6             UHLWI                 en0      !
+192.168.2.120      link#6             UHLWI                 en0      !
+192.168.2.121      link#6             UHLWI                 en0      !
+192.168.2.122      link#6             UHLWI                 en0      !
+192.168.2.123      link#6             UHLWI                 en0      !
+192.168.2.124      link#6             UHLWI                 en0      !
+192.168.2.125      link#6             UHLWI                 en0      !
+192.168.2.126      link#6             UHLWI                 en0      !
+192.168.2.127      36:68:93:8a:e1:b1  UHLWI                 en0    995
+192.168.2.128      link#6             UHLWI                 en0      !
+192.168.2.129      link#6             UHLWI                 en0      !
+192.168.2.130/32   link#6             UCS                   en0      !
+192.168.2.130      8a:a:3e:48:95:e4   UHLWI                 lo0       
+192.168.2.131      link#6             UHLWI                 en0      !
+192.168.2.132      link#6             UHLWI                 en0      !
+192.168.2.133      link#6             UHLWI                 en0      !
+192.168.2.134      link#6             UHLWI                 en0      !
+192.168.2.135      36:68:93:8a:e1:b1  UHLWI                 en0   1149
+192.168.2.136      link#6             UHLWI                 en0      !
+192.168.2.137      link#6             UHLWI                 en0      !
+192.168.2.138      link#6             UHLWI                 en0      !
+192.168.2.139      link#6             UHLWI                 en0      !
+192.168.2.140      link#6             UHLWI                 en0      !
+192.168.2.141      link#6             UHLWI                 en0      !
+192.168.2.142      link#6             UHLWI                 en0      !
+192.168.2.143      link#6             UHLWI                 en0      !
+192.168.2.144      link#6             UHLWI                 en0      !
+192.168.2.145      link#6             UHLWI                 en0      !
+192.168.2.146      link#6             UHLWI                 en0      !
+192.168.2.147      link#6             UHLWI                 en0      !
+192.168.2.148      link#6             UHLWI                 en0      !
+192.168.2.149      link#6             UHLWI                 en0      !
+192.168.2.150      link#6             UHLWI                 en0      !
+192.168.2.151      link#6             UHLWI                 en0      !
+192.168.2.152      link#6             UHLWI                 en0      !
+192.168.2.153      link#6             UHLWI                 en0      !
+192.168.2.154      link#6             UHLWI                 en0      !
+192.168.2.155      link#6             UHLWI                 en0      !
+192.168.2.156      link#6             UHLWI                 en0      !
+192.168.2.157      link#6             UHLWI                 en0      !
+192.168.2.158      link#6             UHLWI                 en0      !
+192.168.2.159      link#6             UHLWI                 en0      !
+192.168.2.160      link#6             UHLWI                 en0      !
+192.168.2.161      16:77:25:77:51:17  UHLWIi                en0   1187
+192.168.2.162      10:f0:5:56:ce:3f   UHLWIi                en0   1174
+192.168.2.163      link#6             UHLWI                 en0      !
+192.168.2.164      link#6             UHLWI                 en0      !
+192.168.2.165      link#6             UHLWI                 en0      !
+192.168.2.166      link#6             UHLWI                 en0      !
+192.168.2.167      link#6             UHLWI                 en0      !
+192.168.2.168      link#6             UHLWI                 en0      !
+192.168.2.169      link#6             UHLWI                 en0      !
+192.168.2.170      link#6             UHLWI                 en0      !
+192.168.2.171      link#6             UHLWI                 en0      !
+192.168.2.172      link#6             UHLWI                 en0      !
+192.168.2.173      9a:78:89:56:64:2d  UHLWI                 en0   1044
+192.168.2.174      link#6             UHLWI                 en0      !
+192.168.2.175      link#6             UHLWI                 en0      !
+192.168.2.176      link#6             UHLWI                 en0      !
+192.168.2.177      link#6             UHLWI                 en0      !
+192.168.2.178      link#6             UHLWI                 en0      !
+192.168.2.179      link#6             UHLWI                 en0      !
+192.168.2.180      link#6             UHLWI                 en0      !
+192.168.2.181      link#6             UHLWI                 en0      !
+192.168.2.182      link#6             UHLWI                 en0      !
+192.168.2.183      link#6             UHLWI                 en0      !
+192.168.2.184      link#6             UHLWI                 en0      !
+192.168.2.185      link#6             UHLWI                 en0      !
+192.168.2.186      link#6             UHLWI                 en0      !
+192.168.2.187      link#6             UHLWI                 en0      !
+192.168.2.188      link#6             UHLWI                 en0      !
+192.168.2.189      link#6             UHLWI                 en0      !
+192.168.2.190      link#6             UHLWI                 en0      !
+192.168.2.191      link#6             UHLWI                 en0      !
+192.168.2.192      link#6             UHLWI                 en0      !
+192.168.2.193      link#6             UHLWI                 en0      !
+192.168.2.194      link#6             UHLWI                 en0      !
+192.168.2.195      76:ad:8b:4a:eb:5c  UHLWI                 en0   1109
+192.168.2.196      link#6             UHLWI                 en0      !
+192.168.2.197      link#6             UHLWI                 en0      !
+192.168.2.198      link#6             UHLWI                 en0      !
+192.168.2.199      link#6             UHLWI                 en0      !
+192.168.2.200      link#6             UHLWI                 en0      !
+192.168.2.201      link#6             UHLWI                 en0      !
+192.168.2.202      link#6             UHLWI                 en0      !
+192.168.2.203      link#6             UHLWI                 en0      !
+192.168.2.204      link#6             UHLWI                 en0      !
+192.168.2.205      link#6             UHRLWI                en0      !
+192.168.2.206      b6:a3:e0:52:ae:95  UHLWIi                en0   1168
+192.168.2.207      link#6             UHLWI                 en0      !
+192.168.2.208      link#6             UHLWI                 en0      !
+192.168.2.209      link#6             UHLWI                 en0      !
+192.168.2.210      link#6             UHLWI                 en0      !
+192.168.2.211      link#6             UHLWI                 en0      !
+192.168.2.212      link#6             UHLWI                 en0      !
+192.168.2.213      link#6             UHLWI                 en0      !
+192.168.2.214      link#6             UHLWI                 en0      !
+192.168.2.215      link#6             UHLWI                 en0      !
+192.168.2.216      link#6             UHLWI                 en0      !
+192.168.2.217      link#6             UHLWI                 en0      !
+192.168.2.218      link#6             UHLWI                 en0      !
+192.168.2.219      link#6             UHLWI                 en0      !
+192.168.2.220      link#6             UHLWI                 en0      !
+192.168.2.221      link#6             UHLWI                 en0      !
+192.168.2.222      link#6             UHLWI                 en0      !
+192.168.2.223      link#6             UHLWI                 en0      !
+192.168.2.224      link#6             UHLWI                 en0      !
+192.168.2.225      link#6             UHLWI                 en0      !
+192.168.2.226      link#6             UHLWI                 en0      !
+192.168.2.227      link#6             UHLWI                 en0      !
+192.168.2.228      link#6             UHLWI                 en0      !
+192.168.2.229      link#6             UHLWI                 en0      !
+192.168.2.230      link#6             UHLWI                 en0      !
+192.168.2.231      link#6             UHLWI                 en0      !
+192.168.2.232      link#6             UHLWI                 en0      !
+192.168.2.233      link#6             UHLWI                 en0      !
+192.168.2.234      link#6             UHLWI                 en0      !
+192.168.2.235      link#6             UHLWI                 en0      !
+192.168.2.236      link#6             UHLWI                 en0      !
+192.168.2.237      link#6             UHLWI                 en0      !
+192.168.2.238      link#6             UHLWI                 en0      !
+192.168.2.239      link#6             UHLWI                 en0      !
+192.168.2.240      link#6             UHLWI                 en0      !
+192.168.2.241      link#6             UHLWI                 en0      !
+192.168.2.242      link#6             UHLWI                 en0      !
+192.168.2.243      link#6             UHLWI                 en0      !
+192.168.2.244      link#6             UHLWI                 en0      !
+192.168.2.245      link#6             UHLWI                 en0      !
+192.168.2.246      link#6             UHLWI                 en0      !
+192.168.2.247      link#6             UHLWI                 en0      !
+192.168.2.248      link#6             UHLWI                 en0      !
+192.168.2.249      link#6             UHLWI                 en0      !
+192.168.2.250      link#6             UHLWI                 en0      !
+192.168.2.251      link#6             UHLWI                 en0      !
+192.168.2.252      link#6             UHLWI                 en0      !
+192.168.2.253      link#6             UHLWI                 en0      !
+192.168.2.254      58:a8:e8:48:c4:b4  UHLWI                 en0   1157
+192.168.2.255      ff:ff:ff:ff:ff:ff  UHLWbI                en0      !
+224.0.0/4          link#6             UmCS                  en0      !
+224.0.0/4          link#14            UmCSI                 en4      !
+224.0.0.251        1:0:5e:0:0:fb      UHmLWI                en0       
+255.255.255.255/32 link#6             UCS                   en0      !
+255.255.255.255    ff:ff:ff:ff:ff:ff  UHLWbI                en0      !
+255.255.255.255/32 link#14            UCSI                  en4      !
+
+========== 11. WIFI SERVER ROUTE ==========
+   route to: 192.168.2.162
+destination: 192.168.2.162
+  interface: en0
+      flags: <UP,HOST,DONE,LLINFO,WASCLONED,IFSCOPE,IFREF>
+ recvpipe  sendpipe  ssthresh  rtt,msec    rttvar  hopcount      mtu     expire
+       0         0         0         0         0         0      1500      1174 
+
+========== 12. ETHERNET SERVER ROUTE ==========
+   route to: 169.254.1.126
+destination: 169.254.1.126
+  interface: en4
+      flags: <UP,HOST,DONE,LLINFO,STATIC,b016,WASCLONED>
+ recvpipe  sendpipe  ssthresh  rtt,msec    rttvar  hopcount      mtu     expire
+       0         0         0         0         0         0      1500      1142 
+
+========== 13. DNS CONFIGURATION ==========
+DNS configuration
+
+resolver #1
+  search domain[0] : home
+  nameserver[0] : 192.168.2.1
+  nameserver[1] : 207.164.234.193
+  if_index : 6 (en0)
+  flags    : Request A records
+  reach    : 0x00020002 (Reachable,Directly Reachable Address)
+
+resolver #2
+  domain   : local
+  options  : mdns
+  timeout  : 5
+  flags    : Request A records
+  reach    : 0x00000000 (Not Reachable)
+  order    : 300000
+
+resolver #3
+  domain   : 254.169.in-addr.arpa
+  options  : mdns
+  timeout  : 5
+  flags    : Request A records
+  reach    : 0x00000000 (Not Reachable)
+  order    : 300200
+
+resolver #4
+  domain   : 8.e.f.ip6.arpa
+  options  : mdns
+  timeout  : 5
+  flags    : Request A records
+  reach    : 0x00000000 (Not Reachable)
+  order    : 300400
+
+resolver #5
+  domain   : 9.e.f.ip6.arpa
+  options  : mdns
+  timeout  : 5
+  flags    : Request A records
+  reach    : 0x00000000 (Not Reachable)
+  order    : 300600
+
+resolver #6
+  domain   : a.e.f.ip6.arpa
+  options  : mdns
+  timeout  : 5
+  flags    : Request A records
+  reach    : 0x00000000 (Not Reachable)
+  order    : 300800
+
+resolver #7
+  domain   : b.e.f.ip6.arpa
+  options  : mdns
+  timeout  : 5
+  flags    : Request A records
+  reach    : 0x00000000 (Not Reachable)
+  order    : 301000
+
+DNS configuration (for scoped queries)
+
+resolver #1
+  search domain[0] : home
+  nameserver[0] : 192.168.2.1
+  nameserver[1] : 207.164.234.193
+  if_index : 6 (en0)
+  flags    : Scoped, Request A records
+  reach    : 0x00020002 (Reachable,Directly Reachable Address)
+
+========== 14. DNS RESOLUTION ==========
+Server:		192.168.2.1
+Address:	192.168.2.1#53
+
+Non-authoritative answer:
+Name:	google.com
+Address: 142.250.137.100
+Name:	google.com
+Address: 142.250.137.101
+Name:	google.com
+Address: 142.250.137.139
+Name:	google.com
+Address: 142.250.137.113
+Name:	google.com
+Address: 142.250.137.102
+Name:	google.com
+Address: 142.250.137.138
+
+
+========== 15. INTERNET PING ==========
+PING 1.1.1.1 (1.1.1.1): 56 data bytes
+64 bytes from 1.1.1.1: icmp_seq=0 ttl=54 time=5.889 ms
+64 bytes from 1.1.1.1: icmp_seq=1 ttl=54 time=10.607 ms
+64 bytes from 1.1.1.1: icmp_seq=2 ttl=54 time=10.318 ms
+64 bytes from 1.1.1.1: icmp_seq=3 ttl=54 time=10.775 ms
+
+--- 1.1.1.1 ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 5.889/9.397/10.775/2.032 ms
+
+========== 16. INTERNET HTTPS ==========
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+HTTP/2 200 
+content-type: text/html; charset=ISO-8859-1
+content-security-policy-report-only: object-src 'none';base-uri 'self';script-src 'nonce-ymRQulMi-prmxetEBdM4Kg' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+accept-ch: Sec-CH-Prefers-Color-Scheme
+p3p: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+date: Fri, 20 Nov 2026 15:22:32 GMT
+server: gws
+x-xss-protection: 0
+x-frame-options: SAMEORIGIN
+expires: Fri, 20 Nov 2026 15:22:32 GMT
+cache-control: private
+set-cookie: __Secure-STRP=ABNhA6iAjULO9pc2h1BxffgV2eoM-4l17RAPrSbi5RTVotBpk9iCugUHUGLsV6JIgQNqbTDBNbuq57a2iYXIpD3TpmPA97MLPtZu; expires=Fri, 20-Nov-2026 15:27:32 GMT; path=/; domain=.google.com; Secure; SameSite=strict
+set-cookie: AEC=Aaa9EJpcLNS9x-L_Hb2SIAnBCH5fHZ4dHmLTxgTzeyXga-QOLgXc1SFs1t8; expires=Wed, 19-May-2027 15:22:32 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax
+set-cookie: NID=CvIBCAESpAEBM9Agl-I435nrpcDHD_MPbCQK8EHTk60ze8WxTbNePWuH57WLTUfjiKCFLWoRm0eirlxGMGAyALiU0gWMvcUcyzULLKeKhUW0HzTzDaeGhTdEeBnSrE2bSYWTOEYcu-0uftF-EqyBUO5ClNT3iI--a9tDdPcDDKyXvunt0lM3FBhNRxfrpnn2Y2-bNobZpV7j8S7DDrwllEktZNS0UBpZspjhtigBMkUBcEpCzwwNJqLhSvVYjAsZI8MNfClT1u95d4lawj-2PMoZiogzkyCGjeD1vWkITQwfrPM82xv8dJk7IPHMlS8kUGO5ewQ; expires=Sat, 22-May-2027 15:22:32 GMT; path=/; domain=.google.com; HttpOnly
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+
+========== 17. SERVER WIFI PING ==========
+PING 192.168.2.162 (192.168.2.162): 56 data bytes
+64 bytes from 192.168.2.162: icmp_seq=0 ttl=128 time=11.590 ms
+64 bytes from 192.168.2.162: icmp_seq=1 ttl=128 time=4.791 ms
+64 bytes from 192.168.2.162: icmp_seq=2 ttl=128 time=4.582 ms
+64 bytes from 192.168.2.162: icmp_seq=3 ttl=128 time=12.787 ms
+64 bytes from 192.168.2.162: icmp_seq=4 ttl=128 time=13.434 ms
+
+--- 192.168.2.162 ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 4.582/9.437/13.434/3.924 ms
+
+========== 18. SERVER ETHERNET PING ==========
+PING 169.254.1.126 (169.254.1.126): 56 data bytes
+64 bytes from 169.254.1.126: icmp_seq=0 ttl=128 time=0.999 ms
+64 bytes from 169.254.1.126: icmp_seq=1 ttl=128 time=0.940 ms
+64 bytes from 169.254.1.126: icmp_seq=2 ttl=128 time=0.988 ms
+64 bytes from 169.254.1.126: icmp_seq=3 ttl=128 time=1.079 ms
+64 bytes from 169.254.1.126: icmp_seq=4 ttl=128 time=1.002 ms
+
+--- 169.254.1.126 ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 0.940/1.002/1.079/0.045 ms
+
+========== 19. FTP WIFI PORT 21 ==========
+Connection to 192.168.2.162 port 21 [tcp/ftp] succeeded!
+
+========== 20. FTP ETHERNET PORT 21 ==========
+Connection to 169.254.1.126 port 21 [tcp/ftp] succeeded!
+
+========== 21. FTP WIFI BANNER ==========
+Connection to 192.168.2.162 port 21 [tcp/ftp] succeeded!
+220-FileZilla Server 1.12.6
+220 Please visit https://filezilla-project.org/
+
+========== 22. FTP ETHERNET BANNER ==========
+Connection to 169.254.1.126 port 21 [tcp/ftp] succeeded!
+220-FileZilla Server 1.12.6
+220 Please visit https://filezilla-project.org/
+
+========== 23. WIFI PASSIVE PORT TEST ==========
+--- Port 50000 ---
+nc: connectx to 192.168.2.162 port 50000 (tcp) failed: Operation timed out
+--- Port 50010 ---
+nc: connectx to 192.168.2.162 port 50010 (tcp) failed: Operation timed out
+--- Port 50050 ---
+nc: connectx to 192.168.2.162 port 50050 (tcp) failed: Operation timed out
+--- Port 50100 ---
+nc: connectx to 192.168.2.162 port 50100 (tcp) failed: Operation timed out
+
+========== 24. ETHERNET PASSIVE PORT TEST ==========
+--- Port 50000 ---
+nc: connectx to 169.254.1.126 port 50000 (tcp) failed: Operation timed out
+--- Port 50010 ---
+nc: connectx to 169.254.1.126 port 50010 (tcp) failed: Operation timed out
+--- Port 50050 ---
+nc: connectx to 169.254.1.126 port 50050 (tcp) failed: Operation timed out
+--- Port 50100 ---
+nc: connectx to 169.254.1.126 port 50100 (tcp) failed: Operation timed out
+
+========== 25. SERVER WIFI ARP ==========
+? (192.168.2.162) at 10:f0:5:56:ce:3f on en0 ifscope [ethernet]
+
+========== 26. SERVER ETHERNET ARP ==========
+? (169.254.1.126) at 3c:52:82:d4:61:6a on en4 [ethernet]
+
+========== 27. ARP TABLE ==========
+? (169.254.1.126) at 3c:52:82:d4:61:6a on en4 [ethernet]
+mynetwork.home (192.168.2.1) at 78:8d:af:4:a9:7b on en0 ifscope [ethernet]
+? (192.168.2.2) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.3) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.4) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.5) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.6) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.7) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.8) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.9) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.10) at (incomplete) on en0 ifscope [ethernet]
+md-iqlal-ahmed (192.168.2.11) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.12) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.13) at (incomplete) on en0 ifscope [ethernet]
+iphone (192.168.2.14) at (incomplete) on en0 ifscope [ethernet]
+38:aa:3c:39:18:65 (192.168.2.15) at 38:aa:3c:39:18:65 on en0 ifscope [ethernet]
+? (192.168.2.16) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.17) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.18) at (incomplete) on en0 ifscope [ethernet]
+oneplus-nord-ce-3-lite-5g (192.168.2.19) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.20) at (incomplete) on en0 ifscope [ethernet]
+pixel-3a (192.168.2.21) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.22) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.23) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.24) at (incomplete) on en0 ifscope [ethernet]
+iphone (192.168.2.25) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.26) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.27) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.28) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.29) at (incomplete) on en0 ifscope [ethernet]
+galaxy-a12 (192.168.2.30) at c2:75:68:52:b2:99 on en0 ifscope [ethernet]
+? (192.168.2.31) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.32) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.33) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.34) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.35) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.36) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.37) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.38) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.39) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.40) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.41) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.42) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.43) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.44) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.45) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.46) at (incomplete) on en0 ifscope [ethernet]
+desktop-ceh9s4q (192.168.2.47) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.48) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.49) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.50) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.51) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.52) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.53) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.54) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.55) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.56) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.57) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.58) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.59) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.60) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.61) at (incomplete) on en0 ifscope [ethernet]
+iphone-6 (192.168.2.62) at fc:9c:a7:b:c5:85 on en0 ifscope [ethernet]
+? (192.168.2.63) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.64) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.65) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.66) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.67) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.68) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.69) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.70) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.71) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.72) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.73) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.74) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.75) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.76) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.77) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.78) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.79) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.80) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.81) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.82) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.83) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.84) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.85) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.86) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.87) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.88) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.89) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.90) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.91) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.92) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.93) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.94) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.95) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.96) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.97) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.98) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.99) at (incomplete) on en0 ifscope [ethernet]
+50tclrokutv (192.168.2.100) at 34:f1:50:ba:b3:b7 on en0 ifscope [ethernet]
+? (192.168.2.101) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.102) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.103) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.104) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.105) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.106) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.107) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.108) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.109) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.110) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.111) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.112) at (incomplete) on en0 ifscope [ethernet]
+b2:44:9e:6c:ee:bc (192.168.2.113) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.114) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.115) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.116) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.117) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.118) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.119) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.120) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.121) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.122) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.123) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.124) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.125) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.126) at (incomplete) on en0 ifscope [ethernet]
+samsung (192.168.2.127) at 36:68:93:8a:e1:b1 on en0 ifscope [ethernet]
+? (192.168.2.128) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.129) at (incomplete) on en0 ifscope [ethernet]
+macbookpro (192.168.2.130) at 8a:a:3e:48:95:e4 on en0 ifscope permanent [ethernet]
+? (192.168.2.131) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.132) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.133) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.134) at (incomplete) on en0 ifscope [ethernet]
+re315 (192.168.2.135) at 36:68:93:8a:e1:b1 on en0 ifscope [ethernet]
+? (192.168.2.136) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.137) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.138) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.139) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.140) at (incomplete) on en0 ifscope [ethernet]
+32:68:93:0a:e1:b0 (192.168.2.141) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.142) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.143) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.144) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.145) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.146) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.147) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.148) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.149) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.150) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.151) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.152) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.153) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.154) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.155) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.156) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.157) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.158) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.159) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.160) at (incomplete) on en0 ifscope [ethernet]
+16:77:25:77:51:17 (192.168.2.161) at 16:77:25:77:51:17 on en0 ifscope [ethernet]
+desktop-8u2afu4 (192.168.2.162) at 10:f0:5:56:ce:3f on en0 ifscope [ethernet]
+? (192.168.2.163) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.164) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.165) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.166) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.167) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.168) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.169) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.170) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.171) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.172) at (incomplete) on en0 ifscope [ethernet]
+9a:78:89:56:64:2d (192.168.2.173) at 9a:78:89:56:64:2d on en0 ifscope [ethernet]
+? (192.168.2.174) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.175) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.176) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.177) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.178) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.179) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.180) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.181) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.182) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.183) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.184) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.185) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.186) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.187) at (incomplete) on en0 ifscope [ethernet]
+merbs (192.168.2.188) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.189) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.190) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.191) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.192) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.193) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.194) at (incomplete) on en0 ifscope [ethernet]
+iphone (192.168.2.195) at 76:ad:8b:4a:eb:5c on en0 ifscope [ethernet]
+? (192.168.2.196) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.197) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.198) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.199) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.200) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.201) at (incomplete) on en0 ifscope [ethernet]
+e8:61:7e:e1:fb:bb (192.168.2.202) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.203) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.204) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.205) at (incomplete) on en0 ifscope [ethernet]
+iphone (192.168.2.206) at b6:a3:e0:52:ae:95 on en0 ifscope [ethernet]
+? (192.168.2.207) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.208) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.209) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.210) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.211) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.212) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.213) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.214) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.215) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.216) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.217) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.218) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.219) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.220) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.221) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.222) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.223) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.224) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.225) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.226) at (incomplete) on en0 ifscope [ethernet]
+36:68:93:8a:e1:b1 (192.168.2.227) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.228) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.229) at (incomplete) on en0 ifscope [ethernet]
+samsung (192.168.2.230) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.231) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.232) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.233) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.234) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.235) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.236) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.237) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.238) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.239) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.240) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.241) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.242) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.243) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.244) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.245) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.246) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.247) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.248) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.249) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.250) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.251) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.252) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.2.253) at (incomplete) on en0 ifscope [ethernet]
+58:a8:e8:48:c4:b4 (192.168.2.254) at 58:a8:e8:48:c4:b4 on en0 ifscope [ethernet]
+? (192.168.2.255) at ff:ff:ff:ff:ff:ff on en0 ifscope [ethernet]
+mdns.mcast.net (224.0.0.251) at 1:0:5e:0:0:fb on en0 ifscope permanent [ethernet]
+broadcasthost (255.255.255.255) at ff:ff:ff:ff:ff:ff on en0 ifscope [ethernet]
+
+========== 28. TCP CONNECTIONS ==========
+Active Internet connections (including servers)
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)    
+tcp4       0      0  127.0.0.1.8787         127.0.0.1.61417        ESTABLISHED
+tcp4       0      0  127.0.0.1.61417        127.0.0.1.8787         ESTABLISHED
+tcp4       0      0  127.0.0.1.8770         127.0.0.1.61370        ESTABLISHED
+tcp4       0      0  127.0.0.1.61370        127.0.0.1.8770         ESTABLISHED
+tcp4       0      0  127.0.0.1.8770         127.0.0.1.61369        ESTABLISHED
+tcp4       0      0  127.0.0.1.61369        127.0.0.1.8770         ESTABLISHED
+tcp4       0      0  127.0.0.1.8770         127.0.0.1.61368        ESTABLISHED
+tcp4       0      0  127.0.0.1.61368        127.0.0.1.8770         ESTABLISHED
+tcp4       0      0  127.0.0.1.8770         127.0.0.1.61367        ESTABLISHED
+tcp4       0      0  127.0.0.1.61367        127.0.0.1.8770         ESTABLISHED
+tcp4       0      0  192.168.2.130.60905    162.125.21.3.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.60625    52.111.227.4.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.60248    172.217.113.4.443      ESTABLISHED
+tcp4       0      0  192.168.2.130.60006    162.125.21.3.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.60004    162.125.21.2.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.59814    162.125.21.2.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.59775    172.217.115.4.443      CLOSE_WAIT 
+tcp4       0      0  192.168.2.130.59774    172.217.115.4.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59419    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59406    69.147.65.252.443      CLOSE_WAIT 
+tcp4       0      0  192.168.2.130.59363    100.50.127.152.443     CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59362    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59314    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59303    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59286    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59277    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59273    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59267    69.147.65.252.443      CLOSE_WAIT 
+tcp4       0      0  192.168.2.130.59266    100.50.127.152.443     CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59265    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59258    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59255    69.147.65.252.443      CLOSE_WAIT 
+tcp4       0      0  192.168.2.130.59254    100.50.127.152.443     CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59245    69.147.65.252.443      CLOSE_WAIT 
+tcp4       0      0  192.168.2.130.59243    100.50.127.152.443     CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59242    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59194    69.147.65.252.443      CLOSE_WAIT 
+tcp4       0      0  192.168.2.130.59187    100.50.127.152.443     CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59184    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59183    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59169    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59168    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59167    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59164    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59163    69.147.65.252.443      CLOSE_WAIT 
+tcp4      24      0  192.168.2.130.59153    69.147.65.252.443      CLOSE_WAIT 
+tcp4       0      0  192.168.2.130.59144    172.217.119.4.443      CLOSE_WAIT 
+tcp4       0      0  192.168.2.130.59143    172.217.119.4.443      CLOSE_WAIT 
+tcp4       0      0  192.168.2.130.58393    172.217.113.4.443      CLOSE_WAIT 
+tcp4       0      0  192.168.2.130.57569    69.147.112.172.993     ESTABLISHED
+tcp4       0      0  192.168.2.130.57536    69.147.112.172.993     ESTABLISHED
+tcp4       0      0  192.168.2.130.55479    64.233.178.108.993     ESTABLISHED
+tcp4       0      0  192.168.2.130.55419    64.233.178.108.993     ESTABLISHED
+tcp4       0      0  192.168.2.130.55346    64.233.178.108.993     ESTABLISHED
+tcp4       0      0  127.0.0.1.8501         127.0.0.1.51450        ESTABLISHED
+tcp4       0      0  127.0.0.1.51450        127.0.0.1.8501         ESTABLISHED
+tcp4       0      0  127.0.0.1.8501         *.*                    LISTEN     
+tcp4       0      0  169.254.166.198.49576  169.254.1.126.139      ESTABLISHED
+tcp4       0      0  192.168.2.130.62414    64.233.178.188.5228    ESTABLISHED
+tcp4       0      0  192.168.2.130.445      192.168.2.162.61052    ESTABLISHED
+tcp4       0      0  192.168.2.130.445      192.168.2.162.61098    ESTABLISHED
+tcp4       0      0  127.0.0.1.8788         *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.8770         *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.18823        *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.49297        127.0.0.1.49298        ESTABLISHED
+tcp4       0      0  127.0.0.1.49298        127.0.0.1.49297        ESTABLISHED
+tcp4       0      0  127.0.0.1.49297        *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.18821        *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.17603        *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.17600        *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.8815         *.*                    LISTEN     
+tcp4       0      0  *.17500                *.*                    LISTEN     
+tcp4       0      0  *.8787                 *.*                    LISTEN     
+tcp4       0      0  192.168.2.130.49181    52.110.16.13.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.49179    192.168.2.161.51389    ESTABLISHED
+tcp4       0      0  192.168.2.130.49179    192.168.2.62.49695     ESTABLISHED
+tcp4       0      0  *.49179                *.*                    LISTEN     
+tcp4       0      0  *.5000                 *.*                    LISTEN     
+tcp4       0      0  *.7000                 *.*                    LISTEN     
+tcp4       0      0  *.88                   *.*                    LISTEN     
+tcp4       0      0  *.445                  *.*                    LISTEN     
+tcp4       0      0  *.5900                 *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.8787         127.0.0.1.61261        TIME_WAIT  
+tcp4       0      0  192.168.2.130.61430    192.168.2.162.21       TIME_WAIT  
+tcp4       0      0  127.0.0.1.18821        127.0.0.1.61433        TIME_WAIT  
+tcp4       0      0  192.168.2.130.61444    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61443    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61446    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61445    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61441    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61455    192.168.2.162.21       TIME_WAIT  
+tcp4       0      0  192.168.2.130.61451    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61453    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61449    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61466    192.168.2.162.21       TIME_WAIT  
+tcp4       0      0  192.168.2.130.61460    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61462    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61465    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61467    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61469    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61474    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61473    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61475    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61477    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61476    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61478    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61472    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61481    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61480    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61482    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61484    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61486    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61487    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61488    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61490    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61493    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61492    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61495    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61494    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61497    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61496    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61502    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61501    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61505    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61507    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61506    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61510    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61509    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61513    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61514    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61519    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61520    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61515    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61517    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61522    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61528    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61524    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  127.0.0.1.61432        127.0.0.1.18821        TIME_WAIT  
+tcp4       0      0  192.168.2.130.61529    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61532    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61538    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61542    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61543    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61545    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61544    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61546    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61549    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61553    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61551    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61554    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61555    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61558    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61559    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61560    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61562    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61563    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61564    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61566    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61569    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61570    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61573    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61572    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61576    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61577    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61581    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61582    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61586    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61585    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61589    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61590    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61592    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61597    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61596    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61599    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61604    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61601    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61602    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61605    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61609    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.61608    69.147.65.252.443      TIME_WAIT  
+tcp4       0      0  192.168.2.130.57369    3.234.55.22.443        ESTABLISHED
+tcp4       0      0  192.168.2.130.57366    35.153.233.243.443     ESTABLISHED
+tcp4       0      0  192.168.2.130.57362    18.67.39.91.443        ESTABLISHED
+tcp4       0      0  192.168.2.130.57356    32.201.241.42.443      ESTABLISHED
+tcp4       0      0  192.168.2.130.57342    34.206.165.67.443      ESTABLISHED
+tcp4       0      0  192.168.2.130.57323    104.18.39.21.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.57320    104.18.39.21.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.57319    104.18.39.21.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.57318    104.18.32.47.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.57071    31.13.80.48.5222       ESTABLISHED
+tcp4       0      0  192.168.2.130.57041    104.19.165.10.443      ESTABLISHED
+tcp4       0      0  192.168.2.130.56985    3.33.235.18.443        ESTABLISHED
+tcp4       0      0  192.168.2.130.56652    52.96.230.146.443      ESTABLISHED
+tcp4       0      0  192.168.2.130.56634    52.205.201.8.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.56633    52.205.201.8.443       ESTABLISHED
+tcp4       0      0  192.168.2.130.56461    17.57.144.138.5223     ESTABLISHED
+udp4       0      0  192.168.2.130.60533    192.178.192.113.443               
+udp4       0      0  *.68                   *.*                               
+udp4       0      0  *.60205                *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.63670                *.*                               
+udp4       0      0  *.17500                *.*                               
+udp46      0      0  *.57152                *.*                               
+udp46      0      0  *.58715                *.*                               
+udp4       0      0  *.3722                 *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.88                   *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp46      0      0  *.*                    *.*                               
+udp4       0      0  *.*                    *.*                               
+udp4       0      0  *.5353                 *.*                               
+udp4       0      0  *.137                  *.*                               
+udp4       0      0  *.138                  *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+icm4       0      0  *.*                    *.*                               
+Active Multipath Internet connections
+Proto/ID  Flags      Local Address          Foreign Address        (state)    
+
+========== 29. LISTENING PORTS ==========
+COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+rapportd    393    x    9u  IPv4 0x28e8507eede07236      0t0  TCP *:49179 (LISTEN)
+rapportd    393    x   10u  IPv6 0x78ef33421c7ae892      0t0  TCP *:49179 (LISTEN)
+ControlCe   441    x    8u  IPv4 0x73c90399a494f20f      0t0  TCP *:7000 (LISTEN)
+ControlCe   441    x    9u  IPv6 0x5f2f0f3e165bbc2b      0t0  TCP *:7000 (LISTEN)
+ControlCe   441    x   10u  IPv4 0xe9af5c84c7859db7      0t0  TCP *:5000 (LISTEN)
+ControlCe   441    x   11u  IPv6 0x5f9f45bc21cbc9cc      0t0  TCP *:5000 (LISTEN)
+Dropbox     750    x  160u  IPv4 0x200f8809774ba387      0t0  TCP 127.0.0.1:17600 (LISTEN)
+Dropbox     750    x  173u  IPv4 0x37a68a33a57e5e48      0t0  TCP 127.0.0.1:17603 (LISTEN)
+Python      762    x    5u  IPv4 0x3c37b320bd33388f      0t0  TCP *:8787 (LISTEN)
+Google      781    x   29u  IPv6 0x52500d49227ee11b      0t0  TCP [::1]:7679 (LISTEN)
+DropboxFi   863    x   32u  IPv4 0xef6d114c26924a24      0t0  TCP *:17500 (LISTEN)
+Python      870    x    4u  IPv4 0xd38f3aac699852cc      0t0  TCP 127.0.0.1:8815 (LISTEN)
+Python     1228    x    4u  IPv4  0x958c274450537f9      0t0  TCP 127.0.0.1:18821 (LISTEN)
+app_inkwe  1487    x   14u  IPv4 0x4dcdbcca779f1d23      0t0  TCP 127.0.0.1:49297 (LISTEN)
+Python     1729    x    4u  IPv4 0xf34c5983a9072a93      0t0  TCP 127.0.0.1:18823 (LISTEN)
+Python     1852    x    4u  IPv4 0x360113f1ddb9ebc9      0t0  TCP 127.0.0.1:8770 (LISTEN)
+Python     1892    x    4u  IPv4 0x1f8555583ec823a2      0t0  TCP 127.0.0.1:8788 (LISTEN)
+Python    20904    x    7u  IPv4 0xe708cdf1abb0ef93      0t0  TCP 127.0.0.1:8501 (LISTEN)
+
+========== 30. NETWORK RELATED PROCESSES ==========
+x                44579   0.3  0.0 34130124    240 s001  S    10:22AM   0:00.01 tee /Users/x/Documents/SmartNetwork/Diagnostics/SmartNetwork_Full_Diagnostic_20261120_102228.txt
+x                14252   0.0  0.1 34271756   7508   ??  Ss    9:21AM   0:00.51 /System/Library/ExtensionKit/Extensions/VPN.appex/Contents/MacOS/VPN
+x                 1494   0.0  0.1 38249880  10608   ??  Ss    8:55AM   0:49.93 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking
+x                  887   0.0  0.0 38152924   3864   ??  Ss    8:55AM   0:00.19 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking
+x                  857   0.0  0.1 84426880   9172   ??  S     8:54AM   0:01.15 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper --type=utility --utility-sub-type=video_capture.mojom.VideoCaptureService --lang=en-US --service-sandbox-type=none --message-loop-type-ui --user-data-dir=/Users/x/Library/Application Support/Claude --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,claude-mcp-app,cowork-artifact-read --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,claude-mcp-app,cowork-artifact-read,sentry-ipc --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,cowork-artifact-read,sentry-ipc --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,cowork-artifact-read,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator --shared-files --field-trial-handle=1718379636,r,13676309446156865497,2192012855786412285,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma,ThrottleResizeIpc --disable-features=BackForwardCache,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SharedWorkerExtendedLifetime,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,12706687568456809694,6331930650487890377,4 --trace-process-track-uuid=3190708995682289984
+x                  856   0.0  0.1 84403428   5432   ??  S     8:54AM   0:00.72 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=audio --message-loop-type-ui --user-data-dir=/Users/x/Library/Application Support/Claude --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,claude-mcp-app,cowork-artifact-read --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,claude-mcp-app,cowork-artifact-read,sentry-ipc --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,cowork-artifact-read,sentry-ipc --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,cowork-artifact-read,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator --shared-files --field-trial-handle=1718379636,r,13676309446156865497,2192012855786412285,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma,ThrottleResizeIpc --disable-features=BackForwardCache,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SharedWorkerExtendedLifetime,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,12706687568456809694,6331930650487890377,4 --trace-process-track-uuid=3190708994745248135 --seatbelt-client=88
+x                  842   0.0  0.1 34503280   4340   ??  S     8:54AM   0:00.37 /Applications/Dropbox.app/Contents/Frameworks/Dropbox Helper.app/Contents/MacOS/Dropbox Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Users/x/Library/Application Support/Dropbox --standard-schemes=dbx-local --enable-sandbox --secure-schemes=dbx-local,sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=dbx-local,sentry-ipc --fetch-schemes=sentry-ipc --streaming-schemes=dbx-local --shared-files --field-trial-handle=1718379636,r,7580328953389785907,5166420090133844463,262144 --enable-features=PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=MacWebContentsOcclusion,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts --variations-seed-version --seatbelt-client=66
+x                  822   0.0  0.2 1549964504  16864   ??  S     8:54AM   0:11.52 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer) --type=renderer --user-data-dir=/Users/x/Library/Application Support/Claude --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,claude-mcp-app,cowork-artifact-read --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,claude-mcp-app,cowork-artifact-read,sentry-ipc --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,cowork-artifact-read,sentry-ipc --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,cowork-artifact-read,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator --app-path=/Applications/Claude.app/Contents/Resources/app.asar --enable-sandbox --enable-blink-features=CanvasDrawElement --allow-file-access-from-files --blink-settings=dnsPrefetchingEnabled=false --disable-blink-features=XSLT,EnableXSLTForCAPAlerts,XSLT,EnableXSLTForCAPAlerts,SharedWorkerExtendedLifetime --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=8 --launch-time-ticks=90539585 --shared-files --field-trial-handle=1718379636,r,13676309446156865497,2192012855786412285,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma,ThrottleResizeIpc --disable-features=BackForwardCache,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SharedWorkerExtendedLifetime,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,12706687568456809694,6331930650487890377,4 --trace-process-track-uuid=3190708993808206286 --launch-speed-changes=classic --desktop-start-arms=none --desktop-features={"launch":{"status":"supported"},"coworkBrowser":{"status":"unsupported","reason":"cowork_browser_disabled","unsupportedCode":"unknown"},"artifactsPane":{"status":"unavailable"},"nativeQuickEntry":{"status":"supported"},"quickEntryDictation":{"status":"supported"},"quickEntryGlobalShortcut":{"status":"supported"},"trayIcon":{"status":"supported"},"customQuickEntryDictationShortcut":{"status":"supported"},"customShortcuts":{"status":"unavailable"},"shortcutPlaces":{"status":"supported"},"closeShortcuts":{"status":"supported"},"movedMenuKeys":{"status":"supported"},"ultrareviewErrorCategories":{"status":"supported"},"setModelCodeMarker":{"status":"supported"},"spawnTaskPendingPop":{"status":"supported"},"spawnTaskInFlightIds":{"status":"supported"},"folderWorktrees":{"status":"supported"},"folderWorktreesRemote":{"status":"supported"},"folderWorktreesListedDiscard":{"status":"supported"},"sessionAttributionProject":{"status":"supported"},"remoteFileDownload":{"status":"supported","setting":"limited"},"keptWorktreeDiscardRemote":{"status":"unavailable"},"partnerApprovalCall":{"status":"unavailable"},"slateWren":{"status":"unavailable"},"sableOtter":{"status":"unavailable"},"artifactApps":{"status":"unavailable"},"telescopeBridge":{"status":"unavailable"},"mcpFinishInApp":{"status":"unavailable"},"copperLarkA":{"status":"supported"},"copperLarkB":{"status":"supported"},"copperLarkC":{"status":"unavailable"},"copperLarkD":{"status":"supported"},"copperLarkH":{"status":"supported"},"quietPenguin":{"status":"unavailable"},"rubberDuck":{"status":"unavailable"},"chillingSlothFeat":{"status":"supported"},"chillingSlothSshShell":{"status":"supported"},"terminalShellReported":{"status":"supported"},"sshBrowserPane":{"status":"unavailable"},"chillingSlothSshWorktreeLocation":{"status":"supported"},"chillingSlothSshPuttyKeyConversion":{"status":"unavailable"},"chillingSlothRemoteFilePreview":{"status":"supported"},"chillingSlothPreviewVmStartChecked":{"status":"supported"},"chillingSlothEnterprise":{"status":"supported"},"chillingSlothLocal":{"status":"supported"},"yukonSilver":{"status":"supported"},"yukonSilverGems":{"status":"supported"},"yukonSilverGemsCache":{"status":"supported"},"wakeScheduler":{"status":"unavailable"},"lowDataDownloadPause":{"status":"unavailable"},"keepAwake":{"status":"supported"},"projects":{"status":"supported"},"trustedFolders":{"status":"supported"},"codeSessionKeepAwake":{"status":"supported"},"ccdPromptSuggestionsSetting":{"status":"unavailable"},"ccdLandingTools":{"status":"supported"},"ccdMcpVerbsMidTurn":{"status":"supported"},"ccdPreferredBrowser":{"status":"supported"},"ccdMcpTurnOnSshHost":{"status":"supported"},"ccdMcpReconnectConnected":{"status":"supported"},"ccdRestartRemoteClaudeCode":{"status":"supported"},"ccdSshStartsWithoutBlockedPlugins":{"status":"supported"},"openWithConsentAnyLanding":{"status":"supported"},"desktopTopBar":{"status":"supported"},"ccdPlugins":{"status":"supported"},"ccdPluginSourceRouting":{"status":"supported"},"ccdPluginRemoveByInstall":{"status":"supported"},"computerUse":{"status":"supported"},"computerUseRollout":{"status":"unavailable"},"computerUseLocal":{"status":"unavailable"},"computerUseComplianceGate":{"status":"supported"},"computerUseAppScoped":{"status":"unsupported","reason":"Background app-scoped mode is not enabled","unsupportedCode":"unknown"},"computerUsePerAppAccess":{"status":"supported"},"coworkWatchRecord":{"status":"unavailable"},"coworkCopperHeron":{"status":"unavailable"},"coworkWatchers":{"status":"unavailable"},"coworkKappa":{"status":"unavailable"},"coworkArtifacts":{"status":"unavailable"},"trustedFolderSettingsConsent":{"status":"unavailable"},"coworkAutoModeAlwaysAllowOverride":{"status":"unavailable"},"framebufferPreview":{"status":"unavailable"},"iosSimulator":{"status":"unsupported","reason":"iOS Simulator is disabled by its rollout flag","unsupportedCode":"unknown"},"androidEmulator":{"status":"unsupported","reason":"Android emulator is disabled by its rollout flag","unsupportedCode":"unknown"},"androidEmulatorCreate":{"status":"unsupported","reason":"Android emulator is disabled by its rollout flag","unsupportedCode":"unknown"},"androidEmulatorDelete":{"status":"unsupported","reason":"Android emulator is disabled by its rollout flag","unsupportedCode":"unknown"},"androidEmulatorErase":{"status":"unsupported","reason":"Android emulator is disabled by its rollout flag","unsupportedCode":"unknown"},"iosSimulatorH264":{"status":"unsupported","reason":"iOS Simulator is disabled by its rollout flag","unsupportedCode":"unknown"},"iosSimulatorAccessibilityReader":{"status":"unsupported","reason":"iOS Simulator is disabled by its rollout flag","unsupportedCode":"unknown"},"iosSimulatorDuo":{"status":"unavailable"},"simulatorScreenshotEditor":{"status":"unavailable"},"simulatorMiniView":{"status":"unavailable"},"simulatorSessionScope":{"status":"unavailable"},"simulatorScreenshotFlight":{"status":"unavailable"},"grandPrix":{"status":"unavailable"},"chromeExtensionInstall":{"status":"supported"},"ccdGitEngine":{"status":"unavailable"},"sessionPrOwnership":{"status":"unavailable"},"sessionFolderFileAccess":{"status":"supported"},"conversationFolderGrants":{"status":"supported"},"localSessionsWithoutGit":{"status":"supported"},"tearOffHalo":{"status":"supported"},"coworkArtifactPopout":{"status":"supported"},"sidePanePopoutNativeViews":{"status":"supported"},"simulatorNativeViewPopout":{"status":"supported"},"simulatorPopoutShortcuts":{"status":"supported"},"simulatorAndroidQuitShortcut":{"status":"supported"},"simulatorNativeViewPerPane":{"status":"supported"},"popoutZoom":{"status":"supported"},"popoutTitleBarOverlay":{"status":"unsupported","reason":"Pop-out title bar overlay requires Windows or Linux","unsupportedCode":"unsupported_platform"},"filePreviewNativeViewRouting":{"status":"supported"},"claudeDesignWindow":{"status":"supported"},"coworkRemoteSessionSpaces":{"status":"supported"},"spaceMemoryBridge":{"status":"unavailable"},"multiAccount":{"status":"unavailable"},"grandPrixRequest":{"status":"unavailable"},"bootPlaceholder":{"status":"supported"},"bootPlaceholderBottom":{"status":"supported"},"coworkBranchSession":{"status":"supported"},"coworkScheduledTaskProjects":{"status":"supported"},"coworkLocalSessionProjects":{"status":"supported"},"coworkScheduledTaskRepoint":{"status":"supported"},"sshAttachmentTransport":{"status":"supported"},"coworkSeededSummon":{"status":"supported"},"seededKind":{"status":"supported"},"coworkTextNotTyped":{"status":"unavailable"},"coworkDeclaredUrls":{"status":"supported"},"snugglyPeach":{"status":"supported"},"gentleQuince":{"status":"unavailable"},"sendNowEscalation":{"status":"supported"},"steerDetachField":{"status":"supported"},"sessionMentions":{"status":"supported"},"cloudSessionMentions":{"status":"unavailable"},"inlinePastes":{"status":"supported"},"turnDiscardedEvent":{"status":"supported"},"unsendNamesMessage":{"status":"supported"},"unsendBehindATurn":{"status":"supported"},"unsendKeepsOtherWork":{"status":"unavailable"},"turnBoxAtReplies":{"status":"supported"},"wslForkSession":{"status":"unavailable"},"wslTerminal":{"status":"unavailable"},"wslMcp":{"status":"unavailable"},"wslPreview":{"status":"unavailable"},"wslLocalFiles":{"status":"unavailable"},"sshFolderEntries":{"status":"unavailable"},"wslRoutines":{"status":"unavailable"},"humbleSky":{"status":"unavailable"},"violinBow":{"status":"unavailable"},"violinBowHomeSettings":{"status":"unavailable"},"coworkThinkingInSend":{"status":"supported"},"bootstrapConfig":{"status":"supported"},"chatIn3p":{"status":"supported"},"selfHostedSessions":{"status":"unavailable"},"selfHostedCowork":{"status":"unavailable"},"desktopHome":{"status":"unavailable"},"chatCodeExecution":{"status":"unavailable"},"mcpPersistentAlwaysAllow":{"status":"supported"},"mcpScheduledTaskAlwaysAllow":{"status":"supported"},"mcpScheduledTaskApprovalLifetime":{"status":"unavailable"},"epitaxyMcpApps":{"status":"supported"},"sideSessionProposalPicks":{"status":"supported"},"sideSessionProposalWorktreePick":{"status":"supported"},"sideSessionOfferCloudStart":{"status":"supported"},"sideSessions":{"status":"supported"},"btwChildSessions":{"status":"unavailable"},"nestedArchiveKeepsFamily":{"status":"unavailable"},"ccdStartsOnIntent":{"status":"unavailable"},"epitaxyMcpAppPane":{"status":"unavailable"},"quietOrchard":{"status":"unavailable"},"ccdConnectorTools":{"status":"unavailable"},"coworkConnectorToken":{"status":"unavailable"},"ccdTeleportSnapshot":{"status":"unavailable"},"officeHandoffDeviceSigning":{"status":"unavailable"}} --desktop-managed-config={"forceLoginOrgUUIDs":null,"loginSsoOrgDomain":null,"disableEssentialTelemetry":false,"disableNonessentialTelemetry":false,"disableMobileSimulatorTools":false,"banner":null,"deploymentDisplayName":null,"deploymentDisplaySubtitle":null,"dictationAvailable":false,"userPluginMarketplacesEnabled":true,"userPluginUploadsEnabled":true,"configDeprecations":[],"configDeprecationNoticesSuppressed":false,"configOrgDelivered":false,"userContentFrameAllowed":true,"disableAutoUpdates":false,"deploymentMode":"1p","appVersion":"6.28899.2","cookielessOrigin":false,"deviceClass":"8","preferredSystemLanguages":["en-CA"],"homePath":"/Users/x","extensionsEnabled":true,"localExtensionInstallAllowed":true,"unpackedExtensionInstallAllowed":true,"configKeySources":{}} --desktop-process-start=slow --desktop-scroll-draw=0.14 --seatbelt-client=15
+x                  817   0.0  0.1 1547687636   9092   ??  S     8:54AM   0:00.63 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer) --type=renderer --user-data-dir=/Users/x/Library/Application Support/Claude --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,claude-mcp-app,cowork-artifact-read --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,claude-mcp-app,cowork-artifact-read,sentry-ipc --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,cowork-artifact-read,sentry-ipc --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,cowork-artifact-read,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator --app-path=/Applications/Claude.app/Contents/Resources/app.asar --enable-sandbox --allow-file-access-from-files --blink-settings=dnsPrefetchingEnabled=false --disable-blink-features=XSLT,EnableXSLTForCAPAlerts,XSLT,EnableXSLTForCAPAlerts,SharedWorkerExtendedLifetime --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=6 --launch-time-ticks=88568478 --shared-files --field-trial-handle=1718379636,r,13676309446156865497,2192012855786412285,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma,ThrottleResizeIpc --disable-features=BackForwardCache,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SharedWorkerExtendedLifetime,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,12706687568456809694,6331930650487890377,4 --trace-process-track-uuid=3190708991934122588 --desktop-managed-config={"forceLoginOrgUUIDs":null,"loginSsoOrgDomain":null,"disableEssentialTelemetry":false,"disableNonessentialTelemetry":false,"disableMobileSimulatorTools":false,"banner":null,"deploymentDisplayName":null,"deploymentDisplaySubtitle":null,"dictationAvailable":false,"userPluginMarketplacesEnabled":true,"userPluginUploadsEnabled":true,"configDeprecations":[],"configDeprecationNoticesSuppressed":false,"configOrgDelivered":false,"userContentFrameAllowed":true,"disableAutoUpdates":false,"deploymentMode":"1p","appVersion":"6.28899.2","cookielessOrigin":false,"deviceClass":"8","preferredSystemLanguages":["en-CA"],"homePath":"/Users/x","extensionsEnabled":true,"localExtensionInstallAllowed":true,"unpackedExtensionInstallAllowed":true,"configKeySources":{}} --desktop-boot-placeholder={"enabled":true,"colors":{"dark":false,"page":{"red":255,"green":255,"blue":255,"alpha":1},"sidebar":{"red":250,"green":250,"blue":250,"alpha":1},"seam":{"red":0,"green":0,"blue":0,"alpha":0.1},"line":{"red":0,"green":0,"blue":0,"alpha":0.12}},"frame":{"sidebarWidth":288,"collapsed":false,"narrowViewportMaxWidth":700,"zoomFactor":1,"shapes":[{"top":8,"left":209,"width":70,"height":28,"radius":7},{"top":12,"left":88,"width":20,"height":20,"radius":4},{"top":12,"left":116,"width":20,"height":20,"radius":4},{"top":12,"left":144,"width":20,"height":20,"radius":4},{"top":55,"left":16,"width":20,"height":20,"radius":4},{"top":58,"left":44,"width":29,"height":14,"radius":4},{"top":89,"left":16,"width":20,"height":20,"radius":4},{"top":92,"left":44,"width":45.5,"height":14,"radius":4},{"top":123,"left":16,"width":20,"height":20,"radius":4},{"top":126,"left":44,"width":53.5,"height":14,"radius":4},{"top":157,"left":16,"width":20,"height":20,"radius":4},{"top":160,"left":44,"width":55.5,"height":14,"radius":4},{"top":191,"left":16,"width":20,"height":20,"radius":4},{"top":194,"left":44,"width":47.5,"height":14,"radius":4},{"top":245,"left":252,"width":16,"height":16,"radius":4},{"top":246.5,"left":18,"width":99.5,"height":13,"radius":4},{"top":246.5,"left":122.5,"width":14,"height":14,"radius":4},{"top":280,"left":19,"width":14,"height":14,"radius":4},{"top":280,"left":44,"width":230,"height":14,"radius":4},{"top":314,"left":19,"width":14,"height":14,"radius":4},{"top":314,"left":44,"width":217,"height":14,"radius":4},{"top":348,"left":19,"width":14,"height":14,"radius":4},{"top":348,"left":44,"width":151.5,"height":14,"radius":4},{"top":382,"left":19,"width":14,"height":14,"radius":4},{"top":382,"left":44,"width":230,"height":14,"radius":4},{"top":416,"left":19,"width":14,"height":14,"radius":4},{"top":416,"left":44,"width":230,"height":14,"radius":4},{"top":450,"left":19,"width":14,"height":14,"radius":4},{"top":450,"left":44,"width":163,"height":14,"radius":4},{"top":484,"left":19,"width":14,"height":14,"radius":4},{"top":484,"left":44,"width":230,"height":14,"radius":4},{"top":518,"left":19,"width":14,"height":14,"radius":4},{"top":518,"left":44,"width":230,"height":14,"radius":4},{"top":552,"left":19,"width":14,"height":14,"radius":4},{"top":552,"left":44,"width":206.5,"height":14,"radius":4},{"top":586,"left":19,"width":14,"height":14,"radius":4},{"top":586,"left":44,"width":143.5,"height":14,"radius":4},{"top":620,"left":19,"width":14,"height":14,"radius":4},{"top":620,"left":44,"width":230,"height":14,"radius":4},{"top":654,"left":19,"width":14,"height":14,"radius":4},{"top":654,"left":44,"width":230,"height":14,"radius":4},{"top":688,"left":19,"width":14,"height":14,"radius":4},{"top":688,"left":44,"width":230,"height":14,"radius":4},{"top":722,"left":19,"width":14,"height":14,"radius":4},{"top":722,"left":44,"width":230,"height":14,"radius":4},{"top":755,"bottom":45,"left":0,"width":288,"height":0,"radius":0,"line":1},{"top":768,"bottom":12,"left":16,"width":20,"height":20,"radius":10},{"top":771,"bottom":15,"left":44,"width":120.5,"height":14,"radius":4}]}} --seatbelt-client=73
+x                  792   0.0  0.0 38155180   4056   ??  Ss    8:54AM   0:00.18 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking
+x                  786   0.0  0.1 38246796   7016   ??  Ss    8:54AM   0:00.80 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking
+x                  706   0.0  0.2 84460148  16432   ??  S     8:54AM   0:04.26 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Users/x/Library/Application Support/Claude --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,claude-mcp-app,cowork-artifact-read --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,claude-mcp-app,cowork-artifact-read,sentry-ipc --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,cowork-artifact-read,sentry-ipc --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,cowork-artifact-read,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator --shared-files --field-trial-handle=1718379636,r,13676309446156865497,2192012855786412285,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma,ThrottleResizeIpc --disable-features=BackForwardCache,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SharedWorkerExtendedLifetime,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,12706687568456809694,6331930650487890377,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=36
+x                  705   0.0  0.1 84567228  10024   ??  S     8:54AM   0:02.20 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper --type=gpu-process --gpu-recent-crash-count=0 --user-data-dir=/Users/x/Library/Application Support/Claude --gpu-preferences=WAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAADAAAAAEAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,13676309446156865497,2192012855786412285,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma,ThrottleResizeIpc --disable-features=BackForwardCache,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,ScreenAIOCREnabled,SharedWorkerExtendedLifetime,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,12706687568456809694,6331930650487890377,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=30
+x                  662   0.0  0.2 38856712  19848   ??  Ss    8:54AM   1:50.44 /System/Volumes/Preboot/Cryptexes/App/System/Library/StagedFrameworks/Safari/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking
+x                  635   0.0  0.1 38165772   5740   ??  Ss    8:53AM   0:01.11 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking
+x                  554   0.0  0.3 84539064  26316   ??  S     8:53AM   0:10.85 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/158.0.8127.36/Helpers/Google Chrome Helper (Aperitif).app/Contents/MacOS/Google Chrome Helper (Aperitif) --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --metrics-client-id=09a320ca-2b84-4fb7-aeaf-6714a0b85360 --shared-files --metrics-shmem-handle=1752395122,r,4487849621058096872,7461153100030450129,524288 --field-trial-handle=1718379636,r,3757361518891577776,9783495938860166408,262144 --variations-seed-version=20261119-040043.030000-production --pseudonymization-salt-handle=1935764596,r,13960849104430476817,7346160192042706459,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=19
+x                  487   0.0  0.1 33803376   7216   ??  S     8:53AM   0:07.40 /usr/libexec/networkserviceproxy
+_networkd          241   0.0  0.1 33779996   7544   ??  Ss    8:53AM   0:10.46 /usr/libexec/symptomsd
+
+========== 31. USB DEVICE TREE ==========
+2026-11-20 10:23:11.866 system_profiler[45099:293426] SPUSBDevice: IOCreatePlugInInterfaceForService failed 0xe00002be
+2026-11-20 10:23:11.867 system_profiler[45099:293426] SPUSBDevice: IOCreatePlugInInterfaceForService failed 0xe00002be
+2026-11-20 10:23:11.868 system_profiler[45099:293426] SPUSBDevice: IOCreatePlugInInterfaceForService failed 0xe00002be
+2026-11-20 10:23:11.868 system_profiler[45099:293426] SPUSBDevice: IOCreatePlugInInterfaceForService failed 0xe00002be
+2026-11-20 10:23:11.869 system_profiler[45099:293426] SPUSBDevice: IOCreatePlugInInterfaceForService failed 0xe00002be
+2026-11-20 10:23:11.870 system_profiler[45099:293426] SPUSBDevice: IOCreatePlugInInterfaceForService failed 0xe00002be
+2026-11-20 10:23:11.872 system_profiler[45099:293426] SPUSBDevice: IOCreatePlugInInterfaceForService failed 0xe00002be
+USB:
+
+    USB 3.1 Bus:
+
+      Host Controller Driver: AppleUSBXHCITR
+      PCI Device ID: 0x15ec 
+      PCI Revision ID: 0x0006 
+      PCI Vendor ID: 0x8086 
+      Bus Number: 0x00 
+
+        USB3.1 Hub:
+
+          Product ID: 0x0626
+          Vendor ID: 0x05e3  (Genesys Logic, Inc.)
+          Version: 6.63
+          Speed: Up to 5 Gb/s
+          Manufacturer: GenesysLogic
+          Location ID: 0x00100000 / 2
+          Current Available (mA): 900
+          Current Required (mA): 0
+          Extra Operating Current (mA): 0
+
+            USB 10/100/1000 LAN:
+
+              Product ID: 0x8153
+              Vendor ID: 0x0bda  (Realtek Semiconductor Corp.)
+              Version: 31.fd
+              Serial Number: DF136C1FF7C31F73
+              Speed: Up to 5 Gb/s
+              Manufacturer: Realtek
+              Location ID: 0x00130000 / 3
+              Current Available (mA): 900
+              Current Required (mA): 184
+              Extra Operating Current (mA): 0
+
+    USB 3.1 Bus:
+
+      Host Controller Driver: AppleIntelCNLUSBXHCI
+      PCI Device ID: 0x9ded 
+      PCI Revision ID: 0x0030 
+      PCI Vendor ID: 0x8086 
+
+        USB2.1 Hub:
+
+          Product ID: 0x0610
+          Vendor ID: 0x05e3  (Genesys Logic, Inc.)
+          Version: 6.63
+          Speed: Up to 480 Mb/s
+          Manufacturer: GenesysLogic
+          Location ID: 0x14100000 / 2
+          Current Available (mA): 500
+          Current Required (mA): 100
+          Extra Operating Current (mA): 0
+
+    Apple T2 Bus:
+
+      Host Controller Driver: AppleUSBVHCIBCE
+
+        Touch Bar Backlight:
+
+          Product ID: 0x8102
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.01
+          Serial Number: 0000000000000000
+          Manufacturer: Apple Inc.
+          Location ID: 0x80700000
+
+        Touch Bar Display:
+
+          Product ID: 0x8302
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.01
+          Serial Number: 0000000000000000
+          Manufacturer: Apple Inc.
+          Location ID: 0x80600000
+
+        Apple Internal Keyboard / Trackpad:
+
+          Product ID: 0x027d
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 9.28
+          Serial Number: FM79196006RKT58AE+TWZ
+          Manufacturer: Apple Inc.
+          Location ID: 0x80500000
+
+        Headset:
+
+          Product ID: 0x8103
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.10
+          Serial Number: 000000000000
+          Manufacturer: Apple
+          Location ID: 0x80400000
+
+        Ambient Light Sensor:
+
+          Product ID: 0x8262
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.01
+          Serial Number: 000000000000
+          Manufacturer: Apple Inc.
+          Location ID: 0x80300000
+
+        FaceTime HD Camera (Built-in):
+
+          Product ID: 0x8514
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.01
+          Serial Number: CC29147854QJ3Y38Y
+          Manufacturer: Apple Inc.
+          Location ID: 0x80200000
+
+        Apple T2 Controller:
+
+          Product ID: 0x8233
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.01
+          Serial Number: 0000000000000000
+          Manufacturer: Apple Inc.
+          Location ID: 0x80100000
+
+
+========== 32. ETHERNET DRIVER CHECK ==========
+  125    3 0xffffff8001de3000 0x2000     0x2000     com.apple.driver.usb.cdc (5.0.0) 1D022E69-B1C9-3507-92EA-75B139AE570B <124 123 38 7 6 3 1>
+  126    0 0xffffff8001e1b000 0x7000     0x7000     com.apple.driver.usb.cdc.ncm (5.0.0) C15EE936-099F-35B5-A64F-A2B5C3B0B84C <125 124 123 53 49 38 8 7 6 3 1>
+  127    0 0xffffff8001e03000 0x2ff8     0x2ff8     com.apple.driver.usb.cdc.ecm (5.0.0) 786D6452-BC91-3F9E-82A6-71CF11FFDFDB <125 124 53 38 37 7 6 3 1>
+  178    0 0xffffff7f95e73000 0x4fff     0x4fff     com.apple.iokit.IOUserEthernet (1.0.1) FB0E7B9F-8563-3DE3-AAC1-F06E2FF4721A <53 8 7 6 3 1>
+  184    0 0xffffff7f94ad4000 0x1ffe     0x1ffe     com.apple.AGDCPluginDisplayMetrics (8.1.10) 7379ADE1-E35C-3928-8083-3FA45CDC3369 <132 9 8 7 6 3 1>
+  206    0 0xffffff8001e2a000 0xaff4     0xaff4     com.apple.driver.usb.realtek8153patcher (5.0.0) D25A7F10-DC1C-3CBF-9D98-C1E5D34CE3BE <38 7 6 3 1>
+  209    0 0xffffff7f95949000 0x3000     0x3000     com.apple.driver.usb.cdc.acm (5.0.0) A57DC957-5C90-34FF-B844-DDCCA1400EF1 <208 125 124 123 69 38 7 6 3 1>
+
+========== 33. ETHERNET REGISTRATION ==========
+  |   "BSD Name" = "en0"
+  |   "IOInterfaceType" = 6
+  |   "BSD Name" = "en2"
+  |   "IOInterfaceType" = 6
+  |   "BSD Name" = "en1"
+  |   "IOInterfaceType" = 6
+  |   "BSD Name" = "en4"
+  |   "IOInterfaceType" = 6
+  |   "BSD Name" = "en3"
+  |   "IOInterfaceType" = 6
+
+========== 34. RESOLVER CONFIGURATION ==========
+#
+# macOS Notice
+#
+# This file is not consulted for DNS hostname resolution, address
+# resolution, or the DNS query routing mechanism used by most
+# processes on this system.
+#
+# To view the DNS configuration used by this system, use:
+#   scutil --dns
+#
+# SEE ALSO
+#   dns-sd(1), scutil(8)
+#
+# This file is automatically generated.
+#
+search home
+nameserver 192.168.2.1
+nameserver 207.164.234.193
+
+========== 35. VPN INTERFACES ==========
+utun0: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1500
+	inet6 fe80::4169:27c8:a15b:342d%utun0 prefixlen 64 scopeid 0xc 
+utun1: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1380
+	inet6 fe80::c512:3132:5f96:ac12%utun1 prefixlen 64 scopeid 0xd 
+utun2: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 2000
+	inet6 fe80::ad33:e6cb:16bf:70e5%utun2 prefixlen 64 scopeid 0xf 
+utun3: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1000
+	inet6 fe80::ce81:b1c:bd2c:69e%utun3 prefixlen 64 scopeid 0x10 
+utun4: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1380
+	inet6 fe80::2e0a:c9b4:dadb:3876%utun4 prefixlen 64 scopeid 0x11 
+utun5: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1380
+	inet6 fe80::c4b5:7b1c:a719:5638%utun5 prefixlen 64 scopeid 0x12 
+
+========== 36. DIAGNOSTIC COMPLETE ==========
+Fri 20 Nov 2026 10:23:12 EST
+
+REPORT LOCATION:
+/Users/x/Documents/SmartNetwork/Diagnostics/SmartNetwork_Full_Diagnostic_20261120_102228.txt
+==================================================
+]7;file://MacBookPro/Users/x
