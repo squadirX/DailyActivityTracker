@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Network | Diagnostic Command Center</title>
+<style>
+:root {
+  --bg:#0b1020; --panel:#141c30; --panel2:#19243b;
+  --line:#293650; --text:#edf3ff; --muted:#91a1bd;
+  --cyan:#36d5f2; --blue:#6688ff; --green:#37d6a0;
+  --orange:#ffb454; --red:#ff6d7d; --purple:#b18cff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.app{display:flex;min-height:100vh}
+.sidebar{width:250px;background:#0e1729;border-right:1px solid var(--line);
+padding:25px 16px;display:flex;flex-direction:column;flex-shrink:0}
+.brand{display:flex;align-items:center;gap:12px;padding:4px 8px 28px}
+.logo{width:42px;height:42px;border-radius:13px;
+background:linear-gradient(135deg,#35d8ef,#6177ff);
+display:grid;place-items:center;font-size:22px;font-weight:800;color:#071323}
+.brand strong{font-size:16px;letter-spacing:.4px}
+.brand small{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+.nav-label{color:#687b9b;font-size:10px;font-weight:800;
+letter-spacing:1.5px;padding:17px 10px 9px}
+.nav button{width:100%;border:0;background:transparent;color:#9eacc5;
+padding:12px 13px;text-align:left;border-radius:10px;
+font-size:13px;cursor:pointer;margin:2px 0}
+.nav button:hover,.nav button.active{background:#202e49;color:white}
+.nav button.active{box-shadow:inset 3px 0 var(--cyan)}
+.nav .ico{display:inline-block;width:27px;font-size:16px}
+.sidebar-foot{margin-top:auto;padding:15px 10px;color:#7586a2;
+font-size:11px;line-height:1.7}
+.main{flex:1;min-width:0;padding:28px 32px;max-width:1700px;margin:auto;width:100%}
+.topbar{display:flex;justify-content:space-between;align-items:center;
+gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.eyebrow{color:var(--cyan);font-size:10px;font-weight:800;letter-spacing:2px}
+h1{font-size:25px;margin:7px 0 5px;letter-spacing:-.6px}
+.subtitle{color:var(--muted);font-size:12px}
+.top-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.clock{color:#b9c8e2;font-size:12px;background:var(--panel);
+border:1px solid var(--line);padding:10px 13px;border-radius:10px}
+.pill{font-size:10px;padding:7px 10px;border-radius:20px;
+background:#342b1c;color:var(--orange);border:1px solid #65502b}
+.button{border:1px solid #3b5d9b;background:#243b67;color:white;
+border-radius:9px;padding:10px 14px;font-size:11px;font-weight:700;cursor:pointer}
+.button:hover{filter:brightness(1.2)}
+.button.primary{background:linear-gradient(110deg,#187eaa,#4c67df);border:0}
+.grid{display:grid;gap:15px}
+.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}
+.card{background:linear-gradient(145deg,var(--panel),#111a2d);
+border:1px solid var(--line);border-radius:15px;padding:18px;min-width:0}
+.kpi-top{display:flex;justify-content:space-between;align-items:center}
+.kpi-label{font-size:11px;color:var(--muted)}
+.kpi-icon{font-size:19px}
+.kpi-value{font-size:24px;font-weight:750;margin:15px 0 5px}
+.kpi-note{font-size:10px;color:var(--muted)}
+.accent-cyan{color:var(--cyan)} .accent-blue{color:var(--blue)}
+.accent-green{color:var(--green)} .accent-orange{color:var(--orange)}
+.section-head{display:flex;justify-content:space-between;align-items:center;
+gap:12px;margin:25px 0 13px;flex-wrap:wrap}
+.section-head h2{font-size:15px;margin:0}
+.section-head p{font-size:11px;color:var(--muted);margin:5px 0 0}
+.two{grid-template-columns:1.25fr 1fr}
+.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.device{display:flex;align-items:center;gap:13px;padding:14px 0;
+border-bottom:1px solid var(--line)}
+.device:last-child{border:0}
+.device-icon{width:39px;height:39px;border-radius:11px;
+background:#202e49;display:grid;place-items:center;font-size:19px}
+.device-info{flex:1;min-width:0}
+.device-info strong{font-size:12px;display:block}
+.device-info small{color:var(--muted);font-size:10px}
+.status{font-size:10px;border-radius:20px;padding:6px 9px;
+background:#302c20;color:var(--orange);white-space:nowrap}
+.status.good{background:#153b35;color:var(--green)}
+.status.bad{background:#402630;color:var(--red)}
+.drive{border:1px solid var(--line);border-radius:12px;padding:14px}
+.drive-top{display:flex;justify-content:space-between;align-items:center}
+.drive h3{font-size:14px;margin:0}
+.drive p{font-size:10px;color:var(--muted);margin:8px 0}
+.drive .status{display:inline-block}
+.progress{height:5px;background:#293650;border-radius:10px;margin-top:12px;overflow:hidden}
+.capacity-info{font-size:9px;color:#b9cde0;line-height:1.5;margin-top:8px;overflow-wrap:anywhere}
+.progress span.capacity-good{background:#20c987!important}
+.progress span.capacity-warning{background:#ffd27a!important}
+.progress span.capacity-critical{background:#ff626e!important}
+.progress span{display:block;height:100%;width:0%;
+background:linear-gradient(90deg,var(--cyan),var(--blue));transition:width .4s}
+.activity{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--orange);margin-top:4px}
+.activity strong{font-size:11px}
+.activity small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.chart{height:145px;display:flex;align-items:end;gap:9px;padding:15px 4px 0}
+.bar{flex:1;min-width:5px;border-radius:5px 5px 2px 2px;
+background:linear-gradient(180deg,#39d9ed,#4e68d9);opacity:.75}
+.chart-labels{display:flex;justify-content:space-between;color:var(--muted);
+font-size:9px;margin-top:9px}
+.panel-note{color:var(--muted);font-size:11px;line-height:1.7}
+.page{display:none}.page.active{display:block}
+.table-wrap{overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{text-align:left;color:#8294b3;font-weight:600;padding:12px;
+border-bottom:1px solid var(--line)}
+td{padding:13px 12px;border-bottom:1px solid #202d43;color:#d4def0}
+.empty{padding:30px;text-align:center;color:var(--muted);font-size:12px}
+.setting-row{display:flex;justify-content:space-between;gap:15px;
+padding:15px 0;border-bottom:1px solid var(--line);font-size:12px}
+select{background:#202e49;color:white;border:1px solid var(--line);
+padding:9px;border-radius:8px}
+.footer{text-align:center;color:#61728e;font-size:10px;padding:30px 0 10px}
+@media(max-width:1050px){.kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){
+.app{display:block}.sidebar{width:100%;padding:12px}
+.brand{padding-bottom:10px}.nav{display:flex;overflow:auto;gap:4px}
+.nav-label,.sidebar-foot{display:none}.nav button{white-space:nowrap;width:auto}
+.main{padding:20px 14px}.two,.three{grid-template-columns:1fr}
+}
+
+/* Traffic-light status: pending / unknown only */
+@keyframes snStatusPending {
+  0%,100% { opacity:1; }
+  50% { opacity:.48; }
+}
+.status.pending {
+  color:#ffd27a!important;
+  border-color:#a77b35!important;
+  background:#493719!important;
+  animation:snStatusPending 1.25s ease-in-out infinite;
+}
+
+
+/* Compact Overview layout */
+.overview-layout {
+  grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);
+  align-items:start;
+}
+.overview-left-column {
+  display:grid;
+  align-content:start;
+  gap:8px;
+  min-width:0;
+}
+.overview-left-column .section-head {
+  margin:8px 0;
+}
+.overview-connectivity-card {
+  padding:10px 13px;
+}
+.overview-connectivity-card .device {
+  padding:8px 0;
+  gap:10px;
+}
+.overview-connectivity-card .device-icon {
+  width:34px;
+  height:34px;
+  font-size:17px;
+}
+.overview-connectivity-card .device-info small {
+  font-size:9px;
+}
+.overview-left-column .drive {
+  padding:10px;
+  min-width:0;
+}
+.overview-left-column .drive h3 {font-size:12px}
+.overview-left-column .drive p {font-size:9px}
+.overview-left-column .status {
+  font-size:9px;
+  padding:5px 7px;
+}
+@media(max-width:720px) {
+  .overview-layout {grid-template-columns:1fr!important}
+  .overview-left-column .grid.four {
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+
+
+
+/* ==========================================
+   SMART NETWORK - CYBERSECURITY SNAPSHOT
+   UI ONLY - NO DIAGNOSTIC LOGIC CHANGED
+   ========================================== */
+
+/* Give Network Performance more horizontal room */
+.overview-layout {
+  grid-template-columns:minmax(0,0.92fr) minmax(0,1.08fr);
+  align-items:stretch;
+}
+
+.overview-layout > .card {
+  min-width:0;
+}
+
+.overview-layout > .card:last-child {
+  padding:18px;
+  height:100%;
+}
+
+.overview-left-column {
+  height:100%;
+}
+
+.sn-performance {
+  gap:18px;
+}
+
+/* Full-width Cybersecurity section */
+.cyber-snapshot {
+  width:100%;
+  margin-top:22px;
+  padding:20px;
+  border:1px solid #294967;
+  border-radius:16px;
+  background:linear-gradient(145deg,#10253a,#0c1c2d);
+  box-sizing:border-box;
+}
+
+.cyber-section-head {
+  margin:0 0 20px!important;
+  align-items:center;
+}
+
+.cyber-section-head h2 {
+  margin-bottom:5px;
+}
+
+.cyber-section-head p {
+  margin:0;
+  color:#9db4ca;
+  font-size:12px;
+}
+
+.cyber-overall-status {
+  display:inline-block;
+  padding:7px 11px;
+  border:1px solid #53647a;
+  border-radius:8px;
+  color:#c5d0dc;
+  background:#202f42;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.6px;
+}
+
+.cyber-group-heading {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:18px 0 12px;
+}
+
+.cyber-group-heading > span {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+  border:1px solid #39718d;
+  border-radius:9px;
+  background:#173b53;
+  color:#63d9e8;
+  font-size:12px;
+  font-weight:800;
+}
+
+.cyber-group-heading strong {
+  display:block;
+  color:#e3edf7;
+  font-size:13px;
+}
+
+.cyber-group-heading small {
+  display:block;
+  margin-top:3px;
+  color:#91a9bf;
+  font-size:10px;
+}
+
+.cyber-second-group {
+  margin-top:24px;
+}
+
+.cyber-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+
+.cyber-card {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+  min-height:112px;
+  padding:13px;
+  border:1px solid #294d69;
+  border-radius:12px;
+  background:linear-gradient(145deg,#193650,#12283d);
+  box-sizing:border-box;
+  transition:border-color .2s, transform .2s;
+}
+
+.cyber-card:hover {
+  border-color:#4b91b2;
+  transform:translateY(-2px);
+}
+
+.cyber-card-visual {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:46px;
+  height:46px;
+  flex:0 0 46px;
+  border:1px solid #41647e;
+  border-radius:12px;
+  background:#203f59;
+  font-size:23px;
+}
+
+.cyber-card-content {
+  min-width:0;
+}
+
+.cyber-card-content h3 {
+  margin:0 0 5px;
+  color:#e8f2fb;
+  font-size:12px;
+  line-height:1.35;
+}
+
+.cyber-card-content p {
+  margin:0 0 9px;
+  color:#a7bbce;
+  font-size:9px;
+  line-height:1.45;
+}
+
+.cyber-card-status {
+  display:inline-block;
+  padding:4px 6px;
+  border:1px solid #66758a;
+  border-radius:5px;
+  background:#29394c;
+  color:#d0d9e4;
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:.3px;
+}
+
+.cyber-footer {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+  padding-top:12px;
+  border-top:1px solid #29445d;
+  color:#8fa8bd;
+  font-size:9px;
+}
+
+/* Responsive layout */
+@media(max-width:1050px) {
+  .cyber-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:720px) {
+  .overview-layout {
+    grid-template-columns:1fr!important;
+  }
+
+  .overview-layout > .card:last-child {
+    height:auto;
+  }
+
+  .cyber-snapshot {
+    padding:14px;
+  }
+
+  .cyber-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+  }
+
+  .cyber-card {
+    min-height:108px;
+    padding:9px;
+    gap:8px;
+  }
+
+  .cyber-card-visual {
+    width:36px;
+    height:36px;
+    flex-basis:36px;
+    font-size:19px;
+  }
+
+  .cyber-card-content h3 {
+    font-size:11px;
+  }
+
+  .cyber-card-content p {
+    font-size:8px;
+  }
+
+  .cyber-section-head {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+
+
+
+/* Overview KPI: blink only the PENDING text. */
+@keyframes snOverviewPendingBlink {
+  0%, 100% { color: #ffd27a; }
+  50% { color: transparent; }
+}
+.kpi-value.kpi-pending {
+  color: #ffd27a !important;
+  animation: snOverviewPendingBlink 1.2s ease-in-out infinite;
+}
+
+</style>
+
+
+
+
+
+
+
+
+<style id="SN_VISUAL_REDESIGN_V1">
+:root{
+ --bg:#071322;
+ --panel:#102139;
+ --panel2:#152b46;
+ --line:#294762;
+ --text:#edf7ff;
+ --muted:#91abc5;
+ --cyan:#43e3f4;
+ --blue:#7297ff;
+ --green:#45dfa7;
+ --amber:#ffc16d;
+ --red:#ff7185;
+ --violet:#bd9aff;
+}
+*{box-sizing:border-box}
+body{
+ background:
+ radial-gradient(ellipse at 72% 0%,#123a5a55,transparent 38%),
+ radial-gradient(ellipse at 0% 60%,#243a7350,transparent 35%),
+ var(--bg)!important;
+ color:var(--text);
+}
+.sidebar{
+ width:265px!important;
+ background:linear-gradient(180deg,#0d2037,#091729)!important;
+ border-right:1px solid #294b68!important;
+ box-shadow:8px 0 35px #0003;
+}
+.brand{padding-bottom:25px!important}
+.logo,.sn-logo{
+ border-radius:14px!important;
+ background:linear-gradient(135deg,#55eff1,#368eea 60%,#987cff)!important;
+ box-shadow:0 0 20px #36d9f455,0 0 35px #347bff33;
+ color:#06182a!important;
+}
+.brand strong{color:#effaff!important;letter-spacing:.8px}
+.brand small{color:#5de1f5!important;letter-spacing:1px}
+.nav-label{color:#58d9f0!important;letter-spacing:1.7px!important}
+.nav button{
+ color:#b5cbe0!important;
+ border:1px solid transparent!important;
+ border-radius:11px!important;
+ padding:12px 11px!important;
+ margin:3px 0!important;
+ transition:all .2s ease;
+}
+.nav button:hover{
+ background:#183a58!important;
+ transform:translateX(2px);
+}
+.nav button.active{
+ background:linear-gradient(100deg,#174568,#1a3152)!important;
+ color:#70efff!important;
+ border-color:#286887!important;
+ box-shadow:inset 3px 0 var(--cyan),0 5px 18px #0003!important;
+}
+.nav .ico{font-size:18px!important}
+.sidebar-foot{color:#86b6d4!important;line-height:1.9}
+.main{
+ max-width:1800px!important;
+ padding:28px clamp(16px,2.7vw,42px)!important;
+}
+.topbar{
+ border-bottom:1px solid #29445d;
+ padding-bottom:19px;
+ margin-bottom:25px!important;
+}
+.eyebrow{
+ color:var(--cyan)!important;
+ letter-spacing:2px!important;
+}
+h1{font-size:clamp(23px,2.2vw,31px)!important}
+.subtitle{color:#9db6ce!important}
+.clock{
+ background:linear-gradient(145deg,#172f49,#10233a)!important;
+ border:1px solid #365873!important;
+ border-radius:11px!important;
+}
+.pill{
+ background:#3b2d1d!important;
+ color:var(--amber)!important;
+ border-color:#765b31!important;
+}
+.grid{gap:16px!important}
+.kpis{gap:15px!important}
+.card{
+ background:linear-gradient(145deg,#142b45,#0f2036)!important;
+ border:1px solid #2c4a66!important;
+ border-radius:16px!important;
+ padding:19px!important;
+ box-shadow:0 10px 28px #0003;
+ transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.card:hover{
+ border-color:#477b9b!important;
+ box-shadow:0 14px 32px #0004;
+}
+.kpi-label{
+ color:#9db8d1!important;
+ letter-spacing:1px;
+ font-size:10px!important;
+ font-weight:800;
+}
+.kpi-value{
+ font-size:29px!important;
+ letter-spacing:-.8px;
+ font-variant-numeric:tabular-nums;
+}
+.kpi-note{color:#91abc5!important;line-height:1.6}
+.kpi-icon{
+ display:inline-grid;
+ place-items:center;
+ width:36px;height:36px;
+ border-radius:11px;
+ background:#1d3b58;
+ border:1px solid #345d7b;
+}
+.accent-cyan{color:var(--cyan)!important}
+.accent-blue{color:var(--blue)!important}
+.accent-green{color:var(--green)!important}
+.accent-orange{color:var(--amber)!important}
+.section-head{margin:27px 0 14px!important}
+.section-head h2{font-size:15px!important;letter-spacing:.2px}
+.section-head p{color:#9ab2ca!important;line-height:1.55}
+.button{
+ border:1px solid #416b8b!important;
+ background:linear-gradient(135deg,#1b4668,#254c7a)!important;
+ border-radius:10px!important;
+ padding:10px 14px!important;
+}
+.button.primary{
+ background:linear-gradient(110deg,#087fae,#566fe2)!important;
+}
+.device{
+ padding:15px 0!important;
+ border-bottom:1px solid #2a435c!important;
+}
+.device-icon{
+ width:43px!important;height:43px!important;
+ border-radius:13px!important;
+ background:linear-gradient(145deg,#204565,#172e49)!important;
+ border:1px solid #365d7b;
+ box-shadow:inset 0 1px 0 #ffffff18;
+}
+.device-info strong{color:#eaf6ff!important}
+.device-info small{color:#91abc5!important;line-height:1.6}
+.status{
+ border:1px solid #765b32!important;
+ background:#3a301f!important;
+ color:#ffd08b!important;
+ font-weight:800;
+ letter-spacing:.3px;
+}
+.status.good{
+ background:#153d36!important;
+ border-color:#28735c!important;
+ color:#5be7b2!important;
+}
+.status.bad{
+ background:#482632!important;
+ border-color:#824052!important;
+ color:#ff899a!important;
+}
+.drive{
+ background:linear-gradient(145deg,#152e49,#10223a)!important;
+ border:1px solid #31516d!important;
+ border-radius:14px!important;
+ padding:16px!important;
+ box-shadow:0 8px 22px #0002;
+}
+.drive h3{color:#eaf7ff!important}
+.drive p{color:#96afc8!important;line-height:1.6}
+.progress{background:#263f59!important}
+.progress span{background:linear-gradient(90deg,#42e1ed,#698bff)!important}
+.table-wrap{
+ border:1px solid #2b4964;
+ border-radius:12px;
+ overflow:auto;
+}
+table{font-size:11px!important}
+th{
+ background:#1a3551!important;
+ color:#83e1f1!important;
+ padding:13px!important;
+ letter-spacing:.8px;
+}
+td{
+ padding:13px!important;
+ border-bottom:1px solid #263f59!important;
+ color:#d8e9f7!important;
+}
+tbody tr:hover{background:#1a3550}
+.empty{
+ background:#132a43!important;
+ border:1px dashed #3a5c78!important;
+ border-radius:12px;
+ padding:22px!important;
+ line-height:1.7;
+}
+.setting-row{
+ border-bottom:1px solid #2a455e!important;
+ line-height:1.6;
+}
+.setting-row>span:first-child{color:#b7cde0!important}
+select{
+ background:#1a3550!important;
+ border:1px solid #42617f!important;
+ border-radius:9px!important;
+ color:#eff8ff!important;
+}
+.activity{border-bottom-color:#29435e!important}
+.dot{box-shadow:0 0 11px currentColor}
+.footer{
+ border-top:1px solid #29445d;
+ color:#86aac6!important;
+ margin-top:30px;
+}
+.page{animation:snPageIn .24s ease}
+@keyframes snPageIn{
+ from{opacity:.65;transform:translateY(5px)}
+ to{opacity:1;transform:translateY(0)}
+}
+/* Correct world-clock flag placement */
+#sn-world .sn-city:nth-of-type(2)::before{
+ content:"🇨🇦 ";
+ font-size:15px;
+}
+#sn-world .sn-city:nth-of-type(7)::before{
+ content:"🇧🇩 ";
+ font-size:15px;
+}
+#sn-world{
+ border:1px solid #315775!important;
+ border-radius:14px!important;
+ background:linear-gradient(145deg,#142d49,#0c2036)!important;
+ padding:13px!important;
+ box-shadow:0 8px 22px #0003;
+}
+#sn-world .sn-world-title{
+ color:#64e3f5!important;
+ font-weight:800;
+ letter-spacing:1.3px;
+}
+#sn-world .sn-time{
+ color:#f1fbff!important;
+ font-size:21px!important;
+ font-variant-numeric:tabular-nums;
+}
+#sn-world .sn-city{color:#b8d3e8!important}
+#sn-world .sn-weather strong{color:#68e1f1!important}
+#hardware-telemetry .hw-card{
+ background:linear-gradient(145deg,#162f49,#10233a)!important;
+ border:1px solid #355775!important;
+ border-radius:14px!important;
+}
+#hardware-telemetry .hw-title{color:#e9f7ff!important}
+#hardware-telemetry .hw-line{color:#b5cce0!important}
+.sn-help-dialog{
+ background:linear-gradient(145deg,#172f4b,#102239)!important;
+ border-color:#426987!important;
+}
+.sn-help-guide-button{
+ background:#1b3a57!important;
+ border-color:#426987!important;
+ border-radius:9px!important;
+}
+/* Network performance visual component */
+.sn-performance{
+ display:grid;
+ gap:14px;
+ margin-top:14px;
+}
+.sn-perf-top{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:10px;
+}
+.sn-perf-metric{
+ min-width:0;
+ padding:13px;
+ border:1px solid #2d506e;
+ border-radius:12px;
+ background:linear-gradient(145deg,#193651,#12283f);
+}
+.sn-perf-metric small{
+ display:block;
+ color:#9cb9d2;
+ font-size:9px;
+ font-weight:800;
+ letter-spacing:1.1px;
+}
+.sn-perf-metric strong{
+ display:block;
+ margin-top:8px;
+ font-size:23px;
+ color:#f0fbff;
+ font-variant-numeric:tabular-nums;
+}
+.sn-perf-metric em{
+ display:block;
+ margin-top:4px;
+ font-size:9px;
+ color:#90abc4;
+ font-style:normal;
+}
+.sn-perf-latency{color:#ffc16d!important}
+.sn-perf-loss{color:#67e4b5!important}
+.sn-perf-health{color:#74dff2!important}
+
+/* metric-status-enhancement */
+.sn-perf-metric{position:relative}
+.sn-perf-badge{
+ position:absolute;top:10px;right:10px;
+ font-size:8px;font-weight:900;letter-spacing:.7px;
+ padding:4px 6px;border-radius:5px;border:1px solid currentColor;
+}
+.sn-perf-metric strong.metric-good,.sn-perf-badge.metric-good{color:#48e09a!important}
+.sn-perf-metric strong.metric-warning,.sn-perf-badge.metric-warning{color:#ffd166!important}
+.sn-perf-metric strong.metric-bad,.sn-perf-badge.metric-bad{color:#ff626b!important}
+@keyframes sn-pending-pulse{
+ 0%,100%{opacity:1;text-shadow:0 0 7px rgba(255,209,102,.65)}
+ 50%{opacity:.35;text-shadow:0 0 1px rgba(255,209,102,.15)}
+}
+.sn-perf-metric strong.metric-pending,
+.sn-perf-badge.metric-pending{
+ color:#ffd166!important;
+ animation:sn-pending-pulse 1.2s ease-in-out infinite;
+}
+
+.sn-perf-chart{
+ padding:14px;
+ border:1px solid #2b4b67;
+ border-radius:14px;
+ background:linear-gradient(145deg,#10243b,#0c1d31);
+}
+.sn-perf-chart-head{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:10px;
+ flex-wrap:wrap;
+ margin-bottom:8px;
+}
+.sn-perf-chart-head strong{font-size:11px;color:#e8f7ff}
+.sn-perf-chart-head span{font-size:9px;color:#8eabc5}
+#sn-latency-chart{
+ display:block;
+ width:100%;
+ height:auto;
+ min-height:120px;
+ overflow:visible;
+}
+.sn-chart-grid{stroke:#29435d;stroke-width:1;stroke-dasharray:4 6}
+.sn-chart-line{
+ fill:none;
+ stroke:#48dff1;
+ stroke-width:3;
+ stroke-linecap:round;
+ stroke-linejoin:round;
+ filter:drop-shadow(0 0 5px #39d9f188);
+}
+.sn-chart-point{
+ fill:#8af4ff;
+ stroke:#164c6c;
+ stroke-width:2;
+}
+.sn-chart-axis{
+ fill:#8eaac3;
+ font-size:10px;
+}
+.sn-chart-empty{
+ fill:#8eaac3;
+ font-size:13px;
+}
+.sn-perf-topology{
+ border:1px solid #2b4b67;
+ border-radius:14px;
+ padding:15px;
+ background:linear-gradient(145deg,#142d47,#0e2036);
+}
+.sn-topology-title{
+ color:#a8c3d9;
+ font-size:9px;
+ font-weight:800;
+ letter-spacing:1.2px;
+ margin-bottom:14px;
+}
+.sn-topology-flow{
+ display:grid;
+ grid-template-columns:repeat(4,minmax(0,1fr));
+ align-items:center;
+ gap:7px;
+}
+.sn-topology-node{
+ min-width:0;
+ text-align:center;
+ padding:12px 5px;
+ border:1px solid #355674;
+ border-radius:12px;
+ background:#193651;
+}
+.sn-topology-icon{font-size:25px;display:block;margin-bottom:7px}
+.sn-topology-node strong{
+ display:block;
+ font-size:10px;
+ color:#edf8ff;
+}
+.sn-topology-node small{
+ display:block;
+ font-size:9px;
+ color:#9cb6cd;
+ margin-top:5px;
+ overflow-wrap:anywhere;
+}
+.sn-topology-link{
+ height:3px;
+ background:#49657d;
+ border-radius:5px;
+ position:relative;
+}
+.sn-topology-link::after{
+ content:"";
+ position:absolute;
+ right:0;top:-3px;
+ border-left:7px solid #6bdff0;
+ border-top:4px solid transparent;
+ border-bottom:4px solid transparent;
+}
+.sn-live-indicator{
+ display:inline-block;
+ width:7px;height:7px;
+ border-radius:50%;
+ margin-right:5px;
+ background:#e9b55e;
+ box-shadow:0 0 8px currentColor;
+}
+.sn-live-indicator.good{background:#45dfa7}
+.sn-live-indicator.bad{background:#ff7185}
+.sn-perf-foot{
+ display:flex;
+ justify-content:space-between;
+ flex-wrap:wrap;
+ gap:8px;
+ color:#8eaac3;
+ font-size:9px;
+}
+@media(max-width:1050px){
+ .sn-perf-top{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:720px){
+ .sidebar{width:100%!important;padding:12px!important}
+ .brand{padding-bottom:12px!important}
+ .nav{display:flex;overflow-x:auto;gap:4px}
+ .nav-label,.sidebar-foot{display:none}
+ .nav button{white-space:nowrap;width:auto;flex:0 0 auto}
+ .main{padding:18px 13px!important}
+ .two,.three{grid-template-columns:1fr!important}
+ .kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .sn-perf-top{grid-template-columns:1fr}
+ .sn-topology-flow{grid-template-columns:1fr}
+ .sn-topology-link{width:3px;height:17px;margin:auto}
+ .sn-topology-link::after{
+  right:-3px;top:auto;bottom:0;
+  border-left:4px solid transparent;
+  border-right:4px solid transparent;
+  border-top:7px solid #6bdff0;
+  border-bottom:0;
+ }
+}
+@media(max-width:420px){
+ .kpis{grid-template-columns:1fr!important}
+}
+</style>
+
+
+
+<style id="topology-flow-enhancement">
+#sn-performance .sn-topology-flow {
+  grid-template-columns:
+    minmax(0,1fr) 20px
+    minmax(0,1fr) 20px
+    minmax(0,1fr) 20px
+    minmax(0,1fr);
+  align-items:center;
+  gap:6px;
+}
+
+#sn-performance .sn-topology-node {
+  padding:10px 3px;
+}
+
+#sn-performance .sn-topology-link {
+  position:relative;
+  width:20px;
+  height:18px;
+  background:transparent;
+  border-radius:5px;
+}
+
+#sn-performance .sn-topology-link::before,
+#sn-performance .sn-topology-link::after {
+  content:none;
+}
+
+#sn-performance .sn-link-track {
+  position:absolute;
+  left:0;
+  right:0;
+  top:50%;
+  height:3px;
+  transform:translateY(-50%);
+  background:#49657d;
+  border-radius:5px;
+}
+
+#sn-performance .sn-link-flow {
+  position:absolute;
+  left:0;
+  top:50%;
+  width:8px;
+  height:8px;
+  transform:translateY(-50%);
+  border-radius:50%;
+  background:#8df7b2;
+  box-shadow:0 0 8px #53e88a;
+  opacity:0;
+}
+
+#sn-performance .sn-link-arrow {
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  border-left:6px solid #7893a8;
+  border-top:4px solid transparent;
+  border-bottom:4px solid transparent;
+}
+
+#sn-performance .sn-link-cross {
+  display:none;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  color:#ff6875;
+  background:#193651;
+  font-size:17px;
+  line-height:16px;
+  font-weight:800;
+  padding:0 2px;
+  z-index:3;
+}
+
+#sn-performance .sn-topology-link.is-connected .sn-link-track {
+  background:#267c50;
+}
+#sn-performance .sn-topology-link.is-connected .sn-link-arrow {
+  border-left-color:#56e68c;
+}
+#sn-performance .sn-topology-link.is-connected .sn-link-flow {
+  opacity:1;
+  animation:sn-blood-flow 1.25s linear infinite;
+}
+
+#sn-performance .sn-topology-link.is-disconnected .sn-link-track {
+  background:#a33a48;
+}
+#sn-performance .sn-topology-link.is-disconnected .sn-link-arrow {
+  display:none;
+}
+#sn-performance .sn-topology-link.is-disconnected .sn-link-cross {
+  display:block;
+}
+
+#sn-performance .sn-topology-link.is-pending .sn-link-track {
+  background:#49657d;
+}
+
+@keyframes sn-blood-flow {
+  0% {left:0;opacity:0}
+  15% {opacity:1}
+  85% {opacity:1}
+  100% {left:calc(100% - 8px);opacity:0}
+}
+
+@media(max-width:720px) {
+  #sn-performance .sn-topology-flow {
+    grid-template-columns:1fr!important;
+  }
+  #sn-performance .sn-topology-link {
+    width:18px;
+    height:18px;
+    margin:auto;
+  }
+  #sn-performance .sn-link-track {
+    left:50%;
+    right:auto;
+    top:0;
+    bottom:0;
+    width:3px;
+    height:auto;
+    transform:translateX(-50%);
+  }
+  #sn-performance .sn-link-arrow {
+    right:auto;
+    left:50%;
+    top:auto;
+    bottom:0;
+    transform:translateX(-50%);
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    border-top:7px solid #7893a8;
+    border-bottom:0;
+  }
+  #sn-performance .sn-topology-link.is-connected .sn-link-arrow {
+    border-top-color:#56e68c;
+  }
+  #sn-performance .sn-link-flow {
+    left:50%;
+    top:0;
+    transform:translateX(-50%);
+    animation-name:sn-blood-flow-vertical;
+  }
+}
+
+@keyframes sn-blood-flow-vertical {
+  0% {top:0;opacity:0}
+  15% {opacity:1}
+  85% {opacity:1}
+  100% {top:calc(100% - 8px);opacity:0}
+}
+</style>
+
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand">
+    <div class="logo">S</div>
+    <div><strong>SMART NETWORK</strong><small>DIAGNOSTIC COMMAND CENTER</small></div>
+  </div>
+  <div class="nav">
+    <div class="nav-label">COMMAND CENTER</div>
+    <button class="active" data-page="overview"><span class="ico">◈</span>Overview</button>
+    <button data-page="network"><span class="ico">⌁</span>Network Diagnostics</button>
+    <button data-page="storage"><span class="ico">▣</span>Storage Transactions</button>
+    <button data-page="integrity"><span class="ico">◉</span>File Integrity</button>
+    <div class="nav-label">MONITORING</div>
+    <button data-page="activity"><span class="ico">◷</span>Live Activity</button>
+    <button data-page="reports"><span class="ico">▤</span>Reports & History</button>
+    <div class="nav-label">SYSTEM</div>
+    <button data-page="settings"><span class="ico">⚙</span>Settings</button>
+    <button type="button" id="snExitButton" onclick="window.close()" title="Exit Dashboard" aria-label="Exit Dashboard" style="display:flex;width:40px;height:36px;margin:8px auto 0 !important;align-self:center!important;padding:0;background:#FF0000;color:#FFFFFF;border:1px solid #FF0000;border-radius:6px;font-size:20px;font-weight:800;cursor:pointer;align-items:center;justify-content:center"><span class="ico" style="font-size:20px;font-weight:900;line-height:1">⏻</span></button> <!-- SN_EXIT_BUTTON -->
+  </div>
+  <div class="sidebar-foot">SMART NETWORK<br>Connectivity & Storage Diagnostics<br>Live Diagnostics · Version 1.1</div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <div>
+    <div class="eyebrow">SMART NETWORK / COMMAND CENTER</div>
+    <h1 id="pageTitle">System Overview</h1>
+    <div class="subtitle" id="pageSub">A unified view of connectivity, storage and file integrity</div>
+  </div>
+  <div class="top-right">
+    <div class="clock" id="clock">Loading local time…</div>
+    <span class="pill">● UI PROTOTYPE</span>
+  </div>
+</header>
+
+<section class="page active" id="overview">
+  <div class="grid kpis">
+    <div class="card"><div class="kpi-top"><span class="kpi-label">CONNECTIVITY HEALTH</span><span class="kpi-icon"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="#43D9B0" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/><path d="M3 12h4l2-4 3 8 2-4h7"/></svg></span></div><div class="kpi-value accent-cyan kpi-pending">PENDING</div><div class="kpi-note">Connectivity checks only · other tests pending</div></div>
+    <div class="card"><div class="kpi-top"><span class="kpi-label">NETWORK LINKS</span><span class="kpi-icon"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="#64B5F6" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="6" rx="1.5"/><rect x="2" y="16" width="6" height="6" rx="1.5"/><rect x="16" y="16" width="6" height="6" rx="1.5"/><path d="M12 8v4M5 16v-2h14v2"/></svg></span></div><div class="kpi-value accent-blue kpi-pending">PENDING</div><div class="kpi-note">Live adapter status</div></div>
+    <div class="card"><div class="kpi-top"><span class="kpi-label">STORAGE TARGETS</span><span class="kpi-icon"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="#F5C76B" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20M6 16h.01M10 16h.01"/></svg></span></div><div class="kpi-value accent-green kpi-pending">PENDING</div><div class="kpi-note">Mounted Windows shares · E pending identification</div></div>
+    <div class="card"><div class="kpi-top"><span class="kpi-label">FAILED TESTS</span><span class="kpi-icon"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="#FF929C" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="M12 8v4M12 16h.01"/></svg></span></div><div class="kpi-value accent-orange kpi-pending">PENDING</div><div class="kpi-note">No test has been executed</div></div>
+  </div>
+
+  <div class="section-head"><div><h2>Connectivity Overview</h2><p>Network interface status and service reachability</p></div><button class="button" onclick="go('network')">Open Diagnostics →</button></div>
+  <div class="grid two overview-layout">
+    <div class="overview-left-column">
+<div class="card overview-connectivity-card">
+      <div class="device"><div class="device-icon">📶</div><div class="device-info"><strong>Wi-Fi Interface</strong><small>IP, gateway, route, latency and packet loss</small></div><span id="ov-wifi" class="status">PENDING</span></div>
+      <div class="device"><div class="device-icon">🔌</div><div class="device-info"><strong>Ethernet Interface</strong><small>USB adapter, link speed, route and reachability</small></div><span id="ov-ethernet" class="status">PENDING</span></div>
+      <div class="device"><div class="device-icon">⇄</div><div class="device-info"><strong>FTP Control Port</strong><small>Control connection and data transfer tests</small></div><span id="ov-ftp" class="status">PENDING</span></div>
+      <div class="device"><div class="device-icon">▤</div><div class="device-info"><strong>SMB File Sharing</strong><small>Windows Server TCP port 445 reachability</small></div><span id="ov-smb" class="status">PENDING</span></div>
+    </div>
+<div class="section-head"><div><h2>Storage Transaction Targets</h2><p>Mounted status only · Write/read-back and SHA-256 tests pending</p></div><button class="button" onclick="go('storage')">Open Storage Tests →</button></div>
+  <div class="grid four" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+    <div class="drive"><div class="drive-top"><h3>Drive C:</h3><span>▣</span></div><p>Windows system drive</p><span id="ov-drive-c" class="status">PENDING</span><div class="capacity-info" id="ov-drive-c-capacity">Capacity: Pending</div><div class="progress"><span></span></div></div>
+    <div class="drive"><div class="drive-top"><h3>Drive D:</h3><span>▣</span></div><p>Storage target</p><span id="ov-drive-d" class="status">PENDING</span><div class="capacity-info" id="ov-drive-d-capacity">Capacity: Pending</div><div class="progress"><span></span></div></div>
+    <div class="drive"><div class="drive-top"><h3>Drive F:</h3><span>▣</span></div><p>Storage target</p><span id="ov-drive-f" class="status">PENDING</span><div class="capacity-info" id="ov-drive-f-capacity">Capacity: Pending</div><div class="progress"><span></span></div></div>
+    <div class="drive"><div class="drive-top"><h3>Drive G:</h3><span>▣</span></div><p>Storage target</p><span id="ov-drive-g" class="status">PENDING</span><div class="capacity-info" id="ov-drive-g-capacity">Capacity: Pending</div><div class="progress"><span></span></div></div>
+  </div>
+  
+
+
+<div class="section-head"><div><h2 class="recent-activity-heading">Recent Activity</h2>
+<details class="recent-activity-help">
+  <summary aria-label="What appears in Recent Activity" title="About Recent Activity">i</summary>
+  <div class="recent-activity-help-popup">
+    <button type="button"
+      class="recent-activity-help-close"
+      aria-label="Close information popup"
+      title="Close"
+      onclick="this.closest('details').open=false">×</button>
+
+    <strong>What will you find in Recent Activity?</strong>
+    <p>Recent Activity displays real diagnostic events and their timestamps.</p>
+    <ul>
+      <li>Wi-Fi and Ethernet connectivity changes</li>
+      <li>Network failover and recovery events</li>
+      <li>FTP/FTPS and SMB connection or test results</li>
+      <li>Storage detection and authorized file transaction results</li>
+      <li>Event time, result and diagnostic status</li>
+    </ul>
+    <p><strong>Status meaning:</strong> Green means confirmed positive, Red means confirmed failure, and blinking Yellow means pending or not yet verified.</p>
+    <p><strong>Important:</strong> Live Refresh shows the latest diagnostic update. It does not mean a historical event has been recorded. Only actual events should appear here; no synthetic events or unverified successes are claimed.</p>
+  </div>
+</details><p>System events and test execution log</p></div></div>
+  <div class="card"><div class="empty" id="recent">Live diagnostics active · Waiting for first refresh.</div></div>
+</div>
+
+    <div class="card">
+      <div class="section-head" style="margin:0"><div><h2>Network Performance</h2><p>Latency and stability history</p></div></div>
+      
+<div class="sn-performance" id="sn-performance">
+  <div class="sn-perf-top">
+    <div class="sn-perf-metric">
+      <small>INTERNET LATENCY</small>
+      <strong class="sn-perf-latency metric-pending" id="sn-perf-latency">—</strong><span class="sn-perf-badge metric-pending" id="sn-perf-latency-badge">PENDING</span>
+      <em>Real ICMP average · 1.1.1.1</em>
+    </div>
+    <div class="sn-perf-metric">
+      <small>PACKET LOSS</small>
+      <strong class="sn-perf-loss metric-pending" id="sn-perf-loss">—</strong><span class="sn-perf-badge metric-pending" id="sn-perf-loss-badge">PENDING</span>
+      <em>Reported by live ping test</em>
+    </div>
+    <div class="sn-perf-metric">
+      <small>NETWORK STATUS</small>
+      <strong class="sn-perf-health metric-pending" id="sn-perf-health">WAITING</strong><span class="sn-perf-badge metric-pending" id="sn-perf-health-badge">PENDING</span>
+      <em id="sn-perf-health-note">Awaiting live measurement</em>
+    </div>
+  </div>
+
+  <div class="sn-perf-chart">
+    <div class="sn-perf-chart-head">
+      <strong>LIVE LATENCY TREND</strong>
+      <span id="sn-perf-sample-count">0 real measurements</span>
+    </div>
+    <svg id="sn-latency-chart" viewBox="0 0 800 190" role="img"
+         aria-label="Live measured internet latency trend">
+      <line class="sn-chart-grid" x1="35" y1="35" x2="780" y2="35"/>
+      <line class="sn-chart-grid" x1="35" y1="85" x2="780" y2="85"/>
+      <line class="sn-chart-grid" x1="35" y1="135" x2="780" y2="135"/>
+      <line class="sn-chart-grid" x1="35" y1="165" x2="780" y2="165"/>
+      <text class="sn-chart-axis" x="5" y="38">High</text>
+      <text class="sn-chart-axis" x="5" y="88">Mid</text>
+      <text class="sn-chart-axis" x="5" y="168">Low</text>
+      <polyline id="sn-latency-line" class="sn-chart-line" points=""/>
+      <g id="sn-latency-points"></g>
+      <text id="sn-chart-empty" class="sn-chart-empty"
+            x="400" y="105" text-anchor="middle">
+        Collecting first real measurement…
+      </text>
+    </svg>
+    <div class="sn-perf-foot">
+      <span>History builds from actual measurements collected during this session</span>
+      <span id="sn-perf-updated">Not yet measured</span>
+    </div>
+  </div>
+
+  <div class="sn-perf-topology">
+    <div class="sn-topology-title">LIVE NETWORK TOPOLOGY · REPORTED CONNECTION STATE</div>
+    <div class="sn-topology-flow">
+      <div class="sn-topology-node">
+        <span class="sn-topology-icon">💻</span>
+        <strong>MacBook</strong>
+        <span class="sn-node-status warn unknown" id="sn-node-mac">UNKNOWN</span>
+        <small id="sn-topo-mac">Local system</small>
+      </div>
+      <div class="sn-topology-link" id="sn-link-mac-router" aria-label="MacBook to Router connection"><span class="sn-link-track"></span><span class="sn-link-flow"></span><span class="sn-link-arrow"></span><span class="sn-link-cross" aria-hidden="true">×</span></div>
+      <div class="sn-topology-node">
+        <span class="sn-topology-icon">📡</span>
+        <strong>Router</strong>
+        <span class="sn-node-status warn unknown" id="sn-node-router">UNKNOWN</span>
+        <small id="sn-topo-router">Waiting for gateway</small>
+      </div>
+      <div class="sn-topology-link" id="sn-link-router-internet" aria-label="Router to Internet connection"><span class="sn-link-track"></span><span class="sn-link-flow"></span><span class="sn-link-arrow"></span><span class="sn-link-cross" aria-hidden="true">×</span></div>
+      <div class="sn-topology-node">
+        <span class="sn-topology-icon">🌐</span>
+        <strong>Internet</strong>
+        <span class="sn-node-status warn unknown" id="sn-node-internet">UNKNOWN</span>
+        <small id="sn-topo-internet">Waiting for ping</small>
+      </div>
+      <div class="sn-topology-link" id="sn-link-internet-windows" aria-label="Internet to Windows targets connection"><span class="sn-link-track"></span><span class="sn-link-flow"></span><span class="sn-link-arrow"></span><span class="sn-link-cross" aria-hidden="true">×</span></div>
+      <div class="sn-topology-node">
+        <span class="sn-topology-icon">🖥️</span>
+        <strong>Windows Network Targets</strong>
+        <span class="sn-node-status warn unknown" id="sn-node-windows">UNKNOWN</span>
+        <small id="sn-topo-windows">Awaiting target diagnostics</small>
+      </div>
+    </div>
+  </div>
+  <div class="sn-perf-foot">
+    <span><i class="sn-live-indicator" id="sn-perf-dot"></i>
+      <span id="sn-perf-source">Live API · Waiting for first response</span>
+    </span>
+    <button class="button" type="button" id="sn-perf-refresh">Refresh Measurements</button>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+
+<!-- CYBERSECURITY SNAPSHOT: UI ONLY -->
+<section class="cyber-snapshot">
+
+  <div class="section-head cyber-section-head">
+    <div>
+      <h2>Cybersecurity Snapshot</h2>
+      <p>Network Security Posture · Vulnerability Management</p>
+    </div>
+    <span class="cyber-overall-status">SECURITY SENSORS PENDING</span>
+  </div>
+
+  <div class="cyber-group-heading">
+    <span>01</span>
+    <div>
+      <strong>Network Security Posture</strong>
+      <small>Firewall · Network Exposure · Threat Detection · DNS</small>
+    </div>
+  </div>
+
+  <div class="cyber-grid">
+
+    <article class="cyber-card">
+      <div class="cyber-card-visual visual-firewall">🛡️</div>
+      <div class="cyber-card-content">
+        <h3>Firewall Status</h3>
+        <p>Host and network firewall visibility</p>
+        <span class="cyber-card-status">SENSOR REQUIRED</span>
+      </div>
+    </article>
+
+    <article class="cyber-card">
+      <div class="cyber-card-visual visual-ports">🔌</div>
+      <div class="cyber-card-content">
+        <h3>Open Ports</h3>
+        <p>Listening services and exposure review</p>
+        <span class="cyber-card-status">SCAN REQUIRED</span>
+      </div>
+    </article>
+
+    <article class="cyber-card">
+      <div class="cyber-card-visual visual-ids">👁️</div>
+      <div class="cyber-card-content">
+        <h3>IDS / IPS</h3>
+        <p>Intrusion detection and prevention visibility</p>
+        <span class="cyber-card-status">SENSOR REQUIRED</span>
+      </div>
+    </article>
+
+    <article class="cyber-card">
+      <div class="cyber-card-visual visual-dns">🌐</div>
+      <div class="cyber-card-content">
+        <h3>DNS Security</h3>
+        <p>DNS filtering and threat intelligence</p>
+        <span class="cyber-card-status">SOURCE REQUIRED</span>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="cyber-group-heading cyber-second-group">
+    <span>02</span>
+    <div>
+      <strong>Vulnerability Management</strong>
+      <small>Discovery · CVE / CVSS · Risk · Remediation</small>
+    </div>
+  </div>
+
+  <div class="cyber-grid">
+
+    <article class="cyber-card">
+      <div class="cyber-card-visual visual-assets">🖥️</div>
+      <div class="cyber-card-content">
+        <h3>Asset Discovery</h3>
+        <p>Network asset identification and inventory</p>
+        <span class="cyber-card-status">SCAN REQUIRED</span>
+      </div>
+    </article>
+
+    <article class="cyber-card">
+      <div class="cyber-card-visual visual-vulnerability">🔍</div>
+      <div class="cyber-card-content">
+        <h3>Vulnerability Findings</h3>
+        <p>Vulnerability detection and CVE references</p>
+        <span class="cyber-card-status">SCAN REQUIRED</span>
+      </div>
+    </article>
+
+    <article class="cyber-card">
+      <div class="cyber-card-visual visual-risk">⚠️</div>
+      <div class="cyber-card-content">
+        <h3>Risk Assessment</h3>
+        <p>CVSS severity and risk prioritization</p>
+        <span class="cyber-card-status">SOURCE REQUIRED</span>
+      </div>
+    </article>
+
+    <article class="cyber-card">
+      <div class="cyber-card-visual visual-remediation">🔧</div>
+      <div class="cyber-card-content">
+        <h3>Remediation</h3>
+        
+
+<script id="sn-overview-pending-script">
+(function () {
+  document.querySelectorAll(".kpi-value.kpi-pending").forEach(function (el) {
+    function updatePendingBlink() {
+      const pending = el.textContent.trim().toUpperCase() === "PENDING";
+      el.classList.toggle("kpi-pending", pending);
+    }
+    const observer = new MutationObserver(updatePendingBlink);
+    observer.observe(el, { childList: true, characterData: true, subtree: true });
+    updatePendingBlink();
+  });
+})();
+</script>
+<p>Mitigation tracking and verification</p>
+        <span class="cyber-card-status">SOURCE REQUIRED</span>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="cyber-footer">
+    <span>UI INITIALIZED · SECURITY TESTS NOT EXECUTED</span>
+    <span>Awaiting verified data sources</span>
+  </div>
+
+</section>
+<!-- END CYBERSECURITY SNAPSHOT -->
+
+
+
+  
+</section>
+
+<section class="page" id="network">
+  <div class="section-head"><div><h2>Network Diagnostics</h2><p>Inspect both network paths independently</p></div><span class="status">BACKEND NOT CONNECTED</span></div>
+  <div class="grid two">
+    <div class="card"><h3>Wi-Fi Diagnostics</h3><p class="panel-note">Interface · IPv4 · Gateway · DNS · Route · Ping · Packet loss · Latency · Internet access</p><div class="setting-row"><span>Interface</span><span>Awaiting detection</span></div><div class="setting-row"><span>IP Address</span><span>—</span></div><div class="setting-row"><span>Gateway / DNS</span><span>—</span></div><div class="setting-row"><span>Connectivity</span><span class="status">NOT TESTED</span></div></div>
+    <div class="card"><h3>Ethernet Diagnostics</h3><p class="panel-note">USB adapter · Driver · Link speed · IPv4 · Route · Ping · TCP reachability</p><div class="setting-row"><span>Interface</span><span>Awaiting detection</span></div><div class="setting-row"><span>Adapter / Link</span><span>—</span></div><div class="setting-row"><span>IP Address</span><span>—</span></div><div class="setting-row"><span>Connectivity</span><span class="status">NOT TESTED</span></div></div>
+  </div>
+  <div class="section-head"><div><h2>Service & Stability Tests</h2><p>FTP control port, passive data channel, continuous monitoring and recovery</p></div></div>
+  <div class="card"><div class="table-wrap"><table><thead><tr><th>TEST</th><th>WI-FI</th><th>ETHERNET</th><th>RESULT</th></tr></thead><tbody><tr><td>Ping / Packet Loss</td><td>Pending</td><td>Pending</td><td>Not tested</td></tr><tr><td>TCP Port 21</td><td>Pending</td><td>Pending</td><td>Not tested</td></tr><tr><td>FTP Session / Transfer</td><td>Pending</td><td>Pending</td><td>Not tested</td></tr><tr><td>Stability / Recovery</td><td>Pending</td><td>Pending</td><td>Not tested</td></tr></tbody></table></div></div>
+</section>
+
+<section class="page" id="storage">
+  <div class="section-head"><div><h2>Storage Transaction Center</h2><p>End-to-end file transfer testing across available shared drives</p></div><span class="status">BACKEND NOT CONNECTED</span></div>
+  <div class="card"><h3>Transaction Workflow</h3><p class="panel-note">1. Create unique test file on Mac → 2. Upload to selected drive → 3. Read/download it back → 4. Compare size and SHA-256 → 5. Clean up only the test-created files.</p></div>
+  <div class="section-head"><div><h2>Target Drives</h2><p>Share discovery and write/read permissions must be verified</p></div></div>
+  <div class="grid three">
+    <div class="drive"><h3>Drive C:</h3><p>Share mapping and dedicated test folder</p><span class="status">NOT VERIFIED</span><div class="progress"><span></span></div></div>
+    <div class="drive"><h3>Drive D:</h3><p>Share mapping and dedicated test folder</p><span class="status">NOT VERIFIED</span><div class="progress"><span></span></div></div>
+    <div class="drive"><h3>Drive F:</h3><p>Share mapping and dedicated test folder</p><span class="status">NOT VERIFIED</span><div class="progress"><span></span></div></div>
+    <div class="drive"><h3>Drive G:</h3><p>Share mapping and dedicated test folder</p><span class="status">NOT VERIFIED</span><div class="progress"><span></span></div></div>
+  </div>
+  <div class="section-head"><div><h2>Transaction Results</h2><p>Upload speed · Download speed · Duration · Integrity</p></div></div>
+  <div class="card"><div class="empty">No storage transactions executed.</div></div>
+</section>
+
+<section class="page" id="integrity">
+  <div class="section-head"><div><h2>File Integrity & Verification</h2><p>Verify that transferred files return unchanged</p></div></div>
+  <div class="grid two">
+    <div class="card"><h3>Checksum Engine</h3><p class="panel-note">SHA-256 source hash compared with returned-file hash. File size and byte-level consistency checks.</p><div class="setting-row"><span>Algorithm</span><strong>SHA-256</strong></div><div class="setting-row"><span>Source file</span><span>Pending</span></div><div class="setting-row"><span>Returned file</span><span>Pending</span></div><div class="setting-row"><span>Integrity result</span><span class="status">NOT TESTED</span></div></div>
+    <div class="card"><h3>Safety & Cleanup</h3><p class="panel-note">Unique test filenames, dedicated test folders, transaction IDs and cleanup limited strictly to files created by this application.</p><div class="setting-row"><span>Automatic cleanup</span><span>Not configured</span></div><div class="setting-row"><span>Existing files protected</span><span class="status good">DESIGN REQUIREMENT</span></div></div>
+  </div>
+</section>
+
+<section class="page" id="activity">
+  <div class="section-head"><div><h2>Live Activity Monitor</h2><p>Chronological event stream for diagnostics and transactions</p></div></div>
+  <div class="card" id="activityLog">
+    <div id="activitySummary" class="empty">Loading backend event history…</div>
+    <div id="activityEntries" style="margin-top:12px;max-height:520px;overflow:auto"></div>
+  </div>
+</section>
+
+<section class="page" id="reports">
+  <div class="section-head"><div><h2>Reports & History</h2><p>Centralized test records and failure analysis</p></div></div>
+  <div class="grid three">
+    <div class="card"><div class="kpi-label">TEST REPORTS</div><div class="kpi-value">—</div><div class="kpi-note">No reports generated</div></div>
+    <div class="card"><div class="kpi-label">SUCCESS RATE</div><div class="kpi-value">—</div><div class="kpi-note">Requires real test data</div></div>
+    <div class="card"><div class="kpi-label">FAILURE RECORDS</div><div class="kpi-value">—</div><div class="kpi-note">No failures recorded</div></div>
+  </div>
+  <div class="card" style="margin-top:15px">
+    <div style="font-weight:700;margin-bottom:8px">Backend Event Report</div>
+    <div>Recorded events: <strong id="reportEventCount">Loading…</strong></div>
+    <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+      <a href="/api/report.csv" style="text-decoration:none">Export CSV</a>
+      <a href="/api/report.txt" style="text-decoration:none">Export TXT</a>
+    </div>
+    <div style="margin-top:12px;color:#9aa9bb;font-size:12px">
+      Event logs only. FTP transfer, storage write/read-back, SHA-256 and failover tests remain pending.
+    </div>
+  </div>
+</section>
+
+<section class="page" id="settings">
+  <div class="section-head"><div><h2>Dashboard Settings</h2><p>Configuration interface skeleton</p></div></div>
+  <div class="card">
+    <div class="setting-row"><span>Network target</span><span>To be configured</span></div>
+    <div class="setting-row"><span>Wi-Fi / Ethernet selection</span><span>Automatic detection planned</span></div>
+    <div class="setting-row"><span>FTP / FTPS settings</span><span>Not connected</span></div>
+    <div class="setting-row"><span>SMB share mapping</span><span>Not connected</span></div>
+    <div class="setting-row"><span>Test file size</span><select id="fileSize"><option>1 KB</option><option>10 KB</option><option>100 KB</option><option>1 MB</option><option>Custom (later)</option></select></div>
+    <div class="setting-row"><span>Integrity algorithm</span><strong>SHA-256</strong></div>
+    <div class="setting-row"><span>Report format</span><span>CSV / HTML / TXT planned</span></div>
+  </div>
+</section>
+
+<div class="footer">SMART NETWORK · CONNECTIVITY & STORAGE DIAGNOSTIC DASHBOARD · UI SKELETON</div>
+</main>
+</div>
+<script>
+const titles={
+ overview:["System Overview","A unified view of connectivity, storage and file integrity"],
+ network:["Network Diagnostics","Wi-Fi, Ethernet, routes, services and stability"],
+ storage:["Storage Transactions","End-to-end drive write, read and verification"],
+ integrity:["File Integrity","SHA-256 and returned-file validation"],
+ activity:["Live Activity Monitor","Chronological diagnostic event stream"],
+ reports:["Reports & History","Test records, summaries and failure analysis"],
+ settings:["System Settings","Dashboard configuration and test preferences"]
+};
+function go(id){
+ document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===id));
+ document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===id));
+ document.getElementById("pageTitle").textContent=titles[id][0];
+ document.getElementById("pageSub").textContent=titles[id][1];
+}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>go(b.dataset.page)));
+function tick(){
+ document.getElementById("clock").textContent=new Date().toLocaleString(undefined,{weekday:"short",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",second:"2-digit"});
+}
+tick();setInterval(tick,1000);
+</script>
+<script id="FINAL_BATCH_ACTIVITY_UI">
+(async function(){
+  const summary = document.getElementById("activitySummary");
+  const list = document.getElementById("activityEntries");
+  const count = document.getElementById("reportEventCount");
+  if (!summary || !list) return;
+
+  async function refreshEvents(){
+    try{
+      const response = await fetch("/api/activity", {cache:"no-store"});
+      if(!response.ok) throw new Error("HTTP " + response.status);
+      const data = await response.json();
+      summary.textContent = "Backend events: " + (data.count || 0) + " · Source: Logs/dashboard.log";
+      if(count) count.textContent = data.count || 0;
+      list.replaceChildren();
+      if(!data.entries || !data.entries.length){
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "No backend events recorded yet.";
+        list.appendChild(empty);
+        return;
+      }
+      data.entries.slice().reverse().forEach(function(entry){
+        const row = document.createElement("div");
+        row.style.cssText = "padding:10px 8px;border-bottom:1px solid rgba(140,160,180,.16);font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere";
+        row.textContent = entry.message;
+        list.appendChild(row);
+      });
+    }catch(error){
+      summary.textContent = "Event history unavailable · " + error.message;
+      if(count) count.textContent = "Unavailable";
+    }
+  }
+  await refreshEvents();
+  setInterval(refreshEvents, 10000);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="sn-unified-help-style">
+.sn-help-button {
+ display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;
+ width:16px;height:16px;min-width:16px;margin-left:6px;padding:0;
+ border:1px solid #829bb8;border-radius:50%;background:transparent;
+ color:#91b9e5;font:600 10px/14px Arial,sans-serif;cursor:pointer;flex:0 0 16px;
+}
+.sn-help-button:hover{background:#24496e;color:white}
+#sn-help-overlay{display:none;position:fixed;inset:0;z-index:2147483000;
+ align-items:center;justify-content:center;padding:18px;background:#050c18bb}
+#sn-help-overlay.open{display:flex}
+.sn-help-dialog{box-sizing:border-box;width:min(540px,94vw);max-height:82vh;
+ overflow:auto;padding:22px;border:1px solid #45617f;border-radius:13px;
+ background:#14243a;color:#edf4ff;font:14px/1.55 Arial,sans-serif}
+.sn-help-dialog h3{margin:0 35px 14px 0;color:white;font-size:18px}
+.sn-help-dialog p{margin:9px 0}
+.sn-help-dialog button{float:right;background:#203752;color:white;
+ border:1px solid #607994;border-radius:7px;padding:4px 10px;cursor:pointer}
+.sn-help-guide-button{margin-left:10px;padding:7px 11px;border:1px solid #607994;
+ border-radius:7px;background:#203752;color:#edf4ff;font-size:12px;cursor:pointer}
+
+/* Recent Activity: confirmed live status presentation */
+#recent {
+ color:#37d6a0!important;
+ text-shadow:0 0 10px rgba(55,214,160,.14);
+}
+
+
+/* Keep Recent Activity title and info icon on one line */
+.recent-activity-heading {
+  display:inline-block!important;
+  vertical-align:middle;
+  margin:0 5px 0 0!important;
+}
+.recent-activity-help {
+  display:inline-block!important;
+  vertical-align:middle;
+  position:relative;
+}
+
+/* Recent Activity popup close button */
+.recent-activity-help-popup {
+  padding-top:38px!important;
+}
+.recent-activity-help-close {
+  position:absolute;
+  top:8px;
+  right:10px;
+  width:25px;
+  height:25px;
+  border:1px solid #829bb8;
+  border-radius:6px;
+  background:#203a57;
+  color:#ffffff;
+  font-size:19px;
+  line-height:20px;
+  cursor:pointer;
+}
+.recent-activity-help-close:hover {
+  background:#a83242;
+  border-color:#e36b78;
+  color:#ffffff;
+}
+
+/* Recent Activity information icon and popup */
+.recent-activity-help {
+  display:inline-block;
+  position:relative;
+  vertical-align:middle;
+  margin-left:5px;
+}
+.recent-activity-help summary {
+  list-style:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:17px;
+  height:17px;
+  border:1px solid #829bb8;
+  border-radius:50%;
+  color:#91b9e5;
+  font:600 11px/1 Arial,sans-serif;
+  cursor:pointer;
+}
+.recent-activity-help summary::-webkit-details-marker {
+  display:none;
+}
+.recent-activity-help summary:hover {
+  background:#24496e;
+  color:white;
+}
+.recent-activity-help-popup {
+  position:absolute;
+  top:25px;
+  left:0;
+  z-index:1000;
+  width:min(370px,85vw);
+  padding:15px 17px;
+  border:1px solid #45617f;
+  border-radius:11px;
+  background:#14243a;
+  color:#edf4ff;
+  box-shadow:0 12px 32px #0008;
+  font-size:11px;
+  line-height:1.6;
+}
+.recent-activity-help-popup strong {
+  color:#ffffff;
+}
+.recent-activity-help-popup p {
+  margin:8px 0;
+  color:#c5d3e7;
+}
+.recent-activity-help-popup ul {
+  margin:7px 0;
+  padding-left:18px;
+  color:#c5d3e7;
+}
+</style>
+<script id="sn-unified-help-script">
+(function(){
+"use strict";
+if(window.__SN_UNIFIED_HELP__)return;
+window.__SN_UNIFIED_HELP__=true;
+
+const help=[
+ ["FTP TCP 21","Basic TCP reachability of the FTP control port on the Windows server.","A reachable port does not prove authenticated login, passive data-channel operation or file transfer."],
+
+ ["PING","An ICMP reachability check between the selected network path and the Windows server.","A reply confirms ping reachability only; it does not verify FTP login, SMB share access or file transfer."],
+
+ ["NETWORK PATH","The network route being used to reach the Windows server, such as Wi-Fi or Ethernet.","Compare each path independently. One working path does not prove the other path works."],
+
+ ["Additional Tests","Tests that require more than basic ping or TCP port reachability.","Do not report these tests as successful until the corresponding real test has been implemented and completed."],
+
+ ["Service & Stability Tests","Separate checks for FTP service access, data-channel operation and sustained network recovery.","Review each test independently. Pending or Not Tested must not be treated as successful."],
+
+ ["Adapter / Link","The detected Ethernet adapter and its negotiated link configuration.","Check the expected adapter, link speed and duplex. Link detection alone does not prove end-to-end connectivity."],
+
+ ["Internet Ping","A response test to an internet destination using ICMP ping.","Review the response and repeated measurements. A successful ping does not prove FTP or SMB access."],
+
+ ["Connectivity","A summary of the connectivity result reported for this interface.","Review the individual ping, route and service checks. A summary does not prove a complete file transfer."],
+
+ ["MAC Address","The hardware address reported for the network interface.","Use it to distinguish adapters. It does not prove that the physical adapter or cable is healthy."],
+
+ ["Default Gateway","The next-hop router selected for traffic leaving the local network.","Compare the gateway with the intended network path and test its reachability."],
+
+ ["Gateway / DNS","The reported network gateway and DNS resolver information.","Confirm that the gateway is reachable and DNS resolution works when hostname access is required."],
+
+ ["IP Address","The IPv4 address currently assigned to a network interface.","Check that the address belongs to the intended network. A 169.254.x.x address usually indicates a self-assigned link-local address."],
+
+ ["Interface","The network interface name reported by macOS, such as en0 or en4.","Confirm that the interface corresponds to the intended Wi-Fi or Ethernet adapter."],
+
+ ["Ethernet Diagnostics","Live information about the wired Ethernet network interface and link.","Check the adapter, link speed, IP address and route. A link being UP does not prove the Ethernet path is usable end to end."],
+
+ ["Wi-Fi Diagnostics","Live information about the Mac Wi-Fi network interface and its connectivity checks.","Review the interface, IP address, gateway, ping and latency. Online status alone does not prove file transfer."],
+
+["CONNECTIVITY HEALTH","Summary of available network diagnostic checks.","Review each network and service test separately. A summary does not prove a complete file transfer."],
+["NETWORK LINKS","Detected network connections and their reported states.","Check Wi-Fi and Ethernet independently."],
+["STORAGE TARGETS","Configured or detected storage destinations.","Mounted status alone does not prove successful file transfer."],
+["FAILED TESTS","Count of diagnostic checks that reported failure.","Open the relevant diagnostic and review the specific failure."],
+["Wi-Fi Interface","Mac wireless network interface details.","Review IP, gateway, route, latency and packet loss."],
+["Ethernet Interface","Wired network interface, including USB Ethernet.","Review adapter detection, link speed, IP and reachability."],
+["FTP Control Port","Basic reachability of the FTP control service.","A reachable port or banner does not prove login or file transfer."],
+["SMB File Sharing","Reachability of the Windows SMB service.","An open port does not prove share access or write permission."],
+["Network Performance","Network latency and stability observations.","Review repeated measurements; a short sample cannot prove long-term stability."],
+["Router / Default Gateway","The network device used as the default route.","Gateway reachability does not expose router CPU, temperature or firmware."],
+["Wi-Fi Adapter","Wireless hardware detected by macOS.","Detection does not prove uninterrupted wireless performance."],
+["USB Ethernet Adapter","USB-connected wired network adapter.","Check detection and link speed; physical port health is not verified."],
+["USB/Thunderbolt","USB and Thunderbolt devices reported by macOS.","Inventory does not prove physical port or cable health."],
+["Gateway","Next-hop address used to reach other networks.","If missing or unreachable, inspect the connection and route."],
+["DNS","Service that translates hostnames into IP addresses.","If name resolution fails, compare hostname and direct-IP reachability."],
+["Route","Network path selected by macOS.","An unexpected route can explain destination reachability problems."],
+["Packet Loss","Percentage of probe packets without a response.","Repeated loss may indicate instability; one missed response is inconclusive."],
+["Latency","Time taken for a network probe response.","Compare repeated measurements for unusual delays."],
+["Link Speed","Negotiated Ethernet connection speed.","If unexpectedly low, inspect cable, adapter and network port."],
+["TCP Port 21","Basic TCP reachability of FTP control port.","Does not verify credentials, passive mode or transfer."],
+["FTP banner","Initial response returned by an FTP service.","A banner is not an authenticated FTP or FTPS session."],
+["SMB TCP 445","Reachability of the SMB service port.","Share permissions and file operations require separate tests."],
+["FTP authenticated session","A separate test requiring valid FTP credentials.","Pending means login has not been verified. A port test is not a login test."],
+["Passive FTP data channel","Separate data connection used by passive FTP.","Remains unverified until an authorized transfer test."],
+["Continuous stability","Sustained stability, failover and recovery testing.","Pending means automatic switching and recovery are not yet proven."],
+["Transaction Workflow","Create, upload, read back and compare a unique test file.","Run only after destination and permissions are confirmed and authorized."],
+["Transaction execution","Permission to perform a real storage test transaction.","Keep disabled until the destination and test folder are verified and authorized."],
+["Automatic cleanup","Cleanup of files created by application test transactions.","Keep disabled until cleanup scope is explicitly configured and authorized."],
+["Read Access","Operating system reports that a location can be read.","Does not prove upload, download or integrity verification."],
+["OS Writable Flag","Operating system reports a writable location.","Not proof of a successful write/read-back transaction."],
+["Mount Path","Local path used to access a mounted volume or share.","Confirm the path identifies the intended destination."],
+["Checksum Engine","Component that calculates and compares file hashes.","Both original and returned files must be available."],
+["SHA-256","Cryptographic checksum for file integrity comparison.","Matching source and returned hashes strongly indicate identical content."],
+["source file hash","Hash calculated from the original test file.","Compare it with the returned file hash."],
+["returned-file hash","Hash calculated from the received file.","A mismatch means integrity has not been verified."],
+["byte-level consistency","Comparison of original and returned file contents.","A size or checksum mismatch means the transaction did not pass integrity verification."],
+["Safety & Cleanup","Safeguards for test files and cleanup operations.","Use unique names and dedicated folders; never remove unrelated files."],
+["Success Rate","Percentage of completed tests that passed.","No test data means the success rate is unknown, not 100 percent."],
+["Failure Records","Recorded diagnostic failure history.","An empty list does not prove every diagnostic passed."],
+["Network target","Server or destination used for network checks.","Confirm the intended destination before testing."],
+["Wi-Fi/Ethernet selection","Method used to select or detect network interfaces.","Automatic detection is not proof of verified failover."],
+["FTP/FTPS settings","Connection details for the file-transfer service.","Use the intended secure protocol; do not expose passwords in reports."],
+["SMB share mapping","Windows network share path.","Confirm server, share name and permissions before a write test."],
+["Test file size","Size selected for an authorized transfer test.","Start small; larger tests require a reason and authorization."],
+["Integrity algorithm","Checksum algorithm used for verification.","SHA-256 is the configured project algorithm."],
+["Report format","Format used to export diagnostic results.","Reports must distinguish passed tests from pending tests."]
+];
+
+
+["Recent Activity",
+ "Shows the current live diagnostic refresh status and, when available, real recorded system events such as network connectivity, Wi-Fi, Ethernet, failover, FTP/SMB and storage diagnostics. Event timestamps describe when the reported update occurred.",
+ "Only actual diagnostic events should be displayed. A live refresh message is not a historical event record, and an empty event history does not mean that a diagnostic has passed."],
+
+const statusGuide=[
+["OK / Online / Yes","The check was detected or responded successfully. This does not prove an end-to-end file transfer."],
+["Pending / Unknown / Not Tested","The check has not been verified yet. This is not automatically a failure."],
+["Disabled","The feature or test is not active. Do not enable it without confirming prerequisites and authorization."],
+["No / Failed / Offline","The check did not pass or the service could not be reached. Review the relevant diagnostic."],
+["Mounted / Readable / Writable","This describes the operating system's view of a location. It does not prove a successful write, read-back or integrity test."]
+];
+
+const selectors="h1,h2,h3,h4,strong,label,th,.setting-row > span:first-child,.setting-row > label,.kpi-label,.card-title,.device-title,.drive-title";
+function norm(el){return (el.innerText||el.textContent||"").replace(/\s+/g," ").trim()}
+
+function findHelp(el){
+ const t=norm(el).toLowerCase();
+ if(!t||t.length>260)return null;
+ return help.find(x=>{
+  const q=x[0].toLowerCase();
+  return t===q||t.startsWith(q+" ")||t.startsWith(q+"·")||
+         t.startsWith(q+" -")||t.startsWith(q+" —")||t.startsWith(q+":");
+ })||null;
+}
+
+function ensureDialog(){
+ let o=document.getElementById("sn-help-overlay");
+ if(o)return o;
+ o=document.createElement("div");
+ o.id="sn-help-overlay";
+ o.innerHTML='<section class="sn-help-dialog" role="dialog" aria-modal="true" aria-labelledby="sn-help-title"><button type="button" class="sn-help-close" aria-label="Close">Close ×</button><h3 id="sn-help-title">Diagnostic Information</h3><div id="sn-help-content"></div></section>';
+ document.body.appendChild(o);
+ o.querySelector(".sn-help-close").onclick=()=>o.classList.remove("open");
+ o.onclick=e=>{if(e.target===o)o.classList.remove("open")};
+ document.addEventListener("keydown",e=>{if(e.key==="Escape")o.classList.remove("open")});
+ return o;
+}
+
+function showItem(item){
+ const o=ensureDialog();
+ o.querySelector("#sn-help-title").textContent=item[0];
+ const c=o.querySelector("#sn-help-content");c.replaceChildren();
+ [["What it means",item[1]],["What to do",item[2]]].forEach(pair=>{
+  const p=document.createElement("p"),b=document.createElement("strong");
+  b.textContent=pair[0]+": ";
+  p.append(b,document.createTextNode(pair[1]));c.append(p);
+ });
+ o.classList.add("open");
+}
+
+function showGuide(){
+ const o=ensureDialog();
+ o.querySelector("#sn-help-title").textContent="Common Status Guide";
+ const c=o.querySelector("#sn-help-content");c.replaceChildren();
+ statusGuide.forEach(item=>{
+  const p=document.createElement("p"),b=document.createElement("strong");
+  b.textContent=item[0]+": ";
+  p.append(b,document.createTextNode(item[1]));c.append(p);
+ });
+ o.classList.add("open");
+}
+
+function addGuideButton(){
+ if(document.querySelector(".sn-help-guide-button"))return;
+ const host=document.querySelector(".top-right")||document.querySelector("header");
+ if(!host)return;
+ const b=document.createElement("button");
+ b.type="button";b.className="sn-help-guide-button";
+ b.textContent="Common Status Guide";
+ b.addEventListener("click",showGuide);host.appendChild(b);
+}
+
+function scan(){
+ if(!document.body)return;
+ document.querySelectorAll(selectors).forEach(el=>{
+  if(el.dataset.snHelpDone||el.closest(".sn-help-dialog"))return;
+  const item=findHelp(el);if(!item)return;
+  const nested=[...el.querySelectorAll(selectors)].some(child=>{
+   const x=findHelp(child);return x&&x[0]===item[0];
+  });
+  if(nested)return;
+  el.dataset.snHelpDone="1";
+  const b=document.createElement("button");
+  b.type="button";b.className="sn-help-button";b.textContent="i";
+  b.title="Information about "+item[0];
+  b.setAttribute("aria-label","Information about "+item[0]);
+  b.addEventListener("click",e=>{
+   e.preventDefault();e.stopPropagation();showItem(item);
+  });
+  el.appendChild(b);
+ });
+ addGuideButton();
+}
+
+function start(){
+ ensureDialog();scan();
+ new MutationObserver(scan).observe(document.body,{
+  childList:true,subtree:true,characterData:true
+ });
+}
+if(document.readyState==="loading")
+ document.addEventListener("DOMContentLoaded",start,{once:true});
+else start();
+})();
+</script>
+
+
+<script id="SN_LIVE_PERFORMANCE_V1">
+(()=>{
+"use strict";
+const history=[];
+const maxPoints=20;
+const $=id=>document.getElementById(id);
+
+function text(id,value){
+ const el=$(id);
+ if(el)el.textContent=value;
+}
+function state(id,label,ok){
+ const el=$(id);
+ if(!el)return;
+ el.textContent=label;
+ el.className="sn-live-indicator "+(ok===true?"good":ok===false?"bad":"");
+}
+function fmtMs(value){
+ return Number.isFinite(value)?value.toFixed(1)+" ms":"—";
+}
+function renderChart(){
+ const line=$("sn-latency-line");
+ const points=$("sn-latency-points");
+ const empty=$("sn-chart-empty");
+ if(!line||!points)return;
+
+ text("sn-perf-sample-count",history.length+" real measurement"+(history.length===1?"":"s"));
+
+ if(!history.length){
+  line.setAttribute("points","");
+  points.replaceChildren();
+  if(empty)empty.style.display="";
+  return;
+ }
+ if(empty)empty.style.display="none";
+
+ const values=history.map(x=>x.value);
+ const min=Math.min(...values);
+ const max=Math.max(...values);
+ const range=Math.max(max-min,1);
+ const coords=values.map((value,index)=>{
+  const x=35+(index/Math.max(values.length-1,1))*745;
+  const y=145-((value-min)/range)*105;
+  return {x,y,value};
+ });
+ line.setAttribute("points",coords.map(p=>p.x+","+p.y).join(" "));
+ points.replaceChildren();
+ coords.forEach(p=>{
+  const circle=document.createElementNS("http://www.w3.org/2000/svg","circle");
+  circle.setAttribute("cx",p.x);
+  circle.setAttribute("cy",p.y);
+  circle.setAttribute("r","4.5");
+  circle.setAttribute("class","sn-chart-point");
+  circle.setAttribute("aria-label",p.value.toFixed(1)+" milliseconds");
+  points.appendChild(circle);
+ });
+}
+function pingState(ping){
+ if(!ping)return "UNKNOWN";
+ if(ping.ok===true)return "ONLINE";
+ if(ping.ok===false)return "OFFLINE";
+ return "UNKNOWN";
+}
+function updateNode(id,label,ok){
+ text(id,label);
+ state("sn-perf-dot","",ok);
+}
+function update(data){
+ const ping=data.internet_ping||{};
+ const latency=ping.average_ms;
+ const loss=ping.packet_loss_percent;
+ const valid=Number.isFinite(latency);
+ const latencyState=!valid?["pending","PENDING"]:latency<=30?["good","EXCELLENT"]:latency<=100?["warning","AVERAGE"]:["bad","POOR"];
+ text("sn-perf-latency",fmtMs(latency));
+ const latencyEl=document.getElementById("sn-perf-latency");
+ const latencyBadge=document.getElementById("sn-perf-latency-badge");
+ if(latencyEl){latencyEl.classList.remove("metric-good","metric-warning","metric-bad","metric-pending");latencyEl.classList.add("metric-"+latencyState[0]);}
+ if(latencyBadge){latencyBadge.textContent=latencyState[1];latencyBadge.classList.remove("metric-good","metric-warning","metric-bad","metric-pending");latencyBadge.classList.add("metric-"+latencyState[0]);}
+ const lossValid=Number.isFinite(loss);
+ const lossState=!lossValid?["pending","PENDING"]:loss===0?["good","CLEAN"]:loss<=2?["warning","WARNING"]:["bad","HIGH"];
+ text("sn-perf-loss",lossValid?loss.toFixed(1)+"%":"—");
+ const lossEl=document.getElementById("sn-perf-loss");
+ const lossBadge=document.getElementById("sn-perf-loss-badge");
+ if(lossEl){lossEl.classList.remove("metric-good","metric-warning","metric-bad","metric-pending");lossEl.classList.add("metric-"+lossState[0]);}
+ if(lossBadge){lossBadge.textContent=lossState[1];lossBadge.classList.remove("metric-good","metric-warning","metric-bad","metric-pending");lossBadge.classList.add("metric-"+lossState[0]);}
+ const online=ping.ok===true;
+ const healthState=online?["good","ONLINE"]:ping.ok===false?["bad","OFFLINE"]:["pending","PENDING"];
+ text("sn-perf-health",online?"ONLINE":ping.ok===false?"OFFLINE":"PENDING");
+ const healthEl=document.getElementById("sn-perf-health");
+ const healthBadge=document.getElementById("sn-perf-health-badge");
+ if(healthEl){healthEl.classList.remove("metric-good","metric-warning","metric-bad","metric-pending");healthEl.classList.add("metric-"+healthState[0]);}
+ if(healthBadge){healthBadge.textContent=healthState[1];healthBadge.classList.remove("metric-good","metric-warning","metric-bad","metric-pending");healthBadge.classList.add("metric-"+healthState[0]);}
+ text("sn-perf-health-note",
+  online?"Internet ping responded":"Ping did not confirm internet reachability");
+
+ if(valid){
+  history.push({value:latency,time:Date.now()});
+  if(history.length>maxPoints)history.shift();
+ }
+ renderChart();
+
+ const router=data.router||{};
+ const routerPing=router.ping||{};
+ const wifi=data.wifi||{};
+ const ethernet=data.ethernet||{};
+ const targets=data.targets||{};
+ const targetList=Object.values(targets);
+ const reachable=targetList.filter(t=>t.ping&&t.ping.ok===true).length;
+
+ const updateTopologyLinks=()=>{
+  const pairs=[
+   ["sn-link-mac-router","sn-node-mac","sn-node-router"],
+   ["sn-link-router-internet","sn-node-router","sn-node-internet"],
+   ["sn-link-internet-windows","sn-node-internet","sn-node-windows"]
+  ];
+
+  pairs.forEach(([linkId,leftId,rightId])=>{
+   const link=$(linkId);
+   const left=$(leftId);
+   const right=$(rightId);
+   if(!link||!left||!right)return;
+
+   const leftGood=left.classList.contains("good");
+   const rightGood=right.classList.contains("good");
+   const leftBad=left.classList.contains("bad");
+   const rightBad=right.classList.contains("bad");
+
+   const state=(leftBad||rightBad)
+    ?"is-disconnected"
+    :(leftGood&&rightGood)
+     ?"is-connected"
+     :"is-pending";
+
+   link.classList.remove(
+    "is-connected","is-disconnected","is-pending"
+   );
+   link.classList.add(state);
+  });
+ };
+
+ const setNodeStatus=(id,label,kind)=>{
+  const el=$(id);
+  if(!el)return;
+  el.textContent=label;
+  el.className="sn-node-status "+kind+(label==="UNKNOWN"?" unknown":"");
+  updateTopologyLinks();
+ };
+
+ // MacBook: detected adapter states only
+ const knownAdapters=[wifi.status,ethernet.status]
+  .filter(x=>x==="UP"||x==="DOWN");
+ const upAdapters=knownAdapters.filter(x=>x==="UP").length;
+
+ if(knownAdapters.length){
+  setNodeStatus("sn-node-mac",
+   upAdapters+" ADAPTER"+(upAdapters===1?"":"S")+" UP",
+   upAdapters>0?"good":"bad");
+ }else{
+  setNodeStatus("sn-node-mac","UNKNOWN","warn");
+ }
+
+ // Router: actual gateway ping result
+ if(router.gateway && typeof routerPing.ok==="boolean"){
+  setNodeStatus("sn-node-router",
+   routerPing.ok?"REACHABLE":"UNREACHABLE",
+   routerPing.ok?"good":"bad");
+ }else{
+  setNodeStatus("sn-node-router","UNKNOWN","warn");
+ }
+
+ // Internet: actual ICMP ping result
+ if(typeof ping.ok==="boolean"){
+  setNodeStatus("sn-node-internet",
+   ping.ok?"REACHABLE":"UNREACHABLE",
+   ping.ok?"good":"bad");
+ }else{
+  setNodeStatus("sn-node-internet","UNKNOWN","warn");
+ }
+
+ // Windows targets: ping reachability only
+ const knownTargets=targetList.filter(t=>t.ping&&typeof t.ping.ok==="boolean");
+ if(knownTargets.length){
+  const count=knownTargets.filter(t=>t.ping.ok===true).length;
+  const complete=knownTargets.length===targetList.length;
+  const label=count+"/"+targetList.length+" REACHABLE";
+  const kind=!complete?"warn":
+   count===targetList.length?"good":
+   count===0?"bad":"warn";
+  setNodeStatus("sn-node-windows",label,kind);
+ }else{
+  setNodeStatus("sn-node-windows","UNKNOWN","warn");
+ }
+
+ text("sn-topo-mac",data.host||"Local system");
+ text("sn-topo-router",
+  router.gateway?router.gateway+" · "+pingState(routerPing):"Gateway unavailable");
+ text("sn-topo-internet",
+  online?"Ping responded":pingState(ping));
+ text("sn-topo-windows",
+  targetList.length?
+   reachable+" of "+targetList.length+" targets ping reachable":
+   "No target data returned");
+
+ const source=[];
+ if(wifi.status)source.push("Wi-Fi "+wifi.status);
+ if(ethernet.status)source.push("Ethernet "+ethernet.status);
+ text("sn-perf-source",
+  "Live API · "+(source.join(" · ")||"Interface state unavailable"));
+
+ const stamp=data.timestamp?new Date(data.timestamp):new Date();
+ text("sn-perf-updated","Updated "+stamp.toLocaleTimeString());
+
+ const button=$("sn-perf-refresh");
+ if(button)button.disabled=false;
+}
+let busy=false;
+async function refresh(){
+ if(busy)return;
+ busy=true;
+ const button=$("sn-perf-refresh");
+ if(button){button.disabled=true;button.textContent="Refreshing…";}
+ try{
+  const response=await fetch("/api/live",{cache:"no-store"});
+  if(!response.ok)throw new Error("HTTP "+response.status);
+  const data=await response.json();
+  if(data.error)throw new Error(data.error);
+  update(data);
+ }catch(error){
+  text("sn-perf-health","UNAVAILABLE");
+  text("sn-perf-health-note","Live diagnostics could not be retrieved");
+  text("sn-perf-source","Live API unavailable · "+error.message);
+ }finally{
+  busy=false;
+  if(button){button.disabled=false;button.textContent="Refresh Measurements";}
+ }
+}
+const button=$("sn-perf-refresh");
+if(button)button.addEventListener("click",refresh);
+refresh();
+setInterval(refresh,30000);
+})();
+</script>
+
+
+<style id="SN_TOPOLOGY_STATUS_V1">
+.sn-node-status{
+ display:inline-block;
+ margin:7px auto 5px;
+ padding:4px 9px;
+ border-radius:20px;
+ border:1px solid #64748b;
+ background:#26384d;
+ color:#d5e3f0;
+ font-size:8px;
+ font-weight:800;
+ letter-spacing:.7px;
+}
+.sn-node-status.good{
+ color:#72f0bd;
+ border-color:#258e70;
+ background:#103d35;
+}
+.sn-node-status.warn{
+ color:#ffd27a;
+ border-color:#a77b35;
+ background:#493719;
+}
+.sn-node-status.bad{
+ color:#ff9ba7;
+ border-color:#a84d5b;
+ background:#481f2b;
+}
+
+/* Only UNKNOWN badges in the four topology cards blink yellow. */
+@keyframes snTopologyUnknownBlink {
+  0%, 100% { color: #ffd27a; }
+  50% { color: transparent; }
+}
+.sn-node-status.warn.unknown {
+  animation: snTopologyUnknownBlink 1.2s ease-in-out infinite;
+}
+</style>
+\n</body>
+</html>
+
+
+<style id="SN_OVERVIEW_PENDING_BLINK_V1">
+/* Only blink the four Connectivity Overview badges; preserve their colors. */
+@keyframes snOverviewPendingBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .45; }
+}
+#ov-wifi.sn-overview-pending-blink,
+#ov-ethernet.sn-overview-pending-blink,
+#ov-ftp.sn-overview-pending-blink,
+#ov-smb.sn-overview-pending-blink {
+  animation: snOverviewPendingBlink 1.2s ease-in-out infinite;
+}
+</style>
+
+<script id="SN_OVERVIEW_PENDING_BLINK_V1_SCRIPT">
+/* Toggle animation only while these four badges display PENDING. */
+(() => {
+  const ids = ["ov-wifi", "ov-ethernet", "ov-ftp", "ov-smb"];
+
+  const updatePendingBlink = (element) => {
+    const isPending = element.textContent.trim().toUpperCase() === "PENDING";
+    element.classList.toggle("sn-overview-pending-blink", isPending);
+  };
+
+  ids.forEach((id) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    updatePendingBlink(element);
+
+    const observer = new MutationObserver(() => updatePendingBlink(element));
+    observer.observe(element, {
+      childList: true,
+      characterData: true,
+      subtree: true
+    });
+  });
+})();
+</script>
+
+
+<style id="SN_STORAGE_PENDING_BLINK_V1">
+/* Blink only the four Storage Transaction Target pending badges. */
+@keyframes snStoragePendingBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .45; }
+}
+#ov-drive-c.sn-storage-pending-blink,
+#ov-drive-d.sn-storage-pending-blink,
+#ov-drive-f.sn-storage-pending-blink,
+#ov-drive-g.sn-storage-pending-blink {
+  animation: snStoragePendingBlink 1.2s ease-in-out infinite;
+}
+</style>
+
+<script id="SN_STORAGE_PENDING_BLINK_V1_SCRIPT">
+(() => {
+  const ids = ["ov-drive-c", "ov-drive-d", "ov-drive-f", "ov-drive-g"];
+
+  ids.forEach((id) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const update = () => {
+      const pending = element.textContent.trim().toUpperCase() === "PENDING";
+      element.classList.toggle("sn-storage-pending-blink", pending);
+    };
+
+    update();
+
+    const observer = new MutationObserver(update);
+    observer.observe(element, {
+      childList: true,
+      characterData: true,
+      subtree: true
+    });
+  });
+})();
+</script>
+
+
+
