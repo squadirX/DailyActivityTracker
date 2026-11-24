@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1530">
+<title>Smart Disk Cleaner | Intelligent Storage Command Center</title>
+<style>
+:root{--bg:#f3f6fc;--ink:#17233d;--muted:#71809b;--nav:#0b1530;--line:#e6ebf4;--white:#fff;--cyan:#39c6e8;--blue:#5478f5;--violet:#8768ed;--green:#28bd91;--orange:#f2a64a;--red:#ed6a83;--shadow:0 18px 45px rgba(32,54,100,.10)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0%,#e4edff 0,transparent 28%),var(--bg);font:14px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+button{font:inherit;cursor:pointer}.app{min-height:100vh;display:flex}.sidebar{width:258px;overflow-y:auto;background:linear-gradient(165deg,#111f43,#091329 78%);color:#dce6ff;padding:24px 17px 18px;display:flex;flex-direction:column;position:fixed;inset:0 auto 0 0;z-index:10;box-shadow:12px 0 35px #15274a20}.brand{display:flex;align-items:center;gap:12px;padding:4px 9px 26px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#57d7f2,#6277fa 58%,#9168ec);display:grid;place-items:center;box-shadow:0 8px 20px #4e8bfa55}.logo svg{width:25px}
+
+/* SMART_DISK_LOGO_CONTINUOUS_GLOW */
+.logo {
+  animation:logoPulse 3.2s ease-in-out infinite;
+  transform-origin:center;
+  will-change:transform,box-shadow;
+}
+.logo svg {
+  animation:logoIconGlow 3.2s ease-in-out infinite;
+}
+.logo:hover {
+  animation-duration:1.5s;
+  box-shadow:0 0 22px #39c6e8dd,0 0 42px #5478f5bb,0 0 58px #8768ed77;
+}
+@keyframes logoPulse {
+  0%,100% {
+    transform:scale(1);
+    box-shadow:0 0 9px #39c6e899,0 0 20px #5478f577,0 8px 20px #4e8bfa66;
+  }
+  50% {
+    transform:scale(1.055);
+    box-shadow:0 0 19px #39c6e8dd,0 0 38px #5478f5bb,0 0 52px #8768ed66,0 8px 25px #4e8bfa88;
+  }
+}
+@keyframes logoIconGlow {
+  0%,100% {filter:drop-shadow(0 0 2px #39c6e899);}
+  50% {filter:drop-shadow(0 0 7px #39c6e8) drop-shadow(0 0 5px #8768ed);}
+}
+
+  50%{box-shadow:0 0 17px #39c6e8bb,0 0 35px #5478f599,0 8px 24px #4e8bfa77}
+}
+@media(prefers-reduced-motion:reduce){.logo,.logo svg{animation:none!important}}.brand b{display:block;font-size:14px;letter-spacing:.09em}.brand small{color:#8ea2ca;font-size:10px;letter-spacing:.16em}.nav-label{font-size:10px;letter-spacing:.18em;color:#6f83ac;padding:13px 12px 8px}.nav{display:grid;gap:6px}.nav button{border:0;color:#9eafd0;background:transparent;text-align:left;padding:11px 13px;border-radius:12px;display:flex;align-items:center;gap:12px;transition:.2s}.nav button:hover{background:#ffffff0d;color:#fff;transform:translateX(2px)}.nav button.active{color:#fff;background:linear-gradient(100deg,#466cf0,#725ee7);box-shadow:0 9px 20px #4b65df50}.nav .ico{width:20px;text-align:center;font-size:16px}.side-bottom{margin-top:auto}.side-note{background:#ffffff0b;border:1px solid #ffffff13;border-radius:15px;padding:13px;color:#9eafd0;font-size:11px;margin:16px 4px}.side-note strong{color:#e8efff;display:block;margin-bottom:5px}.exit{width:100%;border:1px solid #ff879044;background:#e95d7620;color:#ffb3bd;border-radius:12px;padding:11px;text-align:left}.main{margin-left:258px;width:calc(100% - 258px);padding:26px 32px 44px;max-width:1800px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;gap:16px}.eyebrow{color:#7c8ba5;text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700}.topbar h1{margin:3px 0 0;font-size:25px;letter-spacing:-.04em}.top-actions{display:flex;gap:10px;align-items:center}.pill{border:1px solid var(--line);background:#ffffffc9;border-radius:999px;padding:8px 12px;color:#62718c;font-size:11px}.prototype{background:#fff8e9;border:1px solid #ffe4b7;color:#94621c;padding:10px 14px;border-radius:12px;margin-bottom:20px;display:flex;gap:10px;align-items:center;font-size:12px}.prototype strong{color:#7b4e0d}.page{display:none;animation:rise .35s ease}.page.active{display:block}@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.section-head{display:flex;justify-content:space-between;align-items:end;margin:23px 0 13px}.section-head h2{margin:0;font-size:17px;letter-spacing:-.025em}.section-head p{margin:3px 0 0;color:var(--muted);font-size:11px}.grid{display:grid;gap:15px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}.card{background:var(--white);border:1px solid #e8edf6;border-radius:19px;box-shadow:var(--shadow);padding:18px;position:relative;overflow:hidden}.kpi{min-height:134px;color:#fff;border:0;isolation:isolate;box-shadow:0 16px 30px #253c7920;transition:.25s}.kpi:hover,.storage-card:hover{transform:translateY(-4px);box-shadow:0 23px 40px #253c7927}.kpi:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-35px;top:-55px;background:#ffffff20;z-index:-1;box-shadow:0 0 0 18px #ffffff0b,0 0 0 38px #ffffff08}.kpi .label{font-size:11px;color:#ffffffd5}.kpi .value{font-size:29px;font-weight:750;letter-spacing:-.05em;margin:12px 0 3px}.kpi .foot{font-size:10px;color:#ffffffc7}.k1{background:linear-gradient(135deg,#2866d9,#54b8ed)}.k2{background:linear-gradient(135deg,#6b55d9,#a27be9)}.k3{background:linear-gradient(135deg,#159c88,#51cfaa)}.k4{background:linear-gradient(135deg,#d78a35,#f4bb63)}.two{grid-template-columns:1.3fr .9fr}.three{grid-template-columns:repeat(3,1fr)}.status-list{display:grid;gap:12px}.status-row{display:flex;align-items:center;gap:10px}.dot{width:9px;height:9px;border-radius:50%;background:#c4ccda;box-shadow:0 0 0 4px #f0f3f8}.status-row b{font-size:12px}.status-row small{display:block;color:var(--muted);font-size:10px}.status-row .spacer{flex:1}.tag{font-size:10px;padding:4px 8px;border-radius:99px;background:#f0f3f8;color:#77849b}.tag.pending{background:#fff3df;color:#a16b20}.tag.off{background:#f1f3f7;color:#77849b}.storage-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.storage-card{transition:.25s;padding:16px}
+.storage-card:nth-child(1){background:#f0f7ff;border-color:#dcecff}
+.storage-card:nth-child(2){background:#f1f5ff;border-color:#dfe7ff}
+.storage-card:nth-child(3){background:#f2fbf7;border-color:#dcefe5}
+.storage-card:nth-child(4){background:#fff7ed;border-color:#f8e5cc}
+.storage-card:nth-child(5){background:#f4f0ff;border-color:#e5dcff}
+.storage-card:nth-child(6){background:#eff9ff;border-color:#d9efff}
+.storage-card:nth-child(7){background:#fff2f5;border-color:#f8dfe7}
+.storage-card:nth-child(8){background:#f4f8ff;border-color:#dfe8fb}
+.storage-card:nth-child(9){background:#f1fbf5;border-color:#dcefe3}.storage-top{display:flex;justify-content:space-between;align-items:center}.drive-icon{width:37px;height:37px;border-radius:12px;background:linear-gradient(145deg,#e7f4ff,#e9e9ff);display:grid;place-items:center;font-size:18px}.storage-card h3{font-size:13px;margin:12px 0 1px}.storage-card .sub{font-size:10px;color:var(--muted)}.storage-card .capacity{margin-top:16px;font-weight:700;font-size:18px}.storage-card .capacity small{font-size:10px;font-weight:500;color:var(--muted)}.bar{height:7px;background:#edf1f7;border-radius:9px;overflow:hidden;margin:9px 0}.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#4f82f5,#56c7db);border-radius:9px}.storage-card .meta{font-size:10px;color:var(--muted);display:flex;justify-content:space-between}.clock-grid{grid-template-columns:repeat(3,1fr)}.side-world{display:grid;gap:8px;margin:0 3px 14px}.side-clock{border:1px solid #ffffff1a;border-radius:13px;padding:9px 10px;background:linear-gradient(145deg,#1a315d,#253f70);color:#edf4ff;transition:background .3s}.side-clock.day{background:linear-gradient(145deg,#f7d98a,#eaa95b);color:#46300d;border-color:#ffe8b5}.side-clock.night{background:linear-gradient(145deg,#172744,#263c65);color:#edf4ff}.side-clock .sc-top{display:flex;align-items:center;justify-content:space-between;font-size:10px;font-weight:700;letter-spacing:.04em}.side-clock .sc-time{font-size:20px;font-weight:750;line-height:1.2;margin:4px 0 1px;font-variant-numeric:tabular-nums}.side-clock .sc-date{font-size:9px;opacity:.78}.side-clock .sc-weather{font-size:10px;margin-top:6px;padding-top:6px;border-top:1px solid currentColor;opacity:.9;min-height:21px}.side-status{margin:0 3px 13px;padding:10px;border:1px solid #ffffff17;background:#ffffff0a;border-radius:13px}.side-status h4{margin:0 0 7px;color:#9fb2d9;font-size:9px;letter-spacing:.15em}.side-status-row{display:flex;align-items:center;gap:7px;color:#dbe5fb;font-size:10px;padding:4px 0}.side-status-row .status-dot{width:7px;height:7px;border-radius:50%;background:#8794aa;flex:none}.side-status-row .status-value{margin-left:auto;color:#b6c3dc;font-size:9px;text-align:right}.market-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.market-card{padding:12px;min-height:255px}.market-card h3{margin:0;font-size:13px}.market-card .market-sub{font-size:10px;color:var(--muted);margin:2px 0 8px}.tv-frame{width:100%;height:190px;overflow:hidden}.tv-frame iframe{width:100%;height:100%;border:0}.market-foot{font-size:9px;color:var(--muted);margin-top:5px}.market-note{font-size:10px;color:var(--muted);margin-top:10px}.clock{background:linear-gradient(145deg,#172a55,#304c82);color:white;border:0}.clock .city{color:#b7c8ed;font-size:11px}.clock .time{font-size:25px;font-weight:700;letter-spacing:-.04em;margin:8px 0 0;font-variant-numeric:tabular-nums}.clock .date{font-size:10px;color:#c4d1ec}.weather{margin-top:12px;border-top:1px solid #ffffff20;padding-top:10px;color:#d9e5ff;font-size:11px;min-height:42px}.weather b{font-size:18px;margin-right:7px}.panel-title{font-size:13px;font-weight:700;margin:0 0 14px}.mini-chart{height:160px;display:flex;align-items:end;gap:12px;padding:10px 4px 0}.mini-chart span{flex:1;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,#8b8af3,#56c5df);min-height:12px;opacity:.75}.chart-labels{display:flex;justify-content:space-around;color:var(--muted);font-size:9px;margin-top:8px}.empty{border:1px dashed #d5deec;background:#f9fbff;border-radius:15px;padding:22px;text-align:center;color:#77859e;font-size:11px}.empty strong{display:block;color:#44536e;font-size:12px;margin-bottom:4px}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;font-size:11px}.table th{text-align:left;color:#8190a8;font-weight:600;padding:11px;border-bottom:1px solid var(--line)}.table td{padding:13px 11px;border-bottom:1px solid #eff2f7}.table tr:last-child td{border:0}.risk{color:#b5792e;background:#fff4df;padding:4px 8px;border-radius:20px;font-size:10px}.risk.safe{color:#168b6b;background:#e8f8f2}.rule{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid #edf1f6}.rule:last-child{border:0}.rule-icon{width:32px;height:32px;border-radius:10px;background:#edf3ff;display:grid;place-items:center}.rule b{font-size:12px}.rule p{margin:3px 0 0;color:var(--muted);font-size:10px}.btn{border:0;border-radius:11px;padding:10px 14px;background:linear-gradient(100deg,#4774ef,#7764e9);color:#fff;font-size:11px;font-weight:650;box-shadow:0 7px 16px #5c70dc30}.btn.secondary{background:#f0f3fa;color:#53627d;box-shadow:none;border:1px solid #e4eaf3}.btn:disabled{opacity:.45;cursor:not-allowed}.notice{font-size:11px;color:#73819a;margin-top:12px}.map-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:8px}.map-cell{padding:13px 6px;text-align:center;border-radius:12px;background:#f4f6fb;border:1px solid #e8edf5}.map-cell b{display:block;font-size:11px}.map-cell small{font-size:9px;color:#8995aa}.map-cell em{font-style:normal;font-size:17px;display:block;margin-bottom:6px}.footer{text-align:center;color:#9aa5b8;font-size:10px;margin:30px 0 0}
+@media(max-width:1150px){.kpis,.storage-grid{grid-template-columns:repeat(2,1fr)}.market-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.map-grid{grid-template-columns:repeat(5,1fr)}}@media(max-width:780px){.sidebar{width:72px;padding:18px 9px}.brand{padding:4px 5px 24px}.brand div:last-child,.nav-label,.nav button span:not(.ico),.side-note,.exit span,.side-world,.side-status{display:none}.nav button{justify-content:center;padding:12px 5px}.exit{text-align:center}.main{margin-left:72px;width:calc(100% - 72px);padding:20px 15px}.two,.three,.clock-grid{grid-template-columns:1fr}.market-grid{grid-template-columns:1fr}.topbar{align-items:flex-start}.topbar h1{font-size:20px}.top-actions .pill{display:none}}@media(max-width:480px){.kpis,.storage-grid{grid-template-columns:1fr}.map-grid{grid-template-columns:repeat(2,1fr)}.topbar{display:block}.top-actions{margin-top:12px}}
+
+/* STORAGE_LANDSCAPE_NINE_CARD_COLORS */
+.map-grid .map-cell:nth-child(1),#storageCards .storage-card:nth-child(1){background:linear-gradient(145deg,#e4f1ff,#f1f7ff)!important}
+.map-grid .map-cell:nth-child(2),#storageCards .storage-card:nth-child(2){background:linear-gradient(145deg,#e5f8f2,#f1fcf8)!important}
+.map-grid .map-cell:nth-child(3),#storageCards .storage-card:nth-child(3){background:linear-gradient(145deg,#fff0df,#fff8ed)!important}
+.map-grid .map-cell:nth-child(4),#storageCards .storage-card:nth-child(4){background:linear-gradient(145deg,#f0eaff,#f8f5ff)!important}
+.map-grid .map-cell:nth-child(5),#storageCards .storage-card:nth-child(5){background:linear-gradient(145deg,#ffe8ef,#fff3f6)!important}
+.map-grid .map-cell:nth-child(6),#storageCards .storage-card:nth-child(6){background:linear-gradient(145deg,#e2f7fa,#f0fcfd)!important}
+.map-grid .map-cell:nth-child(7),#storageCards .storage-card:nth-child(7){background:linear-gradient(145deg,#f1f5df,#f9fbef)!important}
+.map-grid .map-cell:nth-child(8),#storageCards .storage-card:nth-child(8){background:linear-gradient(145deg,#e9eaff,#f4f4ff)!important}
+.map-grid .map-cell:nth-child(9),#storageCards .storage-card:nth-child(9){background:linear-gradient(145deg,#ffefdf,#fff7ed)!important}
+.map-grid .map-cell{border:1px solid rgba(110,130,170,.13);border-radius:14px;transition:transform .2s ease,box-shadow .2s ease}
+.map-grid .map-cell:hover,#storageCards .storage-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(40,60,100,.10)}
+#storageCards .storage-card{border:1px solid rgba(110,130,170,.13);transition:transform .2s ease,box-shadow .2s ease}
+
+
+/* FINANCIAL_MARKET_FOUR_CARD_COLORS */
+.market-grid > .market-card:nth-child(1) {
+  background:linear-gradient(145deg,#fff3cf,#fffaf0) !important;
+  border:1px solid #f4dfaa;
+}
+.market-grid > .market-card:nth-child(2) {
+  background:linear-gradient(145deg,#e8f0fa,#f7faff) !important;
+  border:1px solid #d5e2f2;
+}
+.market-grid > .market-card:nth-child(3) {
+  background:linear-gradient(145deg,#ffeadf,#fff6f0) !important;
+  border:1px solid #f3d5c5;
+}
+.market-grid > .market-card:nth-child(4) {
+  background:linear-gradient(145deg,#e1f5e9,#f3fbf5) !important;
+  border:1px solid #cce8d7;
+}
+.market-grid > .market-card {
+  border-radius:16px;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.market-grid > .market-card:hover {
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px rgba(35,55,90,.10);
+}
+.market-grid .tv-frame {
+  background:rgba(255,255,255,.72);
+  border-radius:12px;
+  overflow:hidden;
+}
+
+
+/* FINANCIAL_MARKET_INNER_MATCHING_COLORS */
+
+/* Gold */
+.market-grid > .market-card:nth-child(1) .tv-frame {
+  background:linear-gradient(145deg,#fff3cf,#fffaf0) !important;
+}
+
+/* Silver */
+.market-grid > .market-card:nth-child(2) .tv-frame {
+  background:linear-gradient(145deg,#e8f0fa,#f7faff) !important;
+}
+
+/* Oil */
+.market-grid > .market-card:nth-child(3) .tv-frame {
+  background:linear-gradient(145deg,#ffeadf,#fff6f0) !important;
+}
+
+/* USD/CAD */
+.market-grid > .market-card:nth-child(4) .tv-frame {
+  background:linear-gradient(145deg,#e1f5e9,#f3fbf5) !important;
+}
+
+.market-grid .tv-frame {
+  border-radius:12px;
+  overflow:hidden;
+}
+
+
+/* FINANCIAL_MARKET_TRADINGVIEW_TRANSPARENT */
+.market-grid .tradingview-widget-container,
+.market-grid .tradingview-widget-container__widget {
+  background:transparent !important;
+}
+
+
+/* SMART_DISK_MAC_FULL_PAGE_INTERFACE */
+.app.mac-drive-hidden { display:none !important; }
+
+.mac-workspace {
+  display:none;
+  min-height:100vh;
+  padding:28px;
+  background:linear-gradient(145deg,#edf4ff,#f5f7fc 55%,#edf1fa);
+  color:#17243b;
+  font-family:inherit;
+}
+.mac-workspace.active { display:block; }
+.mac-workspace-inner { max-width:1400px; margin:0 auto; }
+.mac-workspace-header {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; margin-bottom:28px;
+}
+.mac-workspace-brand { display:flex; align-items:center; gap:12px; font-weight:800; }
+.mac-workspace-brand .mac-brand-icon {
+  width:42px; height:42px; display:grid; place-items:center;
+  border-radius:13px; background:#172b50; color:white; font-size:22px;
+}
+.mac-back-btn {
+  border:0; border-radius:10px; padding:11px 17px;
+  background:#243c65; color:white; font-weight:700; cursor:pointer;
+}
+.mac-back-btn:hover { background:#345580; }
+.mac-hero {
+  padding:30px; border-radius:20px;
+  background:linear-gradient(120deg,#dcecff,#edf4ff);
+  border:1px solid #d6e5fa; margin-bottom:20px;
+}
+.mac-hero h1 { margin:0 0 9px; font-size:27px; }
+.mac-hero p { margin:0; color:#60718d; font-size:13px; }
+.mac-stats {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px; margin-bottom:22px;
+}
+.mac-stat {
+  padding:20px; border-radius:15px; background:#e5efff;
+  border:1px solid #d4e3f8;
+}
+.mac-stat:nth-child(2) { background:#e5f5ef; border-color:#d2eade; }
+.mac-stat:nth-child(3) { background:#f1eafa; border-color:#e5d9f2; }
+.mac-stat small { display:block; color:#687994; margin-bottom:9px; }
+.mac-stat strong { font-size:25px; }
+.mac-stat span { display:block; color:#75839a; font-size:11px; margin-top:5px; }
+.mac-tools-grid {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px;
+}
+.mac-tool-card {
+  padding:22px; border-radius:16px; background:#eaf1fb;
+  border:1px solid #d9e4f3;
+}
+.mac-tool-card h3 { margin:0 0 9px; font-size:15px; }
+.mac-tool-card p { margin:0; color:#687994; font-size:12px; line-height:1.6; }
+.mac-pending {
+  display:inline-block; margin-top:14px; padding:5px 9px;
+  border-radius:20px; background:#f4ead3; color:#88652b;
+  font-size:10px; font-weight:700;
+}
+.mac-safety {
+  margin-top:20px; padding:16px 18px; border-radius:13px;
+  background:#e7f4ed; border:1px solid #d1e8da;
+  color:#426a53; font-size:12px; line-height:1.6;
+}
+@media(max-width:700px) {
+  .mac-workspace { padding:16px; }
+  .mac-workspace-header { align-items:flex-start; }
+  .mac-stats,.mac-tools-grid { grid-template-columns:1fr; }
+  .mac-hero { padding:22px; }
+}
+
+
+/* SMART_DISK_MAC_BACKEND_STYLES */
+.mac-live-status{font-size:11px;color:#62718c;margin:10px 0 18px}
+.mac-step{padding:22px;border-radius:17px;background:#eaf1fb;
+border:1px solid #d9e4f3;margin:15px 0}
+.mac-step h2{font-size:17px;margin:0 0 7px}
+.mac-step p{font-size:12px;color:#687994;margin:0 0 14px}
+.mac-step button{border:0;border-radius:10px;padding:11px 16px;
+background:linear-gradient(100deg,#4774ef,#7764e9);
+color:white;font-weight:700;font-size:12px}
+.mac-step button:disabled{opacity:.45;cursor:not-allowed}
+.mac-output{white-space:pre-wrap;overflow-wrap:anywhere;
+font:11px/1.55 ui-monospace,monospace;color:#34445f;
+background:#f7f9fd;border:1px solid #dce5f2;border-radius:12px;
+padding:14px;margin-top:13px;max-height:340px;overflow:auto}
+.mac-candidate{display:flex;align-items:flex-start;gap:10px;
+padding:13px;background:#f7f9fd;border:1px solid #dce5f2;
+border-radius:12px;margin:9px 0;font-size:12px}
+.mac-candidate input{margin-top:4px}
+.mac-candidate strong{display:block;margin-bottom:3px}
+.mac-step-note{font-size:11px;color:#687994;margin-top:10px}
+.mac-stat strong{display:block}
+.mac-action-row{display:flex;gap:10px;flex-wrap:wrap}
+
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z"/><path d="M8 9.5h8M8 13h5M8 16h3"/></svg></div><div><b>SMART DISK</b><small>CLEANER · COMMAND</small></div></div>
+  <div class="side-world" aria-label="World clocks and weather">
+    <div class="side-clock night" data-side-clock="toronto"><div class="sc-top"><span>🇨🇦 TORONTO</span><span class="day-icon">🌙</span></div><div class="sc-time" data-side-time="America/Toronto">--:--:--</div><div class="sc-date" data-side-date="America/Toronto">Loading…</div><div class="sc-weather" data-side-weather="toronto">Weather loading…</div></div>
+    <div class="side-clock day" data-side-clock="dhaka"><div class="sc-top"><span>🇧🇩 DHAKA</span><span class="day-icon">☀️</span></div><div class="sc-time" data-side-time="Asia/Dhaka">--:--:--</div><div class="sc-date" data-side-date="Asia/Dhaka">Loading…</div><div class="sc-weather" data-side-weather="dhaka">Weather loading…</div></div>
+    <div class="side-clock day" data-side-clock="auckland"><div class="sc-top"><span>🇳🇿 AUCKLAND</span><span class="day-icon">☀️</span></div><div class="sc-time" data-side-time="Pacific/Auckland">--:--:--</div><div class="sc-date" data-side-date="Pacific/Auckland">Loading…</div><div class="sc-weather" data-side-weather="auckland">Weather loading…</div></div>
+  </div>
+  <div class="side-status"><h4>CONNECTIVITY STATUS</h4>
+    <div class="side-status-row"><span class="status-dot" id="internetDot"></span><span>Internet</span><span class="status-value" id="internetStatus">Checking…</span></div>
+    <div class="side-status-row"><span class="status-dot"></span><span>FTP</span><span class="status-value" id="ftpStatus">Not configured</span></div>
+    <div class="side-status-row"><span class="status-dot"></span><span>Ethernet</span><span class="status-value" id="ethernetStatus">Not available</span></div>
+  </div>
+  <div class="nav-label">WORKSPACE</div>
+  <nav class="nav">
+    <button class="active" data-page="overview"><span class="ico">◈</span><span>Overview</span></button>
+    <button data-page="inventory"><span class="ico">▣</span><span>Storage Inventory</span></button>
+    <button data-page="diagnosis"><span class="ico">⌕</span><span>Diagnosis & Maps</span></button>
+    <button data-page="cleanup"><span class="ico">✧</span><span>Cleanup Review</span></button>
+    <button data-page="history"><span class="ico">◷</span><span>History & Reports</span></button>
+    <button data-page="protection"><span class="ico">⬡</span><span>Protection Rules</span></button>
+  </nav>
+  <div class="side-bottom"><div class="side-note"><strong>Protection first</strong>Read-only prototype. No file changes or cleanup actions are enabled.</div><button class="exit" id="exitBtn">↗ <span>Exit dashboard</span></button></div>
+</aside>
+<main class="main">
+<header class="topbar"><div><div class="eyebrow">Intelligent storage workspace</div><h1 id="pageTitle">Storage Overview</h1></div><div class="top-actions"><span class="pill">● Prototype · Read-only</span><span class="pill" id="todayPill">Local time</span></div></header>
+<div class="prototype"><span>ⓘ</span><div><strong>Prototype mode:</strong> This dashboard does not scan disks, probe FTP/Ethernet hardware, connect to cloud accounts, or delete files. Storage values remain pending verification until trusted collectors are connected.</div></div>
+
+<section class="page active" id="overview">
+  <div class="grid kpis">
+    <div class="card kpi k1"><div class="label">Registered locations</div><div class="value">09</div><div class="foot">Proposed inventory · not verified</div></div>
+    <div class="card kpi k2"><div class="label">Connected locations</div><div class="value">—</div><div class="foot">Awaiting native collectors</div></div>
+    <div class="card kpi k3"><div class="label">Verified capacity</div><div class="value">—</div><div class="foot">No live measurements yet</div></div>
+    <div class="card kpi k4"><div class="label">Cleanup actions</div><div class="value">0</div><div class="foot">Disabled in prototype</div></div>
+  </div>
+  <div class="section-head"><div><h2>Financial market indicators</h2><p>Dynamic TradingView market widgets · provider quote timing may vary by instrument</p></div><span class="tag pending">Provider feed · delays may apply</span></div>
+  <div class="grid market-grid">
+    <div class="card market-card"><h3>🥇 Gold · XAU/USD</h3><div class="market-sub">Spot gold · USD per troy ounce</div><div class="tv-frame"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>{"symbols":[["Gold Spot / U.S. Dollar", "OANDA:XAUUSD|1D"]],"chartOnly":false,"width":"100%","height":"190","locale":"en","colorTheme":"light","isTransparent":true,"autosize":true,"showVolume":false,"showMA":false,"hideDateRanges":true,"hideMarketStatus":false,"hideSymbolLogo":true,"scalePosition":"right","scaleMode":"Normal","fontFamily":"-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif","fontSize":"10","noTimeScale":false,"valuesTracking":"1","changeMode":"price-and-percent","chartType":"area","lineWidth":2,"lineType":0,"dateRanges":["1d|1"]}</script></div></div><div class="market-foot">Source: TradingView · OANDA feed availability applies</div></div>
+    <div class="card market-card"><h3>🥈 Silver · XAG/USD</h3><div class="market-sub">Spot silver · USD per troy ounce</div><div class="tv-frame"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>{"symbols":[["Silver Spot / U.S. Dollar", "OANDA:XAGUSD|1D"]],"chartOnly":false,"width":"100%","height":"190","locale":"en","colorTheme":"light","isTransparent":true,"autosize":true,"showVolume":false,"showMA":false,"hideDateRanges":true,"hideMarketStatus":false,"hideSymbolLogo":true,"scalePosition":"right","scaleMode":"Normal","fontFamily":"-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif","fontSize":"10","noTimeScale":false,"valuesTracking":"1","changeMode":"price-and-percent","chartType":"area","lineWidth":2,"lineType":0,"dateRanges":["1d|1"]}</script></div></div><div class="market-foot">Source: TradingView · OANDA feed availability applies</div></div>
+    <div class="card market-card"><h3>🛢️ Oil · WTI</h3><div class="market-sub">WTI crude oil · USD per barrel</div><div class="tv-frame"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>{"symbols":[["WTI Crude Oil", "TVC:USOIL|1D"]],"chartOnly":false,"width":"100%","height":"190","locale":"en","colorTheme":"light","isTransparent":true,"autosize":true,"showVolume":false,"showMA":false,"hideDateRanges":true,"hideMarketStatus":false,"hideSymbolLogo":true,"scalePosition":"right","scaleMode":"Normal","fontFamily":"-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif","fontSize":"10","noTimeScale":false,"valuesTracking":"1","changeMode":"price-and-percent","chartType":"area","lineWidth":2,"lineType":0,"dateRanges":["1d|1"]}</script></div></div><div class="market-foot">Source: TradingView · quote may be delayed by venue</div></div>
+    <div class="card market-card"><h3>💵 US Dollar · USD/CAD</h3><div class="market-sub">US dollar in Canadian dollars</div><div class="tv-frame"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>{"symbols":[["U.S. Dollar / Canadian Dollar", "FX:USDCAD|1D"]],"chartOnly":false,"width":"100%","height":"190","locale":"en","colorTheme":"light","isTransparent":true,"autosize":true,"showVolume":false,"showMA":false,"hideDateRanges":true,"hideMarketStatus":false,"hideSymbolLogo":true,"scalePosition":"right","scaleMode":"Normal","fontFamily":"-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif","fontSize":"10","noTimeScale":false,"valuesTracking":"1","changeMode":"price-and-percent","chartType":"area","lineWidth":2,"lineType":0,"dateRanges":["1d|1"]}</script></div></div><div class="market-foot">Source: TradingView · FX feed availability applies</div></div>
+  </div>
+  <p class="market-note">Market quotes are supplied by the embedded provider and may be delayed or unavailable depending on instrument, exchange permissions and connectivity. The widget displays its own current quote and daily change; no prices are hardcoded.</p>
+  <div class="section-head"><div><h2>Storage landscape</h2><p>Nine proposed locations · every status awaits verification</p></div><button class="btn secondary" data-go="inventory">View inventory →</button></div>
+  <div class="card"><div class="map-grid">
+<div class="map-cell"><em>💻</em><b>Mac</b><small>Pending</small></div>
+<div class="map-cell"><em>🖥️</em><b>Windows C:</b><small>Pending</small></div>
+<div class="map-cell"><em>🗄️</em><b>Data D:</b><small>Pending</small></div>
+<div class="map-cell"><em>💽</em><b>Transcend F:</b><small>Verify ID</small></div>
+<div class="map-cell"><em>💾</em><b>Transcend G:</b><small>Pending</small></div>
+<div class="map-cell"><em>☁️</em><b>OneDrive</b><small>Pending</small></div>
+<div class="map-cell"><em>☁️</em><b>iCloud Drive</b><small>Pending</small></div>
+<div class="map-cell"><em>☁️</em><b>Google Drive</b><small>Pending</small></div>
+<div class="map-cell"><em>☁️</em><b>Dropbox</b><small>Pending</small></div>
+  </div></div>
+  <div class="section-head"><div><h2>System readiness</h2><p>Current implementation stage</p></div></div>
+  <div class="grid two">
+    <div class="card"><h3 class="panel-title">Project status</h3><div class="status-list">
+      <div class="status-row"><span class="dot" style="background:#29bd91"></span><div><b>Phase 0 · Planning & UI</b><small>Blueprint and browser prototype</small></div><span class="spacer"></span><span class="tag">Complete</span></div>
+      <div class="status-row"><span class="dot"></span><div><b>Phase 1 · Verify inventory</b><small>Confirm devices, volumes and accounts</small></div><span class="spacer"></span><span class="tag pending">Pending</span></div>
+      <div class="status-row"><span class="dot"></span><div><b>Phase 2 · Read-only collectors</b><small>Mac, Windows and cloud sources</small></div><span class="spacer"></span><span class="tag pending">Pending</span></div>
+      <div class="status-row"><span class="dot"></span><div><b>Phase 3–4 · Diagnosis & cleanup</b><small>Review, audit and controlled actions</small></div><span class="spacer"></span><span class="tag off">Not enabled</span></div>
+    </div></div>
+    <div class="card"><h3 class="panel-title">Storage trend</h3><div class="empty"><strong>No verified history yet</strong>Capacity charts will appear after timestamped read-only scans are connected. No illustrative trend is shown.</div></div>
+  </div>
+</section>
+
+<section class="page" id="inventory">
+  <div class="section-head"><div><h2>Registered storage locations</h2><p>Proposed registry · identities and capacity must be confirmed on the source device</p></div><button class="btn secondary" disabled title="Registry editing will be enabled with the backend">＋ Add location · Later</button></div>
+  <div class="grid storage-grid" id="storageCards"></div>
+  <p class="notice">Cloud quota is kept separate from local sync/cache size. Network shares are access paths, not proof of server health. Avoid double-counting a share and its underlying volume.</p>
+  <div class="section-head"><div><h2>Verification checklist</h2><p>Required before any location can be reported as healthy</p></div></div>
+  <div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Location</th><th>Identity</th><th>Capacity / quota</th><th>Source</th><th>Status</th></tr></thead><tbody>
+  <tr><td>MacBook internal</td><td>APFS/container</td><td>—</td><td>macOS collector</td><td><span class="tag pending">Pending verification</span></td></tr>
+  <tr><td>Windows C:</td><td>Physical volume</td><td>—</td><td>Windows collector</td><td><span class="tag pending">Pending verification</span></td></tr>
+  <tr><td>Windows D: ADATA</td><td>Server / project library</td><td>—</td><td>Windows collector</td><td><span class="tag pending">Verify identity</span></td></tr>
+  <tr><td>Windows F: Transcend</td><td>External device</td><td>—</td><td>Windows collector</td><td><span class="tag pending">Verify device</span></td></tr>
+  <tr><td>Transcend G:</td><td>Transcend external drive · verify device</td><td>—</td><td>Windows collector</td><td><span class="tag pending">Pending verification</span></td></tr>
+  <tr><td>OneDrive · iCloud · Google Drive · Dropbox</td><td>Provider account + sync mode</td><td>—</td><td>Authorized APIs</td><td><span class="tag pending">Pending authorization</span></td></tr>
+  </tbody></table></div></div>
+</section>
+
+<section class="page" id="diagnosis">
+  <div class="section-head"><div><h2>Read-only diagnosis</h2><p>Folder usage, largest items, applications, caches and duplicate candidates</p></div><span class="tag pending">Collector not connected</span></div>
+  <div class="grid three">
+    <div class="card"><div class="drive-icon">▦</div><h3>Folder map</h3><p class="notice">Treemap waits for verified directory totals and permission-aware scan results.</p><div class="empty">No folder measurements</div></div>
+    <div class="card"><div class="drive-icon">⌕</div><h3>Largest items</h3><p class="notice">Files and folders will be ranked by measured bytes, path and modified time.</p><div class="empty">No item inventory</div></div>
+    <div class="card"><div class="drive-icon">⧉</div><h3>Duplicate candidates</h3><p class="notice">Hash-based candidate detection only; no automatic removal.</p><div class="empty">No duplicate report</div></div>
+  </div>
+  <div class="section-head"><div><h2>Diagnosis data requirements</h2><p>Only findings supported by the source collector will be displayed</p></div></div>
+  <div class="card"><div class="status-list">
+    <div class="status-row"><span class="dot"></span><div><b>Application usage</b><small>Show only where the OS/provider can reliably attribute it</small></div><span class="spacer"></span><span class="tag pending">Pending</span></div>
+    <div class="status-row"><span class="dot"></span><div><b>Cache and temporary files</b><small>Inventory first; classify risk before recommendation</small></div><span class="spacer"></span><span class="tag pending">Pending</span></div>
+    <div class="status-row"><span class="dot"></span><div><b>Permissions and scan errors</b><small>Report skipped paths, partial results and data freshness</small></div><span class="spacer"></span><span class="tag pending">Pending</span></div>
+  </div></div>
+</section>
+
+<section class="page" id="cleanup">
+  <div class="section-head"><div><h2>Cleanup review queue</h2><p>Review mode only · no delete, move, overwrite or sync-conflict action is available</p></div><span class="tag off">Cleanup disabled</span></div>
+  <div class="grid two">
+    <div class="card"><h3 class="panel-title">Operating modes</h3>
+      <div class="rule"><div class="rule-icon">◉</div><div><b>Read-only Scan · Default</b><p>Inventory and diagnosis only. No changes to files or storage.</p></div></div>
+      <div class="rule"><div class="rule-icon">⌕</div><div><b>Review Mode</b><p>Exact path, measured size, age, category, reason, risk and reclaimable estimate.</p></div></div>
+      <div class="rule"><div class="rule-icon">✓</div><div><b>Safe Cleanup · Future phase</b><p>Only exact allowlisted targets, after process checks and explicit confirmation.</p></div></div>
+      <div class="rule"><div class="rule-icon">⚠</div><div><b>Advanced Review</b><p>Separate approval for developer caches, package downloads and old logs.</p></div></div>
+    </div>
+    <div class="card"><h3 class="panel-title">Pending recommendations</h3><div class="empty"><strong>Nothing to review</strong>No scan has run, so there are no measured cleanup candidates. Recommendations will not be fabricated.</div></div>
+  </div>
+  <div class="section-head"><div><h2>Cleanup policy by storage</h2><p>Provider-specific safety rules</p></div></div>
+  <div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Storage</th><th>Policy</th><th>Default behavior</th></tr></thead><tbody>
+  <tr><td>Mac internal</td><td>macOS-aware</td><td>Review known caches; preserve system-managed and user data</td></tr><tr><td>Windows C:</td><td>Windows-aware</td><td>Native supported mechanisms; no broad system-folder deletion</td></tr><tr><td>Windows D: ADATA</td><td>Project Library protected</td><td>Inventory only; no automatic cleanup of project or operational data</td></tr><tr><td>Windows F: Transcend</td><td>External-drive aware</td><td>Verify exact mounted volume; review before cleanup</td></tr><tr><td>Transcend G:</td><td>External-drive aware</td><td>Inventory only until exact device and ownership are verified</td></tr><tr><td>Cloud drives</td><td>Cloud-aware</td><td>Provider quota and sync diagnosis; deletions disabled</td></tr>
+  </tbody></table></div></div>
+</section>
+
+<section class="page" id="history">
+  <div class="section-head"><div><h2>History & reports</h2><p>Local-first history · timestamp every verified reading</p></div><button class="btn secondary" disabled>Export report · Later</button></div>
+  <div class="grid two">
+    <div class="card"><h3 class="panel-title">Scan history</h3><div class="empty"><strong>No scan records</strong>History will be populated by trusted collectors, including scan source, timestamp and freshness.</div></div>
+    <div class="card"><h3 class="panel-title">Capacity comparison</h3><div class="empty"><strong>No comparable readings</strong>Only verified values from the same storage identity and class will be charted.</div></div>
+  </div>
+  <div class="section-head"><div><h2>Report integrity</h2><p>Facts and policy decisions are stored separately</p></div></div>
+  <div class="card"><div class="status-list">
+    <div class="status-row"><span class="dot"></span><div><b>Source attribution</b><small>Collector/device and storage identity attached to each result</small></div><span class="spacer"></span><span class="tag pending">Awaiting data</span></div>
+    <div class="status-row"><span class="dot"></span><div><b>Freshness and partial results</b><small>Stale scans, permission gaps and errors remain visible</small></div><span class="spacer"></span><span class="tag pending">Awaiting data</span></div>
+    <div class="status-row"><span class="dot"></span><div><b>Before/after audit</b><small>Required for any future approved cleanup operation</small></div><span class="spacer"></span><span class="tag off">Not enabled</span></div>
+  </div></div>
+</section>
+
+<section class="page" id="protection">
+  <div class="section-head"><div><h2>Protection rules</h2><p>Report broadly; clean narrowly. Protection takes priority over reclaimed space.</p></div><span class="tag" style="background:#e8f8f2;color:#168b6b">Protection-first</span></div>
+  <div class="grid two">
+    <div class="card"><h3 class="panel-title">Protected content</h3>
+      <div class="rule"><div class="rule-icon">🛡️</div><div><b>Project source and active workspaces</b><p>Source, dependencies, environments, configuration and supporting assets.</p></div></div>
+      <div class="rule"><div class="rule-icon">▤</div><div><b>Databases and sidecars</b><p>SQLite databases, WAL/SHM/journal files, locks and related data.</p></div></div>
+      <div class="rule"><div class="rule-icon">◈</div><div><b>SmartBackup and backup history</b><p>Application source, snapshots, archives and every historical backup set.</p></div></div>
+      <div class="rule"><div class="rule-icon">🔐</div><div><b>Credentials and security material</b><p>Tokens, certificates, SSH keys, secrets and secure-store contents.</p></div></div>
+      <div class="rule"><div class="rule-icon">🌐</div><div><b>Browser and synced user data</b><p>History, cookies, passwords, bookmarks, profiles, cloud content and network shares.</p></div></div>
+      <div class="rule"><div class="rule-icon">📁</div><div><b>Documents, downloads and unknown paths</b><p>User-created files and anything whose ownership or dependency is unknown.</p></div></div>
+    </div>
+    <div class="card"><h3 class="panel-title">Technical safeguards</h3>
+      <div class="status-list">
+        <div class="status-row"><span class="dot" style="background:#28bd91"></span><div><b>Explicit allowlists only</b><small>Never broad wildcard deletion</small></div></div>
+        <div class="status-row"><span class="dot" style="background:#28bd91"></span><div><b>Canonical path validation</b><small>Reject symlinks and paths outside approved roots</small></div></div>
+        <div class="status-row"><span class="dot" style="background:#28bd91"></span><div><b>Volume and process checks</b><small>Verify identity, mount state and owning process</small></div></div>
+        <div class="status-row"><span class="dot" style="background:#28bd91"></span><div><b>Preview and dry-run first</b><small>Re-measure target immediately before any future action</small></div></div>
+        <div class="status-row"><span class="dot" style="background:#28bd91"></span><div><b>Append-only audit trail</b><small>Record exact target and before/after measurements</small></div></div>
+        <div class="status-row"><span class="dot" style="background:#28bd91"></span><div><b>Cloud deletion disabled</b><small>Until provider semantics and restore behavior are tested</small></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="section-head"><div><h2>Protected project locations</h2><p>Exact machine paths must be verified before backend activation</p></div></div>
+  <div class="card"><div class="status-row"><span class="dot" style="background:#28bd91"></span><div><b>D:\Project_Library</b><small>Known central project-library design · path and volume identity still require verification</small></div><span class="spacer"></span><span class="tag">Protected</span></div><div class="status-row" style="margin-top:14px"><span class="dot" style="background:#28bd91"></span><div><b>SmartBackup backup history</b><small>All backups, snapshots and historical sets</small></div><span class="spacer"></span><span class="tag">Protected</span></div></div>
+</section>
+<div class="footer">SMART DISK CLEANER · INTELLIGENT STORAGE COMMAND CENTER · UI PROTOTYPE</div>
+</main>
+</div>
+
+
+<div class="mac-workspace" id="macDriveWorkspace">
+  <div class="mac-workspace-inner">
+    <header class="mac-workspace-header">
+      <div class="mac-workspace-brand">
+        <div class="mac-brand-icon">💻</div>
+        <div>SMART DISK CLEANER
+          <small style="display:block;font-size:10px;color:#75839a;font-weight:500">
+            MAC DRIVE WORKSPACE · LIVE PYTHON BACKEND
+          </small>
+        </div>
+      </div>
+      <button class="mac-back-btn" id="macBackBtn" type="button">
+        ← Back to Dashboard
+      </button>
+    </header>
+
+    <section class="mac-hero">
+      <h1>Mac Drive Cleaner</h1>
+      <p>Ten-stage Mac inspection, safety review, controlled cleanup, history and verification.</p>
+      <div class="mac-live-status" id="macBackendStatus">
+        Local Python backend · Waiting for first system check
+      </div>
+    </section>
+
+    <section class="mac-step">
+      <h2>10-Stage Workflow</h2>
+      <p>Each stage uses real Mac measurements. Items that cannot be verified remain clearly marked unavailable.</p>
+      <div class="mac-output">01 Live system check · 02 Storage category breakdown · 03 Detailed storage analysis · 04 Application and file safety · 05 Cleanup candidate review · 06 Permission-based cleanup · 07 Before/after verification · 08 Genuine scan history · 09 Dashboard navigation · 10 Final package and runtime validation</div>
+    </section>
+
+    <div class="mac-stats">
+      <article class="mac-stat">
+        <small>Total Capacity</small>
+        <strong id="macTotal">—</strong>
+        <span>Live macOS disk measurement</span>
+      </article>
+      <article class="mac-stat">
+        <small>Used Storage</small>
+        <strong id="macUsed">—</strong>
+        <span id="macUsedPercent">Awaiting system check</span>
+      </article>
+      <article class="mac-stat">
+        <small>Available Storage</small>
+        <strong id="macFree">—</strong>
+        <span>Live macOS available space</span>
+      </article>
+    </div>
+
+    <section class="mac-step">
+      <h2>01 · System Check & Inspection</h2>
+      <p>Read actual disk capacity, macOS version, Mac model, RAM, swap and system status.</p>
+      <button id="macRunSystem">Run System Check</button>
+      <div class="mac-output" id="macSystemOutput">Not run yet.</div>
+    </section>
+
+    <section class="mac-step">
+      <h2>02 · Detailed Storage Analysis</h2>
+      <p>Inspect pip and Chrome cache sizes, Library folders, Logs, temporary folders and large cache/log files. This step is read-only.</p>
+      <button id="macRunAnalysis" disabled>Run Detailed Analysis</button>
+      <div class="mac-output" id="macAnalysisOutput">Complete Step 01 first.</div>
+    </section>
+
+    <section class="mac-step">
+      <h2>03 · Cleanup Review & Execution</h2>
+      <p>Only the explicitly selected cache categories below can be cleaned. Projects, Documents, Application Support, personal data and backups are excluded.</p>
+
+      <label class="mac-candidate">
+        <input type="checkbox" id="macSelectPip">
+        <span><strong>Python pip cache</strong>
+          <span id="macPipInfo">Awaiting analysis</span>
+        </span>
+      </label>
+
+      <label class="mac-candidate">
+        <input type="checkbox" id="macSelectChrome">
+        <span><strong>Google Chrome cache</strong>
+          <span id="macChromeInfo">Awaiting analysis</span>
+        </span>
+      </label>
+
+      <div class="mac-step-note" id="macChromeWarning">
+        Chrome cache cleanup requires Google Chrome to be fully closed.
+      </div>
+
+      <div class="mac-action-row" style="margin-top:14px">
+        <button id="macCleanSelected" disabled>Review & Clean Selected</button>
+      </div>
+      <div class="mac-output" id="macCleanupOutput">No cleanup has been executed.</div>
+    </section>
+
+    <section class="mac-step">
+      <h2>07 · Final Before/After Verification</h2>
+      <p>Measure available disk space again and compare it with the measurement taken before cleanup.</p>
+      <button id="macVerify" disabled>Run Final Verification</button>
+      <div class="mac-output" id="macVerifyOutput">Complete Step 03 first.</div>
+    </section>
+
+<section class="mac-step">
+      <h2>08 · Genuine Scan & Cleanup History</h2>
+      <p>Only actual verification results are stored in history.json. No sample or fabricated history is added.</p>
+      <button id="macLoadHistory">Load History</button>
+      <div class="mac-output" id="macHistoryOutput">No history loaded.</div>
+    </section>
+
+    <section class="mac-step">
+      <h2>09 · Dashboard Navigation</h2>
+      <p>Use “Back to Dashboard” at the top to return to the main Command Center. Your Mac workspace remains a full-page view.</p>
+    </section>
+
+    <section class="mac-step">
+      <h2>10 · Final Runtime & Package Validation</h2>
+      <p>The package validator checks the required files and JSON structure on GitHub. Real Mac hardware and cleanup behavior must still be tested on your Mac.</p>
+      <div class="mac-output" id="macFinalValidation">Pending actual Mac runtime test. No result is assumed.</div>
+    </section>
+
+    <div class="mac-safety">
+      <strong>Protection rules:</strong>
+      No automatic cleanup. No deletion without an explicit selection and confirmation.
+      Only pip cache and the dedicated Chrome cache folder are eligible in this first phase.
+      No project files, documents, application profiles, logs, backups or personal files are targeted.
+    </div>
+  </div>
+</div>
+
+<script>
+const titles={overview:"Storage Overview",inventory:"Storage Inventory",diagnosis:"Diagnosis & Maps",cleanup:"Cleanup Review",history:"History & Reports",protection:"Protection Rules"};
+function showPage(id){document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===id));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===id));document.getElementById("pageTitle").textContent=titles[id]||"Smart Disk Cleaner";window.scrollTo({top:0,behavior:"smooth"});}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.go)));
+const locations=[
+["💻","MacBook internal","Local internal","MAC-INT","macOS · APFS/container"],["🖥️","Windows C:","Local internal","WIN-C","Windows native volume"],["🗄️","Data D:","Server / project storage","WIN-D","Project Library · verify identity"],["💽","Transcend F:","External storage","WIN-F","Confirm exact device and volume"],["💾","Transcend G:","External storage","WIN-G","Confirm exact device and volume"],["☁️","OneDrive","Cloud account","CLOUD-OD","Provider quota ≠ local sync size"],["☁️","iCloud Drive","Cloud account","CLOUD-IC","Account storage ≠ local optimization"],["☁️","Google Drive","Cloud account","CLOUD-GD","Verify streamed / mirrored mode"],["☁️","Dropbox","Cloud account","CLOUD-DB","Cloud quota ≠ local cache"]
+];
+document.getElementById("storageCards").innerHTML=locations.map(x=>`<article class="card storage-card"><div class="storage-top"><div class="drive-icon">${x[0]}</div><span class="tag pending">Pending</span></div><h3>${x[1]}</h3><div class="sub">${x[2]} · ${x[3]}</div><div class="capacity">— <small>capacity not verified</small></div><div class="bar"><span></span></div><div class="meta"><span>${x[4]}</span><span>Unverified</span></div></article>`).join("");
+
+function openMacDrive() {
+  const dashboard = document.querySelector(".app");
+  const workspace = document.getElementById("macDriveWorkspace");
+  if (!dashboard || !workspace) return;
+  dashboard.classList.add("mac-drive-hidden");
+  workspace.classList.add("active");
+  window.scrollTo(0, 0);
+}
+
+function closeMacDrive() {
+  const dashboard = document.querySelector(".app");
+  const workspace = document.getElementById("macDriveWorkspace");
+  if (!dashboard || !workspace) return;
+  workspace.classList.remove("active");
+  dashboard.classList.remove("mac-drive-hidden");
+  window.scrollTo(0, 0);
+}
+
+document.getElementById("macBackBtn").addEventListener("click", closeMacDrive);
+
+const macLandscapeCard = document.querySelector("#overview .map-grid .map-cell");
+if (macLandscapeCard) {
+  macLandscapeCard.style.cursor = "pointer";
+  macLandscapeCard.setAttribute("role", "button");
+  macLandscapeCard.setAttribute("tabindex", "0");
+  macLandscapeCard.setAttribute("aria-label", "Open Mac Drive Cleaner");
+  macLandscapeCard.addEventListener("click", openMacDrive);
+  macLandscapeCard.addEventListener("keydown", event => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openMacDrive();
+    }
+  });
+}
+
+const macInventoryCard = document.querySelector("#storageCards .storage-card");
+if (macInventoryCard) {
+  macInventoryCard.style.cursor = "pointer";
+  macInventoryCard.setAttribute("role", "button");
+  macInventoryCard.setAttribute("tabindex", "0");
+  macInventoryCard.setAttribute("aria-label", "Open Mac Drive Cleaner");
+  macInventoryCard.addEventListener("click", openMacDrive);
+  macInventoryCard.addEventListener("keydown", event => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openMacDrive();
+    }
+  });
+}
+
+const zones={toronto:"America/Toronto",dhaka:"Asia/Dhaka",auckland:"Pacific/Auckland"};
+const cities={toronto:{lat:43.6532,lon:-79.3832},dhaka:{lat:23.8103,lon:90.4125},auckland:{lat:-36.8509,lon:174.7645}};
+const solarTimes={};
+function localMinutes(zone){const parts=new Intl.DateTimeFormat("en-GB",{timeZone:zone,hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date());return Number(parts.find(x=>x.type==="hour").value)*60+Number(parts.find(x=>x.type==="minute").value)}
+function updateClocks(){const now=new Date();for(const [key,zone] of Object.entries(zones)){const time=new Intl.DateTimeFormat("en-CA",{timeZone:zone,hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(now);const date=new Intl.DateTimeFormat("en-US",{timeZone:zone,weekday:"short",year:"numeric",month:"short",day:"numeric"}).format(now);const t=document.querySelector(`[data-side-time="${zone}"]`),d=document.querySelector(`[data-side-date="${zone}"]`);if(t)t.textContent=time;if(d)d.textContent=date;const mins=localMinutes(zone),solar=solarTimes[key];let isDay;if(solar){isDay=mins>=solar.sunrise&&mins<solar.sunset}else{isDay=mins>=360&&mins<1080}const card=document.querySelector(`[data-side-clock="${key}"]`);if(card){card.classList.toggle("day",isDay);card.classList.toggle("night",!isDay);card.querySelector(".day-icon").textContent=isDay?"☀️":"🌙"}}document.getElementById("todayPill").textContent=new Intl.DateTimeFormat("en-CA",{hour:"2-digit",minute:"2-digit",timeZoneName:"short"}).format(now)}
+updateClocks();setInterval(updateClocks,1000);
+const weatherText={0:"Clear sky",1:"Mainly clear",2:"Partly cloudy",3:"Overcast",45:"Fog",48:"Rime fog",51:"Light drizzle",53:"Drizzle",55:"Dense drizzle",61:"Light rain",63:"Rain",65:"Heavy rain",71:"Light snow",73:"Snow",75:"Heavy snow",80:"Rain showers",81:"Rain showers",82:"Heavy showers",95:"Thunderstorm",96:"Thunderstorm + hail",99:"Thunderstorm + hail"};
+async function loadWeather(){for(const [key,c] of Object.entries(cities)){const el=document.querySelector(`[data-side-weather="${key}"]`);try{const url=`https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m&daily=sunrise,sunset&forecast_days=1&timezone=auto`;const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw Error("Weather service unavailable");const d=await r.json(),v=d.current;const hm=x=>{const z=x.slice(11,16).split(":");return Number(z[0])*60+Number(z[1])};solarTimes[key]={sunrise:hm(d.daily.sunrise[0]),sunset:hm(d.daily.sunset[0])};el.innerHTML=`<b>${Math.round(v.temperature_2m)}°C</b> ${weatherText[v.weather_code]||"Current conditions"} <span style="opacity:.78">· Feels ${Math.round(v.apparent_temperature)}°C</span>`}catch(e){el.textContent="Live weather unavailable"}}updateClocks()}
+loadWeather();setInterval(loadWeather,15*60*1000);
+// Internet reachability is tested against a small public endpoint; navigator.onLine alone is not treated as proof.
+async function checkInternet(){const status=document.getElementById("internetStatus"),dot=document.getElementById("internetDot");if(!navigator.onLine){status.textContent="Offline";dot.style.background="#ed6a83";return}try{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),7000);await fetch("https://www.gstatic.com/generate_204?ts="+Date.now(),{mode:"no-cors",cache:"no-store",signal:controller.signal});clearTimeout(timer);status.textContent="Online";dot.style.background="#28bd91"}catch(e){status.textContent="Offline / blocked";dot.style.background="#ed6a83"}}
+checkInternet();setInterval(checkInternet,30000);window.addEventListener("online",checkInternet);window.addEventListener("offline",checkInternet);
+// Browser-only prototype cannot directly probe raw FTP or physical Ethernet. Do not fabricate either state.
+document.getElementById("exitBtn").addEventListener("click",()=>{if(confirm("Close the Smart Disk Cleaner dashboard tab?")){window.close();setTimeout(()=>alert("Your browser may block closing a tab that was opened manually. You can close this tab normally."),250)}});
+
+
+// SMART_DISK_MAC_LIVE_BACKEND
+async function macApi(url, options={}) {
+  const response = await fetch(url, {
+    cache: "no-store",
+    headers: {"Content-Type":"application/json"},
+    ...options
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || "Backend request failed.");
+  return data;
+}
+
+function macText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value == null ? "—" : String(value);
+}
+
+function macPretty(value) {
+  return JSON.stringify(value, null, 2);
+}
+
+function macBusy(id, busy, label) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.disabled = busy;
+  if (label) el.textContent = label;
+}
+
+document.getElementById("macRunSystem").addEventListener("click", async () => {
+  macBusy("macRunSystem", true, "Checking Mac…");
+  macText("macBackendStatus", "Python backend connected · System check running");
+  try {
+    const d = await macApi("/api/system");
+    macText("macTotal", d.disk.total);
+    macText("macUsed", d.disk.used);
+    macText("macFree", d.disk.free);
+    macText("macUsedPercent", d.disk.used_percent + "% used");
+    macText("macSystemOutput",
+      "Timestamp: " + d.timestamp +
+      "\nMac: " + d.computer +
+      "\nmacOS: " + d.macos +
+      "\nRAM: " + d.ram_label +
+      "\nDisk: " + d.disk.total +
+      "\nUsed: " + d.disk.used +
+      "\nAvailable: " + d.disk.free +
+      "\n\nSWAP\n" + d.swap +
+      "\n\nDisk identity\n" + d.disk_identity +
+      "\n\nMemory pressure\n" + d.memory_pressure
+    );
+    macText("macBackendStatus", "Connected · System check completed");
+    macText("macStorageBreakdown", d.storage_categories.map(x =>
+      x.category + " — " + x.size + " [" + x.status + "]" +
+      (x.note ? "\\n" + x.note : "")
+    ).join("\\n\\n"));
+    document.getElementById("macRunAnalysis").disabled = false;
+  } catch(e) {
+    macText("macSystemOutput", "ERROR: " + e.message);
+    macText("macBackendStatus", "Backend error · " + e.message);
+  } finally {
+    macBusy("macRunSystem", false, "Run System Check");
+  }
+});
+
+document.getElementById("macRunAnalysis").addEventListener("click", async () => {
+  macBusy("macRunAnalysis", true, "Analyzing storage…");
+  try {
+    const d = await macApi("/api/analyze", {method:"POST", body:"{}"});
+    const pip = d.candidates.find(x => x.id === "pip");
+    const chrome = d.candidates.find(x => x.id === "chrome");
+
+    macText("macPipInfo",
+      pip.path + "\n" + pip.size + " · " + pip.files + " files");
+    macText("macChromeInfo",
+      chrome.path + "\n" + chrome.size + " · " + chrome.files + " files");
+    macText("macChromeWarning", d.chrome_running
+      ? "Chrome is currently running. Close it before selecting Chrome cache cleanup."
+      : "Chrome is not detected as running.");
+
+    macText("macAnalysisOutput",
+      "Analysis time: " + d.timestamp +
+      "\n\nCLEANUP CANDIDATES\n" +
+      macPretty(d.candidates) +
+      "\n\nREAD-ONLY DEEP INSPECTION\n" +
+      macPretty(d.deep_inspection)
+    );
+
+    document.getElementById("macSelectPip").disabled = !pip.available;
+    document.getElementById("macSelectChrome").disabled =
+      !chrome.available || d.chrome_running;
+    document.getElementById("macCleanSelected").disabled = false;
+    macText("macBackendStatus", "Connected · Detailed analysis completed");
+  } catch(e) {
+    macText("macAnalysisOutput", "ERROR: " + e.message);
+  } finally {
+    macBusy("macRunAnalysis", false, "Run Detailed Analysis");
+  }
+});
+
+document.getElementById("macCleanSelected").addEventListener("click", async () => {
+  const selected = [];
+  if (document.getElementById("macSelectPip").checked) selected.push("pip");
+  if (document.getElementById("macSelectChrome").checked) selected.push("chrome");
+
+  if (!selected.length) {
+    macText("macCleanupOutput", "Select at least one cleanup candidate.");
+    return;
+  }
+
+  const names = selected.map(x => x === "pip" ? "Python pip cache" : "Google Chrome cache");
+  if (!confirm(
+    "Please confirm the exact cleanup selection:\n\n" +
+    names.join("\n") +
+    "\n\nNo other files or folders will be targeted.\n\nContinue?"
+  )) return;
+
+  macBusy("macCleanSelected", true, "Cleaning selected cache…");
+  try {
+    const d = await macApi("/api/cleanup", {
+      method:"POST",
+      body:JSON.stringify({selected, confirmed:true})
+    });
+    macText("macCleanupOutput", macPretty(d));
+    document.getElementById("macVerify").disabled = false;
+    macText("macBackendStatus", "Cleanup action completed · Final verification available");
+  } catch(e) {
+    macText("macCleanupOutput", "CLEANUP NOT COMPLETED\n" + e.message);
+  } finally {
+    macBusy("macCleanSelected", false, "Review & Clean Selected");
+  }
+});
+
+document.getElementById("macVerify").addEventListener("click", async () => {
+  macBusy("macVerify", true, "Verifying…");
+  try {
+    const d = await macApi("/api/verify");
+    macText("macTotal", d.after.total);
+    macText("macUsed", d.after.used);
+    macText("macFree", d.after.free);
+    macText("macUsedPercent", d.after.used_percent + "% used");
+    macText("macVerifyOutput", macPretty(d));
+    macText("macBackendStatus", "Final verification completed");
+  } catch(e) {
+    macText("macVerifyOutput", "ERROR: " + e.message);
+  } finally {
+    macBusy("macVerify", false, "Run Final Verification");
+  }
+});
+
+
+document.getElementById("macRunSafety").addEventListener("click", async () => {
+  macBusy("macRunSafety", true, "Inspecting applications…");
+  try {
+    const d = await macApi("/api/safety");
+    macText("macSafetyOutput",
+      "Scan: " + d.timestamp + "\\nStatus: " + d.status +
+      "\\nRunning applications: " + d.running_application_count +
+      "\\n\\n" + d.running_applications.map(x => x.name + " (PID " + x.pid + ")").join("\\n") +
+      "\\n\\nOpen-file ownership: " + d.open_file_ownership +
+      "\\nUnsaved work: " + d.unsaved_work +
+      "\\n\\n" + d.user_action);
+  } catch(e) { macText("macSafetyOutput", "ERROR: " + e.message); }
+  finally { macBusy("macRunSafety", false, "Inspect Running Applications"); }
+});
+
+document.getElementById("macLoadHistory").addEventListener("click", async () => {
+  macBusy("macLoadHistory", true, "Loading history…");
+  try {
+    const d = await macApi("/api/history");
+    macText("macHistoryOutput", d.records.length
+      ? macPretty(d.records)
+      : "No verified history records yet. Complete a cleanup and final verification to create the first genuine record.");
+    macText("macFinalValidation", "History endpoint responded. Records: " + d.records.length +
+      "\\nFull Mac runtime validation: pending on your Mac.");
+  } catch(e) { macText("macHistoryOutput", "ERROR: " + e.message); }
+  finally { macBusy("macLoadHistory", false, "Load History"); }
+});
+</script>
+</body></html>
