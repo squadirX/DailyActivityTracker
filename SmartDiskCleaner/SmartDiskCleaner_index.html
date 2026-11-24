@@ -228,6 +228,13 @@ border-radius:12px;margin:9px 0;font-size:12px}
 .mac-candidate strong{display:block;margin-bottom:3px}
 .mac-step-note{font-size:11px;color:#687994;margin-top:10px}
 .mac-stat strong{display:block}
+.mac-storage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px}
+.mac-storage-card{background:#f7f9fd;border:1px solid #dce5f2;border-radius:12px;padding:12px;min-width:0}
+.mac-storage-card strong{display:block;font-size:12px;color:#34445f}
+.mac-storage-card span{display:block;font-size:16px;font-weight:750;margin:8px 0 4px;color:#263c61}
+.mac-storage-card small{font-size:10px;color:#687994}
+.mac-storage-card p{font-size:10px;color:#687994;margin:7px 0 0;line-height:1.45}
+@media(max-width:700px){.mac-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .mac-action-row{display:flex;gap:10px;flex-wrap:wrap}
 
 </style>
@@ -437,6 +444,21 @@ border-radius:12px;margin:9px 0;font-size:12px}
         <strong id="macFree">—</strong>
         <span>Live macOS available space</span>
       </article>
+      <article class="mac-stat">
+        <small>Total RAM</small>
+        <strong id="macRamTotal">—</strong>
+        <span id="macRamLabel">Awaiting system check</span>
+      </article>
+      <article class="mac-stat">
+        <small>Swap Usage</small>
+        <strong id="macSwap">—</strong>
+        <span>Native macOS measurement</span>
+      </article>
+      <article class="mac-stat">
+        <small>Memory Pressure</small>
+        <strong id="macPressure">—</strong>
+        <span>System-wide free memory percentage</span>
+      </article>
     </div>
 
     <section class="mac-step">
@@ -628,6 +650,10 @@ document.getElementById("macRunSystem").addEventListener("click", async () => {
     macText("macUsed", d.disk.used);
     macText("macFree", d.disk.free);
     macText("macUsedPercent", d.disk.used_percent + "% used");
+    macText("macRamTotal", d.ram_total);
+    macText("macRamLabel", d.ram_label);
+    macText("macSwap", d.swap);
+    macText("macPressure", d.memory_pressure_summary);
     macText("macSystemOutput",
       "Timestamp: " + d.timestamp +
       "\nMac: " + d.computer +
@@ -641,10 +667,27 @@ document.getElementById("macRunSystem").addEventListener("click", async () => {
       "\n\nMemory pressure\n" + d.memory_pressure
     );
     macText("macBackendStatus", "Connected · System check completed");
-    macText("macStorageBreakdown", d.storage_categories.map(x =>
-      x.category + " — " + x.size + " [" + x.status + "]" +
-      (x.note ? "\\n" + x.note : "")
-    ).join("\\n\\n"));
+    const storageHost = document.getElementById("macStorageCards");
+    if (storageHost) {
+      storageHost.replaceChildren();
+      d.storage_categories.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "mac-storage-card";
+        const name = document.createElement("strong");
+        name.textContent = item.category;
+        const size = document.createElement("span");
+        size.textContent = item.size;
+        const status = document.createElement("small");
+        status.textContent = item.status;
+        card.append(name, size, status);
+        if (item.note) {
+          const note = document.createElement("p");
+          note.textContent = item.note;
+          card.append(note);
+        }
+        storageHost.append(card);
+      });
+    }
     document.getElementById("macRunAnalysis").disabled = false;
   } catch(e) {
     macText("macSystemOutput", "ERROR: " + e.message);
