@@ -222,6 +222,31 @@ def execute_cleanup(selected, confirmed):
     with LOCK: STATE["cleanup"]=outcome
     return outcome
 
+
+def application_safety():
+    p = run(["ps", "-axo", "pid=,comm="], timeout=25)
+    apps = []
+    if p["ok"]:
+        seen = set()
+        for line in p["out"].splitlines():
+            parts = line.strip().split(None, 1)
+            if len(parts) != 2: continue
+            pid, command = parts
+            path = Path(command)
+            if ("/Applications/" in command or "/System/Applications/" in command) and ".app/" in command:
+                name = command.split(".app/", 1)[0].rsplit("/", 1)[-1]
+                if name not in seen:
+                    seen.add(name)
+                    apps.append({"name": name, "pid": int(pid) if pid.isdigit() else None})
+        status = "Measured"
+    else:
+        status = "Unavailable"
+    return {"timestamp": now(), "status": status, "running_applications": apps[:100],
+            "running_application_count": len(apps),
+            "open_file_ownership": "Unable to Verify",
+            "unsaved_work": "Unable to Verify",
+            "user_action": "Save your work and close applications manually. This tool never force-quits apps."}
+
 def read_history():
     if not HISTORY.exists(): return []
     try:
