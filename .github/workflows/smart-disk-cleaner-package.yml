@@ -45,7 +45,7 @@ jobs:
           ):
               assert marker in backend, f"Backend route missing: {marker}"
           for marker in (
-              "macStorageBreakdown", "macRunSafety", "macLoadHistory",
+              "macStorageCards", "macRamTotal", "macRunSafety", "macLoadHistory",
               "macCleanSelected", "macVerify", "macBackBtn"
           ):
               assert marker in html, f"Dashboard element missing: {marker}"
