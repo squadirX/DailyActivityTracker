@@ -1,0 +1,53 @@
+name: Smart Disk Cleaner Package
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "SmartDiskCleaner/**"
+      - ".github/workflows/smart-disk-cleaner-package.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate required package files
+        run: |
+          set -euo pipefail
+          test -s SmartDiskCleaner/SmartDiskCleaner_index.html
+          test -s SmartDiskCleaner/SmartDiskCleaner_Backend.py
+          test -s SmartDiskCleaner/README.md
+          test -s SmartDiskCleaner/history.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          json.loads(Path("SmartDiskCleaner/history.json").read_text())
+          html = Path("SmartDiskCleaner/SmartDiskCleaner_index.html").read_text()
+          backend = Path("SmartDiskCleaner/SmartDiskCleaner_Backend.py").read_text()
+          assert "<html" in html.lower()
+          assert "BaseHTTPRequestHandler" in backend
+          print("Required files and JSON validation passed.")
+          PY
+
+      - name: Build ZIP package
+        run: |
+          cd SmartDiskCleaner
+          zip -9 ../SmartDiskCleaner_Completion_Package.zip \
+            SmartDiskCleaner_index.html \
+            SmartDiskCleaner_Backend.py \
+            README.md \
+            history.json
+
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmartDiskCleaner-Completion-Package
+          path: SmartDiskCleaner_Completion_Package.zip
+          if-no-files-found: error
+          retention-days: 30
