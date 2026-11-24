@@ -113,11 +113,26 @@ def chrome_running():
     p = run(["pgrep", "-fl", "Google Chrome"])
     return p["ok"] and bool(p["out"])
 
+def has_symlink_component(path, boundary):
+    current = Path(path)
+    boundary = Path(boundary)
+    try:
+        relative = current.relative_to(boundary)
+    except ValueError:
+        return True
+    probe = boundary
+    if probe.is_symlink(): return True
+    for part in relative.parts:
+        probe = probe / part
+        if probe.is_symlink(): return True
+    return False
+
 def cache_targets():
-    root = Path.home() / "Library" / "Caches" / "Google" / "Chrome"
+    home = Path.home()
+    root = home / "Library" / "Caches" / "Google" / "Chrome"
     names = {"Cache", "Code Cache", "GPUCache", "CacheStorage"}
     found = []
-    if not root.exists() or root.is_symlink(): return root, found
+    if not root.exists() or has_symlink_component(root, home): return root, found
     root_real = root.resolve()
     for current, dirs, _ in os.walk(root, followlinks=False):
         base = Path(current)
@@ -187,6 +202,8 @@ def execute_cleanup(selected, confirmed):
         home=Path.home().resolve()
         if not info["available"]: results.append({"item":"pip","success":False,"detail":"Cache path unavailable; skipped."})
         else:
+            if has_symlink_component(p, home):
+                raise RuntimeError("pip cache path contains a symbolic link or escapes the user home folder; cleanup blocked.")
             try: p.resolve().relative_to(home)
             except (ValueError,OSError): raise RuntimeError("pip cache is outside the user home folder; cleanup blocked.")
             purge=run([sys.executable,"-m","pip","cache","purge"],timeout=180)
@@ -251,8 +268,13 @@ def read_history():
     if not HISTORY.exists(): return []
     try:
         data=json.loads(HISTORY.read_text(encoding="utf-8"))
-        return data if isinstance(data,list) else []
-    except (OSError,json.JSONDecodeError): return []
+    except json.JSONDecodeError as exc:
+        raise RuntimeError("history.json is invalid JSON; history was not changed.") from exc
+    except OSError as exc:
+        raise RuntimeError(f"history.json could not be read: {exc}") from exc
+    if not isinstance(data,list):
+        raise RuntimeError("history.json must contain a JSON array; history was not changed.")
+    return data
 
 def write_history(entry):
     with LOCK:
