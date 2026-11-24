@@ -288,6 +288,7 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_header("Content-Length",str(len(raw))); self.send_header("Cache-Control","no-store")
                 self.end_headers(); self.wfile.write(raw); return
             if self.path=="/api/system": self.send_json(system_check()); return
+            if self.path=="/api/safety": self.send_json(application_safety()); return
             if self.path=="/api/history": self.send_json({"records":read_history()}); return
             self.send_json({"error":"Endpoint not found."},404)
         except Exception as exc: self.send_json({"error":str(exc)},500)
