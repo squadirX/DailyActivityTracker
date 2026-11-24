@@ -17,7 +17,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Validate required package files
+      - name: Validate the four package files
         run: |
           set -euo pipefail
           test -s SmartDiskCleaner/SmartDiskCleaner_index.html
@@ -25,24 +25,58 @@ jobs:
           test -s SmartDiskCleaner/README.md
           test -s SmartDiskCleaner/history.json
           python - <<'PY'
+          import ast
           import json
           from pathlib import Path
-          json.loads(Path("SmartDiskCleaner/history.json").read_text())
-          html = Path("SmartDiskCleaner/SmartDiskCleaner_index.html").read_text()
-          backend = Path("SmartDiskCleaner/SmartDiskCleaner_Backend.py").read_text()
-          assert "<html" in html.lower()
+
+          root = Path("SmartDiskCleaner")
+          backend = (root / "SmartDiskCleaner_Backend.py").read_text()
+          html = (root / "SmartDiskCleaner_index.html").read_text()
+          readme = (root / "README.md").read_text()
+          history = json.loads((root / "history.json").read_text())
+
+          ast.parse(backend)
+          assert isinstance(history, list), "history.json must be a JSON array"
+          assert "<html" in html.lower() and "</html>" in html.lower()
+          for marker in (
+              "/api/system", "/api/safety", "/api/analyze",
+              "/api/cleanup", "/api/verify", "/api/history"
+          ):
+              assert marker in backend, f"Backend route missing: {marker}"
+          for marker in (
+              "macStorageBreakdown", "macRunSafety", "macLoadHistory",
+              "macCleanSelected", "macVerify", "macBackBtn"
+          ):
+              assert marker in html, f"Dashboard element missing: {marker}"
           assert "BaseHTTPRequestHandler" in backend
-          print("Required files and JSON validation passed.")
+          assert "history.json" in readme
+          assert "force-quit" in readme.lower()
+          print("Python syntax, JSON, UI markers, API routes and README checks passed.")
           PY
 
-      - name: Build ZIP package
+      - name: Build and inspect exact four-file ZIP
         run: |
+          set -euo pipefail
           cd SmartDiskCleaner
           zip -9 ../SmartDiskCleaner_Completion_Package.zip \
             SmartDiskCleaner_index.html \
             SmartDiskCleaner_Backend.py \
             README.md \
             history.json
+          cd ..
+          python - <<'PY'
+          from zipfile import ZipFile
+          expected = {
+              "SmartDiskCleaner_index.html",
+              "SmartDiskCleaner_Backend.py",
+              "README.md",
+              "history.json",
+          }
+          with ZipFile("SmartDiskCleaner_Completion_Package.zip") as archive:
+              actual = set(archive.namelist())
+              assert actual == expected, f"Unexpected ZIP contents: {actual}"
+          print("ZIP contains exactly the four approved files.")
+          PY
 
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v4
