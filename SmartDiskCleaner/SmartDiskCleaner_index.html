@@ -469,14 +469,29 @@ border-radius:12px;margin:9px 0;font-size:12px}
     </section>
 
     <section class="mac-step">
-      <h2>02 · Detailed Storage Analysis</h2>
+      <h2>02 · macOS Storage Category Breakdown</h2>
+      <p>Measured folder totals are displayed separately from macOS-managed categories. Unavailable categories are never estimated.</p>
+      <div class="mac-storage-grid" id="macStorageCards">
+        <div class="mac-output">Not scanned yet. Run Step 01.</div>
+      </div>
+    </section>
+
+    <section class="mac-step">
+      <h2>03 · Detailed Storage Analysis</h2>
       <p>Inspect pip and Chrome cache sizes, Library folders, Logs, temporary folders and large cache/log files. This step is read-only.</p>
       <button id="macRunAnalysis" disabled>Run Detailed Analysis</button>
       <div class="mac-output" id="macAnalysisOutput">Complete Step 01 first.</div>
     </section>
 
     <section class="mac-step">
-      <h2>03 · Cleanup Review & Execution</h2>
+      <h2>04 · Application & File Safety Check</h2>
+      <p>Inspect running applications. Open-file ownership and unsaved work cannot always be verified; save and close apps manually.</p>
+      <button id="macRunSafety">Inspect Running Applications</button>
+      <div class="mac-output" id="macSafetyOutput">Not scanned yet.</div>
+    </section>
+
+    <section class="mac-step">
+      <h2>05 · Cleanup Candidate Review</h2>
       <p>Only the explicitly selected cache categories below can be cleaned. Projects, Documents, Application Support, personal data and backups are excluded.</p>
 
       <label class="mac-candidate">
@@ -497,6 +512,7 @@ border-radius:12px;margin:9px 0;font-size:12px}
         Chrome cache cleanup requires Google Chrome to be fully closed.
       </div>
 
+      <h2 style="font-size:14px;margin:18px 0 8px">06 · Permission-Based Cleanup Execution</h2>
       <div class="mac-action-row" style="margin-top:14px">
         <button id="macCleanSelected" disabled>Review & Clean Selected</button>
       </div>
@@ -507,7 +523,7 @@ border-radius:12px;margin:9px 0;font-size:12px}
       <h2>07 · Final Before/After Verification</h2>
       <p>Measure available disk space again and compare it with the measurement taken before cleanup.</p>
       <button id="macVerify" disabled>Run Final Verification</button>
-      <div class="mac-output" id="macVerifyOutput">Complete Step 03 first.</div>
+      <div class="mac-output" id="macVerifyOutput">Complete Step 06 first.</div>
     </section>
 
 <section class="mac-step">
