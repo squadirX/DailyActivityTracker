@@ -1,4 +1,5 @@
 name: Smart Disk Cleaner Package
+# Package source is maintained in SmartDiskCleaner/; the root-level legacy files are left untouched.
 
 on:
   workflow_dispatch:
