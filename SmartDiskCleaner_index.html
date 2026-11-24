@@ -409,10 +409,16 @@ border-radius:12px;margin:9px 0;font-size:12px}
 
     <section class="mac-hero">
       <h1>Mac Drive Cleaner</h1>
-      <p>Four-step storage inspection, analysis, controlled cleanup and verification.</p>
+      <p>Ten-stage Mac inspection, safety review, controlled cleanup, history and verification.</p>
       <div class="mac-live-status" id="macBackendStatus">
         Local Python backend · Waiting for first system check
       </div>
+    </section>
+
+    <section class="mac-step">
+      <h2>10-Stage Workflow</h2>
+      <p>Each stage uses real Mac measurements. Items that cannot be verified remain clearly marked unavailable.</p>
+      <div class="mac-output">01 Live system check · 02 Storage category breakdown · 03 Detailed storage analysis · 04 Application and file safety · 05 Cleanup candidate review · 06 Permission-based cleanup · 07 Before/after verification · 08 Genuine scan history · 09 Dashboard navigation · 10 Final package and runtime validation</div>
     </section>
 
     <div class="mac-stats">
@@ -476,10 +482,28 @@ border-radius:12px;margin:9px 0;font-size:12px}
     </section>
 
     <section class="mac-step">
-      <h2>04 · Final Verification</h2>
+      <h2>07 · Final Before/After Verification</h2>
       <p>Measure available disk space again and compare it with the measurement taken before cleanup.</p>
       <button id="macVerify" disabled>Run Final Verification</button>
       <div class="mac-output" id="macVerifyOutput">Complete Step 03 first.</div>
+    </section>
+
+<section class="mac-step">
+      <h2>08 · Genuine Scan & Cleanup History</h2>
+      <p>Only actual verification results are stored in history.json. No sample or fabricated history is added.</p>
+      <button id="macLoadHistory">Load History</button>
+      <div class="mac-output" id="macHistoryOutput">No history loaded.</div>
+    </section>
+
+    <section class="mac-step">
+      <h2>09 · Dashboard Navigation</h2>
+      <p>Use “Back to Dashboard” at the top to return to the main Command Center. Your Mac workspace remains a full-page view.</p>
+    </section>
+
+    <section class="mac-step">
+      <h2>10 · Final Runtime & Package Validation</h2>
+      <p>The package validator checks the required files and JSON structure on GitHub. Real Mac hardware and cleanup behavior must still be tested on your Mac.</p>
+      <div class="mac-output" id="macFinalValidation">Pending actual Mac runtime test. No result is assumed.</div>
     </section>
 
     <div class="mac-safety">
@@ -617,6 +641,10 @@ document.getElementById("macRunSystem").addEventListener("click", async () => {
       "\n\nMemory pressure\n" + d.memory_pressure
     );
     macText("macBackendStatus", "Connected · System check completed");
+    macText("macStorageBreakdown", d.storage_categories.map(x =>
+      x.category + " — " + x.size + " [" + x.status + "]" +
+      (x.note ? "\\n" + x.note : "")
+    ).join("\\n\\n"));
     document.getElementById("macRunAnalysis").disabled = false;
   } catch(e) {
     macText("macSystemOutput", "ERROR: " + e.message);
@@ -711,5 +739,33 @@ document.getElementById("macVerify").addEventListener("click", async () => {
   }
 });
 
+
+document.getElementById("macRunSafety").addEventListener("click", async () => {
+  macBusy("macRunSafety", true, "Inspecting applications…");
+  try {
+    const d = await macApi("/api/safety");
+    macText("macSafetyOutput",
+      "Scan: " + d.timestamp + "\\nStatus: " + d.status +
+      "\\nRunning applications: " + d.running_application_count +
+      "\\n\\n" + d.running_applications.map(x => x.name + " (PID " + x.pid + ")").join("\\n") +
+      "\\n\\nOpen-file ownership: " + d.open_file_ownership +
+      "\\nUnsaved work: " + d.unsaved_work +
+      "\\n\\n" + d.user_action);
+  } catch(e) { macText("macSafetyOutput", "ERROR: " + e.message); }
+  finally { macBusy("macRunSafety", false, "Inspect Running Applications"); }
+});
+
+document.getElementById("macLoadHistory").addEventListener("click", async () => {
+  macBusy("macLoadHistory", true, "Loading history…");
+  try {
+    const d = await macApi("/api/history");
+    macText("macHistoryOutput", d.records.length
+      ? macPretty(d.records)
+      : "No verified history records yet. Complete a cleanup and final verification to create the first genuine record.");
+    macText("macFinalValidation", "History endpoint responded. Records: " + d.records.length +
+      "\\nFull Mac runtime validation: pending on your Mac.");
+  } catch(e) { macText("macHistoryOutput", "ERROR: " + e.message); }
+  finally { macBusy("macLoadHistory", false, "Load History"); }
+});
 </script>
 </body></html>
