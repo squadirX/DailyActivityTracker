@@ -28,6 +28,7 @@ jobs:
           python - <<'PY'
           import ast
           import json
+          import re
           from pathlib import Path
 
           root = Path("SmartDiskCleaner")
