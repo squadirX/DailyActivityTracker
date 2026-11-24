@@ -99,10 +99,14 @@ def system_check():
     except ValueError: ram_bytes = None
     vm = run(["vm_stat"])
     cpu = run(["sysctl", "-n", "machdep.cpu.brand_string"])
+    pressure_text = pressure["out"] if pressure["ok"] else "Unavailable"
+    pressure_summary = next((line.split(":", 1)[1].strip() for line in pressure_text.splitlines()
+                             if "System-wide memory free percentage:" in line), "Unavailable")
     result = {"timestamp": now(), "computer": model, "macos": os_version,
               "ram_label": ram_label, "ram_bytes": ram_bytes, "ram_total": human(ram_bytes),
               "swap": swap["out"] if swap["ok"] else "Unavailable",
-              "memory_pressure": pressure["out"] if pressure["ok"] else "Unavailable",
+              "memory_pressure_summary": pressure_summary,
+              "memory_pressure": pressure_text,
               "vm_stat": vm["out"] if vm["ok"] else "Unavailable",
               "cpu": cpu["out"] if cpu["ok"] else "Unavailable",
               "disk": disk, "storage_categories": storage_categories(),
