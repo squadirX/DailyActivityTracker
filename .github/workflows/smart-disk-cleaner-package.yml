@@ -40,16 +40,15 @@ jobs:
           ast.parse(backend)
           assert isinstance(history, list), "history.json must be a JSON array"
           assert "<html" in html.lower() and "</html>" in html.lower()
-          for marker in (
-              "/api/system", "/api/safety", "/api/analyze",
-              "/api/cleanup", "/api/verify", "/api/history"
-          ):
-              assert marker in backend, f"Backend route missing: {marker}"
-          for marker in (
-              "macStorageCards", "macRamTotal", "macRunSafety", "macLoadHistory",
+          required_ids = (
+              "macStorageCards", "macRamTotal", "macSwap", "macPressure",
+              "macRunSafety", "macSafetyOutput", "macLoadHistory",
               "macCleanSelected", "macVerify", "macBackBtn"
-          ):
-              assert marker in html, f"Dashboard element missing: {marker}"
+          )
+          for element_id in required_ids:
+              assert f'id="{element_id}"' in html, f"Dashboard element missing: {element_id}"
+          stages = re.findall(r'<h2[^>]*>(\d{2}) ·', html)
+          assert stages == [f"{n:02d}" for n in range(1, 11)], f"Expected ten ordered stages, found {stages}"
           assert "BaseHTTPRequestHandler" in backend
           assert "history.json" in readme
           assert "force-quit" in readme.lower()
